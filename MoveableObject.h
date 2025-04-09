@@ -9,10 +9,7 @@
 class MoveableObject {
 public:
     //Constructor
-    MoveableObject(const sf::Texture& texture, const Position& startPos);
-
-    // // Getter for movement speed increment
-    // float& getMovementIncrement() const;
+    MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement = 0.0f);
 
     // Getter for sprite (so we can draw it elsewhere)
     const sf::Sprite& getSprite() const;
@@ -21,9 +18,15 @@ public:
     const Position& getPosition() const;
     void setPosition(const Position& newPos);
 
+    // Movement
+    void setMovementIncrement(float);
+    float getMovementIncrement() const;
+
 private:
     Position position_;
-    float movementIncrement_;
+
+    // Default value because some of our instances (i.e., food) don't need movespeed
+    float movementIncrement_ = 0.0f;
     const sf::Texture texture_;
     sf::Sprite sprite_;
 };

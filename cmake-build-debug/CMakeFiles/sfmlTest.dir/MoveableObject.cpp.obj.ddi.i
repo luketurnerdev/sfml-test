@@ -107533,10 +107533,7 @@ struct Position {
 class MoveableObject {
 public:
 
-    MoveableObject(const sf::Texture& texture, const Position& startPos);
-
-
-
+    MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement = 0.0f);
 
 
     const sf::Sprite& getSprite() const;
@@ -107545,9 +107542,15 @@ public:
     const Position& getPosition() const;
     void setPosition(const Position& newPos);
 
+
+    void setMovementIncrement(float);
+    float getMovementIncrement() const;
+
 private:
     Position position_;
-    float movementIncrement_;
+
+
+    float movementIncrement_ = 0.0f;
     const sf::Texture texture_;
     sf::Sprite sprite_;
 };
@@ -107555,10 +107558,14 @@ private:
 
 
 
-MoveableObject::MoveableObject(const sf::Texture& texture, const Position& startPos)
-    : position_(startPos), texture_(texture), sprite_(texture_)
+MoveableObject::MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement)
+    : position_(startPos), movementIncrement_(movementIncrement), texture_(texture), sprite_(texture_)
 {
     sprite_.setPosition(sf::Vector2f(position_.x, position_.y));
+}
+
+float MoveableObject::getMovementIncrement() const {
+    return movementIncrement_;
 }
 
 const sf::Sprite& MoveableObject::getSprite() const {

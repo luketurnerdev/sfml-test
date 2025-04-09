@@ -107553,10 +107553,7 @@ struct Position {
 class MoveableObject {
 public:
 
-    MoveableObject(const sf::Texture& texture, const Position& startPos);
-
-
-
+    MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement = 0.0f);
 
 
     const sf::Sprite& getSprite() const;
@@ -107565,9 +107562,15 @@ public:
     const Position& getPosition() const;
     void setPosition(const Position& newPos);
 
+
+    void setMovementIncrement(float);
+    float getMovementIncrement() const;
+
 private:
     Position position_;
-    float movementIncrement_;
+
+
+    float movementIncrement_ = 0.0f;
     const sf::Texture texture_;
     sf::Sprite sprite_;
 };
