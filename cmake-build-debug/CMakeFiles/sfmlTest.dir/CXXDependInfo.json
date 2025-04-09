@@ -1,0 +1,22 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "GNU",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"dir-cur-bld" : "F:/Programming/C++/sfml/sfmlTest/cmake-build-debug",
+	"dir-cur-src" : "F:/Programming/C++/sfml/sfmlTest",
+	"dir-top-bld" : "F:/Programming/C++/sfml/sfmlTest/cmake-build-debug",
+	"dir-top-src" : "F:/Programming/C++/sfml/sfmlTest",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"C:\\SFML\\include",
+		"F:\\Programming\\C++\\sfml\\sfmlTest\\headers"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "F:/Programming/C++/sfml/sfmlTest/cmake-build-debug/CMakeFiles/sfmlTest.dir"
+}
