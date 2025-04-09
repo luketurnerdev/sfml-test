@@ -16,7 +16,12 @@ include_directories(
 link_directories(${SFML_DIR}/lib)
 
 # Executable
-add_executable(sfmlTest main.cpp)
+add_executable(sfmlTest main.cpp
+        Player.h
+        Position.h
+        snakeGame.cpp
+        snakeGame.h
+)
 
 # Link SFML libraries (assuming you're using dynamic linking with DLLs)
 target_link_libraries(sfmlTest
