@@ -1,8 +1,16 @@
-# 0 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp"
+# 0 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.cpp"
 # 1 "F:\\Programming\\C++\\sfml\\sfmlTest\\cmake-build-debug//"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp"
+# 1 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.cpp"
+
+
+
+
+# 1 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 1
+
+
+
 
 
 
@@ -107509,28 +107517,7 @@ void __attribute__((dllimport)) sleep(Time duration);
 # 41 "C:/SFML/include/SFML/System.hpp" 2
 # 47 "C:/SFML/include/SFML/Window.hpp" 2
 # 60 "C:/SFML/include/SFML/Graphics.hpp" 2
-# 5 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
-# 1 "F:/Programming/C++/sfml/sfmlTest/snakeGame.h" 1
-
-
-
-
-
-
-
-       
-
-void runSnakeGame();
-# 6 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
-
-# 1 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 1
-
-
-
-
-
-
-
+# 8 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
 # 1 "F:/Programming/C++/sfml/sfmlTest/position.h" 1
 
 
@@ -107560,68 +107547,25 @@ private:
     const sf::Texture texture_;
     sf::Sprite sprite_;
 };
-# 8 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
+# 6 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.cpp" 2
 
-void CheckForWindowEvents(sf::RenderWindow& window) {
-    while (const std::optional event = window.pollEvent()) {
-        if (event->is<sf::Event::Closed>()) {
-            window.close();
-        }
-    }
+
+
+MoveableObject::MoveableObject(const sf::Texture& texture, const Position& startPos)
+    : position_(startPos), texture_(texture), sprite_(texture_)
+{
+    sprite_.setPosition(sf::Vector2f(position_.x, position_.y));
 }
 
-void MovePlayerBasedOnKeyPresses(MoveableObject& player, const float& movementIncrement) {
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)) {
-        player.setPosition(Position{player.getPosition().x + movementIncrement,player.getPosition().y});
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) {
-        player.setPosition(Position{player.getPosition().x - movementIncrement,player.getPosition().y});
-    }
-
-
-
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down)) {
-        player.setPosition(Position{player.getPosition().x, player.getPosition().y + movementIncrement});
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up)) {
-        player.setPosition(Position{player.getPosition().x, player.getPosition().y - movementIncrement});
-    }
+const sf::Sprite& MoveableObject::getSprite() const {
+    return sprite_;
 }
 
-void DrawSpriteToScreen(const sf::Sprite& sprite, sf::RenderWindow& window) {
-    window.draw(sprite);
+const Position &MoveableObject::getPosition() const {
+    return position_;
 }
 
-void SetInitialSpritePos(sf::Sprite& sprite, const float& startingXPos, const float& startingYPos) {
-    const sf::Vector2f startingPos = {startingXPos, startingYPos};
-    sprite.setPosition(startingPos);
-}
-
-void runSnakeGame() {
-
-    sf::RenderWindow window(sf::VideoMode({800,600}), "SFML Test", sf::Style::Titlebar);
-    float movementIncrement = 0.05f;
-
-    const sf::Texture characterTexture("img/sword32.png");
-    constexpr Position startPosition = {0,0};
-    MoveableObject player(characterTexture, startPosition);
-
-    while (window.isOpen()) {
-
-        CheckForWindowEvents(window);
-        MovePlayerBasedOnKeyPresses(player, movementIncrement);
-
-
-
-
-        window.clear(sf::Color::Black);
-
-
-        DrawSpriteToScreen(player.getSprite(), window);
-
-
-        window.display();
-    }
+void MoveableObject::setPosition(const Position& newPos) {
+    position_ = newPos;
+    sprite_.setPosition(sf::Vector2f(position_.x, position_.y));
 }

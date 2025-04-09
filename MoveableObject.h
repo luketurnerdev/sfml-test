@@ -9,7 +9,7 @@
 class Player {
 public:
     //Constructor
-    Player(const std::string& textureFilePath, const Position& startPos);
+    Player(const sf::Texture& texture, const Position& startPos);
 
     // Getter for sprite (so we can draw it elsewhere)
     const sf::Sprite& getSprite() const;
@@ -20,7 +20,7 @@ public:
 
 private:
     Position position_;
-    sf::Texture texture_;
+    const sf::Texture texture_;
     sf::Sprite sprite_;
 };
 

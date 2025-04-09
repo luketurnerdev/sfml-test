@@ -180,12 +180,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Player.cpp",
+			"path" : "MoveableObject.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Player.h",
+			"path" : "MoveableObject.h",
 			"sourceGroupIndex" : 1
 		},
 		{

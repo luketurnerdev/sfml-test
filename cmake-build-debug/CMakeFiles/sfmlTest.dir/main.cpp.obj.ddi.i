@@ -107520,8 +107520,7 @@ void __attribute__((dllimport)) sleep(Time duration);
 # 60 "C:/SFML/include/SFML/Graphics.hpp" 2
 # 3 "F:/Programming/C++/sfml/sfmlTest/main.cpp" 2
 int main() {
-
-
+    runSnakeGame();
     return 0;
 
 }

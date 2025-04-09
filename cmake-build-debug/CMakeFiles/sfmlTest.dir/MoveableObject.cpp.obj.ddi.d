@@ -1,6 +1,6 @@
-CMakeFiles\sfmlTest.dir\Player.cpp.obj.ddi: \
- F:/Programming/C++/sfml/sfmlTest/Player.cpp \
- F:/Programming/C++/sfml/sfmlTest/Player.h \
+CMakeFiles\sfmlTest.dir\MoveableObject.cpp.obj.ddi: \
+ F:/Programming/C++/sfml/sfmlTest/MoveableObject.cpp \
+ F:/Programming/C++/sfml/sfmlTest/MoveableObject.h \
  C:/SFML/include/SFML/Graphics.hpp \
  C:/SFML/include/SFML/Graphics/BlendMode.hpp \
  C:/SFML/include/SFML/Graphics/Export.hpp C:/SFML/include/SFML/Config.hpp \
@@ -300,5 +300,4 @@ CMakeFiles\sfmlTest.dir\Player.cpp.obj.ddi: \
  C:/SFML/include/SFML/System/InputStream.hpp \
  C:/SFML/include/SFML/System/MemoryInputStream.hpp \
  C:/SFML/include/SFML/System/Sleep.hpp \
- F:/Programming/C++/sfml/sfmlTest/position.h \
- C:/mingw64/include/c++/14.2.0/iostream
+ F:/Programming/C++/sfml/sfmlTest/position.h
