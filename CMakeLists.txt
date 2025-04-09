@@ -20,9 +20,11 @@ add_executable(sfmlTest
         main.cpp
         snakeGame.cpp
         snakeGame.h
-        Player.cpp
-        Player.h
+        MoveableObject.cpp
+        MoveableObject.h
         Position.h
+        Food.h
+        Food.cpp
 )
 
 # Link SFML dynamic libraries (no -s suffix)

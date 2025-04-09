@@ -107536,6 +107536,9 @@ public:
     MoveableObject(const sf::Texture& texture, const Position& startPos);
 
 
+
+
+
     const sf::Sprite& getSprite() const;
 
 
@@ -107544,6 +107547,7 @@ public:
 
 private:
     Position position_;
+    float movementIncrement_;
     const sf::Texture texture_;
     sf::Sprite sprite_;
 };

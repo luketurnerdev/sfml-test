@@ -107556,6 +107556,9 @@ public:
     MoveableObject(const sf::Texture& texture, const Position& startPos);
 
 
+
+
+
     const sf::Sprite& getSprite() const;
 
 
@@ -107564,6 +107567,7 @@ public:
 
 private:
     Position position_;
+    float movementIncrement_;
     const sf::Texture texture_;
     sf::Sprite sprite_;
 };
@@ -107616,18 +107620,25 @@ void SetInitialSpritePos(sf::Sprite& sprite, const float& startingXPos, const fl
     sprite.setPosition(startingPos);
 }
 
+void SetPlayerBoundaries(sf::RenderWindow& window) {
+
+
+
+}
+
 void runSnakeGame() {
 
     sf::RenderWindow window(sf::VideoMode({800,600}), "SFML Test", sf::Style::Titlebar);
-    float movementIncrement = 0.05f;
+
 
 
     const sf::Texture characterTexture("img/sword32.png");
     constexpr Position startPosition = {0,0};
+    const float movementIncrement = 0.05f;
     MoveableObject player(characterTexture, startPosition);
 
 
-    const sf::Texture foodTexture("img/sword32.png");
+    const sf::Texture foodTexture("img/banana32.png");
     constexpr Position spawnPosition = {100,100};
     Food food(foodTexture, spawnPosition);
 

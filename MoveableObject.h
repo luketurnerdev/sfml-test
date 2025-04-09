@@ -6,10 +6,13 @@
 
 #include <SFML/Graphics.hpp>
 #include "position.h"
-class Player {
+class MoveableObject {
 public:
     //Constructor
-    Player(const sf::Texture& texture, const Position& startPos);
+    MoveableObject(const sf::Texture& texture, const Position& startPos);
+
+    // // Getter for movement speed increment
+    // float& getMovementIncrement() const;
 
     // Getter for sprite (so we can draw it elsewhere)
     const sf::Sprite& getSprite() const;
@@ -20,6 +23,7 @@ public:
 
 private:
     Position position_;
+    float movementIncrement_;
     const sf::Texture texture_;
     sf::Sprite sprite_;
 };
