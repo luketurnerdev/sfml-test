@@ -83,7 +83,24 @@ build CMakeFiles/sfmlTest.dir/snakeGame.cpp.obj: CXX_COMPILER__sfmlTest_scanned_
   OBJECT_FILE_DIR = CMakeFiles\sfmlTest.dir
   dyndep = CMakeFiles/sfmlTest.dir/CXX.dd
 
-build CMakeFiles/sfmlTest.dir/CXX.dd | F$:/Programming/C++/sfml/sfmlTest/cmake-build-debug/CMakeFiles/sfmlTest.dir/CXXModules.json CMakeFiles/sfmlTest.dir/main.cpp.obj.modmap CMakeFiles/sfmlTest.dir/snakeGame.cpp.obj.modmap: CXX_DYNDEP__sfmlTest_Debug CMakeFiles/sfmlTest.dir/main.cpp.obj.ddi CMakeFiles/sfmlTest.dir/snakeGame.cpp.obj.ddi | F$:/Programming/C++/sfml/sfmlTest/cmake-build-debug/CMakeFiles/sfmlTest.dir/CXXDependInfo.json
+build CMakeFiles/sfmlTest.dir/Player.cpp.obj.ddi: CXX_SCAN__sfmlTest_Debug F$:/Programming/C++/sfml/sfmlTest/Player.cpp || cmake_object_order_depends_target_sfmlTest
+  DEP_FILE = CMakeFiles\sfmlTest.dir\Player.cpp.obj.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles\sfmlTest.dir\Player.cpp.obj.ddi
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/SFML/include -IF:/Programming/C++/sfml/sfmlTest/headers
+  OBJ_FILE = CMakeFiles\sfmlTest.dir\Player.cpp.obj
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles\sfmlTest.dir\Player.cpp.obj.ddi.i
+
+build CMakeFiles/sfmlTest.dir/Player.cpp.obj: CXX_COMPILER__sfmlTest_scanned_Debug F$:/Programming/C++/sfml/sfmlTest/Player.cpp | CMakeFiles/sfmlTest.dir/Player.cpp.obj.modmap || cmake_object_order_depends_target_sfmlTest CMakeFiles/sfmlTest.dir/CXX.dd
+  DEP_FILE = CMakeFiles\sfmlTest.dir\Player.cpp.obj.d
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles\sfmlTest.dir\Player.cpp.obj.modmap
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/SFML/include -IF:/Programming/C++/sfml/sfmlTest/headers
+  OBJECT_DIR = CMakeFiles\sfmlTest.dir
+  OBJECT_FILE_DIR = CMakeFiles\sfmlTest.dir
+  dyndep = CMakeFiles/sfmlTest.dir/CXX.dd
+
+build CMakeFiles/sfmlTest.dir/CXX.dd | F$:/Programming/C++/sfml/sfmlTest/cmake-build-debug/CMakeFiles/sfmlTest.dir/CXXModules.json CMakeFiles/sfmlTest.dir/main.cpp.obj.modmap CMakeFiles/sfmlTest.dir/snakeGame.cpp.obj.modmap CMakeFiles/sfmlTest.dir/Player.cpp.obj.modmap: CXX_DYNDEP__sfmlTest_Debug CMakeFiles/sfmlTest.dir/main.cpp.obj.ddi CMakeFiles/sfmlTest.dir/snakeGame.cpp.obj.ddi CMakeFiles/sfmlTest.dir/Player.cpp.obj.ddi | F$:/Programming/C++/sfml/sfmlTest/cmake-build-debug/CMakeFiles/sfmlTest.dir/CXXDependInfo.json
 
 
 # =============================================================================
@@ -93,7 +110,7 @@ build CMakeFiles/sfmlTest.dir/CXX.dd | F$:/Programming/C++/sfml/sfmlTest/cmake-b
 #############################################
 # Link the executable sfmlTest.exe
 
-build sfmlTest.exe: CXX_EXECUTABLE_LINKER__sfmlTest_Debug CMakeFiles/sfmlTest.dir/main.cpp.obj CMakeFiles/sfmlTest.dir/snakeGame.cpp.obj
+build sfmlTest.exe: CXX_EXECUTABLE_LINKER__sfmlTest_Debug CMakeFiles/sfmlTest.dir/main.cpp.obj CMakeFiles/sfmlTest.dir/snakeGame.cpp.obj CMakeFiles/sfmlTest.dir/Player.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lsfml-graphics  -lsfml-window  -lsfml-system  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LC:/SFML/lib

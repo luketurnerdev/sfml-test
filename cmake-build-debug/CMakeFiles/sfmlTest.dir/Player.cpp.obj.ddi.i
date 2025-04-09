@@ -1,0 +1,5 @@
+# 0 "F:/Programming/C++/sfml/sfmlTest/Player.cpp"
+# 1 "F:\\Programming\\C++\\sfml\\sfmlTest\\cmake-build-debug//"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "F:/Programming/C++/sfml/sfmlTest/Player.cpp"

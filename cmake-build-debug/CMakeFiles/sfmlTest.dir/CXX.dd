@@ -3,3 +3,5 @@ build CMakeFiles/sfmlTest.dir/main.cpp.obj: dyndep
 
 build CMakeFiles/sfmlTest.dir/snakeGame.cpp.obj: dyndep
 
+build CMakeFiles/sfmlTest.dir/Player.cpp.obj: dyndep
+
