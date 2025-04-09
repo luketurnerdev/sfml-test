@@ -1,21 +1,14 @@
-# 0 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp"
+# 0 "F:/Programming/C++/sfml/sfmlTest/Utils.cpp"
 # 1 "F:\\Programming\\C++\\sfml\\sfmlTest\\cmake-build-debug//"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp"
-
-
-
-# 1 "C:/SFML/include/SFML/Graphics.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics.hpp"
-       
+# 1 "F:/Programming/C++/sfml/sfmlTest/Utils.cpp"
 
 
 
 
-
-# 1 "C:/SFML/include/SFML/Graphics/BlendMode.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/BlendMode.hpp"
+# 1 "C:/SFML/include/SFML/Graphics/RenderWindow.hpp" 1
+# 25 "C:/SFML/include/SFML/Graphics/RenderWindow.hpp"
        
 
 
@@ -32,7 +25,25 @@
 # 25 "C:/SFML/include/SFML/Config.hpp"
        
 # 31 "C:/SFML/include/SFML/Graphics/Export.hpp" 2
-# 31 "C:/SFML/include/SFML/Graphics/BlendMode.hpp" 2
+# 31 "C:/SFML/include/SFML/Graphics/RenderWindow.hpp" 2
+
+# 1 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp" 1
+# 25 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+       
+
+
+
+
+
+
+# 1 "C:/SFML/include/SFML/Graphics/BlendMode.hpp" 1
+# 25 "C:/SFML/include/SFML/Graphics/BlendMode.hpp"
+       
+
+
+
+
+
 
 
 namespace sf
@@ -124,25 +135,7 @@ __attribute__((dllimport)) extern const BlendMode BlendNone;
 
 
 }
-# 32 "C:/SFML/include/SFML/Graphics.hpp" 2
-# 1 "C:/SFML/include/SFML/Graphics/CircleShape.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/CircleShape.hpp"
-       
-
-
-
-
-
-
-# 1 "C:/SFML/include/SFML/Graphics/Shape.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/Shape.hpp"
-       
-
-
-
-
-
-
+# 33 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp" 2
 # 1 "C:/SFML/include/SFML/Graphics/Color.hpp" 1
 # 25 "C:/SFML/include/SFML/Graphics/Color.hpp"
        
@@ -762,44 +755,22 @@ inline constexpr Color Color::Transparent(0, 0, 0, 0);
 
 }
 # 230 "C:/SFML/include/SFML/Graphics/Color.hpp" 2
-# 33 "C:/SFML/include/SFML/Graphics/Shape.hpp" 2
-# 1 "C:/SFML/include/SFML/Graphics/Drawable.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/Drawable.hpp"
+# 34 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp" 2
+# 1 "C:/SFML/include/SFML/Graphics/CoordinateType.hpp" 1
+# 25 "C:/SFML/include/SFML/Graphics/CoordinateType.hpp"
        
-
-
-
-
-
-
 
 namespace sf
 {
-class RenderTarget;
-struct RenderStates;
-
-
-
-
-
-
-class __attribute__((dllimport)) Drawable
+# 37 "C:/SFML/include/SFML/Graphics/CoordinateType.hpp"
+enum class CoordinateType
 {
-public:
-
-
-
-
-    virtual ~Drawable() = default;
-
-protected:
-    friend class RenderTarget;
-# 66 "C:/SFML/include/SFML/Graphics/Drawable.hpp"
-    virtual void draw(RenderTarget& target, RenderStates states) const = 0;
+    Normalized,
+    Pixels
 };
 
 }
-# 34 "C:/SFML/include/SFML/Graphics/Shape.hpp" 2
+# 35 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp" 2
 # 1 "C:/SFML/include/SFML/Graphics/PrimitiveType.hpp" 1
 # 25 "C:/SFML/include/SFML/Graphics/PrimitiveType.hpp"
        
@@ -818,7 +789,7 @@ enum class PrimitiveType
 };
 
 }
-# 35 "C:/SFML/include/SFML/Graphics/Shape.hpp" 2
+# 36 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp" 2
 # 1 "C:/SFML/include/SFML/Graphics/Rect.hpp" 1
 # 25 "C:/SFML/include/SFML/Graphics/Rect.hpp"
        
@@ -12394,32 +12365,11 @@ constexpr bool operator!=(const Rect<T>& lhs, const Rect<T>& rhs)
 
 }
 # 152 "C:/SFML/include/SFML/Graphics/Rect.hpp" 2
-# 36 "C:/SFML/include/SFML/Graphics/Shape.hpp" 2
+# 37 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp" 2
 # 1 "C:/SFML/include/SFML/Graphics/RenderStates.hpp" 1
 # 25 "C:/SFML/include/SFML/Graphics/RenderStates.hpp"
        
-
-
-
-
-
-
-
-# 1 "C:/SFML/include/SFML/Graphics/CoordinateType.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/CoordinateType.hpp"
-       
-
-namespace sf
-{
-# 37 "C:/SFML/include/SFML/Graphics/CoordinateType.hpp"
-enum class CoordinateType
-{
-    Normalized,
-    Pixels
-};
-
-}
-# 34 "C:/SFML/include/SFML/Graphics/RenderStates.hpp" 2
+# 34 "C:/SFML/include/SFML/Graphics/RenderStates.hpp"
 # 1 "C:/SFML/include/SFML/Graphics/StencilMode.hpp" 1
 # 25 "C:/SFML/include/SFML/Graphics/StencilMode.hpp"
        
@@ -19749,78 +19699,8 @@ struct __attribute__((dllimport)) RenderStates
 };
 
 }
-# 37 "C:/SFML/include/SFML/Graphics/Shape.hpp" 2
-# 1 "C:/SFML/include/SFML/Graphics/Transformable.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
-       
-# 37 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
-namespace sf
-{
+# 38 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp" 2
 
-
-
-
-class __attribute__((dllimport)) Transformable
-{
-public:
-
-
-
-
-    Transformable() = default;
-
-
-
-
-
-    virtual ~Transformable() = default;
-# 70 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
-    void setPosition(Vector2f position);
-# 84 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
-    void setRotation(Angle angle);
-# 98 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
-    void setScale(Vector2f factors);
-# 115 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
-    void setOrigin(Vector2f origin);
-# 125 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
-    [[nodiscard]] Vector2f getPosition() const;
-# 137 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
-    [[nodiscard]] Angle getRotation() const;
-# 147 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
-    [[nodiscard]] Vector2f getScale() const;
-# 157 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
-    [[nodiscard]] Vector2f getOrigin() const;
-# 174 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
-    void move(Vector2f offset);
-# 189 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
-    void rotate(Angle angle);
-# 207 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
-    void scale(Vector2f factor);
-# 217 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
-    [[nodiscard]] const Transform& getTransform() const;
-# 227 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
-    [[nodiscard]] const Transform& getInverseTransform() const;
-
-private:
-
-
-
-    Vector2f m_origin;
-    Vector2f m_position;
-    Angle m_rotation;
-    Vector2f m_scale{1, 1};
-    mutable Transform m_transform;
-    mutable Transform m_inverseTransform;
-    mutable bool m_transformNeedUpdate{true};
-    mutable bool m_inverseTransformNeedUpdate{true};
-};
-
-}
-# 38 "C:/SFML/include/SFML/Graphics/Shape.hpp" 2
-# 1 "C:/SFML/include/SFML/Graphics/VertexArray.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/VertexArray.hpp"
-       
-# 36 "C:/SFML/include/SFML/Graphics/VertexArray.hpp"
 # 1 "C:/SFML/include/SFML/Graphics/Vertex.hpp" 1
 # 25 "C:/SFML/include/SFML/Graphics/Vertex.hpp"
        
@@ -19844,7 +19724,343 @@ struct Vertex
 };
 
 }
-# 37 "C:/SFML/include/SFML/Graphics/VertexArray.hpp" 2
+# 40 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp" 2
+# 1 "C:/SFML/include/SFML/Graphics/View.hpp" 1
+# 25 "C:/SFML/include/SFML/Graphics/View.hpp"
+       
+# 39 "C:/SFML/include/SFML/Graphics/View.hpp"
+namespace sf
+{
+
+
+
+
+class __attribute__((dllimport)) View
+{
+public:
+
+
+
+
+
+
+    View() = default;
+
+
+
+
+
+
+
+    explicit View(const FloatRect& rectangle);
+# 71 "C:/SFML/include/SFML/Graphics/View.hpp"
+    View(Vector2f center, Vector2f size);
+# 81 "C:/SFML/include/SFML/Graphics/View.hpp"
+    void setCenter(Vector2f center);
+# 91 "C:/SFML/include/SFML/Graphics/View.hpp"
+    void setSize(Vector2f size);
+# 103 "C:/SFML/include/SFML/Graphics/View.hpp"
+    void setRotation(Angle angle);
+# 120 "C:/SFML/include/SFML/Graphics/View.hpp"
+    void setViewport(const FloatRect& viewport);
+# 144 "C:/SFML/include/SFML/Graphics/View.hpp"
+    void setScissor(const FloatRect& scissor);
+# 154 "C:/SFML/include/SFML/Graphics/View.hpp"
+    [[nodiscard]] Vector2f getCenter() const;
+# 164 "C:/SFML/include/SFML/Graphics/View.hpp"
+    [[nodiscard]] Vector2f getSize() const;
+# 174 "C:/SFML/include/SFML/Graphics/View.hpp"
+    [[nodiscard]] Angle getRotation() const;
+# 184 "C:/SFML/include/SFML/Graphics/View.hpp"
+    [[nodiscard]] const FloatRect& getViewport() const;
+# 194 "C:/SFML/include/SFML/Graphics/View.hpp"
+    [[nodiscard]] const FloatRect& getScissor() const;
+# 204 "C:/SFML/include/SFML/Graphics/View.hpp"
+    void move(Vector2f offset);
+# 214 "C:/SFML/include/SFML/Graphics/View.hpp"
+    void rotate(Angle angle);
+# 231 "C:/SFML/include/SFML/Graphics/View.hpp"
+    void zoom(float factor);
+# 243 "C:/SFML/include/SFML/Graphics/View.hpp"
+    [[nodiscard]] const Transform& getTransform() const;
+# 255 "C:/SFML/include/SFML/Graphics/View.hpp"
+    [[nodiscard]] const Transform& getInverseTransform() const;
+
+private:
+
+
+
+    Vector2f m_center{500, 500};
+    Vector2f m_size{1000, 1000};
+    Angle m_rotation;
+    FloatRect m_viewport{{0, 0}, {1, 1}};
+    FloatRect m_scissor{{0, 0}, {1, 1}};
+    mutable Transform m_transform;
+    mutable Transform m_inverseTransform;
+    mutable bool m_transformUpdated{};
+    mutable bool m_invTransformUpdated{};
+};
+
+}
+# 41 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp" 2
+# 50 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+namespace sf
+{
+class Drawable;
+class Shader;
+class Texture;
+class Transform;
+class VertexBuffer;
+
+
+
+
+
+class __attribute__((dllimport)) RenderTarget
+{
+public:
+
+
+
+
+    virtual ~RenderTarget() = default;
+
+
+
+
+
+    RenderTarget(const RenderTarget&) = delete;
+
+
+
+
+
+    RenderTarget& operator=(const RenderTarget&) = delete;
+
+
+
+
+
+    RenderTarget(RenderTarget&&) noexcept = default;
+
+
+
+
+
+    RenderTarget& operator=(RenderTarget&&) noexcept = default;
+# 104 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    void clear(Color color = Color::Black);
+# 115 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    void clearStencil(StencilValue stencilValue);
+# 127 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    void clear(Color color, StencilValue stencilValue);
+# 148 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    void setView(const View& view);
+# 158 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    [[nodiscard]] const View& getView() const;
+# 171 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    [[nodiscard]] const View& getDefaultView() const;
+# 186 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    [[nodiscard]] IntRect getViewport(const View& view) const;
+# 201 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    [[nodiscard]] IntRect getScissor(const View& view) const;
+# 221 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    [[nodiscard]] Vector2f mapPixelToCoords(Vector2i point) const;
+# 252 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    [[nodiscard]] Vector2f mapPixelToCoords(Vector2i point, const View& view) const;
+# 272 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    [[nodiscard]] Vector2i mapCoordsToPixel(Vector2f point) const;
+# 299 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    [[nodiscard]] Vector2i mapCoordsToPixel(Vector2f point, const View& view) const;
+# 308 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    void draw(const Drawable& drawable, const RenderStates& states = RenderStates::Default);
+# 319 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    void draw(const Vertex* vertices,
+              std::size_t vertexCount,
+              PrimitiveType type,
+              const RenderStates& states = RenderStates::Default);
+# 331 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    void draw(const VertexBuffer& vertexBuffer, const RenderStates& states = RenderStates::Default);
+# 342 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    void draw(const VertexBuffer& vertexBuffer,
+              std::size_t firstVertex,
+              std::size_t vertexCount,
+              const RenderStates& states = RenderStates::Default);
+
+
+
+
+
+
+
+    [[nodiscard]] virtual Vector2u getSize() const = 0;
+
+
+
+
+
+
+
+    [[nodiscard]] virtual bool isSrgb() const;
+# 383 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    [[nodiscard]] virtual bool setActive(bool active = true);
+# 417 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    void pushGLStates();
+# 428 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    void popGLStates();
+# 451 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    void resetGLStates();
+
+protected:
+
+
+
+
+    RenderTarget() = default;
+# 467 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    void initialize();
+
+private:
+
+
+
+
+    void applyCurrentView();
+
+
+
+
+
+
+
+    void applyBlendMode(const BlendMode& mode);
+
+
+
+
+
+
+
+    void applyStencilMode(const StencilMode& mode);
+
+
+
+
+
+
+
+    void applyTransform(const Transform& transform);
+# 507 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    void applyTexture(const Texture* texture, CoordinateType coordinateType = CoordinateType::Pixels);
+
+
+
+
+
+
+
+    void applyShader(const Shader* shader);
+# 524 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    void setupDraw(bool useVertexCache, const RenderStates& states);
+# 534 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
+    void drawPrimitives(PrimitiveType type, std::size_t firstVertex, std::size_t vertexCount);
+
+
+
+
+
+
+
+    void cleanupDraw(const RenderStates& states);
+
+
+
+
+
+    struct StatesCache
+    {
+        bool enable{};
+        bool glStatesSet{};
+        bool viewChanged{};
+        bool scissorEnabled{};
+        bool stencilEnabled{};
+        BlendMode lastBlendMode;
+        StencilMode lastStencilMode;
+        std::uint64_t lastTextureId{};
+        CoordinateType lastCoordinateType{};
+        bool texCoordsArrayEnabled{};
+        bool useVertexCache{};
+        std::array<Vertex, 4> vertexCache{};
+    };
+
+
+
+
+    View m_defaultView;
+    View m_view;
+    StatesCache m_cache{};
+    std::uint64_t m_id{};
+};
+
+}
+# 33 "C:/SFML/include/SFML/Graphics/RenderWindow.hpp" 2
+
+# 1 "C:/SFML/include/SFML/Window/ContextSettings.hpp" 1
+# 25 "C:/SFML/include/SFML/Window/ContextSettings.hpp"
+       
+
+
+
+
+
+namespace sf
+{
+
+
+
+
+
+struct ContextSettings
+{
+
+
+
+
+    enum Attribute
+    {
+        Default = 0,
+        Core = 1 << 0,
+        Debug = 1 << 2
+    };
+
+
+
+
+
+    unsigned int depthBits{};
+    unsigned int stencilBits{};
+    unsigned int antiAliasingLevel{};
+    unsigned int majorVersion{1};
+    unsigned int minorVersion{1};
+    std::uint32_t attributeFlags{Attribute::Default};
+    bool sRgbCapable{};
+};
+
+}
+# 35 "C:/SFML/include/SFML/Graphics/RenderWindow.hpp" 2
+# 1 "C:/SFML/include/SFML/Window/VideoMode.hpp" 1
+# 25 "C:/SFML/include/SFML/Window/VideoMode.hpp"
+       
+
+
+
+
+# 1 "C:/SFML/include/SFML/Window/Export.hpp" 1
+# 25 "C:/SFML/include/SFML/Window/Export.hpp"
+       
+# 31 "C:/SFML/include/SFML/Window/VideoMode.hpp" 2
+
+
 
 # 1 "C:/mingw64/include/c++/14.2.0/vector" 1 3
 # 58 "C:/mingw64/include/c++/14.2.0/vector" 3
@@ -32103,22 +32319,18 @@ namespace std
     }
 
 }
-# 39 "C:/SFML/include/SFML/Graphics/VertexArray.hpp" 2
+# 35 "C:/SFML/include/SFML/Window/VideoMode.hpp" 2
 
 
 
-
-
-# 43 "C:/SFML/include/SFML/Graphics/VertexArray.hpp"
+# 37 "C:/SFML/include/SFML/Window/VideoMode.hpp"
 namespace sf
 {
-class RenderTarget;
 
 
 
 
-
-class __attribute__((dllimport)) VertexArray : public Drawable
+class __attribute__((dllimport)) VideoMode
 {
 public:
 
@@ -32127,9 +32339,9 @@ public:
 
 
 
-    VertexArray() = default;
-# 69 "C:/SFML/include/SFML/Graphics/VertexArray.hpp"
-    explicit VertexArray(PrimitiveType type, std::size_t vertexCount = 0);
+    VideoMode() = default;
+# 61 "C:/SFML/include/SFML/Window/VideoMode.hpp"
+    explicit VideoMode(Vector2u modeSize, unsigned int modeBitsPerPixel = 32);
 
 
 
@@ -32137,279 +32349,41 @@ public:
 
 
 
-    [[nodiscard]] std::size_t getVertexCount() const;
-# 93 "C:/SFML/include/SFML/Graphics/VertexArray.hpp"
-    [[nodiscard]] Vertex& operator[](std::size_t index);
-# 109 "C:/SFML/include/SFML/Graphics/VertexArray.hpp"
-    [[nodiscard]] const Vertex& operator[](std::size_t index) const;
-# 120 "C:/SFML/include/SFML/Graphics/VertexArray.hpp"
-    void clear();
-# 134 "C:/SFML/include/SFML/Graphics/VertexArray.hpp"
-    void resize(std::size_t vertexCount);
+    [[nodiscard]] static VideoMode getDesktopMode();
+# 85 "C:/SFML/include/SFML/Window/VideoMode.hpp"
+    [[nodiscard]] static const std::vector<VideoMode>& getFullscreenModes();
+# 97 "C:/SFML/include/SFML/Window/VideoMode.hpp"
+    [[nodiscard]] bool isValid() const;
 
 
 
 
-
-
-
-    void append(const Vertex& vertex);
-# 157 "C:/SFML/include/SFML/Graphics/VertexArray.hpp"
-    void setPrimitiveType(PrimitiveType type);
-
-
-
-
-
-
-
-    [[nodiscard]] PrimitiveType getPrimitiveType() const;
-# 176 "C:/SFML/include/SFML/Graphics/VertexArray.hpp"
-    [[nodiscard]] FloatRect getBounds() const;
-
-private:
-
-
-
-
-
-
-
-    void draw(RenderTarget& target, RenderStates states) const override;
-
-
-
-
-    std::vector<Vertex> m_vertices;
-    PrimitiveType m_primitiveType{PrimitiveType::Points};
+    Vector2u size;
+    unsigned int bitsPerPixel{};
 };
+# 116 "C:/SFML/include/SFML/Window/VideoMode.hpp"
+[[nodiscard]] __attribute__((dllimport)) bool operator==(const VideoMode& left, const VideoMode& right);
+# 128 "C:/SFML/include/SFML/Window/VideoMode.hpp"
+[[nodiscard]] __attribute__((dllimport)) bool operator!=(const VideoMode& left, const VideoMode& right);
+# 140 "C:/SFML/include/SFML/Window/VideoMode.hpp"
+[[nodiscard]] __attribute__((dllimport)) bool operator<(const VideoMode& left, const VideoMode& right);
+# 152 "C:/SFML/include/SFML/Window/VideoMode.hpp"
+[[nodiscard]] __attribute__((dllimport)) bool operator>(const VideoMode& left, const VideoMode& right);
+# 164 "C:/SFML/include/SFML/Window/VideoMode.hpp"
+[[nodiscard]] __attribute__((dllimport)) bool operator<=(const VideoMode& left, const VideoMode& right);
+# 176 "C:/SFML/include/SFML/Window/VideoMode.hpp"
+[[nodiscard]] __attribute__((dllimport)) bool operator>=(const VideoMode& left, const VideoMode& right);
 
 }
-# 39 "C:/SFML/include/SFML/Graphics/Shape.hpp" 2
-
-
-
-
-
-
-namespace sf
-{
-class Texture;
-class RenderTarget;
-
-
-
-
-
-class __attribute__((dllimport)) Shape : public Drawable, public Transformable
-{
-public:
-# 77 "C:/SFML/include/SFML/Graphics/Shape.hpp"
-    void setTexture(const Texture* texture, bool resetRect = false);
-# 91 "C:/SFML/include/SFML/Graphics/Shape.hpp"
-    void setTextureRect(const IntRect& rect);
-# 108 "C:/SFML/include/SFML/Graphics/Shape.hpp"
-    void setFillColor(Color color);
-# 120 "C:/SFML/include/SFML/Graphics/Shape.hpp"
-    void setOutlineColor(Color color);
-# 135 "C:/SFML/include/SFML/Graphics/Shape.hpp"
-    void setOutlineThickness(float thickness);
-# 149 "C:/SFML/include/SFML/Graphics/Shape.hpp"
-    [[nodiscard]] const Texture* getTexture() const;
-# 159 "C:/SFML/include/SFML/Graphics/Shape.hpp"
-    [[nodiscard]] const IntRect& getTextureRect() const;
-# 169 "C:/SFML/include/SFML/Graphics/Shape.hpp"
-    [[nodiscard]] Color getFillColor() const;
-# 179 "C:/SFML/include/SFML/Graphics/Shape.hpp"
-    [[nodiscard]] Color getOutlineColor() const;
-# 189 "C:/SFML/include/SFML/Graphics/Shape.hpp"
-    [[nodiscard]] float getOutlineThickness() const;
-# 199 "C:/SFML/include/SFML/Graphics/Shape.hpp"
-    [[nodiscard]] virtual std::size_t getPointCount() const = 0;
-# 216 "C:/SFML/include/SFML/Graphics/Shape.hpp"
-    [[nodiscard]] virtual Vector2f getPoint(std::size_t index) const = 0;
-# 228 "C:/SFML/include/SFML/Graphics/Shape.hpp"
-    [[nodiscard]] virtual Vector2f getGeometricCenter() const;
-# 242 "C:/SFML/include/SFML/Graphics/Shape.hpp"
-    [[nodiscard]] FloatRect getLocalBounds() const;
-# 263 "C:/SFML/include/SFML/Graphics/Shape.hpp"
-    [[nodiscard]] FloatRect getGlobalBounds() const;
-
-protected:
-# 274 "C:/SFML/include/SFML/Graphics/Shape.hpp"
-    void update();
-
-private:
-
-
-
-
-
-
-
-    void draw(RenderTarget& target, RenderStates states) const override;
-
-
-
-
-
-    void updateFillColors();
-
-
-
-
-
-    void updateTexCoords();
-
-
-
-
-
-    void updateOutline();
-
-
-
-
-
-    void updateOutlineColors();
-
-
-
-
-    const Texture* m_texture{};
-    IntRect m_textureRect;
-    Color m_fillColor{Color::White};
-    Color m_outlineColor{Color::White};
-    float m_outlineThickness{};
-    VertexArray m_vertices{PrimitiveType::TriangleFan};
-    VertexArray m_outlineVertices{PrimitiveType::TriangleStrip};
-    FloatRect m_insideBounds;
-    FloatRect m_bounds;
-};
-
-}
-# 33 "C:/SFML/include/SFML/Graphics/CircleShape.hpp" 2
-
-
-
-
-
-
-namespace sf
-{
-
-
-
-
-class __attribute__((dllimport)) CircleShape : public Shape
-{
-public:
-
-
-
-
-
-
-
-    explicit CircleShape(float radius = 0, std::size_t pointCount = 30);
-# 65 "C:/SFML/include/SFML/Graphics/CircleShape.hpp"
-    void setRadius(float radius);
-# 75 "C:/SFML/include/SFML/Graphics/CircleShape.hpp"
-    [[nodiscard]] float getRadius() const;
-# 85 "C:/SFML/include/SFML/Graphics/CircleShape.hpp"
-    void setPointCount(std::size_t count);
-# 95 "C:/SFML/include/SFML/Graphics/CircleShape.hpp"
-    [[nodiscard]] std::size_t getPointCount() const override;
-# 110 "C:/SFML/include/SFML/Graphics/CircleShape.hpp"
-    [[nodiscard]] Vector2f getPoint(std::size_t index) const override;
-# 122 "C:/SFML/include/SFML/Graphics/CircleShape.hpp"
-    [[nodiscard]] Vector2f getGeometricCenter() const override;
-
-private:
-
-
-
-    float m_radius;
-    std::size_t m_pointCount;
-};
-
-}
-# 33 "C:/SFML/include/SFML/Graphics.hpp" 2
-
-# 1 "C:/SFML/include/SFML/Graphics/ConvexShape.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/ConvexShape.hpp"
-       
-# 39 "C:/SFML/include/SFML/Graphics/ConvexShape.hpp"
-namespace sf
-{
-
-
-
-
-class __attribute__((dllimport)) ConvexShape : public Shape
-{
-public:
-
-
-
-
-
-
-    explicit ConvexShape(std::size_t pointCount = 0);
-# 67 "C:/SFML/include/SFML/Graphics/ConvexShape.hpp"
-    void setPointCount(std::size_t count);
-# 77 "C:/SFML/include/SFML/Graphics/ConvexShape.hpp"
-    [[nodiscard]] std::size_t getPointCount() const override;
-# 97 "C:/SFML/include/SFML/Graphics/ConvexShape.hpp"
-    void setPoint(std::size_t index, Vector2f point);
-# 114 "C:/SFML/include/SFML/Graphics/ConvexShape.hpp"
-    [[nodiscard]] Vector2f getPoint(std::size_t index) const override;
-
-private:
-
-
-
-    std::vector<Vector2f> m_points;
-};
-
-}
-# 35 "C:/SFML/include/SFML/Graphics.hpp" 2
-
-# 1 "C:/SFML/include/SFML/Graphics/Font.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/Font.hpp"
+# 36 "C:/SFML/include/SFML/Graphics/RenderWindow.hpp" 2
+# 1 "C:/SFML/include/SFML/Window/Window.hpp" 1
+# 25 "C:/SFML/include/SFML/Window/Window.hpp"
        
 
 
 
 
 
-
-# 1 "C:/SFML/include/SFML/Graphics/Glyph.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/Glyph.hpp"
-       
-# 35 "C:/SFML/include/SFML/Graphics/Glyph.hpp"
-namespace sf
-{
-
-
-
-
-struct __attribute__((dllimport)) Glyph
-{
-    float advance{};
-    int lsbDelta{};
-    int rsbDelta{};
-    FloatRect bounds;
-    IntRect textureRect;
-};
-
-}
-# 33 "C:/SFML/include/SFML/Graphics/Font.hpp" 2
-
-# 1 "C:/SFML/include/SFML/Graphics/Texture.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-       
-# 35 "C:/SFML/include/SFML/Graphics/Texture.hpp"
 # 1 "C:/SFML/include/SFML/Window/GlResource.hpp" 1
 # 25 "C:/SFML/include/SFML/Window/GlResource.hpp"
        
@@ -32417,10 +32391,7 @@ struct __attribute__((dllimport)) Glyph
 
 
 
-# 1 "C:/SFML/include/SFML/Window/Export.hpp" 1
-# 25 "C:/SFML/include/SFML/Window/Export.hpp"
-       
-# 31 "C:/SFML/include/SFML/Window/GlResource.hpp" 2
+
 
 # 1 "C:/mingw64/include/c++/14.2.0/memory" 1 3
 # 47 "C:/mingw64/include/c++/14.2.0/memory" 3
@@ -59653,26 +59624,131 @@ private:
 };
 
 }
-# 36 "C:/SFML/include/SFML/Graphics/Texture.hpp" 2
-
-
-
-# 1 "C:/mingw64/include/c++/14.2.0/filesystem" 1 3
-# 33 "C:/mingw64/include/c++/14.2.0/filesystem" 3
+# 32 "C:/SFML/include/SFML/Window/Window.hpp" 2
+# 1 "C:/SFML/include/SFML/Window/WindowBase.hpp" 1
+# 25 "C:/SFML/include/SFML/Window/WindowBase.hpp"
        
-# 34 "C:/mingw64/include/c++/14.2.0/filesystem" 3
 
 
 
 
-# 1 "C:/mingw64/include/c++/14.2.0/bits/version.h" 1 3
-# 47 "C:/mingw64/include/c++/14.2.0/bits/version.h" 3
+
+
+# 1 "C:/SFML/include/SFML/Window/Vulkan.hpp" 1
+# 25 "C:/SFML/include/SFML/Window/Vulkan.hpp"
        
-# 48 "C:/mingw64/include/c++/14.2.0/bits/version.h" 3
-# 39 "C:/mingw64/include/c++/14.2.0/filesystem" 2 3
-# 51 "C:/mingw64/include/c++/14.2.0/filesystem" 3
-# 1 "C:/mingw64/include/c++/14.2.0/bits/fs_fwd.h" 1 3
-# 37 "C:/mingw64/include/c++/14.2.0/bits/fs_fwd.h" 3
+# 35 "C:/SFML/include/SFML/Window/Vulkan.hpp"
+using VkInstance = struct VkInstance_T*;
+
+
+
+
+using VkSurfaceKHR = struct VkSurfaceKHR_T*;
+# 51 "C:/SFML/include/SFML/Window/Vulkan.hpp"
+struct VkAllocationCallbacks;
+
+
+namespace sf
+{
+
+using VulkanFunctionPointer = void (*)();
+
+
+
+
+
+namespace Vulkan
+{
+# 81 "C:/SFML/include/SFML/Window/Vulkan.hpp"
+[[nodiscard]] __attribute__((dllimport)) bool isAvailable(bool requireGraphics = true);
+# 91 "C:/SFML/include/SFML/Window/Vulkan.hpp"
+[[nodiscard]] __attribute__((dllimport)) VulkanFunctionPointer getFunction(const char* name);
+
+
+
+
+
+
+
+[[nodiscard]] __attribute__((dllimport)) const std::vector<const char*>& getGraphicsRequiredInstanceExtensions();
+}
+
+}
+# 33 "C:/SFML/include/SFML/Window/WindowBase.hpp" 2
+# 1 "C:/SFML/include/SFML/Window/WindowEnums.hpp" 1
+# 25 "C:/SFML/include/SFML/Window/WindowEnums.hpp"
+       
+
+
+namespace sf
+{
+namespace Style
+{
+
+
+
+
+
+enum
+{
+    None = 0,
+    Titlebar = 1 << 0,
+    Resize = 1 << 1,
+    Close = 1 << 2,
+
+    Default = Titlebar | Resize | Close
+};
+
+}
+
+
+
+
+
+
+enum class State
+{
+    Windowed,
+    Fullscreen
+};
+
+}
+# 34 "C:/SFML/include/SFML/Window/WindowBase.hpp" 2
+# 1 "C:/SFML/include/SFML/Window/WindowHandle.hpp" 1
+# 25 "C:/SFML/include/SFML/Window/WindowHandle.hpp"
+       
+# 34 "C:/SFML/include/SFML/Window/WindowHandle.hpp"
+struct HWND__;
+
+
+namespace sf
+{
+
+
+
+using WindowHandle = HWND__*;
+# 72 "C:/SFML/include/SFML/Window/WindowHandle.hpp"
+}
+# 35 "C:/SFML/include/SFML/Window/WindowBase.hpp" 2
+
+# 1 "C:/SFML/include/SFML/System/Time.hpp" 1
+# 25 "C:/SFML/include/SFML/System/Time.hpp"
+       
+
+
+
+
+# 1 "C:/mingw64/include/c++/14.2.0/chrono" 1 3
+# 33 "C:/mingw64/include/c++/14.2.0/chrono" 3
+       
+# 34 "C:/mingw64/include/c++/14.2.0/chrono" 3
+
+
+
+
+
+
+
 # 1 "C:/mingw64/include/c++/14.2.0/bits/chrono.h" 1 3
 # 33 "C:/mingw64/include/c++/14.2.0/bits/chrono.h" 3
        
@@ -63319,4630 +63395,7 @@ inline namespace _V2 {
 
 
 }
-# 38 "C:/mingw64/include/c++/14.2.0/bits/fs_fwd.h" 2 3
-
-namespace std
-{
-
-
-
-namespace filesystem
-{
-
-
-inline namespace __cxx11 __attribute__((__abi_tag__ ("cxx11"))) { }
-
-
-
-
-
-
-
-  class file_status;
-namespace __cxx11 {
-  class path;
-  class filesystem_error;
-  class directory_entry;
-  class directory_iterator;
-  class recursive_directory_iterator;
-}
-
-
-  struct space_info
-  {
-    uintmax_t capacity;
-    uintmax_t free;
-    uintmax_t available;
-
-
-    friend bool operator==(const space_info&, const space_info&) = default;
-
-  };
-
-
-  enum class file_type : signed char {
-      none = 0, not_found = -1, regular = 1, directory = 2, symlink = 3,
-      block = 4, character = 5, fifo = 6, socket = 7, unknown = 8
-  };
-
-
-  enum class copy_options : unsigned short {
-      none = 0,
-      skip_existing = 1, overwrite_existing = 2, update_existing = 4,
-      recursive = 8,
-      copy_symlinks = 16, skip_symlinks = 32,
-      directories_only = 64, create_symlinks = 128, create_hard_links = 256
-  };
-
-
-
-  [[nodiscard]]
-  constexpr copy_options
-  operator&(copy_options __x, copy_options __y) noexcept
-  {
-    using __utype = typename std::underlying_type<copy_options>::type;
-    return static_cast<copy_options>(
- static_cast<__utype>(__x) & static_cast<__utype>(__y));
-  }
-
-  [[nodiscard]]
-  constexpr copy_options
-  operator|(copy_options __x, copy_options __y) noexcept
-  {
-    using __utype = typename std::underlying_type<copy_options>::type;
-    return static_cast<copy_options>(
- static_cast<__utype>(__x) | static_cast<__utype>(__y));
-  }
-
-  [[nodiscard]]
-  constexpr copy_options
-  operator^(copy_options __x, copy_options __y) noexcept
-  {
-    using __utype = typename std::underlying_type<copy_options>::type;
-    return static_cast<copy_options>(
- static_cast<__utype>(__x) ^ static_cast<__utype>(__y));
-  }
-
-  [[nodiscard]]
-  constexpr copy_options
-  operator~(copy_options __x) noexcept
-  {
-    using __utype = typename std::underlying_type<copy_options>::type;
-    return static_cast<copy_options>(~static_cast<__utype>(__x));
-  }
-
-  inline copy_options&
-  operator&=(copy_options& __x, copy_options __y) noexcept
-  { return __x = __x & __y; }
-
-  inline copy_options&
-  operator|=(copy_options& __x, copy_options __y) noexcept
-  { return __x = __x | __y; }
-
-  inline copy_options&
-  operator^=(copy_options& __x, copy_options __y) noexcept
-  { return __x = __x ^ __y; }
-
-
-
-
-  enum class perms : unsigned {
-      none = 0,
-      owner_read = 0400,
-      owner_write = 0200,
-      owner_exec = 0100,
-      owner_all = 0700,
-      group_read = 040,
-      group_write = 020,
-      group_exec = 010,
-      group_all = 070,
-      others_read = 04,
-      others_write = 02,
-      others_exec = 01,
-      others_all = 07,
-      all = 0777,
-      set_uid = 04000,
-      set_gid = 02000,
-      sticky_bit = 01000,
-      mask = 07777,
-      unknown = 0xFFFF,
-  };
-
-
-
-  [[nodiscard]]
-  constexpr perms
-  operator&(perms __x, perms __y) noexcept
-  {
-    using __utype = typename std::underlying_type<perms>::type;
-    return static_cast<perms>(
- static_cast<__utype>(__x) & static_cast<__utype>(__y));
-  }
-
-  [[nodiscard]]
-  constexpr perms
-  operator|(perms __x, perms __y) noexcept
-  {
-    using __utype = typename std::underlying_type<perms>::type;
-    return static_cast<perms>(
- static_cast<__utype>(__x) | static_cast<__utype>(__y));
-  }
-
-  [[nodiscard]]
-  constexpr perms
-  operator^(perms __x, perms __y) noexcept
-  {
-    using __utype = typename std::underlying_type<perms>::type;
-    return static_cast<perms>(
- static_cast<__utype>(__x) ^ static_cast<__utype>(__y));
-  }
-
-  [[nodiscard]]
-  constexpr perms
-  operator~(perms __x) noexcept
-  {
-    using __utype = typename std::underlying_type<perms>::type;
-    return static_cast<perms>(~static_cast<__utype>(__x));
-  }
-
-  inline perms&
-  operator&=(perms& __x, perms __y) noexcept
-  { return __x = __x & __y; }
-
-  inline perms&
-  operator|=(perms& __x, perms __y) noexcept
-  { return __x = __x | __y; }
-
-  inline perms&
-  operator^=(perms& __x, perms __y) noexcept
-  { return __x = __x ^ __y; }
-
-
-
-  enum class perm_options : unsigned {
-      replace = 0x1,
-      add = 0x2,
-      remove = 0x4,
-      nofollow = 0x8
-  };
-
-
-
-  [[nodiscard]]
-  constexpr perm_options
-  operator&(perm_options __x, perm_options __y) noexcept
-  {
-    using __utype = typename std::underlying_type<perm_options>::type;
-    return static_cast<perm_options>(
- static_cast<__utype>(__x) & static_cast<__utype>(__y));
-  }
-
-  [[nodiscard]]
-  constexpr perm_options
-  operator|(perm_options __x, perm_options __y) noexcept
-  {
-    using __utype = typename std::underlying_type<perm_options>::type;
-    return static_cast<perm_options>(
- static_cast<__utype>(__x) | static_cast<__utype>(__y));
-  }
-
-  [[nodiscard]]
-  constexpr perm_options
-  operator^(perm_options __x, perm_options __y) noexcept
-  {
-    using __utype = typename std::underlying_type<perm_options>::type;
-    return static_cast<perm_options>(
- static_cast<__utype>(__x) ^ static_cast<__utype>(__y));
-  }
-
-  [[nodiscard]]
-  constexpr perm_options
-  operator~(perm_options __x) noexcept
-  {
-    using __utype = typename std::underlying_type<perm_options>::type;
-    return static_cast<perm_options>(~static_cast<__utype>(__x));
-  }
-
-  inline perm_options&
-  operator&=(perm_options& __x, perm_options __y) noexcept
-  { return __x = __x & __y; }
-
-  inline perm_options&
-  operator|=(perm_options& __x, perm_options __y) noexcept
-  { return __x = __x | __y; }
-
-  inline perm_options&
-  operator^=(perm_options& __x, perm_options __y) noexcept
-  { return __x = __x ^ __y; }
-
-
-
-  enum class directory_options : unsigned char {
-      none = 0, follow_directory_symlink = 1, skip_permission_denied = 2
-  };
-
-
-
-  [[nodiscard]]
-  constexpr directory_options
-  operator&(directory_options __x, directory_options __y) noexcept
-  {
-    using __utype = typename std::underlying_type<directory_options>::type;
-    return static_cast<directory_options>(
- static_cast<__utype>(__x) & static_cast<__utype>(__y));
-  }
-
-  [[nodiscard]]
-  constexpr directory_options
-  operator|(directory_options __x, directory_options __y) noexcept
-  {
-    using __utype = typename std::underlying_type<directory_options>::type;
-    return static_cast<directory_options>(
- static_cast<__utype>(__x) | static_cast<__utype>(__y));
-  }
-
-  [[nodiscard]]
-  constexpr directory_options
-  operator^(directory_options __x, directory_options __y) noexcept
-  {
-    using __utype = typename std::underlying_type<directory_options>::type;
-    return static_cast<directory_options>(
- static_cast<__utype>(__x) ^ static_cast<__utype>(__y));
-  }
-
-  [[nodiscard]]
-  constexpr directory_options
-  operator~(directory_options __x) noexcept
-  {
-    using __utype = typename std::underlying_type<directory_options>::type;
-    return static_cast<directory_options>(~static_cast<__utype>(__x));
-  }
-
-  inline directory_options&
-  operator&=(directory_options& __x, directory_options __y) noexcept
-  { return __x = __x & __y; }
-
-  inline directory_options&
-  operator|=(directory_options& __x, directory_options __y) noexcept
-  { return __x = __x | __y; }
-
-  inline directory_options&
-  operator^=(directory_options& __x, directory_options __y) noexcept
-  { return __x = __x ^ __y; }
-
-
-
-  using file_time_type = __file_clock::time_point;
-
-
-
-  void copy(const path& __from, const path& __to, copy_options __options);
-  void copy(const path& __from, const path& __to, copy_options __options,
-     error_code&);
-
-  bool copy_file(const path& __from, const path& __to, copy_options __option);
-  bool copy_file(const path& __from, const path& __to, copy_options __option,
-   error_code&);
-
-  path current_path();
-
-  bool exists(file_status) noexcept;
-
-  bool is_other(file_status) noexcept;
-
-  uintmax_t file_size(const path&);
-  uintmax_t file_size(const path&, error_code&) noexcept;
-  uintmax_t hard_link_count(const path&);
-  uintmax_t hard_link_count(const path&, error_code&) noexcept;
-  file_time_type last_write_time(const path&);
-  file_time_type last_write_time(const path&, error_code&) noexcept;
-
-  void permissions(const path&, perms, perm_options, error_code&) noexcept;
-
-  path proximate(const path& __p, const path& __base, error_code& __ec);
-  path proximate(const path& __p, const path& __base, error_code& __ec);
-
-  path relative(const path& __p, const path& __base, error_code& __ec);
-
-  file_status status(const path&);
-  file_status status(const path&, error_code&) noexcept;
-
-  bool status_known(file_status) noexcept;
-
-  file_status symlink_status(const path&);
-  file_status symlink_status(const path&, error_code&) noexcept;
-
-  bool is_regular_file(file_status) noexcept;
-  bool is_symlink(file_status) noexcept;
-
-  bool remove(const path&, error_code&) noexcept;
-  uintmax_t remove_all(const path&);
-  uintmax_t remove_all(const path&, error_code&);
-
-
-}
-
-}
-# 52 "C:/mingw64/include/c++/14.2.0/filesystem" 2 3
-# 1 "C:/mingw64/include/c++/14.2.0/bits/fs_path.h" 1 3
-# 36 "C:/mingw64/include/c++/14.2.0/bits/fs_path.h" 3
-# 1 "C:/mingw64/include/c++/14.2.0/locale" 1 3
-# 36 "C:/mingw64/include/c++/14.2.0/locale" 3
-       
-# 37 "C:/mingw64/include/c++/14.2.0/locale" 3
-
-
-
-
-
-
-# 1 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 1 3
-# 37 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-       
-# 38 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-
-# 1 "C:/mingw64/include/c++/14.2.0/ctime" 1 3
-# 39 "C:/mingw64/include/c++/14.2.0/ctime" 3
-       
-# 40 "C:/mingw64/include/c++/14.2.0/ctime" 3
-# 40 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 2 3
-
-namespace std
-{
-
-# 52 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-  class time_base
-  {
-  public:
-    enum dateorder { no_order, dmy, mdy, ymd, ydm };
-  };
-
-  template<typename _CharT>
-    struct __timepunct_cache : public locale::facet
-    {
-
-      static const _CharT* _S_timezones[14];
-
-      const _CharT* _M_date_format;
-      const _CharT* _M_date_era_format;
-      const _CharT* _M_time_format;
-      const _CharT* _M_time_era_format;
-      const _CharT* _M_date_time_format;
-      const _CharT* _M_date_time_era_format;
-      const _CharT* _M_am;
-      const _CharT* _M_pm;
-      const _CharT* _M_am_pm_format;
-
-
-      const _CharT* _M_day1;
-      const _CharT* _M_day2;
-      const _CharT* _M_day3;
-      const _CharT* _M_day4;
-      const _CharT* _M_day5;
-      const _CharT* _M_day6;
-      const _CharT* _M_day7;
-
-
-      const _CharT* _M_aday1;
-      const _CharT* _M_aday2;
-      const _CharT* _M_aday3;
-      const _CharT* _M_aday4;
-      const _CharT* _M_aday5;
-      const _CharT* _M_aday6;
-      const _CharT* _M_aday7;
-
-
-      const _CharT* _M_month01;
-      const _CharT* _M_month02;
-      const _CharT* _M_month03;
-      const _CharT* _M_month04;
-      const _CharT* _M_month05;
-      const _CharT* _M_month06;
-      const _CharT* _M_month07;
-      const _CharT* _M_month08;
-      const _CharT* _M_month09;
-      const _CharT* _M_month10;
-      const _CharT* _M_month11;
-      const _CharT* _M_month12;
-
-
-      const _CharT* _M_amonth01;
-      const _CharT* _M_amonth02;
-      const _CharT* _M_amonth03;
-      const _CharT* _M_amonth04;
-      const _CharT* _M_amonth05;
-      const _CharT* _M_amonth06;
-      const _CharT* _M_amonth07;
-      const _CharT* _M_amonth08;
-      const _CharT* _M_amonth09;
-      const _CharT* _M_amonth10;
-      const _CharT* _M_amonth11;
-      const _CharT* _M_amonth12;
-
-      bool _M_allocated;
-
-      __timepunct_cache(size_t __refs = 0) : facet(__refs),
-      _M_date_format(0), _M_date_era_format(0), _M_time_format(0),
-      _M_time_era_format(0), _M_date_time_format(0),
-      _M_date_time_era_format(0), _M_am(0), _M_pm(0),
-      _M_am_pm_format(0), _M_day1(0), _M_day2(0), _M_day3(0),
-      _M_day4(0), _M_day5(0), _M_day6(0), _M_day7(0),
-      _M_aday1(0), _M_aday2(0), _M_aday3(0), _M_aday4(0),
-      _M_aday5(0), _M_aday6(0), _M_aday7(0), _M_month01(0),
-      _M_month02(0), _M_month03(0), _M_month04(0), _M_month05(0),
-      _M_month06(0), _M_month07(0), _M_month08(0), _M_month09(0),
-      _M_month10(0), _M_month11(0), _M_month12(0), _M_amonth01(0),
-      _M_amonth02(0), _M_amonth03(0), _M_amonth04(0),
-      _M_amonth05(0), _M_amonth06(0), _M_amonth07(0),
-      _M_amonth08(0), _M_amonth09(0), _M_amonth10(0),
-      _M_amonth11(0), _M_amonth12(0), _M_allocated(false)
-      { }
-
-      ~__timepunct_cache();
-
-    private:
-      __timepunct_cache&
-      operator=(const __timepunct_cache&);
-
-      explicit
-      __timepunct_cache(const __timepunct_cache&);
-    };
-
-  template<typename _CharT>
-    __timepunct_cache<_CharT>::~__timepunct_cache()
-    {
-      if (_M_allocated)
- {
-
- }
-    }
-
-
-  template<>
-    const char*
-    __timepunct_cache<char>::_S_timezones[14];
-
-
-  template<>
-    const wchar_t*
-    __timepunct_cache<wchar_t>::_S_timezones[14];
-
-
-
-  template<typename _CharT>
-    const _CharT* __timepunct_cache<_CharT>::_S_timezones[14];
-
-  template<typename _CharT>
-    class __timepunct : public locale::facet
-    {
-    public:
-
-      typedef _CharT __char_type;
-      typedef __timepunct_cache<_CharT> __cache_type;
-
-    protected:
-      __cache_type* _M_data;
-      __c_locale _M_c_locale_timepunct;
-      const char* _M_name_timepunct;
-
-    public:
-
-      static locale::id id;
-
-      explicit
-      __timepunct(size_t __refs = 0);
-
-      explicit
-      __timepunct(__cache_type* __cache, size_t __refs = 0);
-# 206 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      explicit
-      __timepunct(__c_locale __cloc, const char* __s, size_t __refs = 0);
-
-
-
-      void
-      _M_put(_CharT* __s, size_t __maxlen, const _CharT* __format,
-      const tm* __tm) const throw ();
-
-      void
-      _M_date_formats(const _CharT** __date) const
-      {
-
- __date[0] = _M_data->_M_date_format;
- __date[1] = _M_data->_M_date_era_format;
-      }
-
-      void
-      _M_time_formats(const _CharT** __time) const
-      {
-
- __time[0] = _M_data->_M_time_format;
- __time[1] = _M_data->_M_time_era_format;
-      }
-
-      void
-      _M_date_time_formats(const _CharT** __dt) const
-      {
-
- __dt[0] = _M_data->_M_date_time_format;
- __dt[1] = _M_data->_M_date_time_era_format;
-      }
-
-
-      void
-      _M_am_pm_format(const _CharT*) const
-      { }
-
-
-      void
-      _M_am_pm_format(const _CharT** __ampm_format) const
-      {
- __ampm_format[0] = _M_data->_M_am_pm_format;
-      }
-
-      void
-      _M_am_pm(const _CharT** __ampm) const
-      {
- __ampm[0] = _M_data->_M_am;
- __ampm[1] = _M_data->_M_pm;
-      }
-
-      void
-      _M_days(const _CharT** __days) const
-      {
- __days[0] = _M_data->_M_day1;
- __days[1] = _M_data->_M_day2;
- __days[2] = _M_data->_M_day3;
- __days[3] = _M_data->_M_day4;
- __days[4] = _M_data->_M_day5;
- __days[5] = _M_data->_M_day6;
- __days[6] = _M_data->_M_day7;
-      }
-
-      void
-      _M_days_abbreviated(const _CharT** __days) const
-      {
- __days[0] = _M_data->_M_aday1;
- __days[1] = _M_data->_M_aday2;
- __days[2] = _M_data->_M_aday3;
- __days[3] = _M_data->_M_aday4;
- __days[4] = _M_data->_M_aday5;
- __days[5] = _M_data->_M_aday6;
- __days[6] = _M_data->_M_aday7;
-      }
-
-      void
-      _M_months(const _CharT** __months) const
-      {
- __months[0] = _M_data->_M_month01;
- __months[1] = _M_data->_M_month02;
- __months[2] = _M_data->_M_month03;
- __months[3] = _M_data->_M_month04;
- __months[4] = _M_data->_M_month05;
- __months[5] = _M_data->_M_month06;
- __months[6] = _M_data->_M_month07;
- __months[7] = _M_data->_M_month08;
- __months[8] = _M_data->_M_month09;
- __months[9] = _M_data->_M_month10;
- __months[10] = _M_data->_M_month11;
- __months[11] = _M_data->_M_month12;
-      }
-
-      void
-      _M_months_abbreviated(const _CharT** __months) const
-      {
- __months[0] = _M_data->_M_amonth01;
- __months[1] = _M_data->_M_amonth02;
- __months[2] = _M_data->_M_amonth03;
- __months[3] = _M_data->_M_amonth04;
- __months[4] = _M_data->_M_amonth05;
- __months[5] = _M_data->_M_amonth06;
- __months[6] = _M_data->_M_amonth07;
- __months[7] = _M_data->_M_amonth08;
- __months[8] = _M_data->_M_amonth09;
- __months[9] = _M_data->_M_amonth10;
- __months[10] = _M_data->_M_amonth11;
- __months[11] = _M_data->_M_amonth12;
-      }
-
-    protected:
-      virtual
-      ~__timepunct();
-
-
-      void
-      _M_initialize_timepunct(__c_locale __cloc = 0);
-    };
-
-  template<typename _CharT>
-    locale::id __timepunct<_CharT>::id;
-
-
-  template<>
-    void
-    __timepunct<char>::_M_initialize_timepunct(__c_locale __cloc);
-
-  template<>
-    void
-    __timepunct<char>::_M_put(char*, size_t, const char*, const tm*) const throw ();
-
-
-  template<>
-    void
-    __timepunct<wchar_t>::_M_initialize_timepunct(__c_locale __cloc);
-
-  template<>
-    void
-    __timepunct<wchar_t>::_M_put(wchar_t*, size_t, const wchar_t*,
-     const tm*) const throw ();
-
-
-
-}
-
-
-# 1 "C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h" 1 3
-# 37 "C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h" 3
-namespace std
-{
-
-
-  template<typename _CharT>
-    __timepunct<_CharT>::__timepunct(size_t __refs)
-    : facet(__refs), _M_data(0)
-    {
-      _M_name_timepunct = _S_get_c_name();
-      _M_initialize_timepunct();
-    }
-
-  template<typename _CharT>
-    __timepunct<_CharT>::__timepunct(__cache_type* __cache, size_t __refs)
-    : facet(__refs), _M_data(__cache)
-    {
-      _M_name_timepunct = _S_get_c_name();
-      _M_initialize_timepunct();
-    }
-
-  template<typename _CharT>
-    __timepunct<_CharT>::__timepunct(__c_locale __cloc, const char* __s,
-         size_t __refs)
-    : facet(__refs), _M_data(0)
-    {
-      if (__builtin_strcmp(__s, _S_get_c_name()) != 0)
- {
-   const size_t __len = __builtin_strlen(__s) + 1;
-   char* __tmp = new char[__len];
-   __builtin_memcpy(__tmp, __s, __len);
-   _M_name_timepunct = __tmp;
- }
-      else
- _M_name_timepunct = _S_get_c_name();
-
-      try
- { _M_initialize_timepunct(__cloc); }
-      catch(...)
- {
-   if (_M_name_timepunct != _S_get_c_name())
-     delete [] _M_name_timepunct;
-   throw;
- }
-    }
-
-  template<typename _CharT>
-    __timepunct<_CharT>::~__timepunct()
-    {
-      if (_M_name_timepunct != _S_get_c_name())
- delete [] _M_name_timepunct;
-      delete _M_data;
-      _S_destroy_c_locale(_M_c_locale_timepunct);
-    }
-
-
-}
-# 353 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 2 3
-
-namespace std
-{
-
-
-  struct __time_get_state
-  {
-
-    void
-    _M_finalize_state(tm* __tm);
-
-    unsigned int _M_have_I : 1;
-    unsigned int _M_have_wday : 1;
-    unsigned int _M_have_yday : 1;
-    unsigned int _M_have_mon : 1;
-    unsigned int _M_have_mday : 1;
-    unsigned int _M_have_uweek : 1;
-    unsigned int _M_have_wweek : 1;
-    unsigned int _M_have_century : 1;
-    unsigned int _M_is_pm : 1;
-    unsigned int _M_want_century : 1;
-    unsigned int _M_want_xday : 1;
-    unsigned int _M_pad1 : 5;
-    unsigned int _M_week_no : 6;
-    unsigned int _M_pad2 : 10;
-    int _M_century;
-    int _M_pad3;
-  };
-
-namespace __cxx11 {
-# 397 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-  template<typename _CharT, typename _InIter>
-    class time_get : public locale::facet, public time_base
-    {
-    public:
-
-
-
-      typedef _CharT char_type;
-      typedef _InIter iter_type;
-
-
-
-      static locale::id id;
-# 418 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      explicit
-      time_get(size_t __refs = 0)
-      : facet (__refs) { }
-# 435 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      dateorder
-      date_order() const
-      { return this->do_date_order(); }
-# 459 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      iter_type
-      get_time(iter_type __beg, iter_type __end, ios_base& __io,
-        ios_base::iostate& __err, tm* __tm) const
-      { return this->do_get_time(__beg, __end, __io, __err, __tm); }
-# 484 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      iter_type
-      get_date(iter_type __beg, iter_type __end, ios_base& __io,
-        ios_base::iostate& __err, tm* __tm) const
-      { return this->do_get_date(__beg, __end, __io, __err, __tm); }
-# 512 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      iter_type
-      get_weekday(iter_type __beg, iter_type __end, ios_base& __io,
-    ios_base::iostate& __err, tm* __tm) const
-      { return this->do_get_weekday(__beg, __end, __io, __err, __tm); }
-# 541 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      iter_type
-      get_monthname(iter_type __beg, iter_type __end, ios_base& __io,
-      ios_base::iostate& __err, tm* __tm) const
-      { return this->do_get_monthname(__beg, __end, __io, __err, __tm); }
-# 567 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      iter_type
-      get_year(iter_type __beg, iter_type __end, ios_base& __io,
-        ios_base::iostate& __err, tm* __tm) const
-      { return this->do_get_year(__beg, __end, __io, __err, __tm); }
-# 588 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      inline
-      iter_type get(iter_type __s, iter_type __end, ios_base& __io,
-                    ios_base::iostate& __err, tm* __tm, char __format,
-                    char __modifier = 0) const
-      {
-        return this->do_get(__s, __end, __io, __err, __tm, __format,
-                            __modifier);
-      }
-# 615 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      iter_type get(iter_type __s, iter_type __end, ios_base& __io,
-                    ios_base::iostate& __err, tm* __tm, const char_type* __fmt,
-                    const char_type* __fmtend) const;
-
-
-    protected:
-
-      virtual
-      ~time_get() { }
-# 635 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual dateorder
-      do_date_order() const;
-# 653 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual iter_type
-      do_get_time(iter_type __beg, iter_type __end, ios_base& __io,
-    ios_base::iostate& __err, tm* __tm) const;
-# 672 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual iter_type
-      do_get_date(iter_type __beg, iter_type __end, ios_base& __io,
-    ios_base::iostate& __err, tm* __tm) const;
-# 691 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual iter_type
-      do_get_weekday(iter_type __beg, iter_type __end, ios_base&,
-       ios_base::iostate& __err, tm* __tm) const;
-# 710 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual iter_type
-      do_get_monthname(iter_type __beg, iter_type __end, ios_base&,
-         ios_base::iostate& __err, tm* __tm) const;
-# 729 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual iter_type
-      do_get_year(iter_type __beg, iter_type __end, ios_base& __io,
-    ios_base::iostate& __err, tm* __tm) const;
-# 752 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual
-
-      iter_type
-      do_get(iter_type __s, iter_type __end, ios_base& __f,
-             ios_base::iostate& __err, tm* __tm,
-             char __format, char __modifier) const;
-
-
-
-      iter_type
-      _M_extract_num(iter_type __beg, iter_type __end, int& __member,
-       int __min, int __max, size_t __len,
-       ios_base& __io, ios_base::iostate& __err) const;
-
-
-      iter_type
-      _M_extract_name(iter_type __beg, iter_type __end, int& __member,
-        const _CharT** __names, size_t __indexlen,
-        ios_base& __io, ios_base::iostate& __err) const;
-
-
-      iter_type
-      _M_extract_wday_or_month(iter_type __beg, iter_type __end, int& __member,
-          const _CharT** __names, size_t __indexlen,
-          ios_base& __io, ios_base::iostate& __err) const;
-
-
-      iter_type
-      _M_extract_via_format(iter_type __beg, iter_type __end, ios_base& __io,
-       ios_base::iostate& __err, tm* __tm,
-       const _CharT* __format) const;
-
-
-
-      iter_type
-      _M_extract_via_format(iter_type __beg, iter_type __end, ios_base& __io,
-       ios_base::iostate& __err, tm* __tm,
-       const _CharT* __format,
-       __time_get_state &__state) const;
-    };
-
-  template<typename _CharT, typename _InIter>
-    locale::id time_get<_CharT, _InIter>::id;
-
-
-  template<typename _CharT, typename _InIter>
-    class time_get_byname : public time_get<_CharT, _InIter>
-    {
-    public:
-
-      typedef _CharT char_type;
-      typedef _InIter iter_type;
-
-      explicit
-      time_get_byname(const char*, size_t __refs = 0)
-      : time_get<_CharT, _InIter>(__refs) { }
-
-
-      explicit
-      time_get_byname(const string& __s, size_t __refs = 0)
-      : time_get_byname(__s.c_str(), __refs) { }
-
-
-    protected:
-      virtual
-      ~time_get_byname() { }
-    };
-
-}
-# 834 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-  template<typename _CharT, typename _OutIter>
-    class time_put : public locale::facet
-    {
-    public:
-
-
-
-      typedef _CharT char_type;
-      typedef _OutIter iter_type;
-
-
-
-      static locale::id id;
-# 855 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      explicit
-      time_put(size_t __refs = 0)
-      : facet(__refs) { }
-# 874 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      iter_type
-      put(iter_type __s, ios_base& __io, char_type __fill, const tm* __tm,
-   const _CharT* __beg, const _CharT* __end) const;
-# 894 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      iter_type
-      put(iter_type __s, ios_base& __io, char_type __fill,
-   const tm* __tm, char __format, char __mod = 0) const
-      { return this->do_put(__s, __io, __fill, __tm, __format, __mod); }
-
-    protected:
-
-      virtual
-      ~time_put()
-      { }
-# 921 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual iter_type
-      do_put(iter_type __s, ios_base& __io, char_type __fill, const tm* __tm,
-      char __format, char __mod) const;
-    };
-
-  template<typename _CharT, typename _OutIter>
-    locale::id time_put<_CharT, _OutIter>::id;
-
-
-  template<typename _CharT, typename _OutIter>
-    class time_put_byname : public time_put<_CharT, _OutIter>
-    {
-    public:
-
-      typedef _CharT char_type;
-      typedef _OutIter iter_type;
-
-      explicit
-      time_put_byname(const char*, size_t __refs = 0)
-      : time_put<_CharT, _OutIter>(__refs)
-      { }
-
-
-      explicit
-      time_put_byname(const string& __s, size_t __refs = 0)
-      : time_put_byname(__s.c_str(), __refs) { }
-
-
-    protected:
-      virtual
-      ~time_put_byname() { }
-    };
-# 966 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-  class money_base
-  {
-  public:
-    enum part { none, space, symbol, sign, value };
-    struct pattern { char field[4]; };
-
-    static const pattern _S_default_pattern;
-
-    enum
-    {
-      _S_minus,
-      _S_zero,
-      _S_end = 11
-    };
-
-
-
-    static const char* _S_atoms;
-
-
-
-    __attribute__ ((__const__)) static pattern
-    _S_construct_pattern(char __precedes, char __space, char __posn) throw ();
-  };
-
-  template<typename _CharT, bool _Intl>
-    struct __moneypunct_cache : public locale::facet
-    {
-      const char* _M_grouping;
-      size_t _M_grouping_size;
-      bool _M_use_grouping;
-      _CharT _M_decimal_point;
-      _CharT _M_thousands_sep;
-      const _CharT* _M_curr_symbol;
-      size_t _M_curr_symbol_size;
-      const _CharT* _M_positive_sign;
-      size_t _M_positive_sign_size;
-      const _CharT* _M_negative_sign;
-      size_t _M_negative_sign_size;
-      int _M_frac_digits;
-      money_base::pattern _M_pos_format;
-      money_base::pattern _M_neg_format;
-
-
-
-
-      _CharT _M_atoms[money_base::_S_end];
-
-      bool _M_allocated;
-
-      __moneypunct_cache(size_t __refs = 0) : facet(__refs),
-      _M_grouping(0), _M_grouping_size(0), _M_use_grouping(false),
-      _M_decimal_point(_CharT()), _M_thousands_sep(_CharT()),
-      _M_curr_symbol(0), _M_curr_symbol_size(0),
-      _M_positive_sign(0), _M_positive_sign_size(0),
-      _M_negative_sign(0), _M_negative_sign_size(0),
-      _M_frac_digits(0),
-      _M_pos_format(money_base::pattern()),
-      _M_neg_format(money_base::pattern()), _M_allocated(false)
-      { }
-
-      ~__moneypunct_cache();
-
-      void
-      _M_cache(const locale& __loc);
-
-    private:
-      __moneypunct_cache&
-      operator=(const __moneypunct_cache&);
-
-      explicit
-      __moneypunct_cache(const __moneypunct_cache&);
-    };
-
-  template<typename _CharT, bool _Intl>
-    __moneypunct_cache<_CharT, _Intl>::~__moneypunct_cache()
-    {
-      if (_M_allocated)
- {
-   delete [] _M_grouping;
-   delete [] _M_curr_symbol;
-   delete [] _M_positive_sign;
-   delete [] _M_negative_sign;
- }
-    }
-
-namespace __cxx11 {
-# 1061 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-  template<typename _CharT, bool _Intl>
-    class moneypunct : public locale::facet, public money_base
-    {
-    public:
-
-
-
-      typedef _CharT char_type;
-      typedef basic_string<_CharT> string_type;
-
-      typedef __moneypunct_cache<_CharT, _Intl> __cache_type;
-
-    private:
-      __cache_type* _M_data;
-
-    public:
-
-
-      static const bool intl = _Intl;
-
-      static locale::id id;
-# 1090 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      explicit
-      moneypunct(size_t __refs = 0)
-      : facet(__refs), _M_data(0)
-      { _M_initialize_moneypunct(); }
-# 1103 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      explicit
-      moneypunct(__cache_type* __cache, size_t __refs = 0)
-      : facet(__refs), _M_data(__cache)
-      { _M_initialize_moneypunct(); }
-# 1118 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      explicit
-      moneypunct(__c_locale __cloc, const char* __s, size_t __refs = 0)
-      : facet(__refs), _M_data(0)
-      { _M_initialize_moneypunct(__cloc, __s); }
-# 1132 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      char_type
-      decimal_point() const
-      { return this->do_decimal_point(); }
-# 1145 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      char_type
-      thousands_sep() const
-      { return this->do_thousands_sep(); }
-# 1175 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      string
-      grouping() const
-      { return this->do_grouping(); }
-# 1188 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      string_type
-      curr_symbol() const
-      { return this->do_curr_symbol(); }
-# 1205 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      string_type
-      positive_sign() const
-      { return this->do_positive_sign(); }
-# 1222 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      string_type
-      negative_sign() const
-      { return this->do_negative_sign(); }
-# 1238 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      int
-      frac_digits() const
-      { return this->do_frac_digits(); }
-# 1274 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      pattern
-      pos_format() const
-      { return this->do_pos_format(); }
-
-      pattern
-      neg_format() const
-      { return this->do_neg_format(); }
-
-
-    protected:
-
-      virtual
-      ~moneypunct();
-# 1296 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual char_type
-      do_decimal_point() const
-      { return _M_data->_M_decimal_point; }
-# 1308 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual char_type
-      do_thousands_sep() const
-      { return _M_data->_M_thousands_sep; }
-# 1321 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual string
-      do_grouping() const
-      { return _M_data->_M_grouping; }
-# 1334 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual string_type
-      do_curr_symbol() const
-      { return _M_data->_M_curr_symbol; }
-# 1347 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual string_type
-      do_positive_sign() const
-      { return _M_data->_M_positive_sign; }
-# 1360 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual string_type
-      do_negative_sign() const
-      { return _M_data->_M_negative_sign; }
-# 1374 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual int
-      do_frac_digits() const
-      { return _M_data->_M_frac_digits; }
-# 1388 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual pattern
-      do_pos_format() const
-      { return _M_data->_M_pos_format; }
-# 1402 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual pattern
-      do_neg_format() const
-      { return _M_data->_M_neg_format; }
-
-
-       void
-       _M_initialize_moneypunct(__c_locale __cloc = 0,
-    const char* __name = 0);
-    };
-
-  template<typename _CharT, bool _Intl>
-    locale::id moneypunct<_CharT, _Intl>::id;
-
-  template<typename _CharT, bool _Intl>
-    const bool moneypunct<_CharT, _Intl>::intl;
-
-  template<>
-    moneypunct<char, true>::~moneypunct();
-
-  template<>
-    moneypunct<char, false>::~moneypunct();
-
-  template<>
-    void
-    moneypunct<char, true>::_M_initialize_moneypunct(__c_locale, const char*);
-
-  template<>
-    void
-    moneypunct<char, false>::_M_initialize_moneypunct(__c_locale, const char*);
-
-
-  template<>
-    moneypunct<wchar_t, true>::~moneypunct();
-
-  template<>
-    moneypunct<wchar_t, false>::~moneypunct();
-
-  template<>
-    void
-    moneypunct<wchar_t, true>::_M_initialize_moneypunct(__c_locale,
-       const char*);
-
-  template<>
-    void
-    moneypunct<wchar_t, false>::_M_initialize_moneypunct(__c_locale,
-        const char*);
-
-
-
-  template<typename _CharT, bool _Intl>
-    class moneypunct_byname : public moneypunct<_CharT, _Intl>
-    {
-    public:
-      typedef _CharT char_type;
-      typedef basic_string<_CharT> string_type;
-
-      static const bool intl = _Intl;
-
-      explicit
-      moneypunct_byname(const char* __s, size_t __refs = 0)
-      : moneypunct<_CharT, _Intl>(__refs)
-      {
- if (__builtin_strcmp(__s, "C") != 0
-     && __builtin_strcmp(__s, "POSIX") != 0)
-   {
-     __c_locale __tmp;
-     this->_S_create_c_locale(__tmp, __s);
-     this->_M_initialize_moneypunct(__tmp);
-     this->_S_destroy_c_locale(__tmp);
-   }
-      }
-
-
-      explicit
-      moneypunct_byname(const string& __s, size_t __refs = 0)
-      : moneypunct_byname(__s.c_str(), __refs) { }
-
-
-    protected:
-      virtual
-      ~moneypunct_byname() { }
-    };
-
-  template<typename _CharT, bool _Intl>
-    const bool moneypunct_byname<_CharT, _Intl>::intl;
-
-}
-
-namespace __cxx11 {
-# 1505 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-  template<typename _CharT, typename _InIter>
-    class money_get : public locale::facet
-    {
-    public:
-
-
-
-      typedef _CharT char_type;
-      typedef _InIter iter_type;
-      typedef basic_string<_CharT> string_type;
-
-
-
-      static locale::id id;
-# 1527 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      explicit
-      money_get(size_t __refs = 0) : facet(__refs) { }
-# 1557 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      iter_type
-      get(iter_type __s, iter_type __end, bool __intl, ios_base& __io,
-   ios_base::iostate& __err, long double& __units) const
-      { return this->do_get(__s, __end, __intl, __io, __err, __units); }
-# 1588 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      iter_type
-      get(iter_type __s, iter_type __end, bool __intl, ios_base& __io,
-   ios_base::iostate& __err, string_type& __digits) const
-      { return this->do_get(__s, __end, __intl, __io, __err, __digits); }
-
-    protected:
-
-      virtual
-      ~money_get() { }
-# 1612 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual iter_type
-      do_get(iter_type __s, iter_type __end, bool __intl, ios_base& __io,
-      ios_base::iostate& __err, long double& __units) const;
-# 1624 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual iter_type
-      do_get(iter_type __s, iter_type __end, bool __intl, ios_base& __io,
-      ios_base::iostate& __err, string_type& __digits) const;
-# 1644 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      template<bool _Intl>
-        iter_type
-        _M_extract(iter_type __s, iter_type __end, ios_base& __io,
-     ios_base::iostate& __err, string& __digits) const;
-    };
-
-  template<typename _CharT, typename _InIter>
-    locale::id money_get<_CharT, _InIter>::id;
-# 1666 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-  template<typename _CharT, typename _OutIter>
-    class money_put : public locale::facet
-    {
-    public:
-
-
-      typedef _CharT char_type;
-      typedef _OutIter iter_type;
-      typedef basic_string<_CharT> string_type;
-
-
-
-      static locale::id id;
-# 1687 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      explicit
-      money_put(size_t __refs = 0) : facet(__refs) { }
-# 1707 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      iter_type
-      put(iter_type __s, bool __intl, ios_base& __io,
-   char_type __fill, long double __units) const
-      { return this->do_put(__s, __intl, __io, __fill, __units); }
-# 1730 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      iter_type
-      put(iter_type __s, bool __intl, ios_base& __io,
-   char_type __fill, const string_type& __digits) const
-      { return this->do_put(__s, __intl, __io, __fill, __digits); }
-
-    protected:
-
-      virtual
-      ~money_put() { }
-# 1765 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual iter_type
-      do_put(iter_type __s, bool __intl, ios_base& __io, char_type __fill,
-      long double __units) const;
-# 1789 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual iter_type
-      do_put(iter_type __s, bool __intl, ios_base& __io, char_type __fill,
-      const string_type& __digits) const;
-# 1809 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      template<bool _Intl>
-        iter_type
-        _M_insert(iter_type __s, ios_base& __io, char_type __fill,
-    const string_type& __digits) const;
-    };
-
-  template<typename _CharT, typename _OutIter>
-    locale::id money_put<_CharT, _OutIter>::id;
-
-}
-
-
-
-
-
-  struct messages_base
-  {
-    typedef int catalog;
-  };
-
-namespace __cxx11 {
-# 1852 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-  template<typename _CharT>
-    class messages : public locale::facet, public messages_base
-    {
-    public:
-
-
-
-      typedef _CharT char_type;
-      typedef basic_string<_CharT> string_type;
-
-
-    protected:
-
-
-      __c_locale _M_c_locale_messages;
-      const char* _M_name_messages;
-
-    public:
-
-      static locale::id id;
-# 1880 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      explicit
-      messages(size_t __refs = 0);
-# 1894 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      explicit
-      messages(__c_locale __cloc, const char* __s, size_t __refs = 0);
-# 1907 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      catalog
-      open(const basic_string<char>& __s, const locale& __loc) const
-      { return this->do_open(__s, __loc); }
-# 1925 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      catalog
-      open(const basic_string<char>&, const locale&, const char*) const;
-# 1943 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      string_type
-      get(catalog __c, int __set, int __msgid, const string_type& __s) const
-      { return this->do_get(__c, __set, __msgid, __s); }
-# 1954 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      void
-      close(catalog __c) const
-      { return this->do_close(__c); }
-
-    protected:
-
-      virtual
-      ~messages();
-# 1974 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual catalog
-      do_open(const basic_string<char>&, const locale&) const;
-# 1993 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
-      virtual string_type
-      do_get(catalog, int, int, const string_type& __dfault) const;
-
-
-
-
-
-
-      virtual void
-      do_close(catalog) const;
-
-
-      char*
-      _M_convert_to_char(const string_type& __msg) const
-      {
-
- return reinterpret_cast<char*>(const_cast<_CharT*>(__msg.c_str()));
-      }
-
-
-      string_type
-      _M_convert_from_char(char*) const
-      {
-
- return string_type();
-      }
-     };
-
-  template<typename _CharT>
-    locale::id messages<_CharT>::id;
-
-
-  template<>
-    string
-    messages<char>::do_get(catalog, int, int, const string&) const;
-
-
-  template<>
-    wstring
-    messages<wchar_t>::do_get(catalog, int, int, const wstring&) const;
-
-
-
-   template<typename _CharT>
-    class messages_byname : public messages<_CharT>
-    {
-    public:
-      typedef _CharT char_type;
-      typedef basic_string<_CharT> string_type;
-
-      explicit
-      messages_byname(const char* __s, size_t __refs = 0);
-
-
-      explicit
-      messages_byname(const string& __s, size_t __refs = 0)
-      : messages_byname(__s.c_str(), __refs) { }
-
-
-    protected:
-      virtual
-      ~messages_byname()
-      { }
-    };
-
-}
-
-
-}
-
-
-# 1 "C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h" 1 3
-# 36 "C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h" 3
-namespace std
-{
-
-
-
-  template<typename _CharT>
-     messages<_CharT>::messages(size_t __refs)
-     : facet(__refs)
-     { _M_c_locale_messages = _S_get_c_locale(); }
-
-  template<typename _CharT>
-     messages<_CharT>::messages(__c_locale, const char*, size_t __refs)
-     : facet(__refs)
-     { _M_c_locale_messages = _S_get_c_locale(); }
-
-  template<typename _CharT>
-    typename messages<_CharT>::catalog
-    messages<_CharT>::open(const basic_string<char>& __s, const locale& __loc,
-      const char*) const
-    { return this->do_open(__s, __loc); }
-
-
-  template<typename _CharT>
-    messages<_CharT>::~messages()
-    { _S_destroy_c_locale(_M_c_locale_messages); }
-
-  template<typename _CharT>
-    typename messages<_CharT>::catalog
-    messages<_CharT>::do_open(const basic_string<char>&, const locale&) const
-    { return 0; }
-
-  template<typename _CharT>
-    typename messages<_CharT>::string_type
-    messages<_CharT>::do_get(catalog, int, int,
-        const string_type& __dfault) const
-    { return __dfault; }
-
-  template<typename _CharT>
-    void
-    messages<_CharT>::do_close(catalog) const
-    { }
-
-
-   template<typename _CharT>
-     messages_byname<_CharT>::messages_byname(const char* __s, size_t __refs)
-     : messages<_CharT>(__refs)
-     {
- if (__builtin_strcmp(__s, "C") != 0
-     && __builtin_strcmp(__s, "POSIX") != 0)
-   {
-     this->_S_destroy_c_locale(this->_M_c_locale_messages);
-     this->_S_create_c_locale(this->_M_c_locale_messages, __s);
-   }
-     }
-
-
-}
-# 2065 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 2 3
-
-
-# 1 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 1 3
-# 39 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 3
-       
-# 40 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 3
-
-
-
-
-namespace std
-{
-
-
-
-  class codecvt_base
-  {
-  public:
-    enum result
-    {
-      ok,
-      partial,
-      error,
-      noconv
-    };
-  };
-# 70 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 3
-  template<typename _InternT, typename _ExternT, typename _StateT>
-    class __codecvt_abstract_base
-    : public locale::facet, public codecvt_base
-    {
-    public:
-
-      typedef codecvt_base::result result;
-      typedef _InternT intern_type;
-      typedef _ExternT extern_type;
-      typedef _StateT state_type;
-# 118 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 3
-      result
-      out(state_type& __state, const intern_type* __from,
-   const intern_type* __from_end, const intern_type*& __from_next,
-   extern_type* __to, extern_type* __to_end,
-   extern_type*& __to_next) const
-      {
- return this->do_out(__state, __from, __from_end, __from_next,
-       __to, __to_end, __to_next);
-      }
-# 157 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 3
-      result
-      unshift(state_type& __state, extern_type* __to, extern_type* __to_end,
-       extern_type*& __to_next) const
-      { return this->do_unshift(__state, __to,__to_end,__to_next); }
-# 198 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 3
-      result
-      in(state_type& __state, const extern_type* __from,
-  const extern_type* __from_end, const extern_type*& __from_next,
-  intern_type* __to, intern_type* __to_end,
-  intern_type*& __to_next) const
-      {
- return this->do_in(__state, __from, __from_end, __from_next,
-      __to, __to_end, __to_next);
-      }
-
-      int
-      encoding() const throw()
-      { return this->do_encoding(); }
-
-      bool
-      always_noconv() const throw()
-      { return this->do_always_noconv(); }
-
-      int
-      length(state_type& __state, const extern_type* __from,
-      const extern_type* __end, size_t __max) const
-      { return this->do_length(__state, __from, __end, __max); }
-
-      int
-      max_length() const throw()
-      { return this->do_max_length(); }
-
-    protected:
-      explicit
-      __codecvt_abstract_base(size_t __refs = 0) : locale::facet(__refs) { }
-
-      virtual
-      ~__codecvt_abstract_base() { }
-# 239 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 3
-      virtual result
-      do_out(state_type& __state, const intern_type* __from,
-      const intern_type* __from_end, const intern_type*& __from_next,
-      extern_type* __to, extern_type* __to_end,
-      extern_type*& __to_next) const = 0;
-
-      virtual result
-      do_unshift(state_type& __state, extern_type* __to,
-   extern_type* __to_end, extern_type*& __to_next) const = 0;
-
-      virtual result
-      do_in(state_type& __state, const extern_type* __from,
-     const extern_type* __from_end, const extern_type*& __from_next,
-     intern_type* __to, intern_type* __to_end,
-     intern_type*& __to_next) const = 0;
-
-      virtual int
-      do_encoding() const throw() = 0;
-
-      virtual bool
-      do_always_noconv() const throw() = 0;
-
-      virtual int
-      do_length(state_type&, const extern_type* __from,
-  const extern_type* __end, size_t __max) const = 0;
-
-      virtual int
-      do_max_length() const throw() = 0;
-    };
-# 276 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 3
-   template<typename _InternT, typename _ExternT, typename _StateT>
-    class codecvt
-    : public __codecvt_abstract_base<_InternT, _ExternT, _StateT>
-    {
-    public:
-
-      typedef codecvt_base::result result;
-      typedef _InternT intern_type;
-      typedef _ExternT extern_type;
-      typedef _StateT state_type;
-
-    protected:
-      __c_locale _M_c_locale_codecvt;
-
-    public:
-      static locale::id id;
-
-      explicit
-      codecvt(size_t __refs = 0)
-      : __codecvt_abstract_base<_InternT, _ExternT, _StateT> (__refs),
- _M_c_locale_codecvt(0)
-      { }
-
-      explicit
-      codecvt(__c_locale __cloc, size_t __refs = 0);
-
-    protected:
-      virtual
-      ~codecvt() { }
-
-      virtual result
-      do_out(state_type& __state, const intern_type* __from,
-      const intern_type* __from_end, const intern_type*& __from_next,
-      extern_type* __to, extern_type* __to_end,
-      extern_type*& __to_next) const;
-
-      virtual result
-      do_unshift(state_type& __state, extern_type* __to,
-   extern_type* __to_end, extern_type*& __to_next) const;
-
-      virtual result
-      do_in(state_type& __state, const extern_type* __from,
-     const extern_type* __from_end, const extern_type*& __from_next,
-     intern_type* __to, intern_type* __to_end,
-     intern_type*& __to_next) const;
-
-      virtual int
-      do_encoding() const throw();
-
-      virtual bool
-      do_always_noconv() const throw();
-
-      virtual int
-      do_length(state_type&, const extern_type* __from,
-  const extern_type* __end, size_t __max) const;
-
-      virtual int
-      do_max_length() const throw();
-    };
-
-  template<typename _InternT, typename _ExternT, typename _StateT>
-    locale::id codecvt<_InternT, _ExternT, _StateT>::id;
-
-
-  template<>
-    class codecvt<char, char, mbstate_t>
-    : public __codecvt_abstract_base<char, char, mbstate_t>
-    {
-      friend class messages<char>;
-
-    public:
-
-      typedef char intern_type;
-      typedef char extern_type;
-      typedef mbstate_t state_type;
-
-    protected:
-      __c_locale _M_c_locale_codecvt;
-
-    public:
-      static locale::id id;
-
-      explicit
-      codecvt(size_t __refs = 0);
-
-      explicit
-      codecvt(__c_locale __cloc, size_t __refs = 0);
-
-    protected:
-      virtual
-      ~codecvt();
-
-      virtual result
-      do_out(state_type& __state, const intern_type* __from,
-      const intern_type* __from_end, const intern_type*& __from_next,
-      extern_type* __to, extern_type* __to_end,
-      extern_type*& __to_next) const;
-
-      virtual result
-      do_unshift(state_type& __state, extern_type* __to,
-   extern_type* __to_end, extern_type*& __to_next) const;
-
-      virtual result
-      do_in(state_type& __state, const extern_type* __from,
-     const extern_type* __from_end, const extern_type*& __from_next,
-     intern_type* __to, intern_type* __to_end,
-     intern_type*& __to_next) const;
-
-      virtual int
-      do_encoding() const throw();
-
-      virtual bool
-      do_always_noconv() const throw();
-
-      virtual int
-      do_length(state_type&, const extern_type* __from,
-  const extern_type* __end, size_t __max) const;
-
-      virtual int
-      do_max_length() const throw();
-  };
-
-
-
-
-
-
-  template<>
-    class codecvt<wchar_t, char, mbstate_t>
-    : public __codecvt_abstract_base<wchar_t, char, mbstate_t>
-    {
-      friend class messages<wchar_t>;
-
-    public:
-
-      typedef wchar_t intern_type;
-      typedef char extern_type;
-      typedef mbstate_t state_type;
-
-    protected:
-      __c_locale _M_c_locale_codecvt;
-
-    public:
-      static locale::id id;
-
-      explicit
-      codecvt(size_t __refs = 0);
-
-      explicit
-      codecvt(__c_locale __cloc, size_t __refs = 0);
-
-    protected:
-      virtual
-      ~codecvt();
-
-      virtual result
-      do_out(state_type& __state, const intern_type* __from,
-      const intern_type* __from_end, const intern_type*& __from_next,
-      extern_type* __to, extern_type* __to_end,
-      extern_type*& __to_next) const;
-
-      virtual result
-      do_unshift(state_type& __state,
-   extern_type* __to, extern_type* __to_end,
-   extern_type*& __to_next) const;
-
-      virtual result
-      do_in(state_type& __state,
-      const extern_type* __from, const extern_type* __from_end,
-      const extern_type*& __from_next,
-      intern_type* __to, intern_type* __to_end,
-      intern_type*& __to_next) const;
-
-      virtual
-      int do_encoding() const throw();
-
-      virtual
-      bool do_always_noconv() const throw();
-
-      virtual
-      int do_length(state_type&, const extern_type* __from,
-      const extern_type* __end, size_t __max) const;
-
-      virtual int
-      do_max_length() const throw();
-    };
-
-
-
-
-
-
-
-  template<>
-    class codecvt<char16_t, char, mbstate_t>
-    : public __codecvt_abstract_base<char16_t, char, mbstate_t>
-    {
-    public:
-
-      typedef char16_t intern_type;
-      typedef char extern_type;
-      typedef mbstate_t state_type;
-
-    public:
-      static locale::id id;
-
-      explicit
-      codecvt(size_t __refs = 0)
-      : __codecvt_abstract_base<char16_t, char, mbstate_t>(__refs) { }
-
-    protected:
-      virtual
-      ~codecvt();
-
-      virtual result
-      do_out(state_type& __state, const intern_type* __from,
-      const intern_type* __from_end, const intern_type*& __from_next,
-      extern_type* __to, extern_type* __to_end,
-      extern_type*& __to_next) const;
-
-      virtual result
-      do_unshift(state_type& __state,
-   extern_type* __to, extern_type* __to_end,
-   extern_type*& __to_next) const;
-
-      virtual result
-      do_in(state_type& __state,
-      const extern_type* __from, const extern_type* __from_end,
-      const extern_type*& __from_next,
-      intern_type* __to, intern_type* __to_end,
-      intern_type*& __to_next) const;
-
-      virtual
-      int do_encoding() const throw();
-
-      virtual
-      bool do_always_noconv() const throw();
-
-      virtual
-      int do_length(state_type&, const extern_type* __from,
-      const extern_type* __end, size_t __max) const;
-
-      virtual int
-      do_max_length() const throw();
-    };
-
-
-
-
-
-  template<>
-    class codecvt<char32_t, char, mbstate_t>
-    : public __codecvt_abstract_base<char32_t, char, mbstate_t>
-    {
-    public:
-
-      typedef char32_t intern_type;
-      typedef char extern_type;
-      typedef mbstate_t state_type;
-
-    public:
-      static locale::id id;
-
-      explicit
-      codecvt(size_t __refs = 0)
-      : __codecvt_abstract_base<char32_t, char, mbstate_t>(__refs) { }
-
-    protected:
-      virtual
-      ~codecvt();
-
-      virtual result
-      do_out(state_type& __state, const intern_type* __from,
-      const intern_type* __from_end, const intern_type*& __from_next,
-      extern_type* __to, extern_type* __to_end,
-      extern_type*& __to_next) const;
-
-      virtual result
-      do_unshift(state_type& __state,
-   extern_type* __to, extern_type* __to_end,
-   extern_type*& __to_next) const;
-
-      virtual result
-      do_in(state_type& __state,
-      const extern_type* __from, const extern_type* __from_end,
-      const extern_type*& __from_next,
-      intern_type* __to, intern_type* __to_end,
-      intern_type*& __to_next) const;
-
-      virtual
-      int do_encoding() const throw();
-
-      virtual
-      bool do_always_noconv() const throw();
-
-      virtual
-      int do_length(state_type&, const extern_type* __from,
-      const extern_type* __end, size_t __max) const;
-
-      virtual int
-      do_max_length() const throw();
-    };
-
-
-
-
-
-
-  template<>
-    class codecvt<char16_t, char8_t, mbstate_t>
-    : public __codecvt_abstract_base<char16_t, char8_t, mbstate_t>
-    {
-    public:
-
-      typedef char16_t intern_type;
-      typedef char8_t extern_type;
-      typedef mbstate_t state_type;
-
-    public:
-      static locale::id id;
-
-      explicit
-      codecvt(size_t __refs = 0)
-      : __codecvt_abstract_base<char16_t, char8_t, mbstate_t>(__refs) { }
-
-    protected:
-      virtual
-      ~codecvt();
-
-      virtual result
-      do_out(state_type& __state, const intern_type* __from,
-      const intern_type* __from_end, const intern_type*& __from_next,
-      extern_type* __to, extern_type* __to_end,
-      extern_type*& __to_next) const;
-
-      virtual result
-      do_unshift(state_type& __state,
-   extern_type* __to, extern_type* __to_end,
-   extern_type*& __to_next) const;
-
-      virtual result
-      do_in(state_type& __state,
-      const extern_type* __from, const extern_type* __from_end,
-      const extern_type*& __from_next,
-      intern_type* __to, intern_type* __to_end,
-      intern_type*& __to_next) const;
-
-      virtual
-      int do_encoding() const throw();
-
-      virtual
-      bool do_always_noconv() const throw();
-
-      virtual
-      int do_length(state_type&, const extern_type* __from,
-      const extern_type* __end, size_t __max) const;
-
-      virtual int
-      do_max_length() const throw();
-    };
-
-
-
-
-
-  template<>
-    class codecvt<char32_t, char8_t, mbstate_t>
-    : public __codecvt_abstract_base<char32_t, char8_t, mbstate_t>
-    {
-    public:
-
-      typedef char32_t intern_type;
-      typedef char8_t extern_type;
-      typedef mbstate_t state_type;
-
-    public:
-      static locale::id id;
-
-      explicit
-      codecvt(size_t __refs = 0)
-      : __codecvt_abstract_base<char32_t, char8_t, mbstate_t>(__refs) { }
-
-    protected:
-      virtual
-      ~codecvt();
-
-      virtual result
-      do_out(state_type& __state, const intern_type* __from,
-      const intern_type* __from_end, const intern_type*& __from_next,
-      extern_type* __to, extern_type* __to_end,
-      extern_type*& __to_next) const;
-
-      virtual result
-      do_unshift(state_type& __state,
-   extern_type* __to, extern_type* __to_end,
-   extern_type*& __to_next) const;
-
-      virtual result
-      do_in(state_type& __state,
-      const extern_type* __from, const extern_type* __from_end,
-      const extern_type*& __from_next,
-      intern_type* __to, intern_type* __to_end,
-      intern_type*& __to_next) const;
-
-      virtual
-      int do_encoding() const throw();
-
-      virtual
-      bool do_always_noconv() const throw();
-
-      virtual
-      int do_length(state_type&, const extern_type* __from,
-      const extern_type* __end, size_t __max) const;
-
-      virtual int
-      do_max_length() const throw();
-    };
-
-
-
-
-
-  template<typename _InternT, typename _ExternT, typename _StateT>
-    class codecvt_byname : public codecvt<_InternT, _ExternT, _StateT>
-    {
-    public:
-      explicit
-      codecvt_byname(const char* __s, size_t __refs = 0)
-      : codecvt<_InternT, _ExternT, _StateT>(__refs)
-      {
- if (__builtin_strcmp(__s, "C") != 0
-     && __builtin_strcmp(__s, "POSIX") != 0)
-   {
-     this->_S_destroy_c_locale(this->_M_c_locale_codecvt);
-     this->_S_create_c_locale(this->_M_c_locale_codecvt, __s);
-   }
-      }
-
-
-      explicit
-      codecvt_byname(const string& __s, size_t __refs = 0)
-      : codecvt_byname(__s.c_str(), __refs) { }
-
-
-    protected:
-      virtual
-      ~codecvt_byname() { }
-    };
-
-
-  template<>
-    class codecvt_byname<char16_t, char, mbstate_t>
-    : public codecvt<char16_t, char, mbstate_t>
-    {
-    public:
-      explicit
-      codecvt_byname(const char*, size_t __refs = 0)
-      : codecvt<char16_t, char, mbstate_t>(__refs) { }
-
-      explicit
-      codecvt_byname(const string& __s, size_t __refs = 0)
-      : codecvt_byname(__s.c_str(), __refs) { }
-
-    protected:
-      virtual
-      ~codecvt_byname() { }
-    };
-
-  template<>
-    class codecvt_byname<char32_t, char, mbstate_t>
-    : public codecvt<char32_t, char, mbstate_t>
-    {
-    public:
-      explicit
-      codecvt_byname(const char*, size_t __refs = 0)
-      : codecvt<char32_t, char, mbstate_t>(__refs) { }
-
-      explicit
-      codecvt_byname(const string& __s, size_t __refs = 0)
-      : codecvt_byname(__s.c_str(), __refs) { }
-
-    protected:
-      virtual
-      ~codecvt_byname() { }
-    };
-
-
-  template<>
-    class codecvt_byname<char16_t, char8_t, mbstate_t>
-    : public codecvt<char16_t, char8_t, mbstate_t>
-    {
-    public:
-      explicit
-      codecvt_byname(const char*, size_t __refs = 0)
-      : codecvt<char16_t, char8_t, mbstate_t>(__refs) { }
-
-      explicit
-      codecvt_byname(const string& __s, size_t __refs = 0)
-      : codecvt_byname(__s.c_str(), __refs) { }
-
-    protected:
-      virtual
-      ~codecvt_byname() { }
-    };
-
-  template<>
-    class codecvt_byname<char32_t, char8_t, mbstate_t>
-    : public codecvt<char32_t, char8_t, mbstate_t>
-    {
-    public:
-      explicit
-      codecvt_byname(const char*, size_t __refs = 0)
-      : codecvt<char32_t, char8_t, mbstate_t>(__refs) { }
-
-      explicit
-      codecvt_byname(const string& __s, size_t __refs = 0)
-      : codecvt_byname(__s.c_str(), __refs) { }
-
-    protected:
-      virtual
-      ~codecvt_byname() { }
-    };
-
-
-
-
-
-
-
-  extern template class codecvt_byname<char, char, mbstate_t>;
-
-  extern template
-    const codecvt<char, char, mbstate_t>&
-    use_facet<codecvt<char, char, mbstate_t> >(const locale&);
-
-  extern template
-    bool
-    has_facet<codecvt<char, char, mbstate_t> >(const locale&);
-
-
-  extern template class codecvt_byname<wchar_t, char, mbstate_t>;
-
-  extern template
-    const codecvt<wchar_t, char, mbstate_t>&
-    use_facet<codecvt<wchar_t, char, mbstate_t> >(const locale&);
-
-  extern template
-    bool
-    has_facet<codecvt<wchar_t, char, mbstate_t> >(const locale&);
-
-
-
-  extern template class codecvt_byname<char16_t, char, mbstate_t>;
-  extern template class codecvt_byname<char32_t, char, mbstate_t>;
-
-
-  extern template class codecvt_byname<char16_t, char8_t, mbstate_t>;
-  extern template class codecvt_byname<char32_t, char8_t, mbstate_t>;
-
-
-
-
-
-
-
-}
-# 2068 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 2 3
-
-# 1 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc" 1 3
-# 33 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc" 3
-       
-# 34 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc" 3
-
-namespace std
-{
-
-
-  template<typename _CharT, bool _Intl>
-    struct __use_cache<__moneypunct_cache<_CharT, _Intl> >
-    {
-      const __moneypunct_cache<_CharT, _Intl>*
-      operator() (const locale& __loc) const
-      {
- const size_t __i = moneypunct<_CharT, _Intl>::id._M_id();
- const locale::facet** __caches = __loc._M_impl->_M_caches;
- if (!__caches[__i])
-   {
-     __moneypunct_cache<_CharT, _Intl>* __tmp = 0;
-     try
-       {
-  __tmp = new __moneypunct_cache<_CharT, _Intl>;
-  __tmp->_M_cache(__loc);
-       }
-     catch(...)
-       {
-  delete __tmp;
-  throw;
-       }
-     __loc._M_impl->_M_install_cache(__tmp, __i);
-   }
- return static_cast<
-   const __moneypunct_cache<_CharT, _Intl>*>(__caches[__i]);
-      }
-    };
-
-  template<typename _CharT, bool _Intl>
-    void
-    __moneypunct_cache<_CharT, _Intl>::_M_cache(const locale& __loc)
-    {
-      const moneypunct<_CharT, _Intl>& __mp =
- use_facet<moneypunct<_CharT, _Intl> >(__loc);
-
-      struct _Scoped_str
-      {
- size_t _M_len;
- _CharT* _M_str;
-
- explicit
- _Scoped_str(const basic_string<_CharT>& __str)
- : _M_len(__str.size()), _M_str(new _CharT[_M_len])
- { __str.copy(_M_str, _M_len); }
-
- ~_Scoped_str() { delete[] _M_str; }
-
- void
- _M_release(const _CharT*& __p, size_t& __n)
- {
-   __p = _M_str;
-   __n = _M_len;
-   _M_str = 0;
- }
-      };
-
-      _Scoped_str __curr_symbol(__mp.curr_symbol());
-      _Scoped_str __positive_sign(__mp.positive_sign());
-      _Scoped_str __negative_sign(__mp.negative_sign());
-
-      const string& __g = __mp.grouping();
-      const size_t __g_size = __g.size();
-      char* const __grouping = new char[__g_size];
-      __g.copy(__grouping, __g_size);
-
-
-
-      _M_grouping = __grouping;
-      _M_grouping_size = __g_size;
-      _M_use_grouping = (__g_size
-    && static_cast<signed char>(__grouping[0]) > 0
-    && (__grouping[0]
-        != __gnu_cxx::__numeric_traits<char>::__max));
-
-      _M_decimal_point = __mp.decimal_point();
-      _M_thousands_sep = __mp.thousands_sep();
-
-      __curr_symbol._M_release(_M_curr_symbol, _M_curr_symbol_size);
-      __positive_sign._M_release(_M_positive_sign, _M_positive_sign_size);
-      __negative_sign._M_release(_M_negative_sign, _M_negative_sign_size);
-
-      _M_frac_digits = __mp.frac_digits();
-      _M_pos_format = __mp.pos_format();
-      _M_neg_format = __mp.neg_format();
-
-      const ctype<_CharT>& __ct = use_facet<ctype<_CharT> >(__loc);
-      __ct.widen(money_base::_S_atoms,
-   money_base::_S_atoms + money_base::_S_end, _M_atoms);
-
-      _M_allocated = true;
-    }
-
-namespace __cxx11 {
-
-  template<typename _CharT, typename _InIter>
-    template<bool _Intl>
-      _InIter
-      money_get<_CharT, _InIter>::
-      _M_extract(iter_type __beg, iter_type __end, ios_base& __io,
-   ios_base::iostate& __err, string& __units) const
-      {
- typedef char_traits<_CharT> __traits_type;
- typedef typename string_type::size_type size_type;
- typedef money_base::part part;
- typedef __moneypunct_cache<_CharT, _Intl> __cache_type;
-
- const locale& __loc = __io._M_getloc();
- const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
-
- __use_cache<__cache_type> __uc;
- const __cache_type* __lc = __uc(__loc);
- const char_type* __lit = __lc->_M_atoms;
-
-
- bool __negative = false;
-
- size_type __sign_size = 0;
-
- const bool __mandatory_sign = (__lc->_M_positive_sign_size
-           && __lc->_M_negative_sign_size);
-
- string __grouping_tmp;
- if (__lc->_M_use_grouping)
-   __grouping_tmp.reserve(32);
-
- int __last_pos = 0;
-
- int __n = 0;
-
- bool __testvalid = true;
-
- bool __testdecfound = false;
-
-
- string __res;
- __res.reserve(32);
-
- const char_type* __lit_zero = __lit + money_base::_S_zero;
- const money_base::pattern __p = __lc->_M_neg_format;
- for (int __i = 0; __i < 4 && __testvalid; ++__i)
-   {
-     const part __which = static_cast<part>(__p.field[__i]);
-     switch (__which)
-       {
-       case money_base::symbol:
-
-
-
-
-  if (__io.flags() & ios_base::showbase || __sign_size > 1
-      || __i == 0
-      || (__i == 1 && (__mandatory_sign
-         || (static_cast<part>(__p.field[0])
-      == money_base::sign)
-         || (static_cast<part>(__p.field[2])
-      == money_base::space)))
-      || (__i == 2 && ((static_cast<part>(__p.field[3])
-          == money_base::value)
-         || (__mandatory_sign
-      && (static_cast<part>(__p.field[3])
-          == money_base::sign)))))
-    {
-      const size_type __len = __lc->_M_curr_symbol_size;
-      size_type __j = 0;
-      for (; __beg != __end && __j < __len
-      && *__beg == __lc->_M_curr_symbol[__j];
-    ++__beg, (void)++__j);
-      if (__j != __len
-   && (__j || __io.flags() & ios_base::showbase))
-        __testvalid = false;
-    }
-  break;
-       case money_base::sign:
-
-  if (__lc->_M_positive_sign_size && __beg != __end
-      && *__beg == __lc->_M_positive_sign[0])
-    {
-      __sign_size = __lc->_M_positive_sign_size;
-      ++__beg;
-    }
-  else if (__lc->_M_negative_sign_size && __beg != __end
-    && *__beg == __lc->_M_negative_sign[0])
-    {
-      __negative = true;
-      __sign_size = __lc->_M_negative_sign_size;
-      ++__beg;
-    }
-  else if (__lc->_M_positive_sign_size
-    && !__lc->_M_negative_sign_size)
-
-
-    __negative = true;
-  else if (__mandatory_sign)
-    __testvalid = false;
-  break;
-       case money_base::value:
-
-
-  for (; __beg != __end; ++__beg)
-    {
-      const char_type __c = *__beg;
-      const char_type* __q = __traits_type::find(__lit_zero,
-              10, __c);
-      if (__q != 0)
-        {
-   __res += money_base::_S_atoms[__q - __lit];
-   ++__n;
-        }
-      else if (__c == __lc->_M_decimal_point
-        && !__testdecfound)
-        {
-   if (__lc->_M_frac_digits <= 0)
-     break;
-
-   __last_pos = __n;
-   __n = 0;
-   __testdecfound = true;
-        }
-      else if (__lc->_M_use_grouping
-        && __c == __lc->_M_thousands_sep
-        && !__testdecfound)
-        {
-   if (__n)
-     {
-
-       __grouping_tmp += static_cast<char>(__n);
-       __n = 0;
-     }
-   else
-     {
-       __testvalid = false;
-       break;
-     }
-        }
-      else
-        break;
-    }
-  if (__res.empty())
-    __testvalid = false;
-  break;
-       case money_base::space:
-
-  if (__beg != __end && __ctype.is(ctype_base::space, *__beg))
-    ++__beg;
-  else
-    __testvalid = false;
-
-       case money_base::none:
-
-  if (__i != 3)
-    for (; __beg != __end
-    && __ctype.is(ctype_base::space, *__beg); ++__beg);
-  break;
-       }
-   }
-
-
- if (__sign_size > 1 && __testvalid)
-   {
-     const char_type* __sign = __negative ? __lc->_M_negative_sign
-                                          : __lc->_M_positive_sign;
-     size_type __i = 1;
-     for (; __beg != __end && __i < __sign_size
-     && *__beg == __sign[__i]; ++__beg, (void)++__i);
-
-     if (__i != __sign_size)
-       __testvalid = false;
-   }
-
- if (__testvalid)
-   {
-
-     if (__res.size() > 1)
-       {
-  const size_type __first = __res.find_first_not_of('0');
-  const bool __only_zeros = __first == string::npos;
-  if (__first)
-    __res.erase(0, __only_zeros ? __res.size() - 1 : __first);
-       }
-
-
-     if (__negative && __res[0] != '0')
-       __res.insert(__res.begin(), '-');
-
-
-     if (__grouping_tmp.size())
-       {
-
-  __grouping_tmp += static_cast<char>(__testdecfound ? __last_pos
-                         : __n);
-  if (!std::__verify_grouping(__lc->_M_grouping,
-         __lc->_M_grouping_size,
-         __grouping_tmp))
-    __err |= ios_base::failbit;
-       }
-
-
-     if (__testdecfound && __n != __lc->_M_frac_digits)
-       __testvalid = false;
-   }
-
-
- if (!__testvalid)
-   __err |= ios_base::failbit;
- else
-   __units.swap(__res);
-
-
- if (__beg == __end)
-   __err |= ios_base::eofbit;
- return __beg;
-      }
-# 368 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc" 3
-  template<typename _CharT, typename _InIter>
-    _InIter
-    money_get<_CharT, _InIter>::
-    do_get(iter_type __beg, iter_type __end, bool __intl, ios_base& __io,
-    ios_base::iostate& __err, long double& __units) const
-    {
-      string __str;
-      __beg = __intl ? _M_extract<true>(__beg, __end, __io, __err, __str)
-              : _M_extract<false>(__beg, __end, __io, __err, __str);
-      std::__convert_to_v(__str.c_str(), __units, __err, _S_get_c_locale());
-      return __beg;
-    }
-
-  template<typename _CharT, typename _InIter>
-    _InIter
-    money_get<_CharT, _InIter>::
-    do_get(iter_type __beg, iter_type __end, bool __intl, ios_base& __io,
-    ios_base::iostate& __err, string_type& __digits) const
-    {
-      typedef typename string::size_type size_type;
-
-      const locale& __loc = __io._M_getloc();
-      const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
-
-      string __str;
-      __beg = __intl ? _M_extract<true>(__beg, __end, __io, __err, __str)
-              : _M_extract<false>(__beg, __end, __io, __err, __str);
-      const size_type __len = __str.size();
-      if (__len)
- {
-   __digits.resize(__len);
-   __ctype.widen(__str.data(), __str.data() + __len, &__digits[0]);
- }
-      return __beg;
-    }
-# 420 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc" 3
-  template<typename _CharT, typename _OutIter>
-    template<bool _Intl>
-      _OutIter
-      money_put<_CharT, _OutIter>::
-      _M_insert(iter_type __s, ios_base& __io, char_type __fill,
-  const string_type& __digits) const
-      {
- typedef typename string_type::size_type size_type;
- typedef money_base::part part;
- typedef __moneypunct_cache<_CharT, _Intl> __cache_type;
-
- const locale& __loc = __io._M_getloc();
- const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
-
- __use_cache<__cache_type> __uc;
- const __cache_type* __lc = __uc(__loc);
- const char_type* __lit = __lc->_M_atoms;
-
-
-
- const char_type* __beg = __digits.data();
-
- money_base::pattern __p;
- const char_type* __sign;
- size_type __sign_size;
- if (!(*__beg == __lit[money_base::_S_minus]))
-   {
-     __p = __lc->_M_pos_format;
-     __sign = __lc->_M_positive_sign;
-     __sign_size = __lc->_M_positive_sign_size;
-   }
- else
-   {
-     __p = __lc->_M_neg_format;
-     __sign = __lc->_M_negative_sign;
-     __sign_size = __lc->_M_negative_sign_size;
-     if (__digits.size())
-       ++__beg;
-   }
-
-
- size_type __len = __ctype.scan_not(ctype_base::digit, __beg,
-        __beg + __digits.size()) - __beg;
- if (__len)
-   {
-
-
-
-     string_type __value;
-     __value.reserve(2 * __len);
-
-
-
-     long __paddec = __len - __lc->_M_frac_digits;
-     if (__paddec > 0)
-       {
-  if (__lc->_M_frac_digits < 0)
-    __paddec = __len;
-  if (__lc->_M_grouping_size)
-    {
-      __value.assign(2 * __paddec, char_type());
-      _CharT* __vend =
-        std::__add_grouping(&__value[0], __lc->_M_thousands_sep,
-       __lc->_M_grouping,
-       __lc->_M_grouping_size,
-       __beg, __beg + __paddec);
-      __value.erase(__vend - &__value[0]);
-    }
-  else
-    __value.assign(__beg, __paddec);
-       }
-
-
-     if (__lc->_M_frac_digits > 0)
-       {
-  __value += __lc->_M_decimal_point;
-  if (__paddec >= 0)
-    __value.append(__beg + __paddec, __lc->_M_frac_digits);
-  else
-    {
-
-      __value.append(-__paddec, __lit[money_base::_S_zero]);
-      __value.append(__beg, __len);
-    }
-       }
-
-
-     const ios_base::fmtflags __f = __io.flags()
-                                    & ios_base::adjustfield;
-     __len = __value.size() + __sign_size;
-     __len += ((__io.flags() & ios_base::showbase)
-        ? __lc->_M_curr_symbol_size : 0);
-
-     string_type __res;
-     __res.reserve(2 * __len);
-
-     const size_type __width = static_cast<size_type>(__io.width());
-     const bool __testipad = (__f == ios_base::internal
-         && __len < __width);
-
-     for (int __i = 0; __i < 4; ++__i)
-       {
-  const part __which = static_cast<part>(__p.field[__i]);
-  switch (__which)
-    {
-    case money_base::symbol:
-      if (__io.flags() & ios_base::showbase)
-        __res.append(__lc->_M_curr_symbol,
-       __lc->_M_curr_symbol_size);
-      break;
-    case money_base::sign:
-
-
-
-      if (__sign_size)
-        __res += __sign[0];
-      break;
-    case money_base::value:
-      __res += __value;
-      break;
-    case money_base::space:
-
-
-
-      if (__testipad)
-        __res.append(__width - __len, __fill);
-      else
-        __res += __fill;
-      break;
-    case money_base::none:
-      if (__testipad)
-        __res.append(__width - __len, __fill);
-      break;
-    }
-       }
-
-
-     if (__sign_size > 1)
-       __res.append(__sign + 1, __sign_size - 1);
-
-
-     __len = __res.size();
-     if (__width > __len)
-       {
-  if (__f == ios_base::left)
-
-    __res.append(__width - __len, __fill);
-  else
-
-    __res.insert(0, __width - __len, __fill);
-  __len = __width;
-       }
-
-
-     __s = std::__write(__s, __res.data(), __len);
-   }
- __io.width(0);
- return __s;
-      }
-# 590 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc" 3
-  template<typename _CharT, typename _OutIter>
-    _OutIter
-    money_put<_CharT, _OutIter>::
-    do_put(iter_type __s, bool __intl, ios_base& __io, char_type __fill,
-    long double __units) const
-    {
-      const locale __loc = __io.getloc();
-      const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
-
-
-      int __cs_size = 64;
-      char* __cs = static_cast<char*>(__builtin_alloca(__cs_size));
-
-
-      int __len = std::__convert_from_v(_S_get_c_locale(), __cs, __cs_size,
-     "%.*Lf", 0, __units);
-
-      if (__len >= __cs_size)
- {
-   __cs_size = __len + 1;
-   __cs = static_cast<char*>(__builtin_alloca(__cs_size));
-   __len = std::__convert_from_v(_S_get_c_locale(), __cs, __cs_size,
-     "%.*Lf", 0, __units);
- }
-# 622 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc" 3
-      string_type __digits(__len, char_type());
-      __ctype.widen(__cs, __cs + __len, &__digits[0]);
-      return __intl ? _M_insert<true>(__s, __io, __fill, __digits)
-             : _M_insert<false>(__s, __io, __fill, __digits);
-    }
-
-  template<typename _CharT, typename _OutIter>
-    _OutIter
-    money_put<_CharT, _OutIter>::
-    do_put(iter_type __s, bool __intl, ios_base& __io, char_type __fill,
-    const string_type& __digits) const
-    { return __intl ? _M_insert<true>(__s, __io, __fill, __digits)
-             : _M_insert<false>(__s, __io, __fill, __digits); }
-# 674 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc" 3
-}
-
-
-
-
-  template<typename _CharT, typename _InIter>
-    time_base::dateorder
-    time_get<_CharT, _InIter>::do_date_order() const
-    { return time_base::no_order; }
-
-
-
-  template<typename _CharT, typename _InIter>
-    _InIter
-    time_get<_CharT, _InIter>::
-    _M_extract_via_format(iter_type __beg, iter_type __end, ios_base& __io,
-     ios_base::iostate& __err, tm* __tm,
-     const _CharT* __format,
-     __time_get_state &__state) const
-    {
-      const locale& __loc = __io._M_getloc();
-      const __timepunct<_CharT>& __tp = use_facet<__timepunct<_CharT> >(__loc);
-      const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
-      const size_t __len = char_traits<_CharT>::length(__format);
-
-      ios_base::iostate __tmperr = ios_base::goodbit;
-      size_t __i = 0;
-      for (; __beg != __end && __i < __len && !__tmperr; ++__i)
- {
-   if (__ctype.narrow(__format[__i], 0) == '%')
-     {
-
-       char __c = __ctype.narrow(__format[++__i], 0);
-       int __mem = 0;
-       if (__c == 'E' || __c == 'O')
-  __c = __ctype.narrow(__format[++__i], 0);
-       switch (__c)
-  {
-    const char* __cs;
-    _CharT __wcs[10];
-  case 'a':
-  case 'A':
-
-    const char_type* __days[14];
-    __tp._M_days(&__days[0]);
-    __tp._M_days_abbreviated(&__days[7]);
-    __beg = _M_extract_name(__beg, __end, __mem, __days,
-       14, __io, __tmperr);
-    if (!__tmperr)
-      {
-        __tm->tm_wday = __mem % 7;
-        __state._M_have_wday = 1;
-      }
-    break;
-  case 'h':
-  case 'b':
-  case 'B':
-
-    const char_type* __months[24];
-    __tp._M_months(&__months[0]);
-    __tp._M_months_abbreviated(&__months[12]);
-    __beg = _M_extract_name(__beg, __end, __mem,
-       __months, 24, __io, __tmperr);
-    if (!__tmperr)
-      {
-        __tm->tm_mon = __mem % 12;
-        __state._M_have_mon = 1;
-        __state._M_want_xday = 1;
-      }
-    break;
-  case 'c':
-
-    const char_type* __dt[2];
-    __tp._M_date_time_formats(__dt);
-    __beg = _M_extract_via_format(__beg, __end, __io, __tmperr,
-      __tm, __dt[0], __state);
-    if (!__tmperr)
-      __state._M_want_xday = 1;
-    break;
-  case 'C':
-
-    __beg = _M_extract_num(__beg, __end, __mem, 0, 99, 2,
-      __io, __tmperr);
-    if (!__tmperr)
-      {
-        __state._M_century = __mem;
-        __state._M_have_century = 1;
-        __state._M_want_xday = 1;
-      }
-    break;
-  case 'd':
-  case 'e':
-
-    if (__ctype.is(ctype_base::space, *__beg))
-      ++__beg;
-    __beg = _M_extract_num(__beg, __end, __mem, 1, 31, 2,
-      __io, __tmperr);
-    if (!__tmperr)
-      {
-        __tm->tm_mday = __mem;
-        __state._M_have_mday = 1;
-        __state._M_want_xday = 1;
-      }
-    break;
-  case 'D':
-
-    __cs = "%m/%d/%y";
-    __ctype.widen(__cs, __cs + 9, __wcs);
-    __beg = _M_extract_via_format(__beg, __end, __io, __tmperr,
-      __tm, __wcs, __state);
-    if (!__tmperr)
-      __state._M_want_xday = 1;
-    break;
-  case 'H':
-
-    __beg = _M_extract_num(__beg, __end, __mem, 0, 23, 2,
-      __io, __tmperr);
-    if (!__tmperr)
-      {
-        __tm->tm_hour = __mem;
-        __state._M_have_I = 0;
-      }
-    break;
-  case 'I':
-
-    __beg = _M_extract_num(__beg, __end, __mem, 1, 12, 2,
-      __io, __tmperr);
-    if (!__tmperr)
-      {
-        __tm->tm_hour = __mem % 12;
-        __state._M_have_I = 1;
-      }
-    break;
-  case 'j':
-
-    __beg = _M_extract_num(__beg, __end, __mem, 1, 366, 3,
-      __io, __tmperr);
-    if (!__tmperr)
-      {
-        __tm->tm_yday = __mem - 1;
-        __state._M_have_yday = 1;
-      }
-    break;
-  case 'm':
-
-    __beg = _M_extract_num(__beg, __end, __mem, 1, 12, 2,
-      __io, __tmperr);
-    if (!__tmperr)
-      {
-        __tm->tm_mon = __mem - 1;
-        __state._M_have_mon = 1;
-      }
-    break;
-  case 'M':
-
-    __beg = _M_extract_num(__beg, __end, __mem, 0, 59, 2,
-      __io, __tmperr);
-    if (!__tmperr)
-      __tm->tm_min = __mem;
-    break;
-  case 'n':
-  case 't':
-    while (__beg != __end
-    && __ctype.is(ctype_base::space, *__beg))
-      ++__beg;
-    break;
-  case 'p':
-
-    const char_type* __ampm[2];
-    __tp._M_am_pm(&__ampm[0]);
-    if (!__ampm[0][0] || !__ampm[1][0])
-      break;
-    __beg = _M_extract_name(__beg, __end, __mem, __ampm,
-       2, __io, __tmperr);
-    if (!__tmperr && __mem)
-      __state._M_is_pm = 1;
-    break;
-  case 'r':
-
-    const char_type* __ampm_format;
-    __tp._M_am_pm_format(&__ampm_format);
-    __beg = _M_extract_via_format(__beg, __end, __io, __tmperr,
-      __tm, __ampm_format, __state);
-    break;
-  case 'R':
-
-    __cs = "%H:%M";
-    __ctype.widen(__cs, __cs + 6, __wcs);
-    __beg = _M_extract_via_format(__beg, __end, __io, __tmperr,
-      __tm, __wcs, __state);
-    break;
-  case 'S':
-
-
-
-    __beg = _M_extract_num(__beg, __end, __mem, 0, 60, 2,
-
-
-
-      __io, __tmperr);
-    if (!__tmperr)
-      __tm->tm_sec = __mem;
-    break;
-  case 'T':
-
-    __cs = "%H:%M:%S";
-    __ctype.widen(__cs, __cs + 9, __wcs);
-    __beg = _M_extract_via_format(__beg, __end, __io, __tmperr,
-      __tm, __wcs, __state);
-    break;
-  case 'U':
-
-    __beg = _M_extract_num(__beg, __end, __mem, 0, 53, 2,
-      __io, __tmperr);
-    if (!__tmperr)
-      {
-        __state._M_week_no = __mem;
-        __state._M_have_uweek = 1;
-      }
-    break;
-  case 'w':
-
-    __beg = _M_extract_num(__beg, __end, __mem, 0, 6, 1,
-      __io, __tmperr);
-    if (!__tmperr)
-      {
-        __tm->tm_wday = __mem;
-        __state._M_have_wday = 1;
-      }
-    break;
-  case 'W':
-
-    __beg = _M_extract_num(__beg, __end, __mem, 0, 53, 2,
-      __io, __tmperr);
-    if (!__tmperr)
-      {
-        __state._M_week_no = __mem;
-        __state._M_have_wweek = 1;
-      }
-    break;
-  case 'x':
-
-    const char_type* __dates[2];
-    __tp._M_date_formats(__dates);
-    __beg = _M_extract_via_format(__beg, __end, __io, __tmperr,
-      __tm, __dates[0], __state);
-    break;
-  case 'X':
-
-    const char_type* __times[2];
-    __tp._M_time_formats(__times);
-    __beg = _M_extract_via_format(__beg, __end, __io, __tmperr,
-      __tm, __times[0], __state);
-    break;
-  case 'y':
-
-    __beg = _M_extract_num(__beg, __end, __mem, 0, 99, 2,
-      __io, __tmperr);
-    if (!__tmperr)
-      {
-        __state._M_want_century = 1;
-        __state._M_want_xday = 1;
-
-
-        __c = 0;
-        if (__beg != __end)
-   __c = __ctype.narrow(*__beg, '*');
-        if (__c >= '0' && __c <= '9')
-   {
-     ++__beg;
-     __mem = __mem * 10 + (__c - '0');
-     if (__beg != __end)
-       {
-         __c = __ctype.narrow(*__beg, '*');
-         if (__c >= '0' && __c <= '9')
-    {
-      ++__beg;
-      __mem = __mem * 10 + (__c - '0');
-    }
-       }
-     __mem -= 1900;
-     __state._M_want_century = 0;
-   }
-
-
-        else if (__mem < 69)
-   __mem += 100;
-        __tm->tm_year = __mem;
-      }
-    break;
-  case 'Y':
-
-    __beg = _M_extract_num(__beg, __end, __mem, 0, 9999, 4,
-      __io, __tmperr);
-    if (!__tmperr)
-      {
-        __tm->tm_year = __mem - 1900;
-        __state._M_want_century = 0;
-        __state._M_want_xday = 1;
-      }
-    break;
-  case 'Z':
-
-    if (__ctype.is(ctype_base::upper, *__beg))
-      {
-        int __tmp;
-        __beg = _M_extract_name(__beg, __end, __tmp,
-           __timepunct_cache<_CharT>::_S_timezones,
-           14, __io, __tmperr);
-
-
-        if (__beg != __end && !__tmperr && __tmp == 0
-     && (*__beg == __ctype.widen('-')
-         || *__beg == __ctype.widen('+')))
-   {
-     __beg = _M_extract_num(__beg, __end, __tmp, 0, 23, 2,
-       __io, __tmperr);
-     __beg = _M_extract_num(__beg, __end, __tmp, 0, 59, 2,
-       __io, __tmperr);
-   }
-      }
-    else
-      __tmperr |= ios_base::failbit;
-    break;
-  case '%':
-    if (*__beg == __ctype.widen('%'))
-      ++__beg;
-    else
-      __tmperr |= ios_base::failbit;
-    break;
-  default:
-
-    __tmperr |= ios_base::failbit;
-  }
-     }
-   else if (__ctype.is(ctype_base::space, __format[__i]))
-     {
-
-       while (__beg != __end
-       && __ctype.is(ctype_base::space, *__beg))
-  ++__beg;
-     }
-   else
-     {
-
-
-       if (__ctype.tolower(__format[__i]) == __ctype.tolower(*__beg)
-    || __ctype.toupper(__format[__i]) == __ctype.toupper(*__beg))
-  ++__beg;
-       else
-  __tmperr |= ios_base::failbit;
-     }
- }
-
-      if (__tmperr || __i != __len)
- __err |= ios_base::failbit;
-
-      return __beg;
-    }
-
-  template<typename _CharT, typename _InIter>
-    _InIter
-    time_get<_CharT, _InIter>::
-    _M_extract_via_format(iter_type __beg, iter_type __end, ios_base& __io,
-     ios_base::iostate& __err, tm* __tm,
-     const _CharT* __format) const
-    {
-      __time_get_state __state = __time_get_state();
-      return _M_extract_via_format(__beg, __end, __io, __err, __tm,
-       __format, __state);
-    }
-
-  template<typename _CharT, typename _InIter>
-    _InIter
-    time_get<_CharT, _InIter>::
-    _M_extract_num(iter_type __beg, iter_type __end, int& __member,
-     int __min, int __max, size_t __len,
-     ios_base& __io, ios_base::iostate& __err) const
-    {
-      const locale& __loc = __io._M_getloc();
-      const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
-
-      size_t __i = 0;
-      int __value = 0;
-      for (; __beg != __end && __i < __len; ++__beg, (void)++__i)
- {
-   const char __c = __ctype.narrow(*__beg, '*');
-   if (__c >= '0' && __c <= '9')
-     {
-       __value = __value * 10 + (__c - '0');
-       if (__value > __max)
-  break;
-     }
-   else
-     break;
- }
-      if (__i && __value >= __min && __value <= __max)
- __member = __value;
-      else
- __err |= ios_base::failbit;
-
-      return __beg;
-    }
-
-
-
-
-
-
-  template<typename _CharT, typename _InIter>
-    _InIter
-    time_get<_CharT, _InIter>::
-    _M_extract_name(iter_type __beg, iter_type __end, int& __member,
-      const _CharT** __names, size_t __indexlen,
-      ios_base& __io, ios_base::iostate& __err) const
-    {
-      typedef char_traits<_CharT> __traits_type;
-      const locale& __loc = __io._M_getloc();
-      const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
-
-      size_t* __matches
- = static_cast<size_t*>(__builtin_alloca(2 * sizeof(size_t)
-      * __indexlen));
-      size_t* __lengths = __matches + __indexlen;
-      size_t __nmatches = 0;
-      size_t __pos = 0;
-      bool __testvalid = true;
-      const char_type* __name;
-      bool __begupdated = false;
-
-
-      if (__beg != __end)
- {
-   const char_type __c = *__beg;
-
-   const char_type __cl = __ctype.tolower(__c);
-   const char_type __cu = __ctype.toupper(__c);
-   for (size_t __i1 = 0; __i1 < __indexlen; ++__i1)
-     if (__cl == __ctype.tolower(__names[__i1][0])
-  || __cu == __ctype.toupper(__names[__i1][0]))
-       {
-  __lengths[__nmatches]
-    = __traits_type::length(__names[__i1]);
-  __matches[__nmatches++] = __i1;
-       }
- }
-
-      while (__nmatches > 1)
- {
-
-   size_t __minlen = __lengths[0];
-   for (size_t __i2 = 1; __i2 < __nmatches; ++__i2)
-     __minlen = std::min(__minlen, __lengths[__i2]);
-   ++__pos;
-   ++__beg;
-   if (__pos == __minlen)
-     {
-
-
-
-
-
-
-       bool __match_longer = false;
-
-       if (__beg != __end)
-  {
-
-    const char_type __cl = __ctype.tolower(*__beg);
-    const char_type __cu = __ctype.toupper(*__beg);
-    for (size_t __i3 = 0; __i3 < __nmatches; ++__i3)
-      {
-        __name = __names[__matches[__i3]];
-        if (__lengths[__i3] > __pos
-     && (__ctype.tolower(__name[__pos]) == __cl
-         || __ctype.toupper(__name[__pos]) == __cu))
-   {
-     __match_longer = true;
-     break;
-   }
-      }
-  }
-       for (size_t __i4 = 0; __i4 < __nmatches;)
-  if (__match_longer == (__lengths[__i4] == __pos))
-    {
-      __matches[__i4] = __matches[--__nmatches];
-      __lengths[__i4] = __lengths[__nmatches];
-    }
-  else
-    ++__i4;
-       if (__match_longer)
-  {
-    __minlen = __lengths[0];
-    for (size_t __i5 = 1; __i5 < __nmatches; ++__i5)
-      __minlen = std::min(__minlen, __lengths[__i5]);
-  }
-       else
-  {
-
-
-    if (__nmatches == 2 && (__indexlen & 1) == 0)
-      {
-        if (__matches[0] < __indexlen / 2)
-   {
-     if (__matches[1] == __matches[0] + __indexlen / 2)
-       __nmatches = 1;
-   }
-        else if (__matches[1] == __matches[0] - __indexlen / 2)
-   {
-     __matches[0] = __matches[1];
-     __lengths[0] = __lengths[1];
-     __nmatches = 1;
-   }
-      }
-    __begupdated = true;
-    break;
-  }
-     }
-   if (__pos < __minlen && __beg != __end)
-     {
-
-       const char_type __cl = __ctype.tolower(*__beg);
-       const char_type __cu = __ctype.toupper(*__beg);
-       for (size_t __i6 = 0; __i6 < __nmatches;)
-  {
-    __name = __names[__matches[__i6]];
-    if (__ctype.tolower(__name[__pos]) != __cl
-        && __ctype.toupper(__name[__pos]) != __cu)
-      {
-        __matches[__i6] = __matches[--__nmatches];
-        __lengths[__i6] = __lengths[__nmatches];
-      }
-    else
-      ++__i6;
-  }
-     }
-   else
-     break;
- }
-
-      if (__nmatches == 1)
- {
-
-   if (!__begupdated)
-     {
-       ++__beg;
-       ++__pos;
-     }
-   __name = __names[__matches[0]];
-   const size_t __len = __lengths[0];
-   while (__pos < __len
-   && __beg != __end
-
-   && (__ctype.tolower(__name[__pos]) == __ctype.tolower(*__beg)
-       || (__ctype.toupper(__name[__pos])
-    == __ctype.toupper(*__beg))))
-     ++__beg, (void)++__pos;
-
-   if (__len == __pos)
-     __member = __matches[0];
-   else
-     __testvalid = false;
- }
-      else
- __testvalid = false;
-      if (!__testvalid)
- __err |= ios_base::failbit;
-
-      return __beg;
-    }
-
-  template<typename _CharT, typename _InIter>
-    _InIter
-    time_get<_CharT, _InIter>::
-    _M_extract_wday_or_month(iter_type __beg, iter_type __end, int& __member,
-        const _CharT** __names, size_t __indexlen,
-        ios_base& __io, ios_base::iostate& __err) const
-    {
-      typedef char_traits<_CharT> __traits_type;
-      const locale& __loc = __io._M_getloc();
-      const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
-
-      int* __matches = static_cast<int*>(__builtin_alloca(2 * sizeof(int)
-         * __indexlen));
-      size_t __nmatches = 0;
-      size_t* __matches_lengths = 0;
-      size_t __pos = 0;
-
-      if (__beg != __end)
- {
-   const char_type __c = *__beg;
-   for (size_t __i = 0; __i < 2 * __indexlen; ++__i)
-     if (__c == __names[__i][0]
-  || __c == __ctype.toupper(__names[__i][0]))
-       __matches[__nmatches++] = __i;
- }
-
-      if (__nmatches)
- {
-   ++__beg;
-   ++__pos;
-
-   __matches_lengths
-     = static_cast<size_t*>(__builtin_alloca(sizeof(size_t)
-          * __nmatches));
-   for (size_t __i = 0; __i < __nmatches; ++__i)
-     __matches_lengths[__i]
-       = __traits_type::length(__names[__matches[__i]]);
- }
-
-      for (; __beg != __end; ++__beg, (void)++__pos)
- {
-   size_t __nskipped = 0;
-   const char_type __c = *__beg;
-   for (size_t __i = 0; __i < __nmatches;)
-     {
-       const char_type* __name = __names[__matches[__i]];
-       if (__pos >= __matches_lengths[__i])
-  ++__nskipped, ++__i;
-       else if (!(__name[__pos] == __c))
-  {
-    --__nmatches;
-    __matches[__i] = __matches[__nmatches];
-    __matches_lengths[__i] = __matches_lengths[__nmatches];
-  }
-       else
-  ++__i;
-     }
-   if (__nskipped == __nmatches)
-     break;
- }
-
-      if ((__nmatches == 1 && __matches_lengths[0] == __pos)
-   || (__nmatches == 2 && (__matches_lengths[0] == __pos
-      || __matches_lengths[1] == __pos)))
- __member = (__matches[0] >= (int)__indexlen
-      ? __matches[0] - (int)__indexlen : __matches[0]);
-      else
- __err |= ios_base::failbit;
-
-      return __beg;
-    }
-
-  template<typename _CharT, typename _InIter>
-    _InIter
-    time_get<_CharT, _InIter>::
-    do_get_time(iter_type __beg, iter_type __end, ios_base& __io,
-  ios_base::iostate& __err, tm* __tm) const
-    {
-      const locale& __loc = __io._M_getloc();
-      const __timepunct<_CharT>& __tp = use_facet<__timepunct<_CharT> >(__loc);
-      const char_type* __times[2];
-      __tp._M_time_formats(__times);
-      __time_get_state __state = __time_get_state();
-      __beg = _M_extract_via_format(__beg, __end, __io, __err,
-        __tm, __times[0], __state);
-      __state._M_finalize_state(__tm);
-      if (__beg == __end)
- __err |= ios_base::eofbit;
-      return __beg;
-    }
-
-  template<typename _CharT, typename _InIter>
-    _InIter
-    time_get<_CharT, _InIter>::
-    do_get_date(iter_type __beg, iter_type __end, ios_base& __io,
-  ios_base::iostate& __err, tm* __tm) const
-    {
-      const locale& __loc = __io._M_getloc();
-      const __timepunct<_CharT>& __tp = use_facet<__timepunct<_CharT> >(__loc);
-      const char_type* __dates[2];
-      __tp._M_date_formats(__dates);
-      __time_get_state __state = __time_get_state();
-      __beg = _M_extract_via_format(__beg, __end, __io, __err,
-        __tm, __dates[0], __state);
-      __state._M_finalize_state(__tm);
-      if (__beg == __end)
- __err |= ios_base::eofbit;
-      return __beg;
-    }
-
-  template<typename _CharT, typename _InIter>
-    _InIter
-    time_get<_CharT, _InIter>::
-    do_get_weekday(iter_type __beg, iter_type __end, ios_base& __io,
-     ios_base::iostate& __err, tm* __tm) const
-    {
-      const locale& __loc = __io._M_getloc();
-      const __timepunct<_CharT>& __tp = use_facet<__timepunct<_CharT> >(__loc);
-      const char_type* __days[14];
-      __tp._M_days_abbreviated(__days);
-      __tp._M_days(__days + 7);
-      int __tmpwday;
-      ios_base::iostate __tmperr = ios_base::goodbit;
-
-      __beg = _M_extract_wday_or_month(__beg, __end, __tmpwday, __days, 7,
-           __io, __tmperr);
-      if (!__tmperr)
- __tm->tm_wday = __tmpwday;
-      else
- __err |= ios_base::failbit;
-
-      if (__beg == __end)
- __err |= ios_base::eofbit;
-      return __beg;
-     }
-
-  template<typename _CharT, typename _InIter>
-    _InIter
-    time_get<_CharT, _InIter>::
-    do_get_monthname(iter_type __beg, iter_type __end,
-                     ios_base& __io, ios_base::iostate& __err, tm* __tm) const
-    {
-      const locale& __loc = __io._M_getloc();
-      const __timepunct<_CharT>& __tp = use_facet<__timepunct<_CharT> >(__loc);
-      const char_type* __months[24];
-      __tp._M_months_abbreviated(__months);
-      __tp._M_months(__months + 12);
-      int __tmpmon;
-      ios_base::iostate __tmperr = ios_base::goodbit;
-
-      __beg = _M_extract_wday_or_month(__beg, __end, __tmpmon, __months, 12,
-           __io, __tmperr);
-      if (!__tmperr)
- __tm->tm_mon = __tmpmon;
-      else
- __err |= ios_base::failbit;
-
-      if (__beg == __end)
- __err |= ios_base::eofbit;
-      return __beg;
-    }
-
-  template<typename _CharT, typename _InIter>
-    _InIter
-    time_get<_CharT, _InIter>::
-    do_get_year(iter_type __beg, iter_type __end, ios_base& __io,
-  ios_base::iostate& __err, tm* __tm) const
-    {
-      int __tmpyear;
-      ios_base::iostate __tmperr = ios_base::goodbit;
-      const locale& __loc = __io._M_getloc();
-      const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
-
-      __beg = _M_extract_num(__beg, __end, __tmpyear, 0, 99, 2,
-        __io, __tmperr);
-      if (!__tmperr)
- {
-   char __c = 0;
-   if (__beg != __end)
-     __c = __ctype.narrow(*__beg, '*');
-
-
-
-   if (__c >= '0' && __c <= '9')
-     {
-       ++__beg;
-       __tmpyear = __tmpyear * 10 + (__c - '0');
-       if (__beg != __end)
-  {
-    __c = __ctype.narrow(*__beg, '*');
-    if (__c >= '0' && __c <= '9')
-      {
-        ++__beg;
-        __tmpyear = __tmpyear * 10 + (__c - '0');
-      }
-  }
-       __tmpyear -= 1900;
-     }
-   else if (__tmpyear < 69)
-     __tmpyear += 100;
-   __tm->tm_year = __tmpyear;
- }
-      else
- __err |= ios_base::failbit;
-
-      if (__beg == __end)
- __err |= ios_base::eofbit;
-      return __beg;
-    }
-
-
-  template<typename _CharT, typename _InIter>
-    inline
-    _InIter
-    time_get<_CharT, _InIter>::
-    get(iter_type __s, iter_type __end, ios_base& __io,
-        ios_base::iostate& __err, tm* __tm, const char_type* __fmt,
-        const char_type* __fmtend) const
-    {
-      const locale& __loc = __io._M_getloc();
-      ctype<_CharT> const& __ctype = use_facet<ctype<_CharT> >(__loc);
-      __err = ios_base::goodbit;
-      bool __use_state = false;
-
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wpmf-conversions"
-
-
-
-
-
-
-      if ((void*)(this->*(&time_get::do_get)) == (void*)(&time_get::do_get))
- __use_state = true;
-#pragma GCC diagnostic pop
-
-      __time_get_state __state = __time_get_state();
-      while (__fmt != __fmtend &&
-             __err == ios_base::goodbit)
-        {
-          if (__s == __end)
-            {
-              __err = ios_base::eofbit | ios_base::failbit;
-              break;
-            }
-          else if (__ctype.narrow(*__fmt, 0) == '%')
-            {
-       const char_type* __fmt_start = __fmt;
-              char __format;
-              char __mod = 0;
-              if (++__fmt == __fmtend)
-                {
-                  __err = ios_base::failbit;
-                  break;
-                }
-              const char __c = __ctype.narrow(*__fmt, 0);
-              if (__c != 'E' && __c != 'O')
-                __format = __c;
-              else if (++__fmt != __fmtend)
-                {
-                  __mod = __c;
-                  __format = __ctype.narrow(*__fmt, 0);
-                }
-              else
-                {
-                  __err = ios_base::failbit;
-                  break;
-                }
-       if (__use_state)
-  {
-    char_type __new_fmt[4];
-    __new_fmt[0] = __fmt_start[0];
-    __new_fmt[1] = __fmt_start[1];
-    if (__mod)
-      {
-        __new_fmt[2] = __fmt_start[2];
-        __new_fmt[3] = char_type();
-      }
-    else
-      __new_fmt[2] = char_type();
-    __s = _M_extract_via_format(__s, __end, __io, __err, __tm,
-           __new_fmt, __state);
-    if (__s == __end)
-      __err |= ios_base::eofbit;
-  }
-       else
-  __s = this->do_get(__s, __end, __io, __err, __tm, __format,
-       __mod);
-              ++__fmt;
-            }
-          else if (__ctype.is(ctype_base::space, *__fmt))
-            {
-              ++__fmt;
-              while (__fmt != __fmtend &&
-                     __ctype.is(ctype_base::space, *__fmt))
-                ++__fmt;
-
-              while (__s != __end &&
-                     __ctype.is(ctype_base::space, *__s))
-                ++__s;
-            }
-
-          else if (__ctype.tolower(*__s) == __ctype.tolower(*__fmt) ||
-                   __ctype.toupper(*__s) == __ctype.toupper(*__fmt))
-            {
-              ++__s;
-              ++__fmt;
-            }
-          else
-            {
-              __err = ios_base::failbit;
-              break;
-            }
-        }
-      if (__use_state)
- __state._M_finalize_state(__tm);
-      return __s;
-    }
-
-  template<typename _CharT, typename _InIter>
-    inline
-    _InIter
-    time_get<_CharT, _InIter>::
-    do_get(iter_type __beg, iter_type __end, ios_base& __io,
-           ios_base::iostate& __err, tm* __tm,
-           char __format, char __mod) const
-    {
-      const locale& __loc = __io._M_getloc();
-      ctype<_CharT> const& __ctype = use_facet<ctype<_CharT> >(__loc);
-      __err = ios_base::goodbit;
-
-      char_type __fmt[4];
-      __fmt[0] = __ctype.widen('%');
-      if (!__mod)
-        {
-          __fmt[1] = __format;
-          __fmt[2] = char_type();
-        }
-      else
-        {
-          __fmt[1] = __mod;
-          __fmt[2] = __format;
-          __fmt[3] = char_type();
-        }
-
-      __time_get_state __state = __time_get_state();
-      __beg = _M_extract_via_format(__beg, __end, __io, __err, __tm, __fmt,
-        __state);
-      __state._M_finalize_state(__tm);
-      if (__beg == __end)
- __err |= ios_base::eofbit;
-      return __beg;
-    }
-
-
-
-  template<typename _CharT, typename _OutIter>
-    _OutIter
-    time_put<_CharT, _OutIter>::
-    put(iter_type __s, ios_base& __io, char_type __fill, const tm* __tm,
- const _CharT* __beg, const _CharT* __end) const
-    {
-      const locale& __loc = __io._M_getloc();
-      ctype<_CharT> const& __ctype = use_facet<ctype<_CharT> >(__loc);
-      for (; __beg != __end; ++__beg)
- if (__ctype.narrow(*__beg, 0) != '%')
-   {
-     *__s = *__beg;
-     ++__s;
-   }
- else if (++__beg != __end)
-   {
-     char __format;
-     char __mod = 0;
-     const char __c = __ctype.narrow(*__beg, 0);
-     if (__c != 'E' && __c != 'O')
-       __format = __c;
-     else if (++__beg != __end)
-       {
-  __mod = __c;
-  __format = __ctype.narrow(*__beg, 0);
-       }
-     else
-       break;
-     __s = this->do_put(__s, __io, __fill, __tm, __format, __mod);
-   }
- else
-   break;
-      return __s;
-    }
-
-  template<typename _CharT, typename _OutIter>
-    _OutIter
-    time_put<_CharT, _OutIter>::
-    do_put(iter_type __s, ios_base& __io, char_type, const tm* __tm,
-    char __format, char __mod) const
-    {
-      const locale& __loc = __io._M_getloc();
-      ctype<_CharT> const& __ctype = use_facet<ctype<_CharT> >(__loc);
-      __timepunct<_CharT> const& __tp = use_facet<__timepunct<_CharT> >(__loc);
-
-
-
-      const size_t __maxlen = 128;
-      char_type __res[__maxlen];
-
-
-
-
-
-
-      char_type __fmt[4];
-      __fmt[0] = __ctype.widen('%');
-      if (!__mod)
- {
-   __fmt[1] = __format;
-   __fmt[2] = char_type();
- }
-      else
- {
-   __fmt[1] = __mod;
-   __fmt[2] = __format;
-   __fmt[3] = char_type();
- }
-
-      __tp._M_put(__res, __maxlen, __fmt, __tm);
-
-
-      return std::__write(__s, __res, char_traits<char_type>::length(__res));
-    }
-
-
-
-
-
-  extern template class moneypunct<char, false>;
-  extern template class moneypunct<char, true>;
-  extern template class moneypunct_byname<char, false>;
-  extern template class moneypunct_byname<char, true>;
-  extern template class __cxx11:: money_get<char>;
-  extern template class __cxx11:: money_put<char>;
-  extern template class __timepunct<char>;
-  extern template class time_put<char>;
-  extern template class time_put_byname<char>;
-  extern template class time_get<char>;
-  extern template class time_get_byname<char>;
-  extern template class messages<char>;
-  extern template class messages_byname<char>;
-
-  extern template
-    const moneypunct<char, true>*
-    __try_use_facet<moneypunct<char, true> >(const locale&) noexcept;
-
-  extern template
-    const moneypunct<char, false>*
-    __try_use_facet<moneypunct<char, false> >(const locale&) noexcept;
-
-  extern template
-    const money_put<char>*
-    __try_use_facet<money_put<char> >(const locale&) noexcept;
-
-  extern template
-    const money_get<char>*
-    __try_use_facet<money_get<char> >(const locale&) noexcept;
-
-  extern template
-    const __timepunct<char>*
-    __try_use_facet<__timepunct<char> >(const locale&) noexcept;
-
-  extern template
-    const time_put<char>*
-    __try_use_facet<time_put<char> >(const locale&) noexcept;
-
-  extern template
-    const time_get<char>*
-    __try_use_facet<time_get<char> >(const locale&) noexcept;
-
-  extern template
-    const messages<char>*
-    __try_use_facet<messages<char> >(const locale&) noexcept;
-
-  extern template
-    const moneypunct<char, true>&
-    use_facet<moneypunct<char, true> >(const locale&);
-
-  extern template
-    const moneypunct<char, false>&
-    use_facet<moneypunct<char, false> >(const locale&);
-
-  extern template
-    const money_put<char>&
-    use_facet<money_put<char> >(const locale&);
-
-  extern template
-    const money_get<char>&
-    use_facet<money_get<char> >(const locale&);
-
-  extern template
-    const __timepunct<char>&
-    use_facet<__timepunct<char> >(const locale&);
-
-  extern template
-    const time_put<char>&
-    use_facet<time_put<char> >(const locale&);
-
-  extern template
-    const time_get<char>&
-    use_facet<time_get<char> >(const locale&);
-
-  extern template
-    const messages<char>&
-    use_facet<messages<char> >(const locale&);
-
-  extern template
-    bool
-    has_facet<moneypunct<char> >(const locale&);
-
-  extern template
-    bool
-    has_facet<money_put<char> >(const locale&);
-
-  extern template
-    bool
-    has_facet<money_get<char> >(const locale&);
-
-  extern template
-    bool
-    has_facet<__timepunct<char> >(const locale&);
-
-  extern template
-    bool
-    has_facet<time_put<char> >(const locale&);
-
-  extern template
-    bool
-    has_facet<time_get<char> >(const locale&);
-
-  extern template
-    bool
-    has_facet<messages<char> >(const locale&);
-
-
-  extern template class moneypunct<wchar_t, false>;
-  extern template class moneypunct<wchar_t, true>;
-  extern template class moneypunct_byname<wchar_t, false>;
-  extern template class moneypunct_byname<wchar_t, true>;
-  extern template class __cxx11:: money_get<wchar_t>;
-  extern template class __cxx11:: money_put<wchar_t>;
-  extern template class __timepunct<wchar_t>;
-  extern template class time_put<wchar_t>;
-  extern template class time_put_byname<wchar_t>;
-  extern template class time_get<wchar_t>;
-  extern template class time_get_byname<wchar_t>;
-  extern template class messages<wchar_t>;
-  extern template class messages_byname<wchar_t>;
-
-  extern template
-    const moneypunct<wchar_t, true>*
-    __try_use_facet<moneypunct<wchar_t, true> >(const locale&) noexcept;
-
-  extern template
-    const moneypunct<wchar_t, false>*
-    __try_use_facet<moneypunct<wchar_t, false> >(const locale&) noexcept;
-
-  extern template
-    const money_put<wchar_t>*
-    __try_use_facet<money_put<wchar_t> >(const locale&) noexcept;
-
-  extern template
-    const money_get<wchar_t>*
-    __try_use_facet<money_get<wchar_t> >(const locale&) noexcept;
-
-  extern template
-    const __timepunct<wchar_t>*
-    __try_use_facet<__timepunct<wchar_t> >(const locale&) noexcept;
-
-  extern template
-    const time_put<wchar_t>*
-    __try_use_facet<time_put<wchar_t> >(const locale&) noexcept;
-
-  extern template
-    const time_get<wchar_t>*
-    __try_use_facet<time_get<wchar_t> >(const locale&) noexcept;
-
-  extern template
-    const messages<wchar_t>*
-    __try_use_facet<messages<wchar_t> >(const locale&) noexcept;
-
-  extern template
-    const moneypunct<wchar_t, true>&
-    use_facet<moneypunct<wchar_t, true> >(const locale&);
-
-  extern template
-    const moneypunct<wchar_t, false>&
-    use_facet<moneypunct<wchar_t, false> >(const locale&);
-
-  extern template
-    const money_put<wchar_t>&
-    use_facet<money_put<wchar_t> >(const locale&);
-
-  extern template
-    const money_get<wchar_t>&
-    use_facet<money_get<wchar_t> >(const locale&);
-
-  extern template
-    const __timepunct<wchar_t>&
-    use_facet<__timepunct<wchar_t> >(const locale&);
-
-  extern template
-    const time_put<wchar_t>&
-    use_facet<time_put<wchar_t> >(const locale&);
-
-  extern template
-    const time_get<wchar_t>&
-    use_facet<time_get<wchar_t> >(const locale&);
-
-  extern template
-    const messages<wchar_t>&
-    use_facet<messages<wchar_t> >(const locale&);
-
-  extern template
-    bool
-    has_facet<moneypunct<wchar_t> >(const locale&);
-
-  extern template
-    bool
-    has_facet<money_put<wchar_t> >(const locale&);
-
-  extern template
-    bool
-    has_facet<money_get<wchar_t> >(const locale&);
-
-  extern template
-    bool
-    has_facet<__timepunct<wchar_t> >(const locale&);
-
-  extern template
-    bool
-    has_facet<time_put<wchar_t> >(const locale&);
-
-  extern template
-    bool
-    has_facet<time_get<wchar_t> >(const locale&);
-
-  extern template
-    bool
-    has_facet<messages<wchar_t> >(const locale&);
-
-
-
-
-}
-# 2070 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 2 3
-# 44 "C:/mingw64/include/c++/14.2.0/locale" 2 3
-
-# 1 "C:/mingw64/include/c++/14.2.0/bits/locale_conv.h" 1 3
-# 42 "C:/mingw64/include/c++/14.2.0/bits/locale_conv.h" 3
-namespace std
-{
-
-
-
-
-
-
-
-  template<typename _OutStr, typename _InChar, typename _Codecvt,
-    typename _State, typename _Fn>
-    bool
-    __do_str_codecvt(const _InChar* __first, const _InChar* __last,
-       _OutStr& __outstr, const _Codecvt& __cvt, _State& __state,
-       size_t& __count, _Fn __fn)
-    {
-      if (__first == __last)
- {
-   __outstr.clear();
-   __count = 0;
-   return true;
- }
-
-      size_t __outchars = 0;
-      auto __next = __first;
-      const auto __maxlen = __cvt.max_length() + 1;
-
-      codecvt_base::result __result;
-      do
- {
-   __outstr.resize(__outstr.size() + (__last - __next) * __maxlen);
-   auto __outnext = &__outstr.front() + __outchars;
-   auto const __outlast = &__outstr.back() + 1;
-   __result = (__cvt.*__fn)(__state, __next, __last, __next,
-     __outnext, __outlast, __outnext);
-   __outchars = __outnext - &__outstr.front();
- }
-      while (__result == codecvt_base::partial && __next != __last
-      && ptrdiff_t(__outstr.size() - __outchars) < __maxlen);
-
-      if (__result == codecvt_base::error)
- {
-   __count = __next - __first;
-   return false;
- }
-
-
-
-      if constexpr (is_same<typename _Codecvt::intern_type,
-           typename _Codecvt::extern_type>())
- if (__result == codecvt_base::noconv)
-   {
-     __outstr.assign(__first, __last);
-     __count = __last - __first;
-     return true;
-   }
-
-      __outstr.resize(__outchars);
-      __count = __next - __first;
-      return true;
-    }
-
-
-  template<typename _CharT, typename _Traits, typename _Alloc, typename _State>
-    inline bool
-    __str_codecvt_in(const char* __first, const char* __last,
-       basic_string<_CharT, _Traits, _Alloc>& __outstr,
-       const codecvt<_CharT, char, _State>& __cvt,
-       _State& __state, size_t& __count)
-    {
-      using _Codecvt = codecvt<_CharT, char, _State>;
-      using _ConvFn
- = codecvt_base::result
-   (_Codecvt::*)(_State&, const char*, const char*, const char*&,
-   _CharT*, _CharT*, _CharT*&) const;
-      _ConvFn __fn = &codecvt<_CharT, char, _State>::in;
-      return __do_str_codecvt(__first, __last, __outstr, __cvt, __state,
-         __count, __fn);
-    }
-
-
-  template<typename _CharT, typename _Traits, typename _Alloc, typename _State>
-    inline bool
-    __str_codecvt_in(const char* __first, const char* __last,
-       basic_string<_CharT, _Traits, _Alloc>& __outstr,
-       const codecvt<_CharT, char, _State>& __cvt)
-    {
-      _State __state = {};
-      size_t __n;
-      return __str_codecvt_in(__first, __last, __outstr, __cvt, __state, __n);
-    }
-
-
-  template<typename _CharT, typename _Traits, typename _Alloc, typename _State>
-    inline bool
-    __str_codecvt_in_all(const char* __first, const char* __last,
-    basic_string<_CharT, _Traits, _Alloc>& __outstr,
-    const codecvt<_CharT, char, _State>& __cvt)
-    {
-      _State __state = {};
-      size_t __n;
-      return __str_codecvt_in(__first, __last, __outstr, __cvt, __state, __n)
- && (__n == size_t(__last - __first));
-    }
-
-
-  template<typename _CharT, typename _Traits, typename _Alloc, typename _State>
-    inline bool
-    __str_codecvt_out(const _CharT* __first, const _CharT* __last,
-        basic_string<char, _Traits, _Alloc>& __outstr,
-        const codecvt<_CharT, char, _State>& __cvt,
-        _State& __state, size_t& __count)
-    {
-      using _Codecvt = codecvt<_CharT, char, _State>;
-      using _ConvFn
- = codecvt_base::result
-   (_Codecvt::*)(_State&, const _CharT*, const _CharT*, const _CharT*&,
-   char*, char*, char*&) const;
-      _ConvFn __fn = &codecvt<_CharT, char, _State>::out;
-      return __do_str_codecvt(__first, __last, __outstr, __cvt, __state,
-         __count, __fn);
-    }
-
-
-  template<typename _CharT, typename _Traits, typename _Alloc, typename _State>
-    inline bool
-    __str_codecvt_out(const _CharT* __first, const _CharT* __last,
-        basic_string<char, _Traits, _Alloc>& __outstr,
-        const codecvt<_CharT, char, _State>& __cvt)
-    {
-      _State __state = {};
-      size_t __n;
-      return __str_codecvt_out(__first, __last, __outstr, __cvt, __state, __n);
-    }
-
-
-  template<typename _CharT, typename _Traits, typename _Alloc, typename _State>
-    inline bool
-    __str_codecvt_out_all(const _CharT* __first, const _CharT* __last,
-     basic_string<char, _Traits, _Alloc>& __outstr,
-     const codecvt<_CharT, char, _State>& __cvt)
-    {
-      _State __state = {};
-      size_t __n;
-      return __str_codecvt_out(__first, __last, __outstr, __cvt, __state, __n)
- && (__n == size_t(__last - __first));
-    }
-
-
-
-
-  template<typename _CharT, typename _Traits, typename _Alloc, typename _State>
-    inline bool
-    __str_codecvt_out(const _CharT* __first, const _CharT* __last,
-        basic_string<char8_t, _Traits, _Alloc>& __outstr,
-        const codecvt<_CharT, char8_t, _State>& __cvt,
-        _State& __state, size_t& __count)
-    {
-      using _Codecvt = codecvt<_CharT, char8_t, _State>;
-      using _ConvFn
- = codecvt_base::result
-   (_Codecvt::*)(_State&, const _CharT*, const _CharT*, const _CharT*&,
-   char8_t*, char8_t*, char8_t*&) const;
-      _ConvFn __fn = &codecvt<_CharT, char8_t, _State>::out;
-      return __do_str_codecvt(__first, __last, __outstr, __cvt, __state,
-         __count, __fn);
-    }
-
-  template<typename _CharT, typename _Traits, typename _Alloc, typename _State>
-    inline bool
-    __str_codecvt_out(const _CharT* __first, const _CharT* __last,
-        basic_string<char8_t, _Traits, _Alloc>& __outstr,
-        const codecvt<_CharT, char8_t, _State>& __cvt)
-    {
-      _State __state = {};
-      size_t __n;
-      return __str_codecvt_out(__first, __last, __outstr, __cvt, __state, __n);
-    }
-
-
-
-  namespace __detail
-  {
-    template<typename _Tp>
-      struct _Scoped_ptr
-      {
- __attribute__((__nonnull__(2)))
- explicit
- _Scoped_ptr(_Tp* __ptr) noexcept
- : _M_ptr(__ptr)
- { }
-
- _Scoped_ptr(_Tp* __ptr, const char* __msg)
- : _M_ptr(__ptr)
- {
-   if (!__ptr)
-     __throw_logic_error(__msg);
- }
-
- ~_Scoped_ptr() { delete _M_ptr; }
-
- _Scoped_ptr(const _Scoped_ptr&) = delete;
- _Scoped_ptr& operator=(const _Scoped_ptr&) = delete;
-
- __attribute__((__returns_nonnull__))
- _Tp* operator->() const noexcept { return _M_ptr; }
-
- _Tp& operator*() const noexcept { return *_M_ptr; }
-
-      private:
- _Tp* _M_ptr;
-      };
-  }
-
-namespace __cxx11 {
-
-
-  template<typename _Codecvt, typename _Elem = wchar_t,
-    typename _Wide_alloc = allocator<_Elem>,
-    typename _Byte_alloc = allocator<char>>
-    class wstring_convert
-    {
-    public:
-      typedef basic_string<char, char_traits<char>, _Byte_alloc> byte_string;
-      typedef basic_string<_Elem, char_traits<_Elem>, _Wide_alloc> wide_string;
-      typedef typename _Codecvt::state_type state_type;
-      typedef typename wide_string::traits_type::int_type int_type;
-
-
-      wstring_convert() : _M_cvt(new _Codecvt()) { }
-
-
-
-
-
-
-
-      explicit
-      wstring_convert(_Codecvt* __pcvt) : _M_cvt(__pcvt, "wstring_convert")
-      { }
-# 291 "C:/mingw64/include/c++/14.2.0/bits/locale_conv.h" 3
-      wstring_convert(_Codecvt* __pcvt, state_type __state)
-      : _M_cvt(__pcvt, "wstring_convert"),
- _M_state(__state), _M_with_cvtstate(true)
-      { }
-
-
-
-
-
-
-      explicit
-      wstring_convert(const byte_string& __byte_err,
-        const wide_string& __wide_err = wide_string())
-      : _M_cvt(new _Codecvt),
- _M_byte_err_string(__byte_err), _M_wide_err_string(__wide_err),
- _M_with_strings(true)
-      { }
-
-      ~wstring_convert() = default;
-
-
-
-      wstring_convert(const wstring_convert&) = delete;
-      wstring_convert& operator=(const wstring_convert&) = delete;
-
-
-      wide_string
-      from_bytes(char __byte)
-      {
- char __bytes[2] = { __byte };
- return from_bytes(__bytes, __bytes+1);
-      }
-
-      wide_string
-      from_bytes(const char* __ptr)
-      { return from_bytes(__ptr, __ptr+char_traits<char>::length(__ptr)); }
-
-      wide_string
-      from_bytes(const byte_string& __str)
-      {
- auto __ptr = __str.data();
- return from_bytes(__ptr, __ptr + __str.size());
-      }
-
-      wide_string
-      from_bytes(const char* __first, const char* __last)
-      {
- if (!_M_with_cvtstate)
-   _M_state = state_type();
- wide_string __out{ _M_wide_err_string.get_allocator() };
- if (__str_codecvt_in(__first, __last, __out, *_M_cvt, _M_state,
-        _M_count))
-   return __out;
- if (_M_with_strings)
-   return _M_wide_err_string;
- __throw_range_error("wstring_convert::from_bytes");
-      }
-
-
-
-      byte_string
-      to_bytes(_Elem __wchar)
-      {
- _Elem __wchars[2] = { __wchar };
- return to_bytes(__wchars, __wchars+1);
-      }
-
-      byte_string
-      to_bytes(const _Elem* __ptr)
-      {
- return to_bytes(__ptr, __ptr+wide_string::traits_type::length(__ptr));
-      }
-
-      byte_string
-      to_bytes(const wide_string& __wstr)
-      {
- auto __ptr = __wstr.data();
- return to_bytes(__ptr, __ptr + __wstr.size());
-      }
-
-      byte_string
-      to_bytes(const _Elem* __first, const _Elem* __last)
-      {
- if (!_M_with_cvtstate)
-   _M_state = state_type();
- byte_string __out{ _M_byte_err_string.get_allocator() };
- if (__str_codecvt_out(__first, __last, __out, *_M_cvt, _M_state,
-         _M_count))
-   return __out;
- if (_M_with_strings)
-   return _M_byte_err_string;
- __throw_range_error("wstring_convert::to_bytes");
-      }
-
-
-
-
-
-      size_t converted() const noexcept { return _M_count; }
-
-
-      state_type state() const { return _M_state; }
-
-    private:
-      __detail::_Scoped_ptr<_Codecvt> _M_cvt;
-      byte_string _M_byte_err_string;
-      wide_string _M_wide_err_string;
-      state_type _M_state = state_type();
-      size_t _M_count = 0;
-      bool _M_with_cvtstate = false;
-      bool _M_with_strings = false;
-    };
-
-}
-
-
-  template<typename _Codecvt, typename _Elem = wchar_t,
-    typename _Tr = char_traits<_Elem>>
-    class wbuffer_convert : public basic_streambuf<_Elem, _Tr>
-    {
-      typedef basic_streambuf<_Elem, _Tr> _Wide_streambuf;
-
-    public:
-      typedef typename _Codecvt::state_type state_type;
-
-
-      wbuffer_convert() : wbuffer_convert(nullptr) { }
-# 427 "C:/mingw64/include/c++/14.2.0/bits/locale_conv.h" 3
-      explicit
-      wbuffer_convert(streambuf* __bytebuf, _Codecvt* __pcvt = new _Codecvt,
-        state_type __state = state_type())
-      : _M_buf(__bytebuf), _M_cvt(__pcvt, "wbuffer_convert"),
- _M_state(__state), _M_always_noconv(_M_cvt->always_noconv())
-      {
- if (_M_buf)
-   {
-     this->setp(_M_put_area, _M_put_area + _S_buffer_length);
-     this->setg(_M_get_area + _S_putback_length,
-         _M_get_area + _S_putback_length,
-         _M_get_area + _S_putback_length);
-   }
-      }
-
-      ~wbuffer_convert() = default;
-
-
-
-      wbuffer_convert(const wbuffer_convert&) = delete;
-      wbuffer_convert& operator=(const wbuffer_convert&) = delete;
-
-      streambuf* rdbuf() const noexcept { return _M_buf; }
-
-      streambuf*
-      rdbuf(streambuf *__bytebuf) noexcept
-      {
- auto __prev = _M_buf;
- _M_buf = __bytebuf;
- return __prev;
-      }
-
-
-      state_type state() const noexcept { return _M_state; }
-
-    protected:
-      int
-      sync()
-      { return _M_buf && _M_conv_put() && !_M_buf->pubsync() ? 0 : -1; }
-
-      typename _Wide_streambuf::int_type
-      overflow(typename _Wide_streambuf::int_type __out)
-      {
- if (!_M_buf || !_M_conv_put())
-   return _Tr::eof();
- else if (!_Tr::eq_int_type(__out, _Tr::eof()))
-   return this->sputc(__out);
- return _Tr::not_eof(__out);
-      }
-
-      typename _Wide_streambuf::int_type
-      underflow()
-      {
- if (!_M_buf)
-   return _Tr::eof();
-
- if (this->gptr() < this->egptr() || (_M_buf && _M_conv_get()))
-   return _Tr::to_int_type(*this->gptr());
- else
-   return _Tr::eof();
-      }
-
-      streamsize
-      xsputn(const typename _Wide_streambuf::char_type* __s, streamsize __n)
-      {
- if (!_M_buf || __n == 0)
-   return 0;
- streamsize __done = 0;
- do
- {
-   auto __nn = std::min<streamsize>(this->epptr() - this->pptr(),
-        __n - __done);
-   _Tr::copy(this->pptr(), __s + __done, __nn);
-   this->pbump(__nn);
-   __done += __nn;
- } while (__done < __n && _M_conv_put());
- return __done;
-      }
-
-    private:
-
-      bool
-      _M_conv_get()
-      {
- const streamsize __pb1 = this->gptr() - this->eback();
- const streamsize __pb2 = _S_putback_length;
- const streamsize __npb = std::min(__pb1, __pb2);
-
- _Tr::move(_M_get_area + _S_putback_length - __npb,
-    this->gptr() - __npb, __npb);
-
- streamsize __nbytes = sizeof(_M_get_buf) - _M_unconv;
- __nbytes = std::min(__nbytes, _M_buf->in_avail());
- if (__nbytes < 1)
-   __nbytes = 1;
- __nbytes = _M_buf->sgetn(_M_get_buf + _M_unconv, __nbytes);
- if (__nbytes < 1)
-   return false;
- __nbytes += _M_unconv;
-
-
-
- _Elem* __outbuf = _M_get_area + _S_putback_length;
- _Elem* __outnext = __outbuf;
- const char* __bnext = _M_get_buf;
-
- codecvt_base::result __result;
- if (_M_always_noconv)
-   __result = codecvt_base::noconv;
- else
-   {
-     _Elem* __outend = _M_get_area + _S_buffer_length;
-
-     __result = _M_cvt->in(_M_state,
-      __bnext, __bnext + __nbytes, __bnext,
-      __outbuf, __outend, __outnext);
-   }
-
- if (__result == codecvt_base::noconv)
-   {
-
-     auto __get_buf = reinterpret_cast<const _Elem*>(_M_get_buf);
-     _Tr::copy(__outbuf, __get_buf, __nbytes);
-     _M_unconv = 0;
-     return true;
-   }
-
- if ((_M_unconv = _M_get_buf + __nbytes - __bnext))
-   char_traits<char>::move(_M_get_buf, __bnext, _M_unconv);
-
- this->setg(__outbuf, __outbuf, __outnext);
-
- return __result != codecvt_base::error;
-      }
-
-
-      bool
-      _M_put(...)
-      { return false; }
-
-      bool
-      _M_put(const char* __p, streamsize __n)
-      {
- if (_M_buf->sputn(__p, __n) < __n)
-   return false;
- return true;
-      }
-
-
-      bool
-      _M_conv_put()
-      {
- _Elem* const __first = this->pbase();
- const _Elem* const __last = this->pptr();
- const streamsize __pending = __last - __first;
-
- if (_M_always_noconv)
-   return _M_put(__first, __pending);
-
- char __outbuf[2 * _S_buffer_length];
-
- const _Elem* __next = __first;
- const _Elem* __start;
- do
-   {
-     __start = __next;
-     char* __outnext = __outbuf;
-     char* const __outlast = __outbuf + sizeof(__outbuf);
-     auto __result = _M_cvt->out(_M_state, __next, __last, __next,
-     __outnext, __outlast, __outnext);
-     if (__result == codecvt_base::error)
-       return false;
-     else if (__result == codecvt_base::noconv)
-       return _M_put(__next, __pending);
-
-     if (!_M_put(__outbuf, __outnext - __outbuf))
-       return false;
-   }
- while (__next != __last && __next != __start);
-
- if (__next != __last)
-   _Tr::move(__first, __next, __last - __next);
-
- this->pbump(__first - __next);
- return __next != __first;
-      }
-
-      streambuf* _M_buf;
-      __detail::_Scoped_ptr<_Codecvt> _M_cvt;
-      state_type _M_state;
-
-      static const streamsize _S_buffer_length = 32;
-      static const streamsize _S_putback_length = 3;
-      _Elem _M_put_area[_S_buffer_length];
-      _Elem _M_get_area[_S_buffer_length];
-      streamsize _M_unconv = 0;
-      char _M_get_buf[_S_buffer_length-_S_putback_length];
-      bool _M_always_noconv;
-    };
-
-
-
-
-}
-# 46 "C:/mingw64/include/c++/14.2.0/locale" 2 3
-# 37 "C:/mingw64/include/c++/14.2.0/bits/fs_path.h" 2 3
-
-# 1 "C:/mingw64/include/c++/14.2.0/iomanip" 1 3
-# 36 "C:/mingw64/include/c++/14.2.0/iomanip" 3
-       
-# 37 "C:/mingw64/include/c++/14.2.0/iomanip" 3
-# 45 "C:/mingw64/include/c++/14.2.0/iomanip" 3
-# 1 "C:/mingw64/include/c++/14.2.0/bits/version.h" 1 3
-# 47 "C:/mingw64/include/c++/14.2.0/bits/version.h" 3
-       
-# 48 "C:/mingw64/include/c++/14.2.0/bits/version.h" 3
-# 46 "C:/mingw64/include/c++/14.2.0/iomanip" 2 3
-
-
-
-
-# 1 "C:/mingw64/include/c++/14.2.0/bits/quoted_string.h" 1 3
-# 33 "C:/mingw64/include/c++/14.2.0/bits/quoted_string.h" 3
-       
-# 34 "C:/mingw64/include/c++/14.2.0/bits/quoted_string.h" 3
-
+# 42 "C:/mingw64/include/c++/14.2.0/chrono" 2 3
 
 
 
@@ -70684,10359 +66137,15 @@ namespace std
 
 }
 # 1239 "C:/mingw64/include/c++/14.2.0/sstream" 2 3
-# 39 "C:/mingw64/include/c++/14.2.0/bits/quoted_string.h" 2 3
+# 46 "C:/mingw64/include/c++/14.2.0/chrono" 2 3
 
-namespace std
-{
 
-
-  namespace __detail {
-
-
-
-    template<typename _String, typename _CharT>
-      struct _Quoted_string
-      {
- static_assert(is_reference<_String>::value
-     || is_pointer<_String>::value,
-        "String type must be pointer or reference");
-
- _Quoted_string(_String __str, _CharT __del, _CharT __esc)
- : _M_string(__str), _M_delim{__del}, _M_escape{__esc}
- { }
-
- _Quoted_string&
- operator=(_Quoted_string&) = delete;
-
- _String _M_string;
- _CharT _M_delim;
- _CharT _M_escape;
-      };
-
-
-    template<typename _CharT, typename _Traits>
-      struct _Quoted_string<basic_string_view<_CharT, _Traits>, _CharT>
-      {
- _Quoted_string(basic_string_view<_CharT, _Traits> __str,
-         _CharT __del, _CharT __esc)
- : _M_string(__str), _M_delim{__del}, _M_escape{__esc}
- { }
-
- _Quoted_string&
- operator=(_Quoted_string&) = delete;
-
- basic_string_view<_CharT, _Traits> _M_string;
- _CharT _M_delim;
- _CharT _M_escape;
-      };
-
-
-
-
-
-
-
-    template<typename _CharT, typename _Traits>
-      std::basic_ostream<_CharT, _Traits>&
-      operator<<(std::basic_ostream<_CharT, _Traits>& __os,
-   const _Quoted_string<const _CharT*, _CharT>& __str)
-      {
-
-
- std::basic_ostringstream<_CharT, _Traits> __ostr;
- __ostr << __str._M_delim;
- for (const _CharT* __c = __str._M_string; *__c; ++__c)
-   {
-     if (*__c == __str._M_delim || *__c == __str._M_escape)
-       __ostr << __str._M_escape;
-     __ostr << *__c;
-   }
- __ostr << __str._M_delim;
-
- return __os << __ostr.str();
-      }
-
-
-
-
-
-
-    template<typename _CharT, typename _Traits, typename _String>
-      std::basic_ostream<_CharT, _Traits>&
-      operator<<(std::basic_ostream<_CharT, _Traits>& __os,
-   const _Quoted_string<_String, _CharT>& __str)
-      {
-
-
- std::basic_ostringstream<_CharT, _Traits> __ostr;
- __ostr << __str._M_delim;
- for (auto __c : __str._M_string)
-   {
-     if (__c == __str._M_delim || __c == __str._M_escape)
-       __ostr << __str._M_escape;
-     __ostr << __c;
-   }
- __ostr << __str._M_delim;
-
- return __os << __ostr.str();
-      }
-
-
-
-
-
-
-
-    template<typename _CharT, typename _Traits, typename _Alloc>
-      std::basic_istream<_CharT, _Traits>&
-      operator>>(std::basic_istream<_CharT, _Traits>& __is,
-   const _Quoted_string<basic_string<_CharT, _Traits, _Alloc>&,
-          _CharT>& __str)
-      {
- _CharT __c;
- __is >> __c;
- if (!__is.good())
-   return __is;
- if (__c != __str._M_delim)
-   {
-     __is.unget();
-     __is >> __str._M_string;
-     return __is;
-   }
- __str._M_string.clear();
- std::ios_base::fmtflags __flags
-   = __is.flags(__is.flags() & ~std::ios_base::skipws);
- do
-   {
-     __is >> __c;
-     if (!__is.good())
-       break;
-     if (__c == __str._M_escape)
-       {
-  __is >> __c;
-  if (!__is.good())
-    break;
-       }
-     else if (__c == __str._M_delim)
-       break;
-     __str._M_string += __c;
-   }
- while (true);
- __is.setf(__flags);
-
- return __is;
-      }
-  }
-
-
-}
-# 51 "C:/mingw64/include/c++/14.2.0/iomanip" 2 3
-
-
-
-namespace std
-{
-
-
-
-
-
-  struct _Resetiosflags { ios_base::fmtflags _M_mask; };
-# 70 "C:/mingw64/include/c++/14.2.0/iomanip" 3
-  inline _Resetiosflags
-  resetiosflags(ios_base::fmtflags __mask)
-  { return { __mask }; }
-
-  template<typename _CharT, typename _Traits>
-    inline basic_istream<_CharT, _Traits>&
-    operator>>(basic_istream<_CharT, _Traits>& __is, _Resetiosflags __f)
-    {
-      __is.setf(ios_base::fmtflags(0), __f._M_mask);
-      return __is;
-    }
-
-  template<typename _CharT, typename _Traits>
-    inline basic_ostream<_CharT, _Traits>&
-    operator<<(basic_ostream<_CharT, _Traits>& __os, _Resetiosflags __f)
-    {
-      __os.setf(ios_base::fmtflags(0), __f._M_mask);
-      return __os;
-    }
-
-
-  struct _Setiosflags { ios_base::fmtflags _M_mask; };
-# 100 "C:/mingw64/include/c++/14.2.0/iomanip" 3
-  inline _Setiosflags
-  setiosflags(ios_base::fmtflags __mask)
-  { return { __mask }; }
-
-  template<typename _CharT, typename _Traits>
-    inline basic_istream<_CharT, _Traits>&
-    operator>>(basic_istream<_CharT, _Traits>& __is, _Setiosflags __f)
-    {
-      __is.setf(__f._M_mask);
-      return __is;
-    }
-
-  template<typename _CharT, typename _Traits>
-    inline basic_ostream<_CharT, _Traits>&
-    operator<<(basic_ostream<_CharT, _Traits>& __os, _Setiosflags __f)
-    {
-      __os.setf(__f._M_mask);
-      return __os;
-    }
-
-
-  struct _Setbase { int _M_base; };
-# 131 "C:/mingw64/include/c++/14.2.0/iomanip" 3
-  inline _Setbase
-  setbase(int __base)
-  { return { __base }; }
-
-  template<typename _CharT, typename _Traits>
-    inline basic_istream<_CharT, _Traits>&
-    operator>>(basic_istream<_CharT, _Traits>& __is, _Setbase __f)
-    {
-      __is.setf(__f._M_base == 8 ? ios_base::oct :
-  __f._M_base == 10 ? ios_base::dec :
-  __f._M_base == 16 ? ios_base::hex :
-  ios_base::fmtflags(0), ios_base::basefield);
-      return __is;
-    }
-
-  template<typename _CharT, typename _Traits>
-    inline basic_ostream<_CharT, _Traits>&
-    operator<<(basic_ostream<_CharT, _Traits>& __os, _Setbase __f)
-    {
-      __os.setf(__f._M_base == 8 ? ios_base::oct :
-  __f._M_base == 10 ? ios_base::dec :
-  __f._M_base == 16 ? ios_base::hex :
-  ios_base::fmtflags(0), ios_base::basefield);
-      return __os;
-    }
-
-
-  template<typename _CharT>
-    struct _Setfill { _CharT _M_c; };
-# 168 "C:/mingw64/include/c++/14.2.0/iomanip" 3
-  template<typename _CharT>
-    inline _Setfill<_CharT>
-    setfill(_CharT __c)
-    { return { __c }; }
-
-  template<typename _CharT, typename _Traits>
-    __attribute__((__deprecated__("'std::setfill' should only be used with "
-      "output streams")))
-    inline basic_istream<_CharT, _Traits>&
-    operator>>(basic_istream<_CharT, _Traits>& __is, _Setfill<_CharT> __f)
-    {
-      __is.fill(__f._M_c);
-      return __is;
-    }
-
-  template<typename _CharT, typename _Traits>
-    inline basic_ostream<_CharT, _Traits>&
-    operator<<(basic_ostream<_CharT, _Traits>& __os, _Setfill<_CharT> __f)
-    {
-      __os.fill(__f._M_c);
-      return __os;
-    }
-
-
-  struct _Setprecision { int _M_n; };
-# 201 "C:/mingw64/include/c++/14.2.0/iomanip" 3
-  inline _Setprecision
-  setprecision(int __n)
-  { return { __n }; }
-
-  template<typename _CharT, typename _Traits>
-    inline basic_istream<_CharT, _Traits>&
-    operator>>(basic_istream<_CharT, _Traits>& __is, _Setprecision __f)
-    {
-      __is.precision(__f._M_n);
-      return __is;
-    }
-
-  template<typename _CharT, typename _Traits>
-    inline basic_ostream<_CharT, _Traits>&
-    operator<<(basic_ostream<_CharT, _Traits>& __os, _Setprecision __f)
-    {
-      __os.precision(__f._M_n);
-      return __os;
-    }
-
-
-  struct _Setw { int _M_n; };
-# 231 "C:/mingw64/include/c++/14.2.0/iomanip" 3
-  inline _Setw
-  setw(int __n)
-  { return { __n }; }
-
-  template<typename _CharT, typename _Traits>
-    inline basic_istream<_CharT, _Traits>&
-    operator>>(basic_istream<_CharT, _Traits>& __is, _Setw __f)
-    {
-      __is.width(__f._M_n);
-      return __is;
-    }
-
-  template<typename _CharT, typename _Traits>
-    inline basic_ostream<_CharT, _Traits>&
-    operator<<(basic_ostream<_CharT, _Traits>& __os, _Setw __f)
-    {
-      __os.width(__f._M_n);
-      return __os;
-    }
-
-
-
-  template<typename _MoneyT>
-    struct _Get_money { _MoneyT& _M_mon; bool _M_intl; };
-# 264 "C:/mingw64/include/c++/14.2.0/iomanip" 3
-  template<typename _MoneyT>
-    inline _Get_money<_MoneyT>
-    get_money(_MoneyT& __mon, bool __intl = false)
-    { return { __mon, __intl }; }
-
-  template<typename _CharT, typename _Traits, typename _MoneyT>
-    basic_istream<_CharT, _Traits>&
-    operator>>(basic_istream<_CharT, _Traits>& __is, _Get_money<_MoneyT> __f)
-    {
-      typename basic_istream<_CharT, _Traits>::sentry __cerb(__is, false);
-      if (__cerb)
- {
-   ios_base::iostate __err = ios_base::goodbit;
-   try
-     {
-       typedef istreambuf_iterator<_CharT, _Traits> _Iter;
-       typedef money_get<_CharT, _Iter> _MoneyGet;
-
-       const _MoneyGet& __mg = use_facet<_MoneyGet>(__is.getloc());
-       __mg.get(_Iter(__is.rdbuf()), _Iter(), __f._M_intl,
-         __is, __err, __f._M_mon);
-     }
-   catch(__cxxabiv1::__forced_unwind&)
-     {
-       __is._M_setstate(ios_base::badbit);
-       throw;
-     }
-   catch(...)
-     { __is._M_setstate(ios_base::badbit); }
-   if (__err)
-     __is.setstate(__err);
- }
-      return __is;
-    }
-
-
-  template<typename _MoneyT>
-    struct _Put_money { const _MoneyT& _M_mon; bool _M_intl; };
-# 311 "C:/mingw64/include/c++/14.2.0/iomanip" 3
-  template<typename _MoneyT>
-    inline _Put_money<_MoneyT>
-    put_money(const _MoneyT& __mon, bool __intl = false)
-    { return { __mon, __intl }; }
-
-  template<typename _CharT, typename _Traits, typename _MoneyT>
-    basic_ostream<_CharT, _Traits>&
-    operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_money<_MoneyT> __f)
-    {
-      typename basic_ostream<_CharT, _Traits>::sentry __cerb(__os);
-      if (__cerb)
- {
-   ios_base::iostate __err = ios_base::goodbit;
-   try
-     {
-       typedef ostreambuf_iterator<_CharT, _Traits> _Iter;
-       typedef money_put<_CharT, _Iter> _MoneyPut;
-
-       const _MoneyPut& __mp = use_facet<_MoneyPut>(__os.getloc());
-       if (__mp.put(_Iter(__os.rdbuf()), __f._M_intl, __os,
-      __os.fill(), __f._M_mon).failed())
-  __err |= ios_base::badbit;
-     }
-   catch(__cxxabiv1::__forced_unwind&)
-     {
-       __os._M_setstate(ios_base::badbit);
-       throw;
-     }
-   catch(...)
-     { __os._M_setstate(ios_base::badbit); }
-   if (__err)
-     __os.setstate(__err);
- }
-      return __os;
-    }
-
-  template<typename _CharT>
-    struct _Put_time
-    {
-      const std::tm* _M_tmb;
-      const _CharT* _M_fmt;
-    };
-# 363 "C:/mingw64/include/c++/14.2.0/iomanip" 3
-  template<typename _CharT>
-    inline _Put_time<_CharT>
-    put_time(const std::tm* __tmb, const _CharT* __fmt)
-    { return { __tmb, __fmt }; }
-
-  template<typename _CharT, typename _Traits>
-    basic_ostream<_CharT, _Traits>&
-    operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_time<_CharT> __f)
-    {
-      typename basic_ostream<_CharT, _Traits>::sentry __cerb(__os);
-      if (__cerb)
-        {
-          ios_base::iostate __err = ios_base::goodbit;
-          try
-            {
-              typedef ostreambuf_iterator<_CharT, _Traits> _Iter;
-              typedef time_put<_CharT, _Iter> _TimePut;
-
-              const _CharT* const __fmt_end = __f._M_fmt +
-                _Traits::length(__f._M_fmt);
-
-              const _TimePut& __mp = use_facet<_TimePut>(__os.getloc());
-              if (__mp.put(_Iter(__os.rdbuf()), __os, __os.fill(),
-                           __f._M_tmb, __f._M_fmt, __fmt_end).failed())
-                __err |= ios_base::badbit;
-            }
-          catch(__cxxabiv1::__forced_unwind&)
-            {
-              __os._M_setstate(ios_base::badbit);
-              throw;
-            }
-          catch(...)
-            { __os._M_setstate(ios_base::badbit); }
-          if (__err)
-            __os.setstate(__err);
-        }
-      return __os;
-    }
-
-  template<typename _CharT>
-    struct _Get_time
-    {
-      std::tm* _M_tmb;
-      const _CharT* _M_fmt;
-    };
-# 418 "C:/mingw64/include/c++/14.2.0/iomanip" 3
-  template<typename _CharT>
-    inline _Get_time<_CharT>
-    get_time(std::tm* __tmb, const _CharT* __fmt)
-    { return { __tmb, __fmt }; }
-
-  template<typename _CharT, typename _Traits>
-    basic_istream<_CharT, _Traits>&
-    operator>>(basic_istream<_CharT, _Traits>& __is, _Get_time<_CharT> __f)
-    {
-      typename basic_istream<_CharT, _Traits>::sentry __cerb(__is, false);
-      if (__cerb)
-        {
-          ios_base::iostate __err = ios_base::goodbit;
-          try
-            {
-              typedef istreambuf_iterator<_CharT, _Traits> _Iter;
-              typedef time_get<_CharT, _Iter> _TimeGet;
-
-              const _CharT* const __fmt_end = __f._M_fmt +
-                _Traits::length(__f._M_fmt);
-
-              const _TimeGet& __mg = use_facet<_TimeGet>(__is.getloc());
-              __mg.get(_Iter(__is.rdbuf()), _Iter(), __is,
-                       __err, __f._M_tmb, __f._M_fmt, __fmt_end);
-            }
-          catch(__cxxabiv1::__forced_unwind&)
-            {
-              __is._M_setstate(ios_base::badbit);
-              throw;
-            }
-          catch(...)
-            { __is._M_setstate(ios_base::badbit); }
-          if (__err)
-            __is.setstate(__err);
-        }
-      return __is;
-    }
-# 465 "C:/mingw64/include/c++/14.2.0/iomanip" 3
-  template<typename _CharT>
-    inline auto
-    quoted(const _CharT* __string,
-    _CharT __delim = _CharT('"'), _CharT __escape = _CharT('\\'))
-    {
-      return __detail::_Quoted_string<const _CharT*, _CharT>(__string, __delim,
-            __escape);
-    }
-
-  template<typename _CharT, typename _Traits, typename _Alloc>
-    inline auto
-    quoted(const basic_string<_CharT, _Traits, _Alloc>& __string,
-    _CharT __delim = _CharT('"'), _CharT __escape = _CharT('\\'))
-    {
-      return __detail::_Quoted_string<
- const basic_string<_CharT, _Traits, _Alloc>&, _CharT>(
-     __string, __delim, __escape);
-    }
-
-  template<typename _CharT, typename _Traits, typename _Alloc>
-    inline auto
-    quoted(basic_string<_CharT, _Traits, _Alloc>& __string,
-    _CharT __delim = _CharT('"'), _CharT __escape = _CharT('\\'))
-    {
-      return __detail::_Quoted_string<
- basic_string<_CharT, _Traits, _Alloc>&, _CharT>(
-     __string, __delim, __escape);
-    }
-
-
-
-
-  template<typename _CharT, typename _Traits>
-    inline auto
-    quoted(basic_string_view<_CharT, _Traits> __sv,
-    _CharT __delim = _CharT('"'), _CharT __escape = _CharT('\\'))
-    {
-      return __detail::_Quoted_string<
- basic_string_view<_CharT, _Traits>, _CharT>(__sv, __delim, __escape);
-    }
-# 514 "C:/mingw64/include/c++/14.2.0/iomanip" 3
-  extern template ostream& operator<<(ostream&, _Setfill<char>);
-  extern template ostream& operator<<(ostream&, _Setiosflags);
-  extern template ostream& operator<<(ostream&, _Resetiosflags);
-  extern template ostream& operator<<(ostream&, _Setbase);
-  extern template ostream& operator<<(ostream&, _Setprecision);
-  extern template ostream& operator<<(ostream&, _Setw);
-  extern template istream& operator>>(istream&, _Setfill<char>);
-  extern template istream& operator>>(istream&, _Setiosflags);
-  extern template istream& operator>>(istream&, _Resetiosflags);
-  extern template istream& operator>>(istream&, _Setbase);
-  extern template istream& operator>>(istream&, _Setprecision);
-  extern template istream& operator>>(istream&, _Setw);
-
-
-  extern template wostream& operator<<(wostream&, _Setfill<wchar_t>);
-  extern template wostream& operator<<(wostream&, _Setiosflags);
-  extern template wostream& operator<<(wostream&, _Resetiosflags);
-  extern template wostream& operator<<(wostream&, _Setbase);
-  extern template wostream& operator<<(wostream&, _Setprecision);
-  extern template wostream& operator<<(wostream&, _Setw);
-  extern template wistream& operator>>(wistream&, _Setfill<wchar_t>);
-  extern template wistream& operator>>(wistream&, _Setiosflags);
-  extern template wistream& operator>>(wistream&, _Resetiosflags);
-  extern template wistream& operator>>(wistream&, _Setbase);
-  extern template wistream& operator>>(wistream&, _Setprecision);
-  extern template wistream& operator>>(wistream&, _Setw);
-
-
-
-
-}
-# 39 "C:/mingw64/include/c++/14.2.0/bits/fs_path.h" 2 3
-# 1 "C:/mingw64/include/c++/14.2.0/codecvt" 1 3
-# 34 "C:/mingw64/include/c++/14.2.0/codecvt" 3
-       
-# 35 "C:/mingw64/include/c++/14.2.0/codecvt" 3
-# 43 "C:/mingw64/include/c++/14.2.0/codecvt" 3
-namespace std
-{
-
-
-  enum codecvt_mode
-  {
-    consume_header = 4,
-    generate_header = 2,
-    little_endian = 1
-  };
-
-  template<typename _Elem, unsigned long _Maxcode = 0x10ffff,
-    codecvt_mode _Mode = (codecvt_mode)0>
-    class codecvt_utf8 : public codecvt<_Elem, char, mbstate_t>
-    {
-    public:
-      explicit
-      codecvt_utf8(size_t __refs = 0);
-
-      ~codecvt_utf8();
-    };
-
-  template<typename _Elem, unsigned long _Maxcode = 0x10ffff,
-    codecvt_mode _Mode = (codecvt_mode)0>
-    class codecvt_utf16 : public codecvt<_Elem, char, mbstate_t>
-    {
-    public:
-      explicit
-      codecvt_utf16(size_t __refs = 0);
-
-      ~codecvt_utf16();
-    };
-
-  template<typename _Elem, unsigned long _Maxcode = 0x10ffff,
-    codecvt_mode _Mode = (codecvt_mode)0>
-    class codecvt_utf8_utf16 : public codecvt<_Elem, char, mbstate_t>
-    {
-    public:
-      explicit
-      codecvt_utf8_utf16(size_t __refs = 0);
-
-      ~codecvt_utf8_utf16();
-    };
-# 154 "C:/mingw64/include/c++/14.2.0/codecvt" 3
-  template<typename _Elem> class __codecvt_utf8_base;
-  template<typename _Elem> class __codecvt_utf16_base;
-  template<typename _Elem> class __codecvt_utf8_utf16_base;
-
-  template<> class __codecvt_utf8_base<char16_t> : public codecvt<char16_t, char, mbstate_t> { public: typedef char16_t intern_type; typedef char extern_type; typedef mbstate_t state_type; protected: __codecvt_utf8_base(unsigned long __maxcode, codecvt_mode __mode, size_t __refs) : codecvt(__refs), _M_maxcode(__maxcode), _M_mode(__mode) { } virtual ~__codecvt_utf8_base(); virtual result do_out(state_type& __state, const intern_type* __from, const intern_type* __from_end, const intern_type*& __from_next, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_unshift(state_type& __state, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_in(state_type& __state, const extern_type* __from, const extern_type* __from_end, const extern_type*& __from_next, intern_type* __to, intern_type* __to_end, intern_type*& __to_next) const; virtual int do_encoding() const throw(); virtual bool do_always_noconv() const throw(); virtual int do_length(state_type&, const extern_type* __from, const extern_type* __end, size_t __max) const; virtual int do_max_length() const throw(); private: unsigned long _M_maxcode; codecvt_mode _M_mode; }; template<unsigned long _Maxcode, codecvt_mode _Mode> class codecvt_utf8<char16_t, _Maxcode, _Mode> : public __codecvt_utf8_base<char16_t> { public: explicit codecvt_utf8(size_t __refs = 0) : __codecvt_utf8_base<char16_t>(std::min(_Maxcode, 0x10fffful), _Mode, __refs) { } };
-  template<> class __codecvt_utf16_base<char16_t> : public codecvt<char16_t, char, mbstate_t> { public: typedef char16_t intern_type; typedef char extern_type; typedef mbstate_t state_type; protected: __codecvt_utf16_base(unsigned long __maxcode, codecvt_mode __mode, size_t __refs) : codecvt(__refs), _M_maxcode(__maxcode), _M_mode(__mode) { } virtual ~__codecvt_utf16_base(); virtual result do_out(state_type& __state, const intern_type* __from, const intern_type* __from_end, const intern_type*& __from_next, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_unshift(state_type& __state, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_in(state_type& __state, const extern_type* __from, const extern_type* __from_end, const extern_type*& __from_next, intern_type* __to, intern_type* __to_end, intern_type*& __to_next) const; virtual int do_encoding() const throw(); virtual bool do_always_noconv() const throw(); virtual int do_length(state_type&, const extern_type* __from, const extern_type* __end, size_t __max) const; virtual int do_max_length() const throw(); private: unsigned long _M_maxcode; codecvt_mode _M_mode; }; template<unsigned long _Maxcode, codecvt_mode _Mode> class codecvt_utf16<char16_t, _Maxcode, _Mode> : public __codecvt_utf16_base<char16_t> { public: explicit codecvt_utf16(size_t __refs = 0) : __codecvt_utf16_base<char16_t>(std::min(_Maxcode, 0x10fffful), _Mode, __refs) { } };
-  template<> class __codecvt_utf8_utf16_base<char16_t> : public codecvt<char16_t, char, mbstate_t> { public: typedef char16_t intern_type; typedef char extern_type; typedef mbstate_t state_type; protected: __codecvt_utf8_utf16_base(unsigned long __maxcode, codecvt_mode __mode, size_t __refs) : codecvt(__refs), _M_maxcode(__maxcode), _M_mode(__mode) { } virtual ~__codecvt_utf8_utf16_base(); virtual result do_out(state_type& __state, const intern_type* __from, const intern_type* __from_end, const intern_type*& __from_next, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_unshift(state_type& __state, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_in(state_type& __state, const extern_type* __from, const extern_type* __from_end, const extern_type*& __from_next, intern_type* __to, intern_type* __to_end, intern_type*& __to_next) const; virtual int do_encoding() const throw(); virtual bool do_always_noconv() const throw(); virtual int do_length(state_type&, const extern_type* __from, const extern_type* __end, size_t __max) const; virtual int do_max_length() const throw(); private: unsigned long _M_maxcode; codecvt_mode _M_mode; }; template<unsigned long _Maxcode, codecvt_mode _Mode> class codecvt_utf8_utf16<char16_t, _Maxcode, _Mode> : public __codecvt_utf8_utf16_base<char16_t> { public: explicit codecvt_utf8_utf16(size_t __refs = 0) : __codecvt_utf8_utf16_base<char16_t>(std::min(_Maxcode, 0x10fffful), _Mode, __refs) { } };
-
-  template<> class __codecvt_utf8_base<char32_t> : public codecvt<char32_t, char, mbstate_t> { public: typedef char32_t intern_type; typedef char extern_type; typedef mbstate_t state_type; protected: __codecvt_utf8_base(unsigned long __maxcode, codecvt_mode __mode, size_t __refs) : codecvt(__refs), _M_maxcode(__maxcode), _M_mode(__mode) { } virtual ~__codecvt_utf8_base(); virtual result do_out(state_type& __state, const intern_type* __from, const intern_type* __from_end, const intern_type*& __from_next, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_unshift(state_type& __state, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_in(state_type& __state, const extern_type* __from, const extern_type* __from_end, const extern_type*& __from_next, intern_type* __to, intern_type* __to_end, intern_type*& __to_next) const; virtual int do_encoding() const throw(); virtual bool do_always_noconv() const throw(); virtual int do_length(state_type&, const extern_type* __from, const extern_type* __end, size_t __max) const; virtual int do_max_length() const throw(); private: unsigned long _M_maxcode; codecvt_mode _M_mode; }; template<unsigned long _Maxcode, codecvt_mode _Mode> class codecvt_utf8<char32_t, _Maxcode, _Mode> : public __codecvt_utf8_base<char32_t> { public: explicit codecvt_utf8(size_t __refs = 0) : __codecvt_utf8_base<char32_t>(std::min(_Maxcode, 0x10fffful), _Mode, __refs) { } };
-  template<> class __codecvt_utf16_base<char32_t> : public codecvt<char32_t, char, mbstate_t> { public: typedef char32_t intern_type; typedef char extern_type; typedef mbstate_t state_type; protected: __codecvt_utf16_base(unsigned long __maxcode, codecvt_mode __mode, size_t __refs) : codecvt(__refs), _M_maxcode(__maxcode), _M_mode(__mode) { } virtual ~__codecvt_utf16_base(); virtual result do_out(state_type& __state, const intern_type* __from, const intern_type* __from_end, const intern_type*& __from_next, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_unshift(state_type& __state, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_in(state_type& __state, const extern_type* __from, const extern_type* __from_end, const extern_type*& __from_next, intern_type* __to, intern_type* __to_end, intern_type*& __to_next) const; virtual int do_encoding() const throw(); virtual bool do_always_noconv() const throw(); virtual int do_length(state_type&, const extern_type* __from, const extern_type* __end, size_t __max) const; virtual int do_max_length() const throw(); private: unsigned long _M_maxcode; codecvt_mode _M_mode; }; template<unsigned long _Maxcode, codecvt_mode _Mode> class codecvt_utf16<char32_t, _Maxcode, _Mode> : public __codecvt_utf16_base<char32_t> { public: explicit codecvt_utf16(size_t __refs = 0) : __codecvt_utf16_base<char32_t>(std::min(_Maxcode, 0x10fffful), _Mode, __refs) { } };
-  template<> class __codecvt_utf8_utf16_base<char32_t> : public codecvt<char32_t, char, mbstate_t> { public: typedef char32_t intern_type; typedef char extern_type; typedef mbstate_t state_type; protected: __codecvt_utf8_utf16_base(unsigned long __maxcode, codecvt_mode __mode, size_t __refs) : codecvt(__refs), _M_maxcode(__maxcode), _M_mode(__mode) { } virtual ~__codecvt_utf8_utf16_base(); virtual result do_out(state_type& __state, const intern_type* __from, const intern_type* __from_end, const intern_type*& __from_next, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_unshift(state_type& __state, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_in(state_type& __state, const extern_type* __from, const extern_type* __from_end, const extern_type*& __from_next, intern_type* __to, intern_type* __to_end, intern_type*& __to_next) const; virtual int do_encoding() const throw(); virtual bool do_always_noconv() const throw(); virtual int do_length(state_type&, const extern_type* __from, const extern_type* __end, size_t __max) const; virtual int do_max_length() const throw(); private: unsigned long _M_maxcode; codecvt_mode _M_mode; }; template<unsigned long _Maxcode, codecvt_mode _Mode> class codecvt_utf8_utf16<char32_t, _Maxcode, _Mode> : public __codecvt_utf8_utf16_base<char32_t> { public: explicit codecvt_utf8_utf16(size_t __refs = 0) : __codecvt_utf8_utf16_base<char32_t>(std::min(_Maxcode, 0x10fffful), _Mode, __refs) { } };
-
-
-  template<> class __codecvt_utf8_base<wchar_t> : public codecvt<wchar_t, char, mbstate_t> { public: typedef wchar_t intern_type; typedef char extern_type; typedef mbstate_t state_type; protected: __codecvt_utf8_base(unsigned long __maxcode, codecvt_mode __mode, size_t __refs) : codecvt(__refs), _M_maxcode(__maxcode), _M_mode(__mode) { } virtual ~__codecvt_utf8_base(); virtual result do_out(state_type& __state, const intern_type* __from, const intern_type* __from_end, const intern_type*& __from_next, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_unshift(state_type& __state, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_in(state_type& __state, const extern_type* __from, const extern_type* __from_end, const extern_type*& __from_next, intern_type* __to, intern_type* __to_end, intern_type*& __to_next) const; virtual int do_encoding() const throw(); virtual bool do_always_noconv() const throw(); virtual int do_length(state_type&, const extern_type* __from, const extern_type* __end, size_t __max) const; virtual int do_max_length() const throw(); private: unsigned long _M_maxcode; codecvt_mode _M_mode; }; template<unsigned long _Maxcode, codecvt_mode _Mode> class codecvt_utf8<wchar_t, _Maxcode, _Mode> : public __codecvt_utf8_base<wchar_t> { public: explicit codecvt_utf8(size_t __refs = 0) : __codecvt_utf8_base<wchar_t>(std::min(_Maxcode, 0x10fffful), _Mode, __refs) { } };
-  template<> class __codecvt_utf16_base<wchar_t> : public codecvt<wchar_t, char, mbstate_t> { public: typedef wchar_t intern_type; typedef char extern_type; typedef mbstate_t state_type; protected: __codecvt_utf16_base(unsigned long __maxcode, codecvt_mode __mode, size_t __refs) : codecvt(__refs), _M_maxcode(__maxcode), _M_mode(__mode) { } virtual ~__codecvt_utf16_base(); virtual result do_out(state_type& __state, const intern_type* __from, const intern_type* __from_end, const intern_type*& __from_next, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_unshift(state_type& __state, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_in(state_type& __state, const extern_type* __from, const extern_type* __from_end, const extern_type*& __from_next, intern_type* __to, intern_type* __to_end, intern_type*& __to_next) const; virtual int do_encoding() const throw(); virtual bool do_always_noconv() const throw(); virtual int do_length(state_type&, const extern_type* __from, const extern_type* __end, size_t __max) const; virtual int do_max_length() const throw(); private: unsigned long _M_maxcode; codecvt_mode _M_mode; }; template<unsigned long _Maxcode, codecvt_mode _Mode> class codecvt_utf16<wchar_t, _Maxcode, _Mode> : public __codecvt_utf16_base<wchar_t> { public: explicit codecvt_utf16(size_t __refs = 0) : __codecvt_utf16_base<wchar_t>(std::min(_Maxcode, 0x10fffful), _Mode, __refs) { } };
-  template<> class __codecvt_utf8_utf16_base<wchar_t> : public codecvt<wchar_t, char, mbstate_t> { public: typedef wchar_t intern_type; typedef char extern_type; typedef mbstate_t state_type; protected: __codecvt_utf8_utf16_base(unsigned long __maxcode, codecvt_mode __mode, size_t __refs) : codecvt(__refs), _M_maxcode(__maxcode), _M_mode(__mode) { } virtual ~__codecvt_utf8_utf16_base(); virtual result do_out(state_type& __state, const intern_type* __from, const intern_type* __from_end, const intern_type*& __from_next, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_unshift(state_type& __state, extern_type* __to, extern_type* __to_end, extern_type*& __to_next) const; virtual result do_in(state_type& __state, const extern_type* __from, const extern_type* __from_end, const extern_type*& __from_next, intern_type* __to, intern_type* __to_end, intern_type*& __to_next) const; virtual int do_encoding() const throw(); virtual bool do_always_noconv() const throw(); virtual int do_length(state_type&, const extern_type* __from, const extern_type* __end, size_t __max) const; virtual int do_max_length() const throw(); private: unsigned long _M_maxcode; codecvt_mode _M_mode; }; template<unsigned long _Maxcode, codecvt_mode _Mode> class codecvt_utf8_utf16<wchar_t, _Maxcode, _Mode> : public __codecvt_utf8_utf16_base<wchar_t> { public: explicit codecvt_utf8_utf16(size_t __refs = 0) : __codecvt_utf8_utf16_base<wchar_t>(std::min(_Maxcode, 0x10fffful), _Mode, __refs) { } };
-
-
-
-}
-# 40 "C:/mingw64/include/c++/14.2.0/bits/fs_path.h" 2 3
-# 57 "C:/mingw64/include/c++/14.2.0/bits/fs_path.h" 3
-namespace std
-{
-
-
-namespace filesystem
-{
-namespace __cxx11 {
-
-  class path;
-
-
-namespace __detail
-{
-
-
-  template<typename _CharT>
-    inline constexpr bool __is_encoded_char = false;
-  template<>
-    inline constexpr bool __is_encoded_char<char> = true;
-
-  template<>
-    inline constexpr bool __is_encoded_char<char8_t> = true;
-
-
-  template<>
-    inline constexpr bool __is_encoded_char<wchar_t> = true;
-
-  template<>
-    inline constexpr bool __is_encoded_char<char16_t> = true;
-  template<>
-    inline constexpr bool __is_encoded_char<char32_t> = true;
-
-
-  template<typename _Iter>
-    using __safe_iterator_traits = std::iterator_traits<_Iter>;
-# 104 "C:/mingw64/include/c++/14.2.0/bits/fs_path.h" 3
-  template<typename _Iter_traits, typename = void>
-    inline constexpr bool __is_path_iter_src = false;
-
-  template<typename _Iter_traits>
-    inline constexpr bool
-    __is_path_iter_src<_Iter_traits, void_t<typename _Iter_traits::value_type>>
-      = __is_encoded_char<typename _Iter_traits::value_type>;
-
-  template<typename _Source>
-    inline constexpr bool __is_path_src
-      = __is_path_iter_src<iterator_traits<decay_t<_Source>>>;
-
-  template<>
-    inline constexpr bool __is_path_src<path> = false;
-
-  template<>
-    inline constexpr bool __is_path_src<volatile path> = false;
-
-  template<>
-    inline constexpr bool __is_path_src<void*> = false;
-
-  template<>
-    inline constexpr bool __is_path_src<const void*> = false;
-
-  template<>
-    inline constexpr bool __is_path_src<volatile void*> = false;
-
-  template<>
-    inline constexpr bool __is_path_src<const volatile void*> = false;
-
-  template<typename _CharT, typename _Traits, typename _Alloc>
-    inline constexpr bool
-      __is_path_src<basic_string<_CharT, _Traits, _Alloc>>
- = __is_encoded_char<_CharT>;
-
-  template<typename _CharT, typename _Traits>
-    inline constexpr bool
-      __is_path_src<basic_string_view<_CharT, _Traits>>
- = __is_encoded_char<_CharT>;
-
-
-  template<typename _Tp>
-    using _Path = enable_if_t<__is_path_src<_Tp>, path>;
-
-
-  template<typename _Iter, typename _Tr = __safe_iterator_traits<_Iter>>
-    using _Path2 = enable_if_t<__is_path_iter_src<_Tr>, path>;
-
-
-  template<typename _Iter>
-    constexpr bool __is_contiguous = std::contiguous_iterator<_Iter>;
-
-
-
-
-
-  template<typename _Tp>
-    constexpr bool __is_contiguous<_Tp*> = true;
-
-  template<typename _Tp, typename _Seq>
-    constexpr bool
-    __is_contiguous<__gnu_cxx::__normal_iterator<_Tp*, _Seq>> = true;
-
-
-
-
-
-
-
-  template<typename _EcharT>
-    using __unified_u8_t = _EcharT;
-
-
-
-
-
-
-  template<typename _CharT, typename _Traits, typename _Alloc>
-    inline basic_string_view<_CharT>
-    __effective_range(const basic_string<_CharT, _Traits, _Alloc>& __source)
-    noexcept
-    { return __source; }
-
-  template<typename _CharT, typename _Traits>
-    inline basic_string_view<_CharT>
-    __effective_range(const basic_string_view<_CharT, _Traits>& __source)
-    noexcept
-    { return __source; }
-
-
-  template<typename _Source>
-    auto
-    __effective_range(const _Source& __source)
-    {
-
-      using _Iter = decltype(std::__niter_base(__source));
-      using value_type = typename iterator_traits<_Iter>::value_type;
-
-      if constexpr (__is_contiguous<_Iter>)
- return basic_string_view<value_type>{&*__source};
-      else
- {
-
-
-   basic_string<__unified_u8_t<value_type>> __str;
-   _Source __it = __source;
-   for (value_type __ch = *__it; __ch != value_type(); __ch = *++__it)
-     __str.push_back(__ch);
-   return __str;
- }
-    }
-
-
-  template<typename _Source>
-    struct __source_value_type_impl
-    {
-      using type
- = typename __safe_iterator_traits<decay_t<_Source>>::value_type;
-    };
-
-  template<typename _CharT, typename _Traits, typename _Alloc>
-    struct __source_value_type_impl<basic_string<_CharT, _Traits, _Alloc>>
-    {
-      using type = _CharT;
-    };
-
-  template<typename _CharT, typename _Traits>
-    struct __source_value_type_impl<basic_string_view<_CharT, _Traits>>
-    {
-      using type = _CharT;
-    };
-
-
-  template<typename _Source>
-    using __source_value_t = typename __source_value_type_impl<_Source>::type;
-
-
-
-
-  template<typename _Tp, typename _Val = __source_value_t<_Tp>>
-    using __value_type_is_char
-      = std::enable_if_t<std::is_same_v<_Val, char>, _Val>;
-
-
-
-  template<typename _Tp, typename _Val = __source_value_t<_Tp>>
-    using __value_type_is_char_or_char8_t
-      = std::enable_if_t<std::is_same_v<_Val, char>
-
-    || std::is_same_v<_Val, char8_t>
-
-    , _Val>;
-
-
-  template<typename _InputIterator>
-    inline auto
-    __string_from_range(_InputIterator __first, _InputIterator __last)
-    {
-      using _EcharT
- = typename std::iterator_traits<_InputIterator>::value_type;
-      static_assert(__is_encoded_char<_EcharT>);
-
-      if constexpr (__is_contiguous<_InputIterator>)
- {
-
-   if (auto __len = __last - __first) [[__likely__]]
-     return basic_string_view<_EcharT>(&*__first, __len);
-   return basic_string_view<_EcharT>();
- }
-      else
- {
-
-   return basic_string<__unified_u8_t<_EcharT>>(__first, __last);
- }
-    }
-
-
-}
-# 293 "C:/mingw64/include/c++/14.2.0/bits/fs_path.h" 3
-  class path
-  {
-  public:
-
-    using value_type = wchar_t;
-    static constexpr value_type preferred_separator = L'\\';
-# 308 "C:/mingw64/include/c++/14.2.0/bits/fs_path.h" 3
-    using string_type = std::basic_string<value_type>;
-
-
-    enum format : unsigned char { native_format, generic_format, auto_format };
-
-
-
-    path() noexcept { }
-
-    path(const path& __p) = default;
-
-    path(path&& __p) noexcept
-    : _M_pathname(std::move(__p._M_pathname)),
-      _M_cmpts(std::move(__p._M_cmpts))
-    { __p.clear(); }
-
-    path(string_type&& __source, format = auto_format)
-    : _M_pathname(std::move(__source))
-    { _M_split_cmpts(); }
-
-    template<typename _Source,
-      typename _Require = __detail::_Path<_Source>>
-      path(_Source const& __source, format = auto_format)
-      : _M_pathname(_S_convert(__detail::__effective_range(__source)))
-      { _M_split_cmpts(); }
-
-    template<typename _InputIterator,
-      typename _Require = __detail::_Path2<_InputIterator>>
-      path(_InputIterator __first, _InputIterator __last, format = auto_format)
-      : _M_pathname(_S_convert(__detail::__string_from_range(__first, __last)))
-      { _M_split_cmpts(); }
-
-    template<typename _Source,
-      typename _Require = __detail::_Path<_Source>,
-      typename _Require2 = __detail::__value_type_is_char<_Source>>
-      path(_Source const& __src, const locale& __loc, format = auto_format)
-      : _M_pathname(_S_convert_loc(__detail::__effective_range(__src), __loc))
-      { _M_split_cmpts(); }
-
-    template<typename _InputIterator,
-      typename _Require = __detail::_Path2<_InputIterator>,
-      typename _Req2 = __detail::__value_type_is_char<_InputIterator>>
-      path(_InputIterator __first, _InputIterator __last, const locale& __loc,
-    format = auto_format)
-      : _M_pathname(_S_convert_loc(__first, __last, __loc))
-      { _M_split_cmpts(); }
-
-    ~path() = default;
-
-
-
-    path& operator=(const path&);
-    path& operator=(path&&) noexcept;
-    path& operator=(string_type&& __source);
-    path& assign(string_type&& __source);
-
-    template<typename _Source>
-      __detail::_Path<_Source>&
-      operator=(_Source const& __source)
-      { return *this = path(__source); }
-
-    template<typename _Source>
-      __detail::_Path<_Source>&
-      assign(_Source const& __source)
-      { return *this = path(__source); }
-
-    template<typename _InputIterator>
-      __detail::_Path2<_InputIterator>&
-      assign(_InputIterator __first, _InputIterator __last)
-      { return *this = path(__first, __last); }
-
-
-
-    path& operator/=(const path& __p);
-
-    template<typename _Source>
-      __detail::_Path<_Source>&
-      operator/=(_Source const& __source)
-      {
- _M_append(_S_convert(__detail::__effective_range(__source)));
- return *this;
-      }
-
-    template<typename _Source>
-      __detail::_Path<_Source>&
-      append(_Source const& __source)
-      {
- _M_append(_S_convert(__detail::__effective_range(__source)));
- return *this;
-      }
-
-    template<typename _InputIterator>
-      __detail::_Path2<_InputIterator>&
-      append(_InputIterator __first, _InputIterator __last)
-      {
- _M_append(_S_convert(__detail::__string_from_range(__first, __last)));
- return *this;
-      }
-
-
-
-    path& operator+=(const path& __x);
-    path& operator+=(const string_type& __x);
-    path& operator+=(const value_type* __x);
-    path& operator+=(value_type __x);
-    path& operator+=(basic_string_view<value_type> __x);
-
-    template<typename _Source>
-      __detail::_Path<_Source>&
-      operator+=(_Source const& __x) { return concat(__x); }
-
-    template<typename _CharT>
-      __detail::_Path2<_CharT*>&
-      operator+=(_CharT __x);
-
-    template<typename _Source>
-      __detail::_Path<_Source>&
-      concat(_Source const& __x)
-      {
- _M_concat(_S_convert(__detail::__effective_range(__x)));
- return *this;
-      }
-
-    template<typename _InputIterator>
-      __detail::_Path2<_InputIterator>&
-      concat(_InputIterator __first, _InputIterator __last)
-      {
- _M_concat(_S_convert(__detail::__string_from_range(__first, __last)));
- return *this;
-      }
-
-
-
-    void clear() noexcept { _M_pathname.clear(); _M_split_cmpts(); }
-
-    path& make_preferred();
-    path& remove_filename();
-    path& replace_filename(const path& __replacement);
-    path& replace_extension(const path& __replacement = path());
-
-    void swap(path& __rhs) noexcept;
-
-
-
-    const string_type& native() const noexcept { return _M_pathname; }
-    const value_type* c_str() const noexcept { return _M_pathname.c_str(); }
-    operator string_type() const { return _M_pathname; }
-
-    template<typename _CharT, typename _Traits = std::char_traits<_CharT>,
-      typename _Allocator = std::allocator<_CharT>>
-      std::basic_string<_CharT, _Traits, _Allocator>
-      string(const _Allocator& __a = _Allocator()) const;
-
-    std::string string() const;
-
-    std::wstring wstring() const;
-
-
-    __attribute__((__abi_tag__("__u8")))
-    std::u8string u8string() const;
-
-
-
-    std::u16string u16string() const;
-    std::u32string u32string() const;
-
-
-    template<typename _CharT, typename _Traits = std::char_traits<_CharT>,
-      typename _Allocator = std::allocator<_CharT>>
-      std::basic_string<_CharT, _Traits, _Allocator>
-      generic_string(const _Allocator& __a = _Allocator()) const;
-
-    std::string generic_string() const;
-
-    std::wstring generic_wstring() const;
-
-
-    __attribute__((__abi_tag__("__u8")))
-    std::u8string generic_u8string() const;
-
-
-
-    std::u16string generic_u16string() const;
-    std::u32string generic_u32string() const;
-
-
-
-    int compare(const path& __p) const noexcept;
-    int compare(const string_type& __s) const noexcept;
-    int compare(const value_type* __s) const noexcept;
-    int compare(basic_string_view<value_type> __s) const noexcept;
-
-
-
-    path root_name() const;
-    path root_directory() const;
-    path root_path() const;
-    path relative_path() const;
-    path parent_path() const;
-    path filename() const;
-    path stem() const;
-    path extension() const;
-
-
-
-    [[nodiscard]] bool empty() const noexcept { return _M_pathname.empty(); }
-    bool has_root_name() const noexcept;
-    bool has_root_directory() const noexcept;
-    bool has_root_path() const noexcept;
-    bool has_relative_path() const noexcept;
-    bool has_parent_path() const noexcept;
-    bool has_filename() const noexcept;
-    bool has_stem() const noexcept;
-    bool has_extension() const noexcept;
-    bool is_absolute() const noexcept;
-    bool is_relative() const noexcept { return !is_absolute(); }
-
-
-    path lexically_normal() const;
-    path lexically_relative(const path& base) const;
-    path lexically_proximate(const path& base) const;
-
-
-    class iterator;
-    using const_iterator = iterator;
-
-    iterator begin() const noexcept;
-    iterator end() const noexcept;
-
-
-    template<typename _CharT, typename _Traits>
-      friend std::basic_ostream<_CharT, _Traits>&
-      operator<<(std::basic_ostream<_CharT, _Traits>& __os, const path& __p)
-      {
- __os << std::quoted(__p.string<_CharT, _Traits>());
- return __os;
-      }
-
-
-    template<typename _CharT, typename _Traits>
-      friend std::basic_istream<_CharT, _Traits>&
-      operator>>(std::basic_istream<_CharT, _Traits>& __is, path& __p)
-      {
- std::basic_string<_CharT, _Traits> __tmp;
- if (__is >> std::quoted(__tmp))
-   __p = std::move(__tmp);
- return __is;
-      }
-
-
-
-
-    friend bool operator==(const path& __lhs, const path& __rhs) noexcept
-    { return path::_S_compare(__lhs, __rhs) == 0; }
-
-
-
-    friend strong_ordering
-    operator<=>(const path& __lhs, const path& __rhs) noexcept
-    { return path::_S_compare(__lhs, __rhs) <=> 0; }
-# 591 "C:/mingw64/include/c++/14.2.0/bits/fs_path.h" 3
-    friend path operator/(const path& __lhs, const path& __rhs)
-    {
-      path __result(__lhs);
-      __result /= __rhs;
-      return __result;
-    }
-
-  private:
-    enum class _Type : unsigned char {
-      _Multi = 0, _Root_name, _Root_dir, _Filename
-    };
-
-    path(basic_string_view<value_type> __str, _Type __type);
-
-    enum class _Split { _Stem, _Extension };
-
-    void _M_append(basic_string_view<value_type>);
-    void _M_concat(basic_string_view<value_type>);
-
-    pair<const string_type*, size_t> _M_find_extension() const noexcept;
-
-
-
-
-
-    template<typename _Tp>
-      static auto
-      _S_convert(_Tp __str)
-      noexcept(is_same_v<typename _Tp::value_type, value_type>)
-      {
- if constexpr (is_same_v<typename _Tp::value_type, value_type>)
-   return __str;
-# 631 "C:/mingw64/include/c++/14.2.0/bits/fs_path.h" 3
- else
-   return _S_convert(__str.data(), __str.data() + __str.size());
-      }
-
-    template<typename _EcharT>
-      static auto
-      _S_convert(const _EcharT* __first, const _EcharT* __last);
-
-
-
-
-    static string_type
-    _S_convert_loc(const char* __first, const char* __last,
-     const std::locale& __loc);
-
-    template<typename _Iter>
-      static string_type
-      _S_convert_loc(_Iter __first, _Iter __last, const std::locale& __loc)
-      {
- const auto __s = __detail::__string_from_range(__first, __last);
- return _S_convert_loc(__s.data(), __s.data() + __s.size(), __loc);
-      }
-
-    template<typename _Tp>
-      static string_type
-      _S_convert_loc(const _Tp& __s, const std::locale& __loc)
-      {
- return _S_convert_loc(__s.data(), __s.data() + __s.size(), __loc);
-      }
-
-    template<typename _CharT, typename _Traits, typename _Allocator>
-      static basic_string<_CharT, _Traits, _Allocator>
-      _S_str_convert(basic_string_view<value_type>, const _Allocator&);
-
-
-    __attribute__((__always_inline__))
-    static int
-    _S_compare(const path& __lhs, const path& __rhs) noexcept;
-
-    void _M_split_cmpts();
-
-    _Type _M_type() const noexcept { return _M_cmpts.type(); }
-
-    string_type _M_pathname;
-
-    struct _Cmpt;
-
-    struct _List
-    {
-      using value_type = _Cmpt;
-      using iterator = value_type*;
-      using const_iterator = const value_type*;
-
-      _List();
-      _List(const _List&);
-      _List(_List&&) = default;
-      _List& operator=(const _List&);
-      _List& operator=(_List&&) = default;
-      ~_List() = default;
-
-      _Type type() const noexcept
-      { return _Type(reinterpret_cast<uintptr_t>(_M_impl.get()) & 0x3); }
-
-      void type(_Type) noexcept;
-
-      int size() const noexcept;
-      bool empty() const noexcept;
-      void clear();
-      void swap(_List& __l) noexcept { _M_impl.swap(__l._M_impl); }
-      int capacity() const noexcept;
-      void reserve(int, bool);
-
-
-
-
-      iterator begin() noexcept;
-      iterator end() noexcept;
-      const_iterator begin() const noexcept;
-      const_iterator end() const noexcept;
-
-      value_type& front() noexcept;
-      value_type& back() noexcept;
-      const value_type& front() const noexcept;
-      const value_type& back() const noexcept;
-
-      void pop_back();
-      void _M_erase_from(const_iterator __pos);
-
-      struct _Impl;
-      struct _Impl_deleter
-      {
- void operator()(_Impl*) const noexcept;
-      };
-      unique_ptr<_Impl, _Impl_deleter> _M_impl;
-    };
-    _List _M_cmpts;
-
-    struct _Parser;
-
-    template<typename _EcharT> struct _Codecvt;
-  };
-
-
-
-
-  inline void swap(path& __lhs, path& __rhs) noexcept { __lhs.swap(__rhs); }
-
-  size_t hash_value(const path& __p) noexcept;
-# 747 "C:/mingw64/include/c++/14.2.0/bits/fs_path.h" 3
-  class filesystem_error : public std::system_error
-  {
-  public:
-    filesystem_error(const string& __what_arg, error_code __ec);
-
-    filesystem_error(const string& __what_arg, const path& __p1,
-       error_code __ec);
-
-    filesystem_error(const string& __what_arg, const path& __p1,
-       const path& __p2, error_code __ec);
-
-    filesystem_error(const filesystem_error&) = default;
-    filesystem_error& operator=(const filesystem_error&) = default;
-
-
-
-
-    ~filesystem_error();
-
-    const path& path1() const noexcept;
-    const path& path2() const noexcept;
-    const char* what() const noexcept;
-
-  private:
-    struct _Impl;
-    std::__shared_ptr<const _Impl> _M_impl;
-  };
-
-
-namespace __detail
-{
-  [[noreturn]] inline void
-  __throw_conversion_error()
-  {
-    (throw (filesystem_error( "Cannot convert character sequence", std::make_error_code(errc::illegal_byte_sequence))))
-
-                                                     ;
-  }
-
-
-  template<typename _Tp>
-    inline std::wstring
-    __wstr_from_utf8(const _Tp& __str)
-    {
-      static_assert(std::is_same_v<typename _Tp::value_type, char>);
-      std::wstring __wstr;
-
-      std::codecvt_utf8_utf16<wchar_t> __wcvt;
-      const auto __p = __str.data();
-      if (!__str_codecvt_in_all(__p, __p + __str.size(), __wstr, __wcvt))
- __detail::__throw_conversion_error();
-      return __wstr;
-    }
-
-
-}
-# 812 "C:/mingw64/include/c++/14.2.0/bits/fs_path.h" 3
-  template<typename _InputIterator,
-    typename _Require = __detail::_Path2<_InputIterator>,
-    typename _CharT
-      = __detail::__value_type_is_char_or_char8_t<_InputIterator>>
-    __attribute__ ((__deprecated__ ("use '" "path(u8string(first, last))" "' instead")))
-    inline path
-    u8path(_InputIterator __first, _InputIterator __last)
-    {
-
-      if constexpr (is_same_v<_CharT, char>)
- return path{ __detail::__wstr_from_utf8(
-     __detail::__string_from_range(__first, __last)) };
-      else
- return path{ __first, __last };
-
-
-
-
-    }
-
-
-
-
-
-
-
-  template<typename _Source,
-    typename _Require = __detail::_Path<_Source>,
-    typename _CharT = __detail::__value_type_is_char_or_char8_t<_Source>>
-    __attribute__ ((__deprecated__ ("use '" "path((const char8_t*)&*source)" "' instead")))
-    inline path
-    u8path(const _Source& __source)
-    {
-
-      if constexpr (is_same_v<_CharT, char>)
- return path{ __detail::__wstr_from_utf8(
-     __detail::__effective_range(__source)) };
-      else
- return path{ __source };
-
-
-
-
-    }
-
-
-
-  struct path::_Cmpt : path
-  {
-    _Cmpt(basic_string_view<value_type> __s, _Type __t, size_t __pos);
-
-    _Cmpt() : _M_pos(-1) { }
-
-    size_t _M_pos;
-  };
-
-
-
-
-
-
-
-  template<typename _EcharT>
-    struct path::_Codecvt
-
-    : std::codecvt<_EcharT, char, mbstate_t>
-    { };
-# 887 "C:/mingw64/include/c++/14.2.0/bits/fs_path.h" 3
-  template<>
-    struct path::_Codecvt<wchar_t>
-    : __conditional_t<sizeof(wchar_t) == sizeof(char32_t),
-        std::codecvt_utf8<wchar_t>,
-        std::codecvt_utf8_utf16<wchar_t>>
-    { };
-
-  template<typename _EcharT>
-    auto
-    path::_S_convert(const _EcharT* __f, const _EcharT* __l)
-    {
-      static_assert(__detail::__is_encoded_char<_EcharT>);
-
-
-
-
-
-
-
-      if constexpr (is_same_v<_EcharT, value_type>)
- return basic_string_view<value_type>(__f, __l - __f);
-
-      else if constexpr (is_same_v<_EcharT, char8_t>)
- {
-   string_view __str(reinterpret_cast<const char*>(__f), __l - __f);
-   return __detail::__wstr_from_utf8(__str);
- }
-
-
-      else if constexpr (is_same_v<_EcharT, char>)
- {
-   std::wstring __wstr;
-   path::_Codecvt<wchar_t> __cvt;
-   if (__str_codecvt_in_all(__f, __l, __wstr, __cvt))
-     return __wstr;
- }
-
-      else
- {
-   path::_Codecvt<_EcharT> __cvt;
-   std::string __str;
-   if (__str_codecvt_out_all(__f, __l, __str, __cvt))
-     return __detail::__wstr_from_utf8(__str);
- }
-      __detail::__throw_conversion_error();
-    }
-# 942 "C:/mingw64/include/c++/14.2.0/bits/fs_path.h" 3
-  class path::iterator
-  {
-  public:
-    using difference_type = std::ptrdiff_t;
-    using value_type = path;
-    using reference = const path&;
-    using pointer = const path*;
-    using iterator_category = std::bidirectional_iterator_tag;
-
-    iterator() noexcept : _M_path(nullptr), _M_cur(), _M_at_end() { }
-
-    iterator(const iterator&) = default;
-    iterator& operator=(const iterator&) = default;
-
-    reference operator*() const noexcept;
-    pointer operator->() const noexcept { return std::__addressof(**this); }
-
-    iterator& operator++() noexcept;
-
-    iterator operator++(int) noexcept
-    { auto __tmp = *this; ++*this; return __tmp; }
-
-    iterator& operator--() noexcept;
-
-    iterator operator--(int) noexcept
-    { auto __tmp = *this; --*this; return __tmp; }
-
-    friend bool
-    operator==(const iterator& __lhs, const iterator& __rhs) noexcept
-    { return __lhs._M_equals(__rhs); }
-
-    friend bool
-    operator!=(const iterator& __lhs, const iterator& __rhs) noexcept
-    { return !__lhs._M_equals(__rhs); }
-
-  private:
-    friend class path;
-
-    bool
-    _M_is_multi() const noexcept
-    { return _M_path->_M_type() == _Type::_Multi; }
-
-    friend difference_type
-    __path_iter_distance(const iterator& __first, const iterator& __last)
-    noexcept
-    {
-      do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(__first._M_path != nullptr), false)) std::__glibcxx_assert_fail(); } while (false);
-      do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(__first._M_path == __last._M_path), false)) std::__glibcxx_assert_fail(); } while (false);
-      if (__first._M_is_multi())
- return std::distance(__first._M_cur, __last._M_cur);
-      else if (__first._M_at_end == __last._M_at_end)
- return 0;
-      else
- return __first._M_at_end ? -1 : 1;
-    }
-
-    friend void
-    __path_iter_advance(iterator& __i, difference_type __n) noexcept
-    {
-      if (__n == 1)
- ++__i;
-      else if (__n == -1)
- --__i;
-      else if (__n != 0)
- {
-   do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(__i._M_path != nullptr), false)) std::__glibcxx_assert_fail(); } while (false);
-   do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(__i._M_is_multi()), false)) std::__glibcxx_assert_fail(); } while (false);
-
-   __i._M_cur += __n;
- }
-    }
-
-    iterator(const path* __path, path::_List::const_iterator __iter) noexcept
-    : _M_path(__path), _M_cur(__iter), _M_at_end()
-    { }
-
-    iterator(const path* __path, bool __at_end) noexcept
-    : _M_path(__path), _M_cur(), _M_at_end(__at_end)
-    { }
-
-    bool _M_equals(iterator) const noexcept;
-
-    const path* _M_path;
-    path::_List::const_iterator _M_cur;
-    bool _M_at_end;
-  };
-
-
-  inline path&
-  path::operator=(path&& __p) noexcept
-  {
-    if (&__p == this) [[__unlikely__]]
-      return *this;
-
-    _M_pathname = std::move(__p._M_pathname);
-    _M_cmpts = std::move(__p._M_cmpts);
-    __p.clear();
-    return *this;
-  }
-
-  inline path&
-  path::operator=(string_type&& __source)
-  { return *this = path(std::move(__source)); }
-
-  inline path&
-  path::assign(string_type&& __source)
-  { return *this = path(std::move(__source)); }
-
-  inline path&
-  path::operator+=(const string_type& __x)
-  {
-    _M_concat(__x);
-    return *this;
-  }
-
-  inline path&
-  path::operator+=(const value_type* __x)
-  {
-    _M_concat(__x);
-    return *this;
-  }
-
-  inline path&
-  path::operator+=(value_type __x)
-  {
-    _M_concat(basic_string_view<value_type>(&__x, 1));
-    return *this;
-  }
-
-  inline path&
-  path::operator+=(basic_string_view<value_type> __x)
-  {
-    _M_concat(__x);
-    return *this;
-  }
-
-  template<typename _CharT>
-    inline __detail::_Path2<_CharT*>&
-    path::operator+=(const _CharT __x)
-    {
-      _M_concat(_S_convert(&__x, &__x + 1));
-      return *this;
-    }
-
-  inline path&
-  path::make_preferred()
-  {
-
-    auto __pos = _M_pathname.find(L'/');
-    while (__pos != _M_pathname.npos)
-      {
- _M_pathname[__pos] = preferred_separator;
- __pos = _M_pathname.find(L'/', __pos);
-      }
-
-    return *this;
-  }
-
-  inline void path::swap(path& __rhs) noexcept
-  {
-    _M_pathname.swap(__rhs._M_pathname);
-    _M_cmpts.swap(__rhs._M_cmpts);
-  }
-
-
-  template<typename _CharT, typename _Traits, typename _Allocator>
-    std::basic_string<_CharT, _Traits, _Allocator>
-    path::_S_str_convert(basic_string_view<value_type> __str,
-    const _Allocator& __a)
-    {
-      static_assert(!is_same_v<_CharT, value_type>);
-
-      using _WString = basic_string<_CharT, _Traits, _Allocator>;
-
-      if (__str.size() == 0)
- return _WString(__a);
-
-
-
-
-
-
-      std::codecvt_utf8_utf16<value_type> __cvt;
-
-      using _CharAlloc = __alloc_rebind<_Allocator, char>;
-      using _String = basic_string<char, char_traits<char>, _CharAlloc>;
-      _String __u8str{_CharAlloc{__a}};
-      const value_type* __wfirst = __str.data();
-      const value_type* __wlast = __wfirst + __str.size();
-      if (!__str_codecvt_out_all(__wfirst, __wlast, __u8str, __cvt))
- __detail::__throw_conversion_error();
-      if constexpr (is_same_v<_CharT, char>)
- return __u8str;
-      else
-
- {
-   const char* __first = __u8str.data();
-   const char* __last = __first + __u8str.size();
-
-
-
-   if constexpr (is_same_v<_CharT, char8_t>)
-     return _WString(__first, __last, __a);
-   else
-
-     {
-
-       _WString __wstr(__a);
-       path::_Codecvt<_CharT> __cvt;
-       if (__str_codecvt_in_all(__first, __last, __wstr, __cvt))
-  return __wstr;
-     }
- }
-      __detail::__throw_conversion_error();
-    }
-
-
-  template<typename _CharT, typename _Traits, typename _Allocator>
-    inline basic_string<_CharT, _Traits, _Allocator>
-    path::string(const _Allocator& __a) const
-    {
-      if constexpr (is_same_v<_CharT, value_type>)
- return { _M_pathname.c_str(), _M_pathname.length(), __a };
-      else
- return _S_str_convert<_CharT, _Traits>(_M_pathname, __a);
-    }
-
-  inline std::string
-  path::string() const { return string<char>(); }
-
-
-  inline std::wstring
-  path::wstring() const { return string<wchar_t>(); }
-
-
-
-  inline std::u8string
-  path::u8string() const { return string<char8_t>(); }
-# 1199 "C:/mingw64/include/c++/14.2.0/bits/fs_path.h" 3
-  inline std::u16string
-  path::u16string() const { return string<char16_t>(); }
-
-  inline std::u32string
-  path::u32string() const { return string<char32_t>(); }
-
-  template<typename _CharT, typename _Traits, typename _Allocator>
-    inline std::basic_string<_CharT, _Traits, _Allocator>
-    path::generic_string(const _Allocator& __a) const
-    {
-
-      const value_type __slash = L'/';
-
-
-
-      using _Alloc2 = typename allocator_traits<_Allocator>::template
- rebind_alloc<value_type>;
-      basic_string<value_type, char_traits<value_type>, _Alloc2> __str(__a);
-
-      if (_M_type() == _Type::_Root_dir)
- __str.assign(1, __slash);
-      else
- {
-   __str.reserve(_M_pathname.size());
-   bool __add_slash = false;
-   for (auto& __elem : *this)
-     {
-
-       if (__elem._M_type() == _Type::_Root_dir)
-  {
-    __str += __slash;
-    continue;
-  }
-
-       if (__add_slash)
-  __str += __slash;
-       __str += basic_string_view<value_type>(__elem._M_pathname);
-       __add_slash = __elem._M_type() == _Type::_Filename;
-     }
- }
-
-      if constexpr (is_same_v<_CharT, value_type>)
- return __str;
-      else
- return _S_str_convert<_CharT, _Traits>(__str, __a);
-    }
-
-  inline std::string
-  path::generic_string() const
-  { return generic_string<char>(); }
-
-
-  inline std::wstring
-  path::generic_wstring() const
-  { return generic_string<wchar_t>(); }
-
-
-
-  inline std::u8string
-  path::generic_u8string() const
-  { return generic_string<char8_t>(); }
-
-
-
-
-
-
-  inline std::u16string
-  path::generic_u16string() const
-  { return generic_string<char16_t>(); }
-
-  inline std::u32string
-  path::generic_u32string() const
-  { return generic_string<char32_t>(); }
-
-  inline int
-  path::compare(const string_type& __s) const noexcept
-  { return compare(basic_string_view<value_type>(__s)); }
-
-  inline int
-  path::compare(const value_type* __s) const noexcept
-  { return compare(basic_string_view<value_type>(__s)); }
-
-  inline path
-  path::filename() const
-  {
-    if (empty())
-      return {};
-    else if (_M_type() == _Type::_Filename)
-      return *this;
-    else if (_M_type() == _Type::_Multi)
-      {
- if (_M_pathname.back() == preferred_separator)
-   return {};
- auto __last = --end();
- if (__last->_M_type() == _Type::_Filename)
-   return *__last;
-      }
-    return {};
-  }
-
-  inline path
-  path::stem() const
-  {
-    auto ext = _M_find_extension();
-    if (ext.first && ext.second != 0)
-      return path{ext.first->substr(0, ext.second)};
-    return {};
-  }
-
-  inline path
-  path::extension() const
-  {
-    auto ext = _M_find_extension();
-    if (ext.first && ext.second != string_type::npos)
-      return path{ext.first->substr(ext.second)};
-    return {};
-  }
-
-  inline bool
-  path::has_stem() const noexcept
-  {
-    auto ext = _M_find_extension();
-    return ext.first && ext.second != 0;
-  }
-
-  inline bool
-  path::has_extension() const noexcept
-  {
-    auto ext = _M_find_extension();
-    return ext.first && ext.second != string_type::npos;
-  }
-
-  inline bool
-  path::is_absolute() const noexcept
-  {
-
-    return has_root_name() && has_root_directory();
-
-
-
-  }
-
-  inline path::iterator
-  path::begin() const noexcept
-  {
-    if (_M_type() == _Type::_Multi)
-      return iterator(this, _M_cmpts.begin());
-    return iterator(this, empty());
-  }
-
-  inline path::iterator
-  path::end() const noexcept
-  {
-    if (_M_type() == _Type::_Multi)
-      return iterator(this, _M_cmpts.end());
-    return iterator(this, true);
-  }
-
-  inline path::iterator&
-  path::iterator::operator++() noexcept
-  {
-    do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(_M_path != nullptr), false)) std::__glibcxx_assert_fail(); } while (false);
-    if (_M_is_multi())
-      {
- do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(_M_cur != _M_path->_M_cmpts.end()), false)) std::__glibcxx_assert_fail(); } while (false);
- ++_M_cur;
-      }
-    else
-      {
- do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(!_M_at_end), false)) std::__glibcxx_assert_fail(); } while (false);
- _M_at_end = true;
-      }
-    return *this;
-  }
-
-  inline path::iterator&
-  path::iterator::operator--() noexcept
-  {
-    do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(_M_path != nullptr), false)) std::__glibcxx_assert_fail(); } while (false);
-    if (_M_is_multi())
-      {
- do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(_M_cur != _M_path->_M_cmpts.begin()), false)) std::__glibcxx_assert_fail(); } while (false);
- --_M_cur;
-      }
-    else
-      {
- do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(_M_at_end), false)) std::__glibcxx_assert_fail(); } while (false);
- _M_at_end = false;
-      }
-    return *this;
-  }
-
-  inline path::iterator::reference
-  path::iterator::operator*() const noexcept
-  {
-    do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(_M_path != nullptr), false)) std::__glibcxx_assert_fail(); } while (false);
-    if (_M_is_multi())
-      {
- do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(_M_cur != _M_path->_M_cmpts.end()), false)) std::__glibcxx_assert_fail(); } while (false);
- return *_M_cur;
-      }
-    return *_M_path;
-  }
-
-  inline bool
-  path::iterator::_M_equals(iterator __rhs) const noexcept
-  {
-    if (_M_path != __rhs._M_path)
-      return false;
-    if (_M_path == nullptr)
-      return true;
-    if (_M_is_multi())
-      return _M_cur == __rhs._M_cur;
-    return _M_at_end == __rhs._M_at_end;
-  }
-
-
-
-
-
-  inline int
-  path::_S_compare(const path& __lhs, const path& __rhs) noexcept
-  { return __lhs.compare(__rhs); }
-
-
-}
-}
-
-
-
-inline ptrdiff_t
-distance(filesystem::path::iterator __first, filesystem::path::iterator __last)
-noexcept
-{ return __path_iter_distance(__first, __last); }
-
-template<typename _Distance>
-  inline void
-  advance(filesystem::path::iterator& __i, _Distance __n) noexcept
-  { __path_iter_advance(__i, static_cast<ptrdiff_t>(__n)); }
-
-extern template class __shared_ptr<const filesystem::filesystem_error::_Impl>;
-
-
-
-
-
-template<>
-  struct hash<filesystem::path>
-  {
-    size_t
-    operator()(const filesystem::path& __p) const noexcept
-    { return filesystem::hash_value(__p); }
-  };
-
-
-}
-# 53 "C:/mingw64/include/c++/14.2.0/filesystem" 2 3
-# 1 "C:/mingw64/include/c++/14.2.0/bits/fs_dir.h" 1 3
-# 44 "C:/mingw64/include/c++/14.2.0/bits/fs_dir.h" 3
-namespace std
-{
-
-
-namespace filesystem
-{
-# 59 "C:/mingw64/include/c++/14.2.0/bits/fs_dir.h" 3
-  class file_status
-  {
-  public:
-
-    file_status() noexcept : file_status(file_type::none) {}
-
-    explicit
-    file_status(file_type __ft, perms __prms = perms::unknown) noexcept
-    : _M_type(__ft), _M_perms(__prms) { }
-
-    file_status(const file_status&) noexcept = default;
-    file_status(file_status&&) noexcept = default;
-    ~file_status() = default;
-
-    file_status& operator=(const file_status&) noexcept = default;
-    file_status& operator=(file_status&&) noexcept = default;
-
-
-    file_type type() const noexcept { return _M_type; }
-    perms permissions() const noexcept { return _M_perms; }
-
-
-    void type(file_type __ft) noexcept { _M_type = __ft; }
-    void permissions(perms __prms) noexcept { _M_perms = __prms; }
-
-
-    friend bool
-    operator==(const file_status&, const file_status&) noexcept = default;
-
-
-  private:
-    file_type _M_type;
-    perms _M_perms;
-  };
-
-namespace __cxx11 {
-
-  struct _Dir;
-  class directory_iterator;
-  class recursive_directory_iterator;
-
-
-
-
-
-
-  class directory_entry
-  {
-  public:
-
-    directory_entry() noexcept = default;
-    directory_entry(const directory_entry&) = default;
-    directory_entry(directory_entry&&) noexcept = default;
-
-    explicit
-    directory_entry(const filesystem::path& __p)
-    : _M_path(__p)
-    { refresh(); }
-
-    directory_entry(const filesystem::path& __p, error_code& __ec)
-    : _M_path(__p)
-    {
-      refresh(__ec);
-      if (__ec)
- _M_path.clear();
-    }
-
-    ~directory_entry() = default;
-
-
-    directory_entry& operator=(const directory_entry&) = default;
-    directory_entry& operator=(directory_entry&&) noexcept = default;
-
-    void
-    assign(const filesystem::path& __p)
-    {
-      _M_path = __p;
-      refresh();
-    }
-
-    void
-    assign(const filesystem::path& __p, error_code& __ec)
-    {
-      _M_path = __p;
-      refresh(__ec);
-    }
-
-    void
-    replace_filename(const filesystem::path& __p)
-    {
-      _M_path.replace_filename(__p);
-      refresh();
-    }
-
-    void
-    replace_filename(const filesystem::path& __p, error_code& __ec)
-    {
-      _M_path.replace_filename(__p);
-      refresh(__ec);
-    }
-
-    void
-    refresh()
-    { _M_type = symlink_status().type(); }
-
-    void
-    refresh(error_code& __ec) noexcept
-    { _M_type = symlink_status(__ec).type(); }
-
-
-    const filesystem::path& path() const noexcept { return _M_path; }
-    operator const filesystem::path& () const noexcept { return _M_path; }
-
-    bool
-    exists() const
-    { return filesystem::exists(file_status{_M_file_type()}); }
-
-    bool
-    exists(error_code& __ec) const noexcept
-    { return filesystem::exists(file_status{_M_file_type(__ec)}); }
-
-    bool
-    is_block_file() const
-    { return _M_file_type() == file_type::block; }
-
-    bool
-    is_block_file(error_code& __ec) const noexcept
-    { return _M_file_type(__ec) == file_type::block; }
-
-    bool
-    is_character_file() const
-    { return _M_file_type() == file_type::character; }
-
-    bool
-    is_character_file(error_code& __ec) const noexcept
-    { return _M_file_type(__ec) == file_type::character; }
-
-    bool
-    is_directory() const
-    { return _M_file_type() == file_type::directory; }
-
-    bool
-    is_directory(error_code& __ec) const noexcept
-    { return _M_file_type(__ec) == file_type::directory; }
-
-    bool
-    is_fifo() const
-    { return _M_file_type() == file_type::fifo; }
-
-    bool
-    is_fifo(error_code& __ec) const noexcept
-    { return _M_file_type(__ec) == file_type::fifo; }
-
-    bool
-    is_other() const
-    { return filesystem::is_other(file_status{_M_file_type()}); }
-
-    bool
-    is_other(error_code& __ec) const noexcept
-    { return filesystem::is_other(file_status{_M_file_type(__ec)}); }
-
-    bool
-    is_regular_file() const
-    { return _M_file_type() == file_type::regular; }
-
-    bool
-    is_regular_file(error_code& __ec) const noexcept
-    { return _M_file_type(__ec) == file_type::regular; }
-
-    bool
-    is_socket() const
-    { return _M_file_type() == file_type::socket; }
-
-    bool
-    is_socket(error_code& __ec) const noexcept
-    { return _M_file_type(__ec) == file_type::socket; }
-
-    bool
-    is_symlink() const
-    {
-      if (_M_type != file_type::none)
- return _M_type == file_type::symlink;
-      return symlink_status().type() == file_type::symlink;
-    }
-
-    bool
-    is_symlink(error_code& __ec) const noexcept
-    {
-      if (_M_type != file_type::none)
- return _M_type == file_type::symlink;
-      return symlink_status(__ec).type() == file_type::symlink;
-    }
-
-    uintmax_t
-    file_size() const
-    { return filesystem::file_size(_M_path); }
-
-    uintmax_t
-    file_size(error_code& __ec) const noexcept
-    { return filesystem::file_size(_M_path, __ec); }
-
-    uintmax_t
-    hard_link_count() const
-    { return filesystem::hard_link_count(_M_path); }
-
-    uintmax_t
-    hard_link_count(error_code& __ec) const noexcept
-    { return filesystem::hard_link_count(_M_path, __ec); }
-
-    file_time_type
-    last_write_time() const
-    { return filesystem::last_write_time(_M_path); }
-
-
-    file_time_type
-    last_write_time(error_code& __ec) const noexcept
-    { return filesystem::last_write_time(_M_path, __ec); }
-
-    file_status
-    status() const
-    { return filesystem::status(_M_path); }
-
-    file_status
-    status(error_code& __ec) const noexcept
-    { return filesystem::status(_M_path, __ec); }
-
-    file_status
-    symlink_status() const
-    { return filesystem::symlink_status(_M_path); }
-
-    file_status
-    symlink_status(error_code& __ec) const noexcept
-    { return filesystem::symlink_status(_M_path, __ec); }
-
-    bool
-    operator==(const directory_entry& __rhs) const noexcept
-    { return _M_path == __rhs._M_path; }
-
-
-    strong_ordering
-    operator<=>(const directory_entry& __rhs) const noexcept
-    { return _M_path <=> __rhs._M_path; }
-# 323 "C:/mingw64/include/c++/14.2.0/bits/fs_dir.h" 3
-  private:
-    friend struct _Dir;
-    friend class directory_iterator;
-    friend class recursive_directory_iterator;
-
-
-
-    template<typename _CharT, typename _Traits>
-      friend basic_ostream<_CharT, _Traits>&
-      operator<<(basic_ostream<_CharT, _Traits>& __os,
-   const directory_entry& __d)
-      { return __os << __d.path(); }
-
-    directory_entry(const filesystem::path& __p, file_type __t)
-    : _M_path(__p), _M_type(__t)
-    { }
-
-
-    file_type
-    _M_file_type() const
-    {
-      if (_M_type != file_type::none && _M_type != file_type::symlink)
- return _M_type;
-      return status().type();
-    }
-
-
-    file_type
-    _M_file_type(error_code& __ec) const noexcept
-    {
-      if (_M_type != file_type::none && _M_type != file_type::symlink)
- {
-   __ec.clear();
-   return _M_type;
- }
-      return status(__ec).type();
-    }
-
-    filesystem::path _M_path;
-    file_type _M_type = file_type::none;
-  };
-# 372 "C:/mingw64/include/c++/14.2.0/bits/fs_dir.h" 3
-  struct __directory_iterator_proxy
-  {
-    const directory_entry& operator*() const& noexcept { return _M_entry; }
-
-    directory_entry operator*() && noexcept { return std::move(_M_entry); }
-
-  private:
-    friend class directory_iterator;
-    friend class recursive_directory_iterator;
-
-    explicit
-    __directory_iterator_proxy(const directory_entry& __e) : _M_entry(__e) { }
-
-    directory_entry _M_entry;
-  };
-
-
-
-
-
-
-
-  class directory_iterator
-  {
-  public:
-    typedef directory_entry value_type;
-    typedef ptrdiff_t difference_type;
-    typedef const directory_entry* pointer;
-    typedef const directory_entry& reference;
-    typedef input_iterator_tag iterator_category;
-
-    directory_iterator() = default;
-
-    explicit
-    directory_iterator(const path& __p)
-    : directory_iterator(__p, directory_options::none, nullptr) { }
-
-    directory_iterator(const path& __p, directory_options __options)
-    : directory_iterator(__p, __options, nullptr) { }
-
-    directory_iterator(const path& __p, error_code& __ec)
-    : directory_iterator(__p, directory_options::none, __ec) { }
-
-    directory_iterator(const path& __p, directory_options __options,
-         error_code& __ec)
-    : directory_iterator(__p, __options, &__ec) { }
-
-    directory_iterator(const directory_iterator& __rhs) = default;
-
-    directory_iterator(directory_iterator&& __rhs) noexcept = default;
-
-    ~directory_iterator() = default;
-
-    directory_iterator&
-    operator=(const directory_iterator& __rhs) = default;
-
-    directory_iterator&
-    operator=(directory_iterator&& __rhs) noexcept = default;
-
-    const directory_entry& operator*() const noexcept;
-    const directory_entry* operator->() const noexcept { return &**this; }
-    directory_iterator& operator++();
-    directory_iterator& increment(error_code& __ec);
-
-    __directory_iterator_proxy operator++(int)
-    {
-      __directory_iterator_proxy __pr{**this};
-      ++*this;
-      return __pr;
-    }
-
-    friend bool
-    operator==(const directory_iterator& __lhs,
-               const directory_iterator& __rhs) noexcept
-    {
-      return !__rhs._M_dir.owner_before(__lhs._M_dir)
- && !__lhs._M_dir.owner_before(__rhs._M_dir);
-    }
-
-
-
-
-    bool operator==(default_sentinel_t) const noexcept
-    { return !_M_dir; }
-# 465 "C:/mingw64/include/c++/14.2.0/bits/fs_dir.h" 3
-  private:
-    directory_iterator(const path&, directory_options, error_code*);
-
-    friend class recursive_directory_iterator;
-
-    std::__shared_ptr<_Dir> _M_dir;
-  };
-# 483 "C:/mingw64/include/c++/14.2.0/bits/fs_dir.h" 3
-  inline directory_iterator
-  begin(directory_iterator __iter) noexcept
-  { return __iter; }
-
-
-  inline directory_iterator
-  end(directory_iterator) noexcept
-  { return directory_iterator(); }
-
-
-
-
-
-
-
-  class recursive_directory_iterator
-  {
-  public:
-    typedef directory_entry value_type;
-    typedef ptrdiff_t difference_type;
-    typedef const directory_entry* pointer;
-    typedef const directory_entry& reference;
-    typedef input_iterator_tag iterator_category;
-
-    recursive_directory_iterator() = default;
-
-    explicit
-    recursive_directory_iterator(const path& __p)
-    : recursive_directory_iterator(__p, directory_options::none, nullptr) { }
-
-    recursive_directory_iterator(const path& __p, directory_options __options)
-    : recursive_directory_iterator(__p, __options, nullptr) { }
-
-    recursive_directory_iterator(const path& __p, directory_options __options,
-                                 error_code& __ec)
-    : recursive_directory_iterator(__p, __options, &__ec) { }
-
-    recursive_directory_iterator(const path& __p, error_code& __ec)
-    : recursive_directory_iterator(__p, directory_options::none, &__ec) { }
-
-    recursive_directory_iterator(
-        const recursive_directory_iterator&) = default;
-
-    recursive_directory_iterator(recursive_directory_iterator&&) = default;
-
-    ~recursive_directory_iterator();
-
-
-    directory_options options() const noexcept;
-    int depth() const noexcept;
-    bool recursion_pending() const noexcept;
-
-    const directory_entry& operator*() const noexcept;
-    const directory_entry* operator->() const noexcept { return &**this; }
-
-
-    recursive_directory_iterator&
-    operator=(const recursive_directory_iterator& __rhs) noexcept;
-    recursive_directory_iterator&
-    operator=(recursive_directory_iterator&& __rhs) noexcept;
-
-    recursive_directory_iterator& operator++();
-    recursive_directory_iterator& increment(error_code& __ec);
-
-    __directory_iterator_proxy operator++(int)
-    {
-      __directory_iterator_proxy __pr{**this};
-      ++*this;
-      return __pr;
-    }
-
-    void pop();
-    void pop(error_code&);
-
-    void disable_recursion_pending() noexcept;
-
-    friend bool
-    operator==(const recursive_directory_iterator& __lhs,
-               const recursive_directory_iterator& __rhs) noexcept
-    {
-      return !__rhs._M_dirs.owner_before(__lhs._M_dirs)
- && !__lhs._M_dirs.owner_before(__rhs._M_dirs);
-    }
-
-
-
-
-    bool operator==(default_sentinel_t) const noexcept
-    { return !_M_dirs; }
-# 581 "C:/mingw64/include/c++/14.2.0/bits/fs_dir.h" 3
-  private:
-    recursive_directory_iterator(const path&, directory_options, error_code*);
-
-    struct _Dir_stack;
-    std::__shared_ptr<_Dir_stack> _M_dirs;
-
-    recursive_directory_iterator&
-    __erase(error_code* = nullptr);
-
-    friend uintmax_t
-    filesystem::remove_all(const path&, error_code&);
-    friend uintmax_t
-    filesystem::remove_all(const path&);
-  };
-# 606 "C:/mingw64/include/c++/14.2.0/bits/fs_dir.h" 3
-  inline recursive_directory_iterator
-  begin(recursive_directory_iterator __iter) noexcept
-  { return __iter; }
-
-
-  inline recursive_directory_iterator
-  end(recursive_directory_iterator) noexcept
-  { return recursive_directory_iterator(); }
-
-
-}
-
-
-}
-
-
-
-
-  extern template class
-    __shared_ptr<filesystem::_Dir>;
-  extern template class
-    __shared_ptr<filesystem::recursive_directory_iterator::_Dir_stack>;
-
-
-}
-# 54 "C:/mingw64/include/c++/14.2.0/filesystem" 2 3
-# 1 "C:/mingw64/include/c++/14.2.0/bits/fs_ops.h" 1 3
-# 37 "C:/mingw64/include/c++/14.2.0/bits/fs_ops.h" 3
-namespace std
-{
-
-
-namespace filesystem
-{
-
-
-
-
-  [[nodiscard]]
-  path absolute(const path& __p);
-
-  [[nodiscard]]
-  path absolute(const path& __p, error_code& __ec);
-
-  [[nodiscard]]
-  path canonical(const path& __p);
-
-  [[nodiscard]]
-  path canonical(const path& __p, error_code& __ec);
-
-  inline void
-  copy(const path& __from, const path& __to)
-  { copy(__from, __to, copy_options::none); }
-
-  inline void
-  copy(const path& __from, const path& __to, error_code& __ec)
-  { copy(__from, __to, copy_options::none, __ec); }
-
-  void copy(const path& __from, const path& __to, copy_options __options);
-  void copy(const path& __from, const path& __to, copy_options __options,
-     error_code& __ec);
-
-  inline bool
-  copy_file(const path& __from, const path& __to)
-  { return copy_file(__from, __to, copy_options::none); }
-
-  inline bool
-  copy_file(const path& __from, const path& __to, error_code& __ec)
-  { return copy_file(__from, __to, copy_options::none, __ec); }
-
-  bool copy_file(const path& __from, const path& __to, copy_options __option);
-  bool copy_file(const path& __from, const path& __to, copy_options __option,
-   error_code& __ec);
-
-  void copy_symlink(const path& __existing_symlink, const path& __new_symlink);
-  void copy_symlink(const path& __existing_symlink, const path& __new_symlink,
-      error_code& __ec) noexcept;
-
-  bool create_directories(const path& __p);
-  bool create_directories(const path& __p, error_code& __ec);
-
-  bool create_directory(const path& __p);
-  bool create_directory(const path& __p, error_code& __ec) noexcept;
-
-  bool create_directory(const path& __p, const path& __attributes);
-  bool create_directory(const path& __p, const path& __attributes,
-   error_code& __ec) noexcept;
-
-  void create_directory_symlink(const path& __to, const path& __new_symlink);
-  void create_directory_symlink(const path& __to, const path& __new_symlink,
-    error_code& __ec) noexcept;
-
-  void create_hard_link(const path& __to, const path& __new_hard_link);
-  void create_hard_link(const path& __to, const path& __new_hard_link,
-   error_code& __ec) noexcept;
-
-  void create_symlink(const path& __to, const path& __new_symlink);
-  void create_symlink(const path& __to, const path& __new_symlink,
-        error_code& __ec) noexcept;
-
-  [[nodiscard]]
-  path current_path();
-
-  [[nodiscard]]
-  path current_path(error_code& __ec);
-
-  void current_path(const path& __p);
-  void current_path(const path& __p, error_code& __ec) noexcept;
-
-  [[nodiscard]]
-  bool
-  equivalent(const path& __p1, const path& __p2);
-
-  [[nodiscard]]
-  bool
-  equivalent(const path& __p1, const path& __p2, error_code& __ec) noexcept;
-
-  [[nodiscard]]
-  inline bool
-  exists(file_status __s) noexcept
-  { return status_known(__s) && __s.type() != file_type::not_found; }
-
-  [[nodiscard]]
-  inline bool
-  exists(const path& __p)
-  { return exists(status(__p)); }
-
-  [[nodiscard]]
-  inline bool
-  exists(const path& __p, error_code& __ec) noexcept
-  {
-    auto __s = status(__p, __ec);
-    if (status_known(__s))
-      {
- __ec.clear();
- return __s.type() != file_type::not_found;
-      }
-    return false;
-  }
-
-  [[nodiscard]]
-  uintmax_t file_size(const path& __p);
-
-  [[nodiscard]]
-  uintmax_t file_size(const path& __p, error_code& __ec) noexcept;
-
-  [[nodiscard]]
-  uintmax_t hard_link_count(const path& __p);
-
-  [[nodiscard]]
-  uintmax_t hard_link_count(const path& __p, error_code& __ec) noexcept;
-
-  [[nodiscard]]
-  inline bool
-  is_block_file(file_status __s) noexcept
-  { return __s.type() == file_type::block; }
-
-  [[nodiscard]]
-  inline bool
-  is_block_file(const path& __p)
-  { return is_block_file(status(__p)); }
-
-  [[nodiscard]]
-  inline bool
-  is_block_file(const path& __p, error_code& __ec) noexcept
-  { return is_block_file(status(__p, __ec)); }
-
-  [[nodiscard]]
-  inline bool
-  is_character_file(file_status __s) noexcept
-  { return __s.type() == file_type::character; }
-
-  [[nodiscard]]
-  inline bool
-  is_character_file(const path& __p)
-  { return is_character_file(status(__p)); }
-
-  [[nodiscard]]
-  inline bool
-  is_character_file(const path& __p, error_code& __ec) noexcept
-  { return is_character_file(status(__p, __ec)); }
-
-  [[nodiscard]]
-  inline bool
-  is_directory(file_status __s) noexcept
-  { return __s.type() == file_type::directory; }
-
-  [[nodiscard]]
-  inline bool
-  is_directory(const path& __p)
-  { return is_directory(status(__p)); }
-
-  [[nodiscard]]
-  inline bool
-  is_directory(const path& __p, error_code& __ec) noexcept
-  { return is_directory(status(__p, __ec)); }
-
-  [[nodiscard]]
-  bool is_empty(const path& __p);
-
-  [[nodiscard]]
-  bool is_empty(const path& __p, error_code& __ec);
-
-  [[nodiscard]]
-  inline bool
-  is_fifo(file_status __s) noexcept
-  { return __s.type() == file_type::fifo; }
-
-  [[nodiscard]]
-  inline bool
-  is_fifo(const path& __p)
-  { return is_fifo(status(__p)); }
-
-  [[nodiscard]]
-  inline bool
-  is_fifo(const path& __p, error_code& __ec) noexcept
-  { return is_fifo(status(__p, __ec)); }
-
-  [[nodiscard]]
-  inline bool
-  is_other(file_status __s) noexcept
-  {
-    return exists(__s) && !is_regular_file(__s) && !is_directory(__s)
-      && !is_symlink(__s);
-  }
-
-  [[nodiscard]]
-  inline bool
-  is_other(const path& __p)
-  { return is_other(status(__p)); }
-
-  [[nodiscard]]
-  inline bool
-  is_other(const path& __p, error_code& __ec) noexcept
-  { return is_other(status(__p, __ec)); }
-
-  [[nodiscard]]
-  inline bool
-  is_regular_file(file_status __s) noexcept
-  { return __s.type() == file_type::regular; }
-
-  [[nodiscard]]
-  inline bool
-  is_regular_file(const path& __p)
-  { return is_regular_file(status(__p)); }
-
-  [[nodiscard]]
-  inline bool
-  is_regular_file(const path& __p, error_code& __ec) noexcept
-  { return is_regular_file(status(__p, __ec)); }
-
-  [[nodiscard]]
-  inline bool
-  is_socket(file_status __s) noexcept
-  { return __s.type() == file_type::socket; }
-
-  [[nodiscard]]
-  inline bool
-  is_socket(const path& __p)
-  { return is_socket(status(__p)); }
-
-  [[nodiscard]]
-  inline bool
-  is_socket(const path& __p, error_code& __ec) noexcept
-  { return is_socket(status(__p, __ec)); }
-
-  [[nodiscard]]
-  inline bool
-  is_symlink(file_status __s) noexcept
-  { return __s.type() == file_type::symlink; }
-
-  [[nodiscard]]
-  inline bool
-  is_symlink(const path& __p)
-  { return is_symlink(symlink_status(__p)); }
-
-  [[nodiscard]]
-  inline bool
-  is_symlink(const path& __p, error_code& __ec) noexcept
-  { return is_symlink(symlink_status(__p, __ec)); }
-
-  [[nodiscard]]
-  file_time_type last_write_time(const path& __p);
-
-  [[nodiscard]]
-  file_time_type last_write_time(const path& __p, error_code& __ec) noexcept;
-
-  void last_write_time(const path& __p, file_time_type __new_time);
-  void last_write_time(const path& __p, file_time_type __new_time,
-         error_code& __ec) noexcept;
-
-  void
-  permissions(const path& __p, perms __prms,
-       perm_options __opts = perm_options::replace);
-
-  inline void
-  permissions(const path& __p, perms __prms, error_code& __ec) noexcept
-  { permissions(__p, __prms, perm_options::replace, __ec); }
-
-  void
-  permissions(const path& __p, perms __prms, perm_options __opts,
-       error_code& __ec) noexcept;
-
-  [[nodiscard]]
-  inline path proximate(const path& __p, error_code& __ec)
-  { return proximate(__p, current_path(), __ec); }
-
-  [[nodiscard]]
-  path proximate(const path& __p, const path& __base = current_path());
-
-  [[nodiscard]]
-  path proximate(const path& __p, const path& __base, error_code& __ec);
-
-  [[nodiscard]]
-  path read_symlink(const path& __p);
-
-  [[nodiscard]]
-  path read_symlink(const path& __p, error_code& __ec);
-
-  [[nodiscard]]
-  inline path relative(const path& __p, error_code& __ec)
-  { return relative(__p, current_path(), __ec); }
-
-  [[nodiscard]]
-  path relative(const path& __p, const path& __base = current_path());
-
-  [[nodiscard]]
-  path relative(const path& __p, const path& __base, error_code& __ec);
-
-  bool remove(const path& __p);
-  bool remove(const path& __p, error_code& __ec) noexcept;
-
-  uintmax_t remove_all(const path& __p);
-  uintmax_t remove_all(const path& __p, error_code& __ec);
-
-  void rename(const path& __from, const path& __to);
-  void rename(const path& __from, const path& __to, error_code& __ec) noexcept;
-
-  void resize_file(const path& __p, uintmax_t __size);
-  void resize_file(const path& __p, uintmax_t __size, error_code& __ec) noexcept;
-
-  [[nodiscard]]
-  space_info space(const path& __p);
-
-  [[nodiscard]]
-  space_info space(const path& __p, error_code& __ec) noexcept;
-
-  [[nodiscard]]
-  file_status status(const path& __p);
-
-  [[nodiscard]]
-  file_status status(const path& __p, error_code& __ec) noexcept;
-
-  [[nodiscard]]
-  inline bool status_known(file_status __s) noexcept
-  { return __s.type() != file_type::none; }
-
-  [[nodiscard]]
-  file_status symlink_status(const path& __p);
-
-  [[nodiscard]]
-  file_status symlink_status(const path& __p, error_code& __ec) noexcept;
-
-  [[nodiscard]]
-  path temp_directory_path();
-
-  [[nodiscard]]
-  path temp_directory_path(error_code& __ec);
-
-  [[nodiscard]]
-  path weakly_canonical(const path& __p);
-
-  [[nodiscard]]
-  path weakly_canonical(const path& __p, error_code& __ec);
-
-
-}
-
-
-}
-# 55 "C:/mingw64/include/c++/14.2.0/filesystem" 2 3
-# 40 "C:/SFML/include/SFML/Graphics/Texture.hpp" 2
-
-
-
-
-
-
-# 45 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-namespace sf
-{
-class InputStream;
-class Window;
-class Image;
-
-
-
-
-
-class __attribute__((dllimport)) Texture : GlResource
-{
-public:
-# 66 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    Texture();
-
-
-
-
-
-    ~Texture();
-
-
-
-
-
-
-
-    Texture(const Texture& copy);
-
-
-
-
-
-    Texture& operator=(const Texture&);
-
-
-
-
-
-    Texture(Texture&&) noexcept;
-
-
-
-
-
-    Texture& operator=(Texture&&) noexcept;
-# 114 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    explicit Texture(const std::filesystem::path& filename, bool sRgb = false);
-# 137 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    Texture(const std::filesystem::path& filename, bool sRgb, const IntRect& area);
-# 154 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    Texture(const void* data, std::size_t size, bool sRgb = false);
-# 178 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    Texture(const void* data, std::size_t size, bool sRgb, const IntRect& area);
-# 194 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    explicit Texture(InputStream& stream, bool sRgb = false);
-# 217 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    Texture(InputStream& stream, bool sRgb, const IntRect& area);
-# 233 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    explicit Texture(const Image& image, bool sRgb = false);
-# 255 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    Texture(const Image& image, bool sRgb, const IntRect& area);
-# 266 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    explicit Texture(Vector2u size, bool sRgb = false);
-# 279 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    [[nodiscard]] bool resize(Vector2u size, bool sRgb = false);
-# 304 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    [[nodiscard]] bool loadFromFile(const std::filesystem::path& filename, bool sRgb = false, const IntRect& area = {});
-# 330 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    [[nodiscard]] bool loadFromMemory(const void* data, std::size_t size, bool sRgb = false, const IntRect& area = {});
-# 355 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    [[nodiscard]] bool loadFromStream(InputStream& stream, bool sRgb = false, const IntRect& area = {});
-# 380 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    [[nodiscard]] bool loadFromImage(const Image& image, bool sRgb = false, const IntRect& area = {});
-
-
-
-
-
-
-
-    [[nodiscard]] Vector2u getSize() const;
-# 403 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    [[nodiscard]] Image copyToImage() const;
-# 421 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    void update(const std::uint8_t* pixels);
-# 441 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    void update(const std::uint8_t* pixels, Vector2u size, Vector2u dest);
-# 462 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    void update(const Texture& texture);
-# 478 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    void update(const Texture& texture, Vector2u dest);
-# 499 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    void update(const Image& image);
-# 515 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    void update(const Image& image, Vector2u dest);
-# 536 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    void update(const Window& window);
-# 552 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    void update(const Window& window, Vector2u dest);
-# 568 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    void setSmooth(bool smooth);
-# 578 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    [[nodiscard]] bool isSmooth() const;
-# 588 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    [[nodiscard]] bool isSrgb() const;
-# 612 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    void setRepeated(bool repeated);
-# 622 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    [[nodiscard]] bool isRepeated() const;
-# 647 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    [[nodiscard]] bool generateMipmap();
-
-
-
-
-
-
-
-    void swap(Texture& right) noexcept;
-# 667 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    [[nodiscard]] unsigned int getNativeHandle() const;
-# 700 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    static void bind(const Texture* texture, CoordinateType coordinateType = CoordinateType::Normalized);
-# 712 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    [[nodiscard]] static unsigned int getMaximumSize();
-
-private:
-    friend class Text;
-    friend class RenderTexture;
-    friend class RenderTarget;
-# 732 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    [[nodiscard]] static unsigned int getValidSize(unsigned int size);
-# 741 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-    void invalidateMipmap();
-
-
-
-
-    Vector2u m_size;
-    Vector2u m_actualSize;
-    unsigned int m_texture{};
-    bool m_isSmooth{};
-    bool m_sRgb{};
-    bool m_isRepeated{};
-    mutable bool m_pixelsFlipped{};
-    bool m_fboAttachment{};
-    bool m_hasMipmap{};
-    std::uint64_t m_cacheId;
-};
-# 765 "C:/SFML/include/SFML/Graphics/Texture.hpp"
-__attribute__((dllimport)) void swap(Texture& left, Texture& right) noexcept;
-
-}
-# 35 "C:/SFML/include/SFML/Graphics/Font.hpp" 2
-
-
-
-
-
-
-# 1 "C:/mingw64/include/c++/14.2.0/unordered_map" 1 3
-# 32 "C:/mingw64/include/c++/14.2.0/unordered_map" 3
-       
-# 33 "C:/mingw64/include/c++/14.2.0/unordered_map" 3
-# 41 "C:/mingw64/include/c++/14.2.0/unordered_map" 3
-# 1 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 1 3
-# 33 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-# 1 "C:/mingw64/include/c++/14.2.0/bits/hashtable.h" 1 3
-# 33 "C:/mingw64/include/c++/14.2.0/bits/hashtable.h" 3
-       
-# 34 "C:/mingw64/include/c++/14.2.0/bits/hashtable.h" 3
-
-# 1 "C:/mingw64/include/c++/14.2.0/bits/hashtable_policy.h" 1 3
-# 42 "C:/mingw64/include/c++/14.2.0/bits/hashtable_policy.h" 3
-
-# 42 "C:/mingw64/include/c++/14.2.0/bits/hashtable_policy.h" 3
-namespace std
-{
-
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    class _Hashtable;
-
-namespace __detail
-{
-
-
-
-
-
-  template<typename _Key, typename _Value, typename _ExtractKey,
-    typename _Equal, typename _Hash, typename _RangeHash,
-    typename _Unused, typename _Traits>
-    struct _Hashtable_base;
-
-
-
-  template<typename _Iterator>
-    inline typename std::iterator_traits<_Iterator>::difference_type
-    __distance_fw(_Iterator __first, _Iterator __last,
-    std::input_iterator_tag)
-    { return __first != __last ? 1 : 0; }
-
-  template<typename _Iterator>
-    inline typename std::iterator_traits<_Iterator>::difference_type
-    __distance_fw(_Iterator __first, _Iterator __last,
-    std::forward_iterator_tag)
-    { return std::distance(__first, __last); }
-
-  template<typename _Iterator>
-    inline typename std::iterator_traits<_Iterator>::difference_type
-    __distance_fw(_Iterator __first, _Iterator __last)
-    { return __distance_fw(__first, __last,
-      std::__iterator_category(__first)); }
-
-  struct _Identity
-  {
-    template<typename _Tp>
-      _Tp&&
-      operator()(_Tp&& __x) const noexcept
-      { return std::forward<_Tp>(__x); }
-  };
-
-  struct _Select1st
-  {
-    template<typename _Pair>
-      struct __1st_type;
-
-    template<typename _Tp, typename _Up>
-      struct __1st_type<pair<_Tp, _Up>>
-      { using type = _Tp; };
-
-    template<typename _Tp, typename _Up>
-      struct __1st_type<const pair<_Tp, _Up>>
-      { using type = const _Tp; };
-
-    template<typename _Pair>
-      struct __1st_type<_Pair&>
-      { using type = typename __1st_type<_Pair>::type&; };
-
-    template<typename _Tp>
-      typename __1st_type<_Tp>::type&&
-      operator()(_Tp&& __x) const noexcept
-      { return std::forward<_Tp>(__x).first; }
-  };
-
-  template<typename _ExKey, typename _Value>
-    struct _ConvertToValueType;
-
-  template<typename _Value>
-    struct _ConvertToValueType<_Identity, _Value>
-    {
-      template<typename _Kt>
- constexpr _Kt&&
- operator()(_Kt&& __k) const noexcept
- { return std::forward<_Kt>(__k); }
-    };
-
-  template<typename _Value>
-    struct _ConvertToValueType<_Select1st, _Value>
-    {
-      constexpr _Value&&
-      operator()(_Value&& __x) const noexcept
-      { return std::move(__x); }
-
-      constexpr const _Value&
-      operator()(const _Value& __x) const noexcept
-      { return __x; }
-
-      template<typename _Kt, typename _Val>
- constexpr std::pair<_Kt, _Val>&&
- operator()(std::pair<_Kt, _Val>&& __x) const noexcept
- { return std::move(__x); }
-
-      template<typename _Kt, typename _Val>
- constexpr const std::pair<_Kt, _Val>&
- operator()(const std::pair<_Kt, _Val>& __x) const noexcept
- { return __x; }
-    };
-
-  template<typename _ExKey>
-    struct _NodeBuilder;
-
-  template<>
-    struct _NodeBuilder<_Select1st>
-    {
-      template<typename _Kt, typename _Arg, typename _NodeGenerator>
- static auto
- _S_build(_Kt&& __k, _Arg&& __arg, const _NodeGenerator& __node_gen)
- -> typename _NodeGenerator::__node_ptr
- {
-   return __node_gen(std::forward<_Kt>(__k),
-       std::forward<_Arg>(__arg).second);
- }
-    };
-
-  template<>
-    struct _NodeBuilder<_Identity>
-    {
-      template<typename _Kt, typename _Arg, typename _NodeGenerator>
- static auto
- _S_build(_Kt&& __k, _Arg&&, const _NodeGenerator& __node_gen)
- -> typename _NodeGenerator::__node_ptr
- { return __node_gen(std::forward<_Kt>(__k)); }
-    };
-
-  template<typename _HashtableAlloc, typename _NodePtr>
-    struct _NodePtrGuard
-    {
-      _HashtableAlloc& _M_h;
-      _NodePtr _M_ptr;
-
-      ~_NodePtrGuard()
-      {
- if (_M_ptr)
-   _M_h._M_deallocate_node_ptr(_M_ptr);
-      }
-    };
-
-  template<typename _NodeAlloc>
-    struct _Hashtable_alloc;
-
-
-
-  template<typename _NodeAlloc>
-    struct _ReuseOrAllocNode
-    {
-    private:
-      using __node_alloc_type = _NodeAlloc;
-      using __hashtable_alloc = _Hashtable_alloc<__node_alloc_type>;
-      using __node_alloc_traits =
- typename __hashtable_alloc::__node_alloc_traits;
-
-    public:
-      using __node_ptr = typename __hashtable_alloc::__node_ptr;
-
-      _ReuseOrAllocNode(__node_ptr __nodes, __hashtable_alloc& __h)
-      : _M_nodes(__nodes), _M_h(__h) { }
-      _ReuseOrAllocNode(const _ReuseOrAllocNode&) = delete;
-
-      ~_ReuseOrAllocNode()
-      { _M_h._M_deallocate_nodes(_M_nodes); }
-
-      template<typename... _Args>
- __node_ptr
- operator()(_Args&&... __args) const
- {
-   if (!_M_nodes)
-     return _M_h._M_allocate_node(std::forward<_Args>(__args)...);
-
-   __node_ptr __node = _M_nodes;
-   _M_nodes = _M_nodes->_M_next();
-   __node->_M_nxt = nullptr;
-   auto& __a = _M_h._M_node_allocator();
-   __node_alloc_traits::destroy(__a, __node->_M_valptr());
-   _NodePtrGuard<__hashtable_alloc, __node_ptr> __guard { _M_h, __node };
-   __node_alloc_traits::construct(__a, __node->_M_valptr(),
-      std::forward<_Args>(__args)...);
-   __guard._M_ptr = nullptr;
-   return __node;
- }
-
-    private:
-      mutable __node_ptr _M_nodes;
-      __hashtable_alloc& _M_h;
-    };
-
-
-
-  template<typename _NodeAlloc>
-    struct _AllocNode
-    {
-    private:
-      using __hashtable_alloc = _Hashtable_alloc<_NodeAlloc>;
-
-    public:
-      using __node_ptr = typename __hashtable_alloc::__node_ptr;
-
-      _AllocNode(__hashtable_alloc& __h)
-      : _M_h(__h) { }
-
-      template<typename... _Args>
- __node_ptr
- operator()(_Args&&... __args) const
- { return _M_h._M_allocate_node(std::forward<_Args>(__args)...); }
-
-    private:
-      __hashtable_alloc& _M_h;
-    };
-# 285 "C:/mingw64/include/c++/14.2.0/bits/hashtable_policy.h" 3
-  template<bool _Cache_hash_code, bool _Constant_iterators, bool _Unique_keys>
-    struct _Hashtable_traits
-    {
-      using __hash_cached = __bool_constant<_Cache_hash_code>;
-      using __constant_iterators = __bool_constant<_Constant_iterators>;
-      using __unique_keys = __bool_constant<_Unique_keys>;
-    };
-
-
-
-
-
-
-
-  template<typename _Hash>
-    struct _Hashtable_hash_traits
-    {
-      static constexpr std::size_t
-      __small_size_threshold() noexcept
-      { return std::__is_fast_hash<_Hash>::value ? 0 : 20; }
-    };
-# 315 "C:/mingw64/include/c++/14.2.0/bits/hashtable_policy.h" 3
-  struct _Hash_node_base
-  {
-    _Hash_node_base* _M_nxt;
-
-    _Hash_node_base() noexcept : _M_nxt() { }
-
-    _Hash_node_base(_Hash_node_base* __next) noexcept : _M_nxt(__next) { }
-  };
-
-
-
-
-
-
-  template<typename _Value>
-    struct _Hash_node_value_base
-    {
-      typedef _Value value_type;
-
-      __gnu_cxx::__aligned_buffer<_Value> _M_storage;
-
-      [[__gnu__::__always_inline__]]
-      _Value*
-      _M_valptr() noexcept
-      { return _M_storage._M_ptr(); }
-
-      [[__gnu__::__always_inline__]]
-      const _Value*
-      _M_valptr() const noexcept
-      { return _M_storage._M_ptr(); }
-
-      [[__gnu__::__always_inline__]]
-      _Value&
-      _M_v() noexcept
-      { return *_M_valptr(); }
-
-      [[__gnu__::__always_inline__]]
-      const _Value&
-      _M_v() const noexcept
-      { return *_M_valptr(); }
-    };
-
-
-
-
-  template<bool _Cache_hash_code>
-    struct _Hash_node_code_cache
-    { };
-
-
-
-
-  template<>
-    struct _Hash_node_code_cache<true>
-    { std::size_t _M_hash_code; };
-
-  template<typename _Value, bool _Cache_hash_code>
-    struct _Hash_node_value
-    : _Hash_node_value_base<_Value>
-    , _Hash_node_code_cache<_Cache_hash_code>
-    { };
-
-
-
-
-  template<typename _Value, bool _Cache_hash_code>
-    struct _Hash_node
-    : _Hash_node_base
-    , _Hash_node_value<_Value, _Cache_hash_code>
-    {
-      _Hash_node*
-      _M_next() const noexcept
-      { return static_cast<_Hash_node*>(this->_M_nxt); }
-    };
-
-
-  template<typename _Value, bool _Cache_hash_code>
-    struct _Node_iterator_base
-    {
-      using __node_type = _Hash_node<_Value, _Cache_hash_code>;
-
-      __node_type* _M_cur;
-
-      _Node_iterator_base() : _M_cur(nullptr) { }
-      _Node_iterator_base(__node_type* __p) noexcept
-      : _M_cur(__p) { }
-
-      void
-      _M_incr() noexcept
-      { _M_cur = _M_cur->_M_next(); }
-
-      friend bool
-      operator==(const _Node_iterator_base& __x, const _Node_iterator_base& __y)
-      noexcept
-      { return __x._M_cur == __y._M_cur; }
-
-
-
-
-
-
-
-    };
-
-
-  template<typename _Value, bool __constant_iterators, bool __cache>
-    struct _Node_iterator
-    : public _Node_iterator_base<_Value, __cache>
-    {
-    private:
-      using __base_type = _Node_iterator_base<_Value, __cache>;
-      using __node_type = typename __base_type::__node_type;
-
-    public:
-      using value_type = _Value;
-      using difference_type = std::ptrdiff_t;
-      using iterator_category = std::forward_iterator_tag;
-
-      using pointer = __conditional_t<__constant_iterators,
-          const value_type*, value_type*>;
-
-      using reference = __conditional_t<__constant_iterators,
-     const value_type&, value_type&>;
-
-      _Node_iterator() = default;
-
-      explicit
-      _Node_iterator(__node_type* __p) noexcept
-      : __base_type(__p) { }
-
-      reference
-      operator*() const noexcept
-      { return this->_M_cur->_M_v(); }
-
-      pointer
-      operator->() const noexcept
-      { return this->_M_cur->_M_valptr(); }
-
-      _Node_iterator&
-      operator++() noexcept
-      {
- this->_M_incr();
- return *this;
-      }
-
-      _Node_iterator
-      operator++(int) noexcept
-      {
- _Node_iterator __tmp(*this);
- this->_M_incr();
- return __tmp;
-      }
-    };
-
-
-  template<typename _Value, bool __constant_iterators, bool __cache>
-    struct _Node_const_iterator
-    : public _Node_iterator_base<_Value, __cache>
-    {
-    private:
-      using __base_type = _Node_iterator_base<_Value, __cache>;
-      using __node_type = typename __base_type::__node_type;
-
-    public:
-      typedef _Value value_type;
-      typedef std::ptrdiff_t difference_type;
-      typedef std::forward_iterator_tag iterator_category;
-
-      typedef const value_type* pointer;
-      typedef const value_type& reference;
-
-      _Node_const_iterator() = default;
-
-      explicit
-      _Node_const_iterator(__node_type* __p) noexcept
-      : __base_type(__p) { }
-
-      _Node_const_iterator(const _Node_iterator<_Value, __constant_iterators,
-      __cache>& __x) noexcept
-      : __base_type(__x._M_cur) { }
-
-      reference
-      operator*() const noexcept
-      { return this->_M_cur->_M_v(); }
-
-      pointer
-      operator->() const noexcept
-      { return this->_M_cur->_M_valptr(); }
-
-      _Node_const_iterator&
-      operator++() noexcept
-      {
- this->_M_incr();
- return *this;
-      }
-
-      _Node_const_iterator
-      operator++(int) noexcept
-      {
- _Node_const_iterator __tmp(*this);
- this->_M_incr();
- return __tmp;
-      }
-    };
-
-
-
-
-
-
-  struct _Mod_range_hashing
-  {
-    typedef std::size_t first_argument_type;
-    typedef std::size_t second_argument_type;
-    typedef std::size_t result_type;
-
-    result_type
-    operator()(first_argument_type __num,
-        second_argument_type __den) const noexcept
-    { return __num % __den; }
-  };
-
-
-
-
-
-
-  struct _Default_ranged_hash { };
-
-
-
-  struct _Prime_rehash_policy
-  {
-    using __has_load_factor = true_type;
-
-    _Prime_rehash_policy(float __z = 1.0) noexcept
-    : _M_max_load_factor(__z), _M_next_resize(0) { }
-
-    float
-    max_load_factor() const noexcept
-    { return _M_max_load_factor; }
-
-
-    std::size_t
-    _M_next_bkt(std::size_t __n) const;
-
-
-    std::size_t
-    _M_bkt_for_elements(std::size_t __n) const
-    { return __builtin_ceil(__n / (double)_M_max_load_factor); }
-
-
-
-
-
-    std::pair<bool, std::size_t>
-    _M_need_rehash(std::size_t __n_bkt, std::size_t __n_elt,
-     std::size_t __n_ins) const;
-
-    typedef std::size_t _State;
-
-    _State
-    _M_state() const
-    { return _M_next_resize; }
-
-    void
-    _M_reset() noexcept
-    { _M_next_resize = 0; }
-
-    void
-    _M_reset(_State __state)
-    { _M_next_resize = __state; }
-
-    static const std::size_t _S_growth_factor = 2;
-
-    float _M_max_load_factor;
-    mutable std::size_t _M_next_resize;
-  };
-
-
-  struct _Mask_range_hashing
-  {
-    typedef std::size_t first_argument_type;
-    typedef std::size_t second_argument_type;
-    typedef std::size_t result_type;
-
-    result_type
-    operator()(first_argument_type __num,
-        second_argument_type __den) const noexcept
-    { return __num & (__den - 1); }
-  };
-
-
-  inline std::size_t
-  __clp2(std::size_t __n) noexcept
-  {
-    using __gnu_cxx::__int_traits;
-
-    if (__n < 2)
-      return __n;
-    const unsigned __lz = sizeof(size_t) > sizeof(long)
-      ? __builtin_clzll(__n - 1ull)
-      : __builtin_clzl(__n - 1ul);
-
-    return (size_t(1) << (__int_traits<size_t>::__digits - __lz - 1)) << 1;
-  }
-
-
-
-  struct _Power2_rehash_policy
-  {
-    using __has_load_factor = true_type;
-
-    _Power2_rehash_policy(float __z = 1.0) noexcept
-    : _M_max_load_factor(__z), _M_next_resize(0) { }
-
-    float
-    max_load_factor() const noexcept
-    { return _M_max_load_factor; }
-
-
-
-    std::size_t
-    _M_next_bkt(std::size_t __n) noexcept
-    {
-      if (__n == 0)
-
-
-
- return 1;
-
-      const auto __max_width = std::min<size_t>(sizeof(size_t), 8);
-      const auto __max_bkt = size_t(1) << (__max_width * 8 - 1);
-      std::size_t __res = __clp2(__n);
-
-      if (__res == 0)
- __res = __max_bkt;
-      else if (__res == 1)
-
-
-
- __res = 2;
-
-      if (__res == __max_bkt)
-
-
-
- _M_next_resize = size_t(-1);
-      else
- _M_next_resize
-   = __builtin_floor(__res * (double)_M_max_load_factor);
-
-      return __res;
-    }
-
-
-    std::size_t
-    _M_bkt_for_elements(std::size_t __n) const noexcept
-    { return __builtin_ceil(__n / (double)_M_max_load_factor); }
-
-
-
-
-
-    std::pair<bool, std::size_t>
-    _M_need_rehash(std::size_t __n_bkt, std::size_t __n_elt,
-     std::size_t __n_ins) noexcept
-    {
-      if (__n_elt + __n_ins > _M_next_resize)
- {
-
-
-
-   double __min_bkts
-     = std::max<std::size_t>(__n_elt + __n_ins, _M_next_resize ? 0 : 11)
-       / (double)_M_max_load_factor;
-   if (__min_bkts >= __n_bkt)
-     return { true,
-       _M_next_bkt(std::max<std::size_t>(__builtin_floor(__min_bkts) + 1,
-      __n_bkt * _S_growth_factor)) };
-
-   _M_next_resize
-     = __builtin_floor(__n_bkt * (double)_M_max_load_factor);
-   return { false, 0 };
- }
-      else
- return { false, 0 };
-    }
-
-    typedef std::size_t _State;
-
-    _State
-    _M_state() const noexcept
-    { return _M_next_resize; }
-
-    void
-    _M_reset() noexcept
-    { _M_next_resize = 0; }
-
-    void
-    _M_reset(_State __state) noexcept
-    { _M_next_resize = __state; }
-
-    static const std::size_t _S_growth_factor = 2;
-
-    float _M_max_load_factor;
-    std::size_t _M_next_resize;
-  };
-
-  template<typename _RehashPolicy>
-    struct _RehashStateGuard
-    {
-      _RehashPolicy* _M_guarded_obj;
-      typename _RehashPolicy::_State _M_prev_state;
-
-      _RehashStateGuard(_RehashPolicy& __policy)
-      : _M_guarded_obj(std::__addressof(__policy))
-      , _M_prev_state(__policy._M_state())
-      { }
-      _RehashStateGuard(const _RehashStateGuard&) = delete;
-
-      ~_RehashStateGuard()
-      {
- if (_M_guarded_obj)
-   _M_guarded_obj->_M_reset(_M_prev_state);
-      }
-    };
-# 761 "C:/mingw64/include/c++/14.2.0/bits/hashtable_policy.h" 3
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits,
-    bool _Unique_keys = _Traits::__unique_keys::value>
-    struct _Map_base { };
-
-
-  template<typename _Key, typename _Val, typename _Alloc, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    struct _Map_base<_Key, pair<const _Key, _Val>, _Alloc, _Select1st, _Equal,
-       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, false>
-    {
-      using mapped_type = _Val;
-    };
-
-
-  template<typename _Key, typename _Val, typename _Alloc, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    struct _Map_base<_Key, pair<const _Key, _Val>, _Alloc, _Select1st, _Equal,
-       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>
-    {
-    private:
-      using __hashtable_base = _Hashtable_base<_Key, pair<const _Key, _Val>,
-            _Select1st, _Equal, _Hash,
-            _RangeHash, _Unused,
-            _Traits>;
-
-      using __hashtable = _Hashtable<_Key, pair<const _Key, _Val>, _Alloc,
-         _Select1st, _Equal, _Hash, _RangeHash,
-         _Unused, _RehashPolicy, _Traits>;
-
-      using __hash_code = typename __hashtable_base::__hash_code;
-
-    public:
-      using key_type = typename __hashtable_base::key_type;
-      using mapped_type = _Val;
-
-      mapped_type&
-      operator[](const key_type& __k);
-
-      mapped_type&
-      operator[](key_type&& __k);
-
-
-
-      mapped_type&
-      at(const key_type& __k)
-      {
- auto __ite = static_cast<__hashtable*>(this)->find(__k);
- if (!__ite._M_cur)
-   __throw_out_of_range(("unordered_map::at"));
- return __ite->second;
-      }
-
-      const mapped_type&
-      at(const key_type& __k) const
-      {
- auto __ite = static_cast<const __hashtable*>(this)->find(__k);
- if (!__ite._M_cur)
-   __throw_out_of_range(("unordered_map::at"));
- return __ite->second;
-      }
-    };
-
-  template<typename _Key, typename _Val, typename _Alloc, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Map_base<_Key, pair<const _Key, _Val>, _Alloc, _Select1st, _Equal,
-       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>::
-    operator[](const key_type& __k)
-    -> mapped_type&
-    {
-      __hashtable* __h = static_cast<__hashtable*>(this);
-      __hash_code __code = __h->_M_hash_code(__k);
-      std::size_t __bkt = __h->_M_bucket_index(__code);
-      if (auto __node = __h->_M_find_node(__bkt, __k, __code))
- return __node->_M_v().second;
-
-      typename __hashtable::_Scoped_node __node {
- __h,
- std::piecewise_construct,
- std::tuple<const key_type&>(__k),
- std::tuple<>()
-      };
-      auto __pos
- = __h->_M_insert_unique_node(__bkt, __code, __node._M_node);
-      __node._M_node = nullptr;
-      return __pos->second;
-    }
-
-  template<typename _Key, typename _Val, typename _Alloc, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Map_base<_Key, pair<const _Key, _Val>, _Alloc, _Select1st, _Equal,
-       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>::
-    operator[](key_type&& __k)
-    -> mapped_type&
-    {
-      __hashtable* __h = static_cast<__hashtable*>(this);
-      __hash_code __code = __h->_M_hash_code(__k);
-      std::size_t __bkt = __h->_M_bucket_index(__code);
-      if (auto __node = __h->_M_find_node(__bkt, __k, __code))
- return __node->_M_v().second;
-
-      typename __hashtable::_Scoped_node __node {
- __h,
- std::piecewise_construct,
- std::forward_as_tuple(std::move(__k)),
- std::tuple<>()
-      };
-      auto __pos
- = __h->_M_insert_unique_node(__bkt, __code, __node._M_node);
-      __node._M_node = nullptr;
-      return __pos->second;
-    }
-
-
-  template<typename _Key, typename _Val, typename _Alloc, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits, bool __uniq>
-    struct _Map_base<const _Key, pair<const _Key, _Val>,
-       _Alloc, _Select1st, _Equal, _Hash,
-       _RangeHash, _Unused, _RehashPolicy, _Traits, __uniq>
-    : _Map_base<_Key, pair<const _Key, _Val>, _Alloc, _Select1st, _Equal, _Hash,
-  _RangeHash, _Unused, _RehashPolicy, _Traits, __uniq>
-    { };
-
-
-
-
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    struct _Insert_base
-    {
-    protected:
-      using __hashtable_base = _Hashtable_base<_Key, _Value, _ExtractKey,
-            _Equal, _Hash, _RangeHash,
-            _Unused, _Traits>;
-
-      using __hashtable = _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-         _Hash, _RangeHash,
-         _Unused, _RehashPolicy, _Traits>;
-
-      using __hash_cached = typename _Traits::__hash_cached;
-      using __constant_iterators = typename _Traits::__constant_iterators;
-
-      using __hashtable_alloc = _Hashtable_alloc<
- __alloc_rebind<_Alloc, _Hash_node<_Value,
-       __hash_cached::value>>>;
-
-      using value_type = typename __hashtable_base::value_type;
-      using size_type = typename __hashtable_base::size_type;
-
-      using __unique_keys = typename _Traits::__unique_keys;
-      using __node_alloc_type = typename __hashtable_alloc::__node_alloc_type;
-      using __node_gen_type = _AllocNode<__node_alloc_type>;
-
-      __hashtable&
-      _M_conjure_hashtable()
-      { return *(static_cast<__hashtable*>(this)); }
-
-      template<typename _InputIterator, typename _NodeGetter>
- void
- _M_insert_range(_InputIterator __first, _InputIterator __last,
-   const _NodeGetter&, true_type __uks);
-
-      template<typename _InputIterator, typename _NodeGetter>
- void
- _M_insert_range(_InputIterator __first, _InputIterator __last,
-   const _NodeGetter&, false_type __uks);
-
-    public:
-      using iterator = _Node_iterator<_Value, __constant_iterators::value,
-          __hash_cached::value>;
-
-      using const_iterator = _Node_const_iterator<_Value,
-        __constant_iterators::value,
-        __hash_cached::value>;
-
-      using __ireturn_type = __conditional_t<__unique_keys::value,
-          std::pair<iterator, bool>,
-          iterator>;
-
-      __ireturn_type
-      insert(const value_type& __v)
-      {
- __hashtable& __h = _M_conjure_hashtable();
- __node_gen_type __node_gen(__h);
- return __h._M_insert(__v, __node_gen, __unique_keys{});
-      }
-
-      iterator
-      insert(const_iterator __hint, const value_type& __v)
-      {
- __hashtable& __h = _M_conjure_hashtable();
- __node_gen_type __node_gen(__h);
- return __h._M_insert(__hint, __v, __node_gen, __unique_keys{});
-      }
-
-      template<typename _KType, typename... _Args>
- std::pair<iterator, bool>
- try_emplace(const_iterator, _KType&& __k, _Args&&... __args)
- {
-   __hashtable& __h = _M_conjure_hashtable();
-   auto __code = __h._M_hash_code(__k);
-   std::size_t __bkt = __h._M_bucket_index(__code);
-   if (auto __node = __h._M_find_node(__bkt, __k, __code))
-     return { iterator(__node), false };
-
-   typename __hashtable::_Scoped_node __node {
-     &__h,
-     std::piecewise_construct,
-     std::forward_as_tuple(std::forward<_KType>(__k)),
-     std::forward_as_tuple(std::forward<_Args>(__args)...)
-     };
-   auto __it
-     = __h._M_insert_unique_node(__bkt, __code, __node._M_node);
-   __node._M_node = nullptr;
-   return { __it, true };
- }
-
-      void
-      insert(initializer_list<value_type> __l)
-      { this->insert(__l.begin(), __l.end()); }
-
-      template<typename _InputIterator>
- void
- insert(_InputIterator __first, _InputIterator __last)
- {
-   __hashtable& __h = _M_conjure_hashtable();
-   __node_gen_type __node_gen(__h);
-   return _M_insert_range(__first, __last, __node_gen, __unique_keys{});
- }
-    };
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    template<typename _InputIterator, typename _NodeGetter>
-      void
-      _Insert_base<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-     _Hash, _RangeHash, _Unused,
-     _RehashPolicy, _Traits>::
-      _M_insert_range(_InputIterator __first, _InputIterator __last,
-        const _NodeGetter& __node_gen, true_type __uks)
-      {
- __hashtable& __h = _M_conjure_hashtable();
- for (; __first != __last; ++__first)
-   __h._M_insert(*__first, __node_gen, __uks);
-      }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    template<typename _InputIterator, typename _NodeGetter>
-      void
-      _Insert_base<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-     _Hash, _RangeHash, _Unused,
-     _RehashPolicy, _Traits>::
-      _M_insert_range(_InputIterator __first, _InputIterator __last,
-        const _NodeGetter& __node_gen, false_type __uks)
-      {
- using __rehash_guard_t = typename __hashtable::__rehash_guard_t;
- using __pair_type = std::pair<bool, std::size_t>;
-
- size_type __n_elt = __detail::__distance_fw(__first, __last);
- if (__n_elt == 0)
-   return;
-
- __hashtable& __h = _M_conjure_hashtable();
- __rehash_guard_t __rehash_guard(__h._M_rehash_policy);
- __pair_type __do_rehash
-   = __h._M_rehash_policy._M_need_rehash(__h._M_bucket_count,
-      __h._M_element_count,
-      __n_elt);
-
- if (__do_rehash.first)
-   __h._M_rehash(__do_rehash.second, __uks);
-
- __rehash_guard._M_guarded_obj = nullptr;
- for (; __first != __last; ++__first)
-   __h._M_insert(*__first, __node_gen, __uks);
-      }
-
-
-
-
-
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits,
-    bool _Constant_iterators = _Traits::__constant_iterators::value>
-    struct _Insert;
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    struct _Insert<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-     _Hash, _RangeHash, _Unused,
-     _RehashPolicy, _Traits, true>
-    : public _Insert_base<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-     _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>
-    {
-      using __base_type = _Insert_base<_Key, _Value, _Alloc, _ExtractKey,
-           _Equal, _Hash, _RangeHash, _Unused,
-           _RehashPolicy, _Traits>;
-
-      using value_type = typename __base_type::value_type;
-      using iterator = typename __base_type::iterator;
-      using const_iterator = typename __base_type::const_iterator;
-      using __ireturn_type = typename __base_type::__ireturn_type;
-
-      using __unique_keys = typename __base_type::__unique_keys;
-      using __hashtable = typename __base_type::__hashtable;
-      using __node_gen_type = typename __base_type::__node_gen_type;
-
-      using __base_type::insert;
-
-      __ireturn_type
-      insert(value_type&& __v)
-      {
- __hashtable& __h = this->_M_conjure_hashtable();
- __node_gen_type __node_gen(__h);
- return __h._M_insert(std::move(__v), __node_gen, __unique_keys{});
-      }
-
-      iterator
-      insert(const_iterator __hint, value_type&& __v)
-      {
- __hashtable& __h = this->_M_conjure_hashtable();
- __node_gen_type __node_gen(__h);
- return __h._M_insert(__hint, std::move(__v), __node_gen,
-        __unique_keys{});
-      }
-    };
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    struct _Insert<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-     _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, false>
-    : public _Insert_base<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-     _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>
-    {
-      using __base_type = _Insert_base<_Key, _Value, _Alloc, _ExtractKey,
-           _Equal, _Hash, _RangeHash, _Unused,
-           _RehashPolicy, _Traits>;
-      using value_type = typename __base_type::value_type;
-      using iterator = typename __base_type::iterator;
-      using const_iterator = typename __base_type::const_iterator;
-
-      using __unique_keys = typename __base_type::__unique_keys;
-      using __hashtable = typename __base_type::__hashtable;
-      using __ireturn_type = typename __base_type::__ireturn_type;
-
-      using __base_type::insert;
-
-      template<typename _Pair>
- using __is_cons = std::is_constructible<value_type, _Pair&&>;
-
-      template<typename _Pair>
- using _IFcons = std::enable_if<__is_cons<_Pair>::value>;
-
-      template<typename _Pair>
- using _IFconsp = typename _IFcons<_Pair>::type;
-
-      template<typename _Pair, typename = _IFconsp<_Pair>>
- __ireturn_type
- insert(_Pair&& __v)
- {
-   __hashtable& __h = this->_M_conjure_hashtable();
-   return __h._M_emplace(__unique_keys{}, std::forward<_Pair>(__v));
- }
-
-      template<typename _Pair, typename = _IFconsp<_Pair>>
- iterator
- insert(const_iterator __hint, _Pair&& __v)
- {
-   __hashtable& __h = this->_M_conjure_hashtable();
-   return __h._M_emplace(__hint, __unique_keys{},
-    std::forward<_Pair>(__v));
- }
-   };
-
-  template<typename _Policy>
-    using __has_load_factor = typename _Policy::__has_load_factor;
-
-
-
-
-
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits,
-    typename =
-      __detected_or_t<false_type, __has_load_factor, _RehashPolicy>>
-    struct _Rehash_base;
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    struct _Rehash_base<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-   _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits,
-   false_type >
-    {
-    };
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    struct _Rehash_base<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-   _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits,
-   true_type >
-    {
-    private:
-      using __hashtable = _Hashtable<_Key, _Value, _Alloc, _ExtractKey,
-         _Equal, _Hash, _RangeHash, _Unused,
-         _RehashPolicy, _Traits>;
-
-    public:
-      float
-      max_load_factor() const noexcept
-      {
- const __hashtable* __this = static_cast<const __hashtable*>(this);
- return __this->__rehash_policy().max_load_factor();
-      }
-
-      void
-      max_load_factor(float __z)
-      {
- __hashtable* __this = static_cast<__hashtable*>(this);
- __this->__rehash_policy(_RehashPolicy(__z));
-      }
-
-      void
-      reserve(std::size_t __n)
-      {
- __hashtable* __this = static_cast<__hashtable*>(this);
- __this->rehash(__this->__rehash_policy()._M_bkt_for_elements(__n));
-      }
-    };
-
-
-
-
-
-
-
-  template<int _Nm, typename _Tp,
-    bool __use_ebo = !__is_final(_Tp) && __is_empty(_Tp)>
-    struct _Hashtable_ebo_helper;
-
-
-  template<int _Nm, typename _Tp>
-    struct _Hashtable_ebo_helper<_Nm, _Tp, true>
-    : private _Tp
-    {
-      _Hashtable_ebo_helper() noexcept(noexcept(_Tp())) : _Tp() { }
-
-      template<typename _OtherTp>
- _Hashtable_ebo_helper(_OtherTp&& __tp)
- : _Tp(std::forward<_OtherTp>(__tp))
- { }
-
-      const _Tp& _M_cget() const { return static_cast<const _Tp&>(*this); }
-      _Tp& _M_get() { return static_cast<_Tp&>(*this); }
-    };
-
-
-  template<int _Nm, typename _Tp>
-    struct _Hashtable_ebo_helper<_Nm, _Tp, false>
-    {
-      _Hashtable_ebo_helper() = default;
-
-      template<typename _OtherTp>
- _Hashtable_ebo_helper(_OtherTp&& __tp)
- : _M_tp(std::forward<_OtherTp>(__tp))
- { }
-
-      const _Tp& _M_cget() const { return _M_tp; }
-      _Tp& _M_get() { return _M_tp; }
-
-    private:
-      _Tp _M_tp{};
-    };
-
-
-
-
-
-
-
-  template<typename _Key, typename _Value, typename _ExtractKey,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    bool __cache_hash_code>
-    struct _Local_iterator_base;
-# 1301 "C:/mingw64/include/c++/14.2.0/bits/hashtable_policy.h" 3
-  template<typename _Key, typename _Value, typename _ExtractKey,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    bool __cache_hash_code>
-    struct _Hash_code_base
-    : private _Hashtable_ebo_helper<1, _Hash>
-    {
-    private:
-      using __ebo_hash = _Hashtable_ebo_helper<1, _Hash>;
-
-
-      friend struct _Local_iterator_base<_Key, _Value, _ExtractKey,
-      _Hash, _RangeHash, _Unused, false>;
-
-    public:
-      typedef _Hash hasher;
-
-      hasher
-      hash_function() const
-      { return _M_hash(); }
-
-    protected:
-      typedef std::size_t __hash_code;
-
-
-
-      _Hash_code_base() = default;
-
-      _Hash_code_base(const _Hash& __hash) : __ebo_hash(__hash) { }
-
-      __hash_code
-      _M_hash_code(const _Key& __k) const
-      {
- static_assert(__is_invocable<const _Hash&, const _Key&>{},
-     "hash function must be invocable with an argument of key type");
- return _M_hash()(__k);
-      }
-
-      template<typename _Kt>
- __hash_code
- _M_hash_code_tr(const _Kt& __k) const
- {
-   static_assert(__is_invocable<const _Hash&, const _Kt&>{},
-     "hash function must be invocable with an argument of key type");
-   return _M_hash()(__k);
- }
-
-      __hash_code
-      _M_hash_code(const _Hash_node_value<_Value, false>& __n) const
-      { return _M_hash_code(_ExtractKey{}(__n._M_v())); }
-
-      __hash_code
-      _M_hash_code(const _Hash_node_value<_Value, true>& __n) const
-      { return __n._M_hash_code; }
-
-      std::size_t
-      _M_bucket_index(__hash_code __c, std::size_t __bkt_count) const
-      { return _RangeHash{}(__c, __bkt_count); }
-
-      std::size_t
-      _M_bucket_index(const _Hash_node_value<_Value, false>& __n,
-        std::size_t __bkt_count) const
- noexcept( noexcept(declval<const _Hash&>()(declval<const _Key&>()))
-    && noexcept(declval<const _RangeHash&>()((__hash_code)0,
-          (std::size_t)0)) )
-      {
- return _RangeHash{}(_M_hash_code(_ExtractKey{}(__n._M_v())),
-       __bkt_count);
-      }
-
-      std::size_t
-      _M_bucket_index(const _Hash_node_value<_Value, true>& __n,
-        std::size_t __bkt_count) const
- noexcept( noexcept(declval<const _RangeHash&>()((__hash_code)0,
-       (std::size_t)0)) )
-      { return _RangeHash{}(__n._M_hash_code, __bkt_count); }
-
-      void
-      _M_store_code(_Hash_node_code_cache<false>&, __hash_code) const
-      { }
-
-      void
-      _M_copy_code(_Hash_node_code_cache<false>&,
-     const _Hash_node_code_cache<false>&) const
-      { }
-
-      void
-      _M_store_code(_Hash_node_code_cache<true>& __n, __hash_code __c) const
-      { __n._M_hash_code = __c; }
-
-      void
-      _M_copy_code(_Hash_node_code_cache<true>& __to,
-     const _Hash_node_code_cache<true>& __from) const
-      { __to._M_hash_code = __from._M_hash_code; }
-
-      void
-      _M_swap(_Hash_code_base& __x)
-      { std::swap(__ebo_hash::_M_get(), __x.__ebo_hash::_M_get()); }
-
-      const _Hash&
-      _M_hash() const { return __ebo_hash::_M_cget(); }
-    };
-
-
-  template<typename _Key, typename _Value, typename _ExtractKey,
-    typename _Hash, typename _RangeHash, typename _Unused>
-    struct _Local_iterator_base<_Key, _Value, _ExtractKey,
-    _Hash, _RangeHash, _Unused, true>
-    : public _Node_iterator_base<_Value, true>
-    {
-    protected:
-      using __base_node_iter = _Node_iterator_base<_Value, true>;
-      using __hash_code_base = _Hash_code_base<_Key, _Value, _ExtractKey,
-           _Hash, _RangeHash, _Unused, true>;
-
-      _Local_iterator_base() = default;
-      _Local_iterator_base(const __hash_code_base&,
-      _Hash_node<_Value, true>* __p,
-      std::size_t __bkt, std::size_t __bkt_count)
-      : __base_node_iter(__p), _M_bucket(__bkt), _M_bucket_count(__bkt_count)
-      { }
-
-      void
-      _M_incr()
-      {
- __base_node_iter::_M_incr();
- if (this->_M_cur)
-   {
-     std::size_t __bkt
-       = _RangeHash{}(this->_M_cur->_M_hash_code, _M_bucket_count);
-     if (__bkt != _M_bucket)
-       this->_M_cur = nullptr;
-   }
-      }
-
-      std::size_t _M_bucket;
-      std::size_t _M_bucket_count;
-
-    public:
-      std::size_t
-      _M_get_bucket() const { return _M_bucket; }
-    };
-
-
-
-
-
-  template<typename _Tp, bool _IsEmpty = std::is_empty<_Tp>::value>
-    struct _Hash_code_storage
-    {
-      __gnu_cxx::__aligned_buffer<_Tp> _M_storage;
-
-      _Tp*
-      _M_h() { return _M_storage._M_ptr(); }
-
-      const _Tp*
-      _M_h() const { return _M_storage._M_ptr(); }
-    };
-
-
-  template<typename _Tp>
-    struct _Hash_code_storage<_Tp, true>
-    {
-      static_assert( std::is_empty<_Tp>::value, "Type must be empty" );
-
-
-
-      _Tp*
-      _M_h() { return reinterpret_cast<_Tp*>(this); }
-
-      const _Tp*
-      _M_h() const { return reinterpret_cast<const _Tp*>(this); }
-    };
-
-  template<typename _Key, typename _Value, typename _ExtractKey,
-    typename _Hash, typename _RangeHash, typename _Unused>
-    using __hash_code_for_local_iter
-      = _Hash_code_storage<_Hash_code_base<_Key, _Value, _ExtractKey,
-        _Hash, _RangeHash, _Unused, false>>;
-
-
-  template<typename _Key, typename _Value, typename _ExtractKey,
-    typename _Hash, typename _RangeHash, typename _Unused>
-    struct _Local_iterator_base<_Key, _Value, _ExtractKey,
-    _Hash, _RangeHash, _Unused, false>
-    : __hash_code_for_local_iter<_Key, _Value, _ExtractKey, _Hash, _RangeHash,
-     _Unused>
-    , _Node_iterator_base<_Value, false>
-    {
-    protected:
-      using __hash_code_base = _Hash_code_base<_Key, _Value, _ExtractKey,
-          _Hash, _RangeHash, _Unused, false>;
-      using __node_iter_base = _Node_iterator_base<_Value, false>;
-
-      _Local_iterator_base() : _M_bucket_count(-1) { }
-
-      _Local_iterator_base(const __hash_code_base& __base,
-      _Hash_node<_Value, false>* __p,
-      std::size_t __bkt, std::size_t __bkt_count)
-      : __node_iter_base(__p), _M_bucket(__bkt), _M_bucket_count(__bkt_count)
-      { _M_init(__base); }
-
-      ~_Local_iterator_base()
-      {
- if (_M_bucket_count != size_t(-1))
-   _M_destroy();
-      }
-
-      _Local_iterator_base(const _Local_iterator_base& __iter)
-      : __node_iter_base(__iter._M_cur), _M_bucket(__iter._M_bucket)
-      , _M_bucket_count(__iter._M_bucket_count)
-      {
- if (_M_bucket_count != size_t(-1))
-   _M_init(*__iter._M_h());
-      }
-
-      _Local_iterator_base&
-      operator=(const _Local_iterator_base& __iter)
-      {
- if (_M_bucket_count != -1)
-   _M_destroy();
- this->_M_cur = __iter._M_cur;
- _M_bucket = __iter._M_bucket;
- _M_bucket_count = __iter._M_bucket_count;
- if (_M_bucket_count != -1)
-   _M_init(*__iter._M_h());
- return *this;
-      }
-
-      void
-      _M_incr()
-      {
- __node_iter_base::_M_incr();
- if (this->_M_cur)
-   {
-     std::size_t __bkt = this->_M_h()->_M_bucket_index(*this->_M_cur,
-             _M_bucket_count);
-     if (__bkt != _M_bucket)
-       this->_M_cur = nullptr;
-   }
-      }
-
-      std::size_t _M_bucket;
-      std::size_t _M_bucket_count;
-
-      void
-      _M_init(const __hash_code_base& __base)
-      { ::new(this->_M_h()) __hash_code_base(__base); }
-
-      void
-      _M_destroy() { this->_M_h()->~__hash_code_base(); }
-
-    public:
-      std::size_t
-      _M_get_bucket() const { return _M_bucket; }
-    };
-
-
-  template<typename _Key, typename _Value, typename _ExtractKey,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    bool __constant_iterators, bool __cache>
-    struct _Local_iterator
-    : public _Local_iterator_base<_Key, _Value, _ExtractKey,
-      _Hash, _RangeHash, _Unused, __cache>
-    {
-    private:
-      using __base_type = _Local_iterator_base<_Key, _Value, _ExtractKey,
-        _Hash, _RangeHash, _Unused, __cache>;
-      using __hash_code_base = typename __base_type::__hash_code_base;
-
-    public:
-      using value_type = _Value;
-      using pointer = __conditional_t<__constant_iterators,
-          const value_type*, value_type*>;
-      using reference = __conditional_t<__constant_iterators,
-     const value_type&, value_type&>;
-      using difference_type = ptrdiff_t;
-      using iterator_category = forward_iterator_tag;
-
-      _Local_iterator() = default;
-
-      _Local_iterator(const __hash_code_base& __base,
-        _Hash_node<_Value, __cache>* __n,
-        std::size_t __bkt, std::size_t __bkt_count)
-      : __base_type(__base, __n, __bkt, __bkt_count)
-      { }
-
-      reference
-      operator*() const
-      { return this->_M_cur->_M_v(); }
-
-      pointer
-      operator->() const
-      { return this->_M_cur->_M_valptr(); }
-
-      _Local_iterator&
-      operator++()
-      {
- this->_M_incr();
- return *this;
-      }
-
-      _Local_iterator
-      operator++(int)
-      {
- _Local_iterator __tmp(*this);
- this->_M_incr();
- return __tmp;
-      }
-    };
-
-
-  template<typename _Key, typename _Value, typename _ExtractKey,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    bool __constant_iterators, bool __cache>
-    struct _Local_const_iterator
-    : public _Local_iterator_base<_Key, _Value, _ExtractKey,
-      _Hash, _RangeHash, _Unused, __cache>
-    {
-    private:
-      using __base_type = _Local_iterator_base<_Key, _Value, _ExtractKey,
-        _Hash, _RangeHash, _Unused, __cache>;
-      using __hash_code_base = typename __base_type::__hash_code_base;
-
-    public:
-      typedef _Value value_type;
-      typedef const value_type* pointer;
-      typedef const value_type& reference;
-      typedef std::ptrdiff_t difference_type;
-      typedef std::forward_iterator_tag iterator_category;
-
-      _Local_const_iterator() = default;
-
-      _Local_const_iterator(const __hash_code_base& __base,
-       _Hash_node<_Value, __cache>* __n,
-       std::size_t __bkt, std::size_t __bkt_count)
-      : __base_type(__base, __n, __bkt, __bkt_count)
-      { }
-
-      _Local_const_iterator(const _Local_iterator<_Key, _Value, _ExtractKey,
-        _Hash, _RangeHash, _Unused,
-        __constant_iterators,
-        __cache>& __x)
-      : __base_type(__x)
-      { }
-
-      reference
-      operator*() const
-      { return this->_M_cur->_M_v(); }
-
-      pointer
-      operator->() const
-      { return this->_M_cur->_M_valptr(); }
-
-      _Local_const_iterator&
-      operator++()
-      {
- this->_M_incr();
- return *this;
-      }
-
-      _Local_const_iterator
-      operator++(int)
-      {
- _Local_const_iterator __tmp(*this);
- this->_M_incr();
- return __tmp;
-      }
-    };
-# 1680 "C:/mingw64/include/c++/14.2.0/bits/hashtable_policy.h" 3
-  template<typename _Key, typename _Value, typename _ExtractKey,
-    typename _Equal, typename _Hash, typename _RangeHash,
-    typename _Unused, typename _Traits>
-    struct _Hashtable_base
-    : public _Hash_code_base<_Key, _Value, _ExtractKey, _Hash, _RangeHash,
-        _Unused, _Traits::__hash_cached::value>,
-      private _Hashtable_ebo_helper<0, _Equal>
-    {
-    public:
-      typedef _Key key_type;
-      typedef _Value value_type;
-      typedef _Equal key_equal;
-      typedef std::size_t size_type;
-      typedef std::ptrdiff_t difference_type;
-
-      using __traits_type = _Traits;
-      using __hash_cached = typename __traits_type::__hash_cached;
-
-      using __hash_code_base = _Hash_code_base<_Key, _Value, _ExtractKey,
-            _Hash, _RangeHash, _Unused,
-            __hash_cached::value>;
-
-      using __hash_code = typename __hash_code_base::__hash_code;
-
-    private:
-      using _EqualEBO = _Hashtable_ebo_helper<0, _Equal>;
-
-      static bool
-      _S_equals(__hash_code, const _Hash_node_code_cache<false>&)
-      { return true; }
-
-      static bool
-      _S_node_equals(const _Hash_node_code_cache<false>&,
-       const _Hash_node_code_cache<false>&)
-      { return true; }
-
-      static bool
-      _S_equals(__hash_code __c, const _Hash_node_code_cache<true>& __n)
-      { return __c == __n._M_hash_code; }
-
-      static bool
-      _S_node_equals(const _Hash_node_code_cache<true>& __lhn,
-       const _Hash_node_code_cache<true>& __rhn)
-      { return __lhn._M_hash_code == __rhn._M_hash_code; }
-
-    protected:
-      _Hashtable_base() = default;
-
-      _Hashtable_base(const _Hash& __hash, const _Equal& __eq)
-      : __hash_code_base(__hash), _EqualEBO(__eq)
-      { }
-
-      bool
-      _M_key_equals(const _Key& __k,
-      const _Hash_node_value<_Value,
-        __hash_cached::value>& __n) const
-      {
- static_assert(__is_invocable<const _Equal&, const _Key&, const _Key&>{},
-   "key equality predicate must be invocable with two arguments of "
-   "key type");
- return _M_eq()(__k, _ExtractKey{}(__n._M_v()));
-      }
-
-      template<typename _Kt>
- bool
- _M_key_equals_tr(const _Kt& __k,
-    const _Hash_node_value<_Value,
-          __hash_cached::value>& __n) const
- {
-   static_assert(
-     __is_invocable<const _Equal&, const _Kt&, const _Key&>{},
-     "key equality predicate must be invocable with two arguments of "
-     "key type");
-   return _M_eq()(__k, _ExtractKey{}(__n._M_v()));
- }
-
-      bool
-      _M_equals(const _Key& __k, __hash_code __c,
-  const _Hash_node_value<_Value, __hash_cached::value>& __n) const
-      { return _S_equals(__c, __n) && _M_key_equals(__k, __n); }
-
-      template<typename _Kt>
- bool
- _M_equals_tr(const _Kt& __k, __hash_code __c,
-       const _Hash_node_value<_Value,
-         __hash_cached::value>& __n) const
- { return _S_equals(__c, __n) && _M_key_equals_tr(__k, __n); }
-
-      bool
-      _M_node_equals(
- const _Hash_node_value<_Value, __hash_cached::value>& __lhn,
- const _Hash_node_value<_Value, __hash_cached::value>& __rhn) const
-      {
- return _S_node_equals(__lhn, __rhn)
-   && _M_key_equals(_ExtractKey{}(__lhn._M_v()), __rhn);
-      }
-
-      void
-      _M_swap(_Hashtable_base& __x)
-      {
- __hash_code_base::_M_swap(__x);
- std::swap(_EqualEBO::_M_get(), __x._EqualEBO::_M_get());
-      }
-
-      const _Equal&
-      _M_eq() const { return _EqualEBO::_M_cget(); }
-    };
-# 1796 "C:/mingw64/include/c++/14.2.0/bits/hashtable_policy.h" 3
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits,
-    bool _Unique_keys = _Traits::__unique_keys::value>
-    struct _Equality;
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    struct _Equality<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>
-    {
-      using __hashtable = _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-         _Hash, _RangeHash, _Unused,
-         _RehashPolicy, _Traits>;
-
-      bool
-      _M_equal(const __hashtable&) const;
-    };
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    bool
-    _Equality<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, true>::
-    _M_equal(const __hashtable& __other) const
-    {
-      using __node_ptr = typename __hashtable::__node_ptr;
-      const __hashtable* __this = static_cast<const __hashtable*>(this);
-      if (__this->size() != __other.size())
- return false;
-
-      for (auto __x_n = __this->_M_begin(); __x_n; __x_n = __x_n->_M_next())
- {
-   std::size_t __ybkt = __other._M_bucket_index(*__x_n);
-   auto __prev_n = __other._M_buckets[__ybkt];
-   if (!__prev_n)
-     return false;
-
-   for (__node_ptr __n = static_cast<__node_ptr>(__prev_n->_M_nxt);;
-        __n = __n->_M_next())
-     {
-       if (__n->_M_v() == __x_n->_M_v())
-  break;
-
-       if (!__n->_M_nxt
-    || __other._M_bucket_index(*__n->_M_next()) != __ybkt)
-  return false;
-     }
- }
-
-      return true;
-    }
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    struct _Equality<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, false>
-    {
-      using __hashtable = _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-         _Hash, _RangeHash, _Unused,
-         _RehashPolicy, _Traits>;
-
-      bool
-      _M_equal(const __hashtable&) const;
-    };
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    bool
-    _Equality<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-       _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits, false>::
-    _M_equal(const __hashtable& __other) const
-    {
-      using __node_ptr = typename __hashtable::__node_ptr;
-      using const_iterator = typename __hashtable::const_iterator;
-      const __hashtable* __this = static_cast<const __hashtable*>(this);
-      if (__this->size() != __other.size())
- return false;
-
-      for (auto __x_n = __this->_M_begin(); __x_n;)
- {
-   std::size_t __x_count = 1;
-   auto __x_n_end = __x_n->_M_next();
-   for (; __x_n_end
-   && __this->key_eq()(_ExtractKey{}(__x_n->_M_v()),
-         _ExtractKey{}(__x_n_end->_M_v()));
-        __x_n_end = __x_n_end->_M_next())
-     ++__x_count;
-
-   std::size_t __ybkt = __other._M_bucket_index(*__x_n);
-   auto __y_prev_n = __other._M_buckets[__ybkt];
-   if (!__y_prev_n)
-     return false;
-
-   __node_ptr __y_n = static_cast<__node_ptr>(__y_prev_n->_M_nxt);
-   for (;;)
-     {
-       if (__this->key_eq()(_ExtractKey{}(__y_n->_M_v()),
-       _ExtractKey{}(__x_n->_M_v())))
-  break;
-
-       auto __y_ref_n = __y_n;
-       for (__y_n = __y_n->_M_next(); __y_n; __y_n = __y_n->_M_next())
-  if (!__other._M_node_equals(*__y_ref_n, *__y_n))
-    break;
-
-       if (!__y_n || __other._M_bucket_index(*__y_n) != __ybkt)
-  return false;
-     }
-
-   auto __y_n_end = __y_n;
-   for (; __y_n_end; __y_n_end = __y_n_end->_M_next())
-     if (--__x_count == 0)
-       break;
-
-   if (__x_count != 0)
-     return false;
-
-   const_iterator __itx(__x_n), __itx_end(__x_n_end);
-   const_iterator __ity(__y_n);
-   if (!std::is_permutation(__itx, __itx_end, __ity))
-     return false;
-
-   __x_n = __x_n_end;
- }
-      return true;
-    }
-
-
-
-
-
-  template<typename _NodeAlloc>
-    struct _Hashtable_alloc : private _Hashtable_ebo_helper<0, _NodeAlloc>
-    {
-    private:
-      using __ebo_node_alloc = _Hashtable_ebo_helper<0, _NodeAlloc>;
-
-      template<typename>
- struct __get_value_type;
-      template<typename _Val, bool _Cache_hash_code>
- struct __get_value_type<_Hash_node<_Val, _Cache_hash_code>>
- { using type = _Val; };
-
-    public:
-      using __node_type = typename _NodeAlloc::value_type;
-      using __node_alloc_type = _NodeAlloc;
-
-      using __node_alloc_traits = __gnu_cxx::__alloc_traits<__node_alloc_type>;
-
-      using __value_alloc_traits = typename __node_alloc_traits::template
- rebind_traits<typename __get_value_type<__node_type>::type>;
-
-      using __node_ptr = __node_type*;
-      using __node_base = _Hash_node_base;
-      using __node_base_ptr = __node_base*;
-      using __buckets_alloc_type =
- __alloc_rebind<__node_alloc_type, __node_base_ptr>;
-      using __buckets_alloc_traits = std::allocator_traits<__buckets_alloc_type>;
-      using __buckets_ptr = __node_base_ptr*;
-
-      _Hashtable_alloc() = default;
-      _Hashtable_alloc(const _Hashtable_alloc&) = default;
-      _Hashtable_alloc(_Hashtable_alloc&&) = default;
-
-      template<typename _Alloc>
- _Hashtable_alloc(_Alloc&& __a)
- : __ebo_node_alloc(std::forward<_Alloc>(__a))
- { }
-
-      __node_alloc_type&
-      _M_node_allocator()
-      { return __ebo_node_alloc::_M_get(); }
-
-      const __node_alloc_type&
-      _M_node_allocator() const
-      { return __ebo_node_alloc::_M_cget(); }
-
-
-      template<typename... _Args>
- __node_ptr
- _M_allocate_node(_Args&&... __args);
-
-
-      void
-      _M_deallocate_node(__node_ptr __n);
-
-
-      void
-      _M_deallocate_node_ptr(__node_ptr __n);
-
-
-
-      void
-      _M_deallocate_nodes(__node_ptr __n);
-
-      __buckets_ptr
-      _M_allocate_buckets(std::size_t __bkt_count);
-
-      void
-      _M_deallocate_buckets(__buckets_ptr, std::size_t __bkt_count);
-    };
-
-
-
-  template<typename _NodeAlloc>
-    template<typename... _Args>
-      auto
-      _Hashtable_alloc<_NodeAlloc>::_M_allocate_node(_Args&&... __args)
-      -> __node_ptr
-      {
- auto& __alloc = _M_node_allocator();
- auto __nptr = __node_alloc_traits::allocate(__alloc, 1);
- __node_ptr __n = std::__to_address(__nptr);
- try
-   {
-     ::new ((void*)__n) __node_type;
-     __node_alloc_traits::construct(__alloc, __n->_M_valptr(),
-        std::forward<_Args>(__args)...);
-     return __n;
-   }
- catch(...)
-   {
-     __n->~__node_type();
-     __node_alloc_traits::deallocate(__alloc, __nptr, 1);
-     throw;
-   }
-      }
-
-  template<typename _NodeAlloc>
-    void
-    _Hashtable_alloc<_NodeAlloc>::_M_deallocate_node(__node_ptr __n)
-    {
-      __node_alloc_traits::destroy(_M_node_allocator(), __n->_M_valptr());
-      _M_deallocate_node_ptr(__n);
-    }
-
-  template<typename _NodeAlloc>
-    void
-    _Hashtable_alloc<_NodeAlloc>::_M_deallocate_node_ptr(__node_ptr __n)
-    {
-      typedef typename __node_alloc_traits::pointer _Ptr;
-      auto __ptr = std::pointer_traits<_Ptr>::pointer_to(*__n);
-      __n->~__node_type();
-      __node_alloc_traits::deallocate(_M_node_allocator(), __ptr, 1);
-    }
-
-  template<typename _NodeAlloc>
-    void
-    _Hashtable_alloc<_NodeAlloc>::_M_deallocate_nodes(__node_ptr __n)
-    {
-      while (__n)
- {
-   __node_ptr __tmp = __n;
-   __n = __n->_M_next();
-   _M_deallocate_node(__tmp);
- }
-    }
-
-  template<typename _NodeAlloc>
-    auto
-    _Hashtable_alloc<_NodeAlloc>::_M_allocate_buckets(std::size_t __bkt_count)
-    -> __buckets_ptr
-    {
-      __buckets_alloc_type __alloc(_M_node_allocator());
-
-      auto __ptr = __buckets_alloc_traits::allocate(__alloc, __bkt_count);
-      __buckets_ptr __p = std::__to_address(__ptr);
-      __builtin_memset(__p, 0, __bkt_count * sizeof(__node_base_ptr));
-      return __p;
-    }
-
-  template<typename _NodeAlloc>
-    void
-    _Hashtable_alloc<_NodeAlloc>::
-    _M_deallocate_buckets(__buckets_ptr __bkts,
-     std::size_t __bkt_count)
-    {
-      typedef typename __buckets_alloc_traits::pointer _Ptr;
-      auto __ptr = std::pointer_traits<_Ptr>::pointer_to(*__bkts);
-      __buckets_alloc_type __alloc(_M_node_allocator());
-      __buckets_alloc_traits::deallocate(__alloc, __ptr, __bkt_count);
-    }
-
-
-}
-
-
-}
-# 36 "C:/mingw64/include/c++/14.2.0/bits/hashtable.h" 2 3
-
-
-
-# 1 "C:/mingw64/include/c++/14.2.0/bits/node_handle.h" 1 3
-# 34 "C:/mingw64/include/c++/14.2.0/bits/node_handle.h" 3
-       
-# 35 "C:/mingw64/include/c++/14.2.0/bits/node_handle.h" 3
-
-# 1 "C:/mingw64/include/c++/14.2.0/bits/version.h" 1 3
-# 47 "C:/mingw64/include/c++/14.2.0/bits/version.h" 3
-       
-# 48 "C:/mingw64/include/c++/14.2.0/bits/version.h" 3
-# 37 "C:/mingw64/include/c++/14.2.0/bits/node_handle.h" 2 3
-
-
-
-
-
-
-
-namespace std
-{
-
-# 64 "C:/mingw64/include/c++/14.2.0/bits/node_handle.h" 3
-  template<typename _Val, typename _NodeAlloc>
-    class _Node_handle_common
-    {
-      using _AllocTraits = allocator_traits<_NodeAlloc>;
-
-    public:
-      using allocator_type = __alloc_rebind<_NodeAlloc, _Val>;
-
-      allocator_type
-      get_allocator() const noexcept
-      {
- do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(!this->empty()), false)) std::__glibcxx_assert_fail(); } while (false);
- return allocator_type(_M_alloc._M_alloc);
-      }
-
-      explicit operator bool() const noexcept { return _M_ptr != nullptr; }
-
-      [[nodiscard]] bool empty() const noexcept { return _M_ptr == nullptr; }
-
-
-    protected:
-      constexpr _Node_handle_common() noexcept : _M_ptr() { }
-
-      ~_Node_handle_common()
-      {
- if (!empty())
-   _M_reset();
-      }
-
-      _Node_handle_common(_Node_handle_common&& __nh) noexcept
-      : _M_ptr(__nh._M_ptr)
-      {
- if (_M_ptr)
-   _M_move(std::move(__nh));
-      }
-
-      _Node_handle_common&
-      operator=(_Node_handle_common&& __nh) noexcept
-      {
- if (empty())
-   {
-     if (!__nh.empty())
-       _M_move(std::move(__nh));
-   }
- else if (__nh.empty())
-   _M_reset();
- else
-   {
-
-     _AllocTraits::destroy(*_M_alloc, _M_ptr->_M_valptr());
-     _AllocTraits::deallocate(*_M_alloc, _M_ptr, 1);
-
-     _M_alloc = __nh._M_alloc.release();
-     _M_ptr = __nh._M_ptr;
-     __nh._M_ptr = nullptr;
-   }
- return *this;
-      }
-
-      _Node_handle_common(typename _AllocTraits::pointer __ptr,
-     const _NodeAlloc& __alloc)
-      : _M_ptr(__ptr), _M_alloc(__alloc)
-      {
- do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(__ptr != nullptr), false)) std::__glibcxx_assert_fail(); } while (false);
-      }
-
-      void
-      _M_swap(_Node_handle_common& __nh) noexcept
-      {
- if (empty())
-   {
-     if (!__nh.empty())
-       _M_move(std::move(__nh));
-   }
- else if (__nh.empty())
-   __nh._M_move(std::move(*this));
- else
-   {
-     using std::swap;
-     swap(_M_ptr, __nh._M_ptr);
-     _M_alloc.swap(__nh._M_alloc);
-   }
-      }
-
-    private:
-
-
-
-      void
-      _M_move(_Node_handle_common&& __nh) noexcept
-      {
- ::new (std::__addressof(_M_alloc)) _NodeAlloc(__nh._M_alloc.release());
- _M_ptr = __nh._M_ptr;
- __nh._M_ptr = nullptr;
-      }
-
-
-
-
-      void
-      _M_reset() noexcept
-      {
- _NodeAlloc __alloc = _M_alloc.release();
- _AllocTraits::destroy(__alloc, _M_ptr->_M_valptr());
- _AllocTraits::deallocate(__alloc, _M_ptr, 1);
- _M_ptr = nullptr;
-      }
-
-
-
-
-      void
-      release() noexcept
-      {
- _M_alloc.release();
- _M_ptr = nullptr;
-      }
-
-    protected:
-      typename _AllocTraits::pointer _M_ptr;
-
-    private:
-
-
-      union _Optional_alloc
-      {
- _Optional_alloc() { }
- ~_Optional_alloc() { }
-
- _Optional_alloc(_Optional_alloc&&) = delete;
- _Optional_alloc& operator=(_Optional_alloc&&) = delete;
-
- _Optional_alloc(const _NodeAlloc& __alloc) noexcept
- : _M_alloc(__alloc)
- { }
-
-
- void
- operator=(_NodeAlloc&& __alloc) noexcept
- {
-   using _ATr = _AllocTraits;
-   if constexpr (_ATr::propagate_on_container_move_assignment::value)
-     _M_alloc = std::move(__alloc);
-   else if constexpr (!_AllocTraits::is_always_equal::value)
-     do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(_M_alloc == __alloc), false)) std::__glibcxx_assert_fail(); } while (false);
- }
-
-
- void
- swap(_Optional_alloc& __other) noexcept
- {
-   using std::swap;
-   if constexpr (_AllocTraits::propagate_on_container_swap::value)
-     swap(_M_alloc, __other._M_alloc);
-   else if constexpr (!_AllocTraits::is_always_equal::value)
-     do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(_M_alloc == __other._M_alloc), false)) std::__glibcxx_assert_fail(); } while (false);
- }
-
-
- _NodeAlloc& operator*() noexcept { return _M_alloc; }
-
-
- _NodeAlloc release() noexcept
- {
-   _NodeAlloc __tmp = std::move(_M_alloc);
-   _M_alloc.~_NodeAlloc();
-   return __tmp;
- }
-
- [[__no_unique_address__]] _NodeAlloc _M_alloc;
-      };
-
-      [[__no_unique_address__]] _Optional_alloc _M_alloc;
-
-      template<typename _Key2, typename _Value2, typename _KeyOfValue,
-        typename _Compare, typename _ValueAlloc>
- friend class _Rb_tree;
-
-      template<typename _Key2, typename _Value2, typename _ValueAlloc,
-        typename _ExtractKey, typename _Equal,
-        typename _Hash, typename _RangeHash, typename _Unused,
-        typename _RehashPolicy, typename _Traits>
- friend class _Hashtable;
-
-
-    };
-
-
-  template<typename _Key, typename _Value, typename _NodeAlloc>
-    class _Node_handle : public _Node_handle_common<_Value, _NodeAlloc>
-    {
-    public:
-      constexpr _Node_handle() noexcept = default;
-      ~_Node_handle() = default;
-      _Node_handle(_Node_handle&&) noexcept = default;
-
-      _Node_handle&
-      operator=(_Node_handle&&) noexcept = default;
-
-      using key_type = _Key;
-      using mapped_type = typename _Value::second_type;
-
-      key_type&
-      key() const noexcept
-      {
- do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(!this->empty()), false)) std::__glibcxx_assert_fail(); } while (false);
- return *_M_pkey;
-      }
-
-      mapped_type&
-      mapped() const noexcept
-      {
- do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(!this->empty()), false)) std::__glibcxx_assert_fail(); } while (false);
- return *_M_pmapped;
-      }
-
-      void
-      swap(_Node_handle& __nh) noexcept
-      {
- this->_M_swap(__nh);
- using std::swap;
- swap(_M_pkey, __nh._M_pkey);
- swap(_M_pmapped, __nh._M_pmapped);
-      }
-
-      friend void
-      swap(_Node_handle& __x, _Node_handle& __y)
-      noexcept(noexcept(__x.swap(__y)))
-      { __x.swap(__y); }
-
-    private:
-      using _AllocTraits = allocator_traits<_NodeAlloc>;
-
-      _Node_handle(typename _AllocTraits::pointer __ptr,
-     const _NodeAlloc& __alloc)
-      : _Node_handle_common<_Value, _NodeAlloc>(__ptr, __alloc)
-      {
- if (__ptr)
-   {
-     auto& __key = const_cast<_Key&>(__ptr->_M_valptr()->first);
-     _M_pkey = _S_pointer_to(__key);
-     _M_pmapped = _S_pointer_to(__ptr->_M_valptr()->second);
-   }
- else
-   {
-     _M_pkey = nullptr;
-     _M_pmapped = nullptr;
-   }
-      }
-
-      template<typename _Tp>
- using __pointer
-   = __ptr_rebind<typename _AllocTraits::pointer,
-    remove_reference_t<_Tp>>;
-
-      __pointer<_Key> _M_pkey = nullptr;
-      __pointer<typename _Value::second_type> _M_pmapped = nullptr;
-
-      template<typename _Tp>
- __pointer<_Tp>
- _S_pointer_to(_Tp& __obj)
- { return pointer_traits<__pointer<_Tp>>::pointer_to(__obj); }
-
-      const key_type&
-      _M_key() const noexcept { return key(); }
-
-      template<typename _Key2, typename _Value2, typename _KeyOfValue,
-        typename _Compare, typename _ValueAlloc>
- friend class _Rb_tree;
-
-      template<typename _Key2, typename _Value2, typename _ValueAlloc,
-        typename _ExtractKey, typename _Equal,
-        typename _Hash, typename _RangeHash, typename _Unused,
-        typename _RehashPolicy, typename _Traits>
- friend class _Hashtable;
-    };
-
-
-  template<typename _Value, typename _NodeAlloc>
-    class _Node_handle<_Value, _Value, _NodeAlloc>
-    : public _Node_handle_common<_Value, _NodeAlloc>
-    {
-    public:
-      constexpr _Node_handle() noexcept = default;
-      ~_Node_handle() = default;
-      _Node_handle(_Node_handle&&) noexcept = default;
-
-      _Node_handle&
-      operator=(_Node_handle&&) noexcept = default;
-
-      using value_type = _Value;
-
-      value_type&
-      value() const noexcept
-      {
- do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(!this->empty()), false)) std::__glibcxx_assert_fail(); } while (false);
- return *this->_M_ptr->_M_valptr();
-      }
-
-      void
-      swap(_Node_handle& __nh) noexcept
-      { this->_M_swap(__nh); }
-
-      friend void
-      swap(_Node_handle& __x, _Node_handle& __y)
-      noexcept(noexcept(__x.swap(__y)))
-      { __x.swap(__y); }
-
-    private:
-      using _AllocTraits = allocator_traits<_NodeAlloc>;
-
-      _Node_handle(typename _AllocTraits::pointer __ptr,
-     const _NodeAlloc& __alloc)
-      : _Node_handle_common<_Value, _NodeAlloc>(__ptr, __alloc) { }
-
-      const value_type&
-      _M_key() const noexcept { return value(); }
-
-      template<typename _Key, typename _Val, typename _KeyOfValue,
-        typename _Compare, typename _Alloc>
- friend class _Rb_tree;
-
-      template<typename _Key2, typename _Value2, typename _ValueAlloc,
-        typename _ExtractKey, typename _Equal,
-        typename _Hash, typename _RangeHash, typename _Unused,
-        typename _RehashPolicy, typename _Traits>
- friend class _Hashtable;
-    };
-
-
-  template<typename _Iterator, typename _NodeHandle>
-    struct _Node_insert_return
-    {
-      _Iterator position = _Iterator();
-      bool inserted = false;
-      _NodeHandle node;
-    };
-
-
-
-
-}
-# 40 "C:/mingw64/include/c++/14.2.0/bits/hashtable.h" 2 3
-
-
-namespace std
-{
-
-
-
-  template<typename _Tp, typename _Hash>
-    using __cache_default
-      = __not_<__and_<
-         __is_fast_hash<_Hash>,
-
-         __is_nothrow_invocable<const _Hash&, const _Tp&>>>;
-
-
-
-
-  template<typename _Equal, typename _Hash, typename _Allocator>
-    using _Hashtable_enable_default_ctor
-      = _Enable_default_constructor<__and_<is_default_constructible<_Equal>,
-           is_default_constructible<_Hash>,
-           is_default_constructible<_Allocator>>{},
-        __detail::_Hash_node_base>;
-# 181 "C:/mingw64/include/c++/14.2.0/bits/hashtable.h" 3
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    class _Hashtable
-    : public __detail::_Hashtable_base<_Key, _Value, _ExtractKey, _Equal,
-           _Hash, _RangeHash, _Unused, _Traits>,
-      public __detail::_Map_base<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-     _Hash, _RangeHash, _Unused,
-     _RehashPolicy, _Traits>,
-      public __detail::_Insert<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-          _Hash, _RangeHash, _Unused,
-          _RehashPolicy, _Traits>,
-      public __detail::_Rehash_base<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused,
-        _RehashPolicy, _Traits>,
-      public __detail::_Equality<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-     _Hash, _RangeHash, _Unused,
-     _RehashPolicy, _Traits>,
-      private __detail::_Hashtable_alloc<
- __alloc_rebind<_Alloc,
-         __detail::_Hash_node<_Value,
-         _Traits::__hash_cached::value>>>,
-      private _Hashtable_enable_default_ctor<_Equal, _Hash, _Alloc>
-    {
-      static_assert(is_same<typename remove_cv<_Value>::type, _Value>::value,
-   "unordered container must have a non-const, non-volatile value_type");
-
-      static_assert(is_same<typename _Alloc::value_type, _Value>{},
-   "unordered container must have the same value_type as its allocator");
-
-
-      using __traits_type = _Traits;
-      using __hash_cached = typename __traits_type::__hash_cached;
-      using __constant_iterators = typename __traits_type::__constant_iterators;
-      using __node_type = __detail::_Hash_node<_Value, __hash_cached::value>;
-      using __node_alloc_type = __alloc_rebind<_Alloc, __node_type>;
-
-      using __hashtable_alloc = __detail::_Hashtable_alloc<__node_alloc_type>;
-
-      using __node_value_type =
- __detail::_Hash_node_value<_Value, __hash_cached::value>;
-      using __node_ptr = typename __hashtable_alloc::__node_ptr;
-      using __value_alloc_traits =
- typename __hashtable_alloc::__value_alloc_traits;
-      using __node_alloc_traits =
- typename __hashtable_alloc::__node_alloc_traits;
-      using __node_base = typename __hashtable_alloc::__node_base;
-      using __node_base_ptr = typename __hashtable_alloc::__node_base_ptr;
-      using __buckets_ptr = typename __hashtable_alloc::__buckets_ptr;
-
-      using __insert_base = __detail::_Insert<_Key, _Value, _Alloc, _ExtractKey,
-           _Equal, _Hash,
-           _RangeHash, _Unused,
-           _RehashPolicy, _Traits>;
-      using __enable_default_ctor
- = _Hashtable_enable_default_ctor<_Equal, _Hash, _Alloc>;
-      using __rehash_guard_t
- = __detail::_RehashStateGuard<_RehashPolicy>;
-
-    public:
-      typedef _Key key_type;
-      typedef _Value value_type;
-      typedef _Alloc allocator_type;
-      typedef _Equal key_equal;
-
-
-
-      typedef typename __value_alloc_traits::pointer pointer;
-      typedef typename __value_alloc_traits::const_pointer const_pointer;
-      typedef value_type& reference;
-      typedef const value_type& const_reference;
-
-      using iterator = typename __insert_base::iterator;
-
-      using const_iterator = typename __insert_base::const_iterator;
-
-      using local_iterator = __detail::_Local_iterator<key_type, _Value,
-   _ExtractKey, _Hash, _RangeHash, _Unused,
-          __constant_iterators::value,
-          __hash_cached::value>;
-
-      using const_local_iterator = __detail::_Local_const_iterator<
-   key_type, _Value,
-   _ExtractKey, _Hash, _RangeHash, _Unused,
-   __constant_iterators::value, __hash_cached::value>;
-
-    private:
-      using __rehash_type = _RehashPolicy;
-
-      using __unique_keys = typename __traits_type::__unique_keys;
-
-      using __hashtable_base = __detail::
- _Hashtable_base<_Key, _Value, _ExtractKey,
-   _Equal, _Hash, _RangeHash, _Unused, _Traits>;
-
-      using __hash_code_base = typename __hashtable_base::__hash_code_base;
-      using __hash_code = typename __hashtable_base::__hash_code;
-      using __ireturn_type = typename __insert_base::__ireturn_type;
-
-      using __map_base = __detail::_Map_base<_Key, _Value, _Alloc, _ExtractKey,
-          _Equal, _Hash, _RangeHash, _Unused,
-          _RehashPolicy, _Traits>;
-
-      using __rehash_base = __detail::_Rehash_base<_Key, _Value, _Alloc,
-         _ExtractKey, _Equal,
-         _Hash, _RangeHash, _Unused,
-         _RehashPolicy, _Traits>;
-
-      using __eq_base = __detail::_Equality<_Key, _Value, _Alloc, _ExtractKey,
-         _Equal, _Hash, _RangeHash, _Unused,
-         _RehashPolicy, _Traits>;
-
-      using __reuse_or_alloc_node_gen_t =
- __detail::_ReuseOrAllocNode<__node_alloc_type>;
-      using __alloc_node_gen_t =
- __detail::_AllocNode<__node_alloc_type>;
-      using __node_builder_t =
- __detail::_NodeBuilder<_ExtractKey>;
-
-
-      struct _Scoped_node
-      {
-
- _Scoped_node(__node_ptr __n, __hashtable_alloc* __h)
- : _M_h(__h), _M_node(__n) { }
-
-
- template<typename... _Args>
-   _Scoped_node(__hashtable_alloc* __h, _Args&&... __args)
-   : _M_h(__h),
-     _M_node(__h->_M_allocate_node(std::forward<_Args>(__args)...))
-   { }
-
-
- ~_Scoped_node() { if (_M_node) _M_h->_M_deallocate_node(_M_node); };
-
- _Scoped_node(const _Scoped_node&) = delete;
- _Scoped_node& operator=(const _Scoped_node&) = delete;
-
- __hashtable_alloc* _M_h;
- __node_ptr _M_node;
-      };
-
-      template<typename _Ht>
- static constexpr
- __conditional_t<std::is_lvalue_reference<_Ht>::value,
-   const value_type&, value_type&&>
- __fwd_value_for(value_type& __val) noexcept
- { return std::move(__val); }
-
-
-
-
-
-      struct __hash_code_base_access : __hash_code_base
-      { using __hash_code_base::_M_bucket_index; };
-
-
-      static_assert(is_nothrow_default_constructible<_RangeHash>::value,
-      "Functor used to map hash code to bucket index"
-      " must be nothrow default constructible");
-      static_assert(noexcept(
- std::declval<const _RangeHash&>()((std::size_t)0, (std::size_t)0)),
-      "Functor used to map hash code to bucket index must be"
-      " noexcept");
-
-
-      static_assert(is_nothrow_default_constructible<_ExtractKey>::value,
-      "_ExtractKey must be nothrow default constructible");
-      static_assert(noexcept(
- std::declval<const _ExtractKey&>()(std::declval<_Value>())),
-      "_ExtractKey functor must be noexcept invocable");
-
-      template<typename _Keya, typename _Valuea, typename _Alloca,
-        typename _ExtractKeya, typename _Equala,
-        typename _Hasha, typename _RangeHasha, typename _Unuseda,
-        typename _RehashPolicya, typename _Traitsa,
-        bool _Unique_keysa>
- friend struct __detail::_Map_base;
-
-      template<typename _Keya, typename _Valuea, typename _Alloca,
-        typename _ExtractKeya, typename _Equala,
-        typename _Hasha, typename _RangeHasha, typename _Unuseda,
-        typename _RehashPolicya, typename _Traitsa>
- friend struct __detail::_Insert_base;
-
-      template<typename _Keya, typename _Valuea, typename _Alloca,
-        typename _ExtractKeya, typename _Equala,
-        typename _Hasha, typename _RangeHasha, typename _Unuseda,
-        typename _RehashPolicya, typename _Traitsa,
-        bool _Constant_iteratorsa>
- friend struct __detail::_Insert;
-
-      template<typename _Keya, typename _Valuea, typename _Alloca,
-        typename _ExtractKeya, typename _Equala,
-        typename _Hasha, typename _RangeHasha, typename _Unuseda,
-        typename _RehashPolicya, typename _Traitsa,
-        bool _Unique_keysa>
- friend struct __detail::_Equality;
-
-    public:
-      using size_type = typename __hashtable_base::size_type;
-      using difference_type = typename __hashtable_base::difference_type;
-
-
-      using node_type = _Node_handle<_Key, _Value, __node_alloc_type>;
-      using insert_return_type = _Node_insert_return<iterator, node_type>;
-
-
-    private:
-      __buckets_ptr _M_buckets = &_M_single_bucket;
-      size_type _M_bucket_count = 1;
-      __node_base _M_before_begin;
-      size_type _M_element_count = 0;
-      _RehashPolicy _M_rehash_policy;
-
-
-
-
-
-
-
-      __node_base_ptr _M_single_bucket = nullptr;
-
-      void
-      _M_update_bbegin()
-      {
- if (auto __begin = _M_begin())
-   _M_buckets[_M_bucket_index(*__begin)] = &_M_before_begin;
-      }
-
-      void
-      _M_update_bbegin(__node_ptr __n)
-      {
- _M_before_begin._M_nxt = __n;
- _M_update_bbegin();
-      }
-
-      bool
-      _M_uses_single_bucket(__buckets_ptr __bkts) const
-      { return __builtin_expect(__bkts == &_M_single_bucket, false); }
-
-      bool
-      _M_uses_single_bucket() const
-      { return _M_uses_single_bucket(_M_buckets); }
-
-      static constexpr size_t
-      __small_size_threshold() noexcept
-      {
- return
-   __detail::_Hashtable_hash_traits<_Hash>::__small_size_threshold();
-      }
-
-      __hashtable_alloc&
-      _M_base_alloc() { return *this; }
-
-      __buckets_ptr
-      _M_allocate_buckets(size_type __bkt_count)
-      {
- if (__builtin_expect(__bkt_count == 1, false))
-   {
-     _M_single_bucket = nullptr;
-     return &_M_single_bucket;
-   }
-
- return __hashtable_alloc::_M_allocate_buckets(__bkt_count);
-      }
-
-      void
-      _M_deallocate_buckets(__buckets_ptr __bkts, size_type __bkt_count)
-      {
- if (_M_uses_single_bucket(__bkts))
-   return;
-
- __hashtable_alloc::_M_deallocate_buckets(__bkts, __bkt_count);
-      }
-
-      void
-      _M_deallocate_buckets()
-      { _M_deallocate_buckets(_M_buckets, _M_bucket_count); }
-
-
-
-      __node_ptr
-      _M_bucket_begin(size_type __bkt) const
-      {
- __node_base_ptr __n = _M_buckets[__bkt];
- return __n ? static_cast<__node_ptr>(__n->_M_nxt) : nullptr;
-      }
-
-      __node_ptr
-      _M_begin() const
-      { return static_cast<__node_ptr>(_M_before_begin._M_nxt); }
-
-
-
-      template<typename _Ht>
- void
- _M_assign_elements(_Ht&&);
-
-      template<typename _Ht, typename _NodeGenerator>
- void
- _M_assign(_Ht&&, const _NodeGenerator&);
-
-      void
-      _M_move_assign(_Hashtable&&, true_type);
-
-      void
-      _M_move_assign(_Hashtable&&, false_type);
-
-      void
-      _M_reset() noexcept;
-
-      _Hashtable(const _Hash& __h, const _Equal& __eq,
-   const allocator_type& __a)
-      : __hashtable_base(__h, __eq),
- __hashtable_alloc(__node_alloc_type(__a)),
- __enable_default_ctor(_Enable_default_constructor_tag{})
-      { }
-
-      template<bool _No_realloc = true>
- static constexpr bool
- _S_nothrow_move()
- {
-
-
-
-
-
-   if constexpr (_No_realloc)
-     if constexpr (is_nothrow_copy_constructible<_Hash>())
-       return is_nothrow_copy_constructible<_Equal>();
-   return false;
-
- }
-
-      _Hashtable(_Hashtable&& __ht, __node_alloc_type&& __a,
-   true_type )
- noexcept(_S_nothrow_move());
-
-      _Hashtable(_Hashtable&&, __node_alloc_type&&,
-   false_type );
-
-      template<typename _InputIterator>
- _Hashtable(_InputIterator __first, _InputIterator __last,
-     size_type __bkt_count_hint,
-     const _Hash&, const _Equal&, const allocator_type&,
-     true_type __uks);
-
-      template<typename _InputIterator>
- _Hashtable(_InputIterator __first, _InputIterator __last,
-     size_type __bkt_count_hint,
-     const _Hash&, const _Equal&, const allocator_type&,
-     false_type __uks);
-
-    public:
-
-      _Hashtable() = default;
-
-      _Hashtable(const _Hashtable&);
-
-      _Hashtable(const _Hashtable&, const allocator_type&);
-
-      explicit
-      _Hashtable(size_type __bkt_count_hint,
-   const _Hash& __hf = _Hash(),
-   const key_equal& __eql = key_equal(),
-   const allocator_type& __a = allocator_type());
-
-
-      _Hashtable(_Hashtable&& __ht)
- noexcept(_S_nothrow_move())
-      : _Hashtable(std::move(__ht), std::move(__ht._M_node_allocator()),
-     true_type{})
-      { }
-
-      _Hashtable(_Hashtable&& __ht, const allocator_type& __a)
- noexcept(_S_nothrow_move<__node_alloc_traits::_S_always_equal()>())
-      : _Hashtable(std::move(__ht), __node_alloc_type(__a),
-     typename __node_alloc_traits::is_always_equal{})
-      { }
-
-      explicit
-      _Hashtable(const allocator_type& __a)
-      : __hashtable_alloc(__node_alloc_type(__a)),
- __enable_default_ctor(_Enable_default_constructor_tag{})
-      { }
-
-      template<typename _InputIterator>
- _Hashtable(_InputIterator __f, _InputIterator __l,
-     size_type __bkt_count_hint = 0,
-     const _Hash& __hf = _Hash(),
-     const key_equal& __eql = key_equal(),
-     const allocator_type& __a = allocator_type())
- : _Hashtable(__f, __l, __bkt_count_hint, __hf, __eql, __a,
-       __unique_keys{})
- { }
-
-      _Hashtable(initializer_list<value_type> __l,
-   size_type __bkt_count_hint = 0,
-   const _Hash& __hf = _Hash(),
-   const key_equal& __eql = key_equal(),
-   const allocator_type& __a = allocator_type())
-      : _Hashtable(__l.begin(), __l.end(), __bkt_count_hint,
-     __hf, __eql, __a, __unique_keys{})
-      { }
-
-      _Hashtable&
-      operator=(const _Hashtable& __ht);
-
-      _Hashtable&
-      operator=(_Hashtable&& __ht)
-      noexcept(__node_alloc_traits::_S_nothrow_move()
-        && is_nothrow_move_assignable<_Hash>::value
-        && is_nothrow_move_assignable<_Equal>::value)
-      {
- constexpr bool __move_storage =
-   __node_alloc_traits::_S_propagate_on_move_assign()
-   || __node_alloc_traits::_S_always_equal();
- _M_move_assign(std::move(__ht), __bool_constant<__move_storage>());
- return *this;
-      }
-
-      _Hashtable&
-      operator=(initializer_list<value_type> __l)
-      {
- __reuse_or_alloc_node_gen_t __roan(_M_begin(), *this);
- _M_before_begin._M_nxt = nullptr;
- clear();
-
-
- auto __l_bkt_count = _M_rehash_policy._M_bkt_for_elements(__l.size());
-
-
- if (_M_bucket_count < __l_bkt_count)
-   rehash(__l_bkt_count);
-
- this->_M_insert_range(__l.begin(), __l.end(), __roan, __unique_keys{});
- return *this;
-      }
-
-      ~_Hashtable() noexcept;
-
-      void
-      swap(_Hashtable&)
-      noexcept(__and_<__is_nothrow_swappable<_Hash>,
-        __is_nothrow_swappable<_Equal>>::value);
-
-
-      iterator
-      begin() noexcept
-      { return iterator(_M_begin()); }
-
-      const_iterator
-      begin() const noexcept
-      { return const_iterator(_M_begin()); }
-
-      iterator
-      end() noexcept
-      { return iterator(nullptr); }
-
-      const_iterator
-      end() const noexcept
-      { return const_iterator(nullptr); }
-
-      const_iterator
-      cbegin() const noexcept
-      { return const_iterator(_M_begin()); }
-
-      const_iterator
-      cend() const noexcept
-      { return const_iterator(nullptr); }
-
-      size_type
-      size() const noexcept
-      { return _M_element_count; }
-
-      [[__nodiscard__]] bool
-      empty() const noexcept
-      { return size() == 0; }
-
-      allocator_type
-      get_allocator() const noexcept
-      { return allocator_type(this->_M_node_allocator()); }
-
-      size_type
-      max_size() const noexcept
-      { return __node_alloc_traits::max_size(this->_M_node_allocator()); }
-
-
-      key_equal
-      key_eq() const
-      { return this->_M_eq(); }
-
-
-
-
-      size_type
-      bucket_count() const noexcept
-      { return _M_bucket_count; }
-
-      size_type
-      max_bucket_count() const noexcept
-      { return max_size(); }
-
-      size_type
-      bucket_size(size_type __bkt) const
-      { return std::distance(begin(__bkt), end(__bkt)); }
-
-      size_type
-      bucket(const key_type& __k) const
-      { return _M_bucket_index(this->_M_hash_code(__k)); }
-
-      local_iterator
-      begin(size_type __bkt)
-      {
- return local_iterator(*this, _M_bucket_begin(__bkt),
-         __bkt, _M_bucket_count);
-      }
-
-      local_iterator
-      end(size_type __bkt)
-      { return local_iterator(*this, nullptr, __bkt, _M_bucket_count); }
-
-      const_local_iterator
-      begin(size_type __bkt) const
-      {
- return const_local_iterator(*this, _M_bucket_begin(__bkt),
-        __bkt, _M_bucket_count);
-      }
-
-      const_local_iterator
-      end(size_type __bkt) const
-      { return const_local_iterator(*this, nullptr, __bkt, _M_bucket_count); }
-
-
-      const_local_iterator
-      cbegin(size_type __bkt) const
-      {
- return const_local_iterator(*this, _M_bucket_begin(__bkt),
-        __bkt, _M_bucket_count);
-      }
-
-      const_local_iterator
-      cend(size_type __bkt) const
-      { return const_local_iterator(*this, nullptr, __bkt, _M_bucket_count); }
-
-      float
-      load_factor() const noexcept
-      {
- return static_cast<float>(size()) / static_cast<float>(bucket_count());
-      }
-
-
-
-
-
-
-      const _RehashPolicy&
-      __rehash_policy() const
-      { return _M_rehash_policy; }
-
-      void
-      __rehash_policy(const _RehashPolicy& __pol)
-      { _M_rehash_policy = __pol; }
-
-
-      iterator
-      find(const key_type& __k);
-
-      const_iterator
-      find(const key_type& __k) const;
-
-      size_type
-      count(const key_type& __k) const;
-
-      std::pair<iterator, iterator>
-      equal_range(const key_type& __k);
-
-      std::pair<const_iterator, const_iterator>
-      equal_range(const key_type& __k) const;
-
-
-      template<typename _Kt,
-        typename = __has_is_transparent_t<_Hash, _Kt>,
-        typename = __has_is_transparent_t<_Equal, _Kt>>
- iterator
- _M_find_tr(const _Kt& __k);
-
-      template<typename _Kt,
-        typename = __has_is_transparent_t<_Hash, _Kt>,
-        typename = __has_is_transparent_t<_Equal, _Kt>>
- const_iterator
- _M_find_tr(const _Kt& __k) const;
-
-      template<typename _Kt,
-        typename = __has_is_transparent_t<_Hash, _Kt>,
-        typename = __has_is_transparent_t<_Equal, _Kt>>
- size_type
- _M_count_tr(const _Kt& __k) const;
-
-      template<typename _Kt,
-        typename = __has_is_transparent_t<_Hash, _Kt>,
-        typename = __has_is_transparent_t<_Equal, _Kt>>
- pair<iterator, iterator>
- _M_equal_range_tr(const _Kt& __k);
-
-      template<typename _Kt,
-        typename = __has_is_transparent_t<_Hash, _Kt>,
-        typename = __has_is_transparent_t<_Equal, _Kt>>
- pair<const_iterator, const_iterator>
- _M_equal_range_tr(const _Kt& __k) const;
-
-
-    private:
-
-      size_type
-      _M_bucket_index(const __node_value_type& __n) const noexcept
-      { return __hash_code_base::_M_bucket_index(__n, _M_bucket_count); }
-
-      size_type
-      _M_bucket_index(__hash_code __c) const
-      { return __hash_code_base::_M_bucket_index(__c, _M_bucket_count); }
-
-      __node_base_ptr
-      _M_find_before_node(const key_type&);
-
-
-
-      __node_base_ptr
-      _M_find_before_node(size_type, const key_type&, __hash_code) const;
-
-      template<typename _Kt>
- __node_base_ptr
- _M_find_before_node_tr(size_type, const _Kt&, __hash_code) const;
-
-      __node_ptr
-      _M_find_node(size_type __bkt, const key_type& __key,
-     __hash_code __c) const
-      {
- __node_base_ptr __before_n = _M_find_before_node(__bkt, __key, __c);
- if (__before_n)
-   return static_cast<__node_ptr>(__before_n->_M_nxt);
- return nullptr;
-      }
-
-      template<typename _Kt>
- __node_ptr
- _M_find_node_tr(size_type __bkt, const _Kt& __key,
-   __hash_code __c) const
- {
-   auto __before_n = _M_find_before_node_tr(__bkt, __key, __c);
-   if (__before_n)
-     return static_cast<__node_ptr>(__before_n->_M_nxt);
-   return nullptr;
- }
-
-
-      void
-      _M_insert_bucket_begin(size_type __bkt, __node_ptr __node)
-      {
- if (_M_buckets[__bkt])
-   {
-
-
-     __node->_M_nxt = _M_buckets[__bkt]->_M_nxt;
-     _M_buckets[__bkt]->_M_nxt = __node;
-   }
- else
-   {
-
-
-
-     __node->_M_nxt = _M_before_begin._M_nxt;
-     _M_before_begin._M_nxt = __node;
-
-     if (__node->_M_nxt)
-
-
-       _M_buckets[_M_bucket_index(*__node->_M_next())] = __node;
-
-     _M_buckets[__bkt] = &_M_before_begin;
-   }
-      }
-
-
-      void
-      _M_remove_bucket_begin(size_type __bkt, __node_ptr __next_n,
-        size_type __next_bkt)
-      {
- if (!__next_n)
-   _M_buckets[__bkt] = nullptr;
- else if (__next_bkt != __bkt)
-   {
-     _M_buckets[__next_bkt] = _M_buckets[__bkt];
-     _M_buckets[__bkt] = nullptr;
-   }
-      }
-
-
-      __node_base_ptr
-      _M_get_previous_node(size_type __bkt, __node_ptr __n);
-
-      pair<__node_ptr, __hash_code>
-      _M_compute_hash_code(__node_ptr __hint, const key_type& __k) const;
-
-
-
-
-      iterator
-      _M_insert_unique_node(size_type __bkt, __hash_code,
-       __node_ptr __n, size_type __n_elt = 1);
-
-
-
-      iterator
-      _M_insert_multi_node(__node_ptr __hint,
-      __hash_code __code, __node_ptr __n);
-
-      template<typename... _Args>
- std::pair<iterator, bool>
- _M_emplace(true_type __uks, _Args&&... __args);
-
-      template<typename... _Args>
- iterator
- _M_emplace(false_type __uks, _Args&&... __args)
- { return _M_emplace(cend(), __uks, std::forward<_Args>(__args)...); }
-
-
-      template<typename... _Args>
- iterator
- _M_emplace(const_iterator, true_type __uks, _Args&&... __args)
- { return _M_emplace(__uks, std::forward<_Args>(__args)...).first; }
-
-      template<typename... _Args>
- iterator
- _M_emplace(const_iterator, false_type __uks, _Args&&... __args);
-
-      template<typename _Kt, typename _Arg, typename _NodeGenerator>
- std::pair<iterator, bool>
- _M_insert_unique(_Kt&&, _Arg&&, const _NodeGenerator&);
-
-      template<typename _Kt>
- static __conditional_t<
-   __and_<__is_nothrow_invocable<_Hash&, const key_type&>,
-   __not_<__is_nothrow_invocable<_Hash&, _Kt>>>::value,
-   key_type, _Kt&&>
- _S_forward_key(_Kt&& __k)
- { return std::forward<_Kt>(__k); }
-
-      static const key_type&
-      _S_forward_key(const key_type& __k)
-      { return __k; }
-
-      static key_type&&
-      _S_forward_key(key_type&& __k)
-      { return std::move(__k); }
-
-      template<typename _Arg, typename _NodeGenerator>
- std::pair<iterator, bool>
- _M_insert_unique_aux(_Arg&& __arg, const _NodeGenerator& __node_gen)
- {
-   return _M_insert_unique(
-     _S_forward_key(_ExtractKey{}(std::forward<_Arg>(__arg))),
-     std::forward<_Arg>(__arg), __node_gen);
- }
-
-      template<typename _Arg, typename _NodeGenerator>
- std::pair<iterator, bool>
- _M_insert(_Arg&& __arg, const _NodeGenerator& __node_gen,
-    true_type )
- {
-   using __to_value
-     = __detail::_ConvertToValueType<_ExtractKey, value_type>;
-   return _M_insert_unique_aux(
-     __to_value{}(std::forward<_Arg>(__arg)), __node_gen);
- }
-
-      template<typename _Arg, typename _NodeGenerator>
- iterator
- _M_insert(_Arg&& __arg, const _NodeGenerator& __node_gen,
-    false_type __uks)
- {
-   using __to_value
-     = __detail::_ConvertToValueType<_ExtractKey, value_type>;
-   return _M_insert(cend(),
-     __to_value{}(std::forward<_Arg>(__arg)), __node_gen, __uks);
- }
-
-
-      template<typename _Arg, typename _NodeGenerator>
- iterator
- _M_insert(const_iterator, _Arg&& __arg,
-    const _NodeGenerator& __node_gen, true_type __uks)
- {
-   return
-     _M_insert(std::forward<_Arg>(__arg), __node_gen, __uks).first;
- }
-
-
-      template<typename _Arg, typename _NodeGenerator>
- iterator
- _M_insert(const_iterator, _Arg&&,
-    const _NodeGenerator&, false_type __uks);
-
-      size_type
-      _M_erase(true_type __uks, const key_type&);
-
-      size_type
-      _M_erase(false_type __uks, const key_type&);
-
-      iterator
-      _M_erase(size_type __bkt, __node_base_ptr __prev_n, __node_ptr __n);
-
-    public:
-
-      template<typename... _Args>
- __ireturn_type
- emplace(_Args&&... __args)
- { return _M_emplace(__unique_keys{}, std::forward<_Args>(__args)...); }
-
-      template<typename... _Args>
- iterator
- emplace_hint(const_iterator __hint, _Args&&... __args)
- {
-   return _M_emplace(__hint, __unique_keys{},
-       std::forward<_Args>(__args)...);
- }
-
-
-
-
-      iterator
-      erase(const_iterator);
-
-
-      iterator
-      erase(iterator __it)
-      { return erase(const_iterator(__it)); }
-
-      size_type
-      erase(const key_type& __k)
-      { return _M_erase(__unique_keys{}, __k); }
-
-      iterator
-      erase(const_iterator, const_iterator);
-
-      void
-      clear() noexcept;
-
-
-
-      void rehash(size_type __bkt_count);
-
-
-
-
-
-
-      insert_return_type
-      _M_reinsert_node(node_type&& __nh)
-      {
- insert_return_type __ret;
- if (__nh.empty())
-   __ret.position = end();
- else
-   {
-     do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(get_allocator() == __nh.get_allocator()), false)) std::__glibcxx_assert_fail(); } while (false);
-
-     __node_ptr __n = nullptr;
-     const key_type& __k = __nh._M_key();
-     const size_type __size = size();
-     if (__size <= __small_size_threshold())
-       {
-  for (__n = _M_begin(); __n; __n = __n->_M_next())
-    if (this->_M_key_equals(__k, *__n))
-      break;
-       }
-
-     __hash_code __code;
-     size_type __bkt;
-     if (!__n)
-       {
-  __code = this->_M_hash_code(__k);
-  __bkt = _M_bucket_index(__code);
-  if (__size > __small_size_threshold())
-    __n = _M_find_node(__bkt, __k, __code);
-       }
-
-     if (__n)
-       {
-  __ret.node = std::move(__nh);
-  __ret.position = iterator(__n);
-  __ret.inserted = false;
-       }
-     else
-       {
-  __ret.position
-    = _M_insert_unique_node(__bkt, __code, __nh._M_ptr);
-  __nh.release();
-  __ret.inserted = true;
-       }
-   }
- return __ret;
-      }
-
-
-      iterator
-      _M_reinsert_node_multi(const_iterator __hint, node_type&& __nh)
-      {
- if (__nh.empty())
-   return end();
-
- do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(get_allocator() == __nh.get_allocator()), false)) std::__glibcxx_assert_fail(); } while (false);
-
- const key_type& __k = __nh._M_key();
- auto __code = this->_M_hash_code(__k);
- auto __ret
-   = _M_insert_multi_node(__hint._M_cur, __code, __nh._M_ptr);
- __nh.release();
- return __ret;
-      }
-
-    private:
-      node_type
-      _M_extract_node(size_t __bkt, __node_base_ptr __prev_n)
-      {
- __node_ptr __n = static_cast<__node_ptr>(__prev_n->_M_nxt);
- if (__prev_n == _M_buckets[__bkt])
-   _M_remove_bucket_begin(__bkt, __n->_M_next(),
-      __n->_M_nxt ? _M_bucket_index(*__n->_M_next()) : 0);
- else if (__n->_M_nxt)
-   {
-     size_type __next_bkt = _M_bucket_index(*__n->_M_next());
-     if (__next_bkt != __bkt)
-       _M_buckets[__next_bkt] = __prev_n;
-   }
-
- __prev_n->_M_nxt = __n->_M_nxt;
- __n->_M_nxt = nullptr;
- --_M_element_count;
- return { __n, this->_M_node_allocator() };
-      }
-
-
-
-      template<typename _H2>
- __hash_code
- _M_src_hash_code(const _H2&, const key_type& __k,
-    const __node_value_type& __src_n) const
- {
-   if constexpr (std::is_same_v<_H2, _Hash>)
-     if constexpr (std::is_empty_v<_Hash>)
-       return this->_M_hash_code(__src_n);
-
-   return this->_M_hash_code(__k);
- }
-
-    public:
-
-      node_type
-      extract(const_iterator __pos)
-      {
- size_t __bkt = _M_bucket_index(*__pos._M_cur);
- return _M_extract_node(__bkt,
-          _M_get_previous_node(__bkt, __pos._M_cur));
-      }
-
-
-      node_type
-      extract(const _Key& __k)
-      {
- node_type __nh;
- __hash_code __code = this->_M_hash_code(__k);
- std::size_t __bkt = _M_bucket_index(__code);
- if (__node_base_ptr __prev_node = _M_find_before_node(__bkt, __k, __code))
-   __nh = _M_extract_node(__bkt, __prev_node);
- return __nh;
-      }
-
-
-      template<typename _Compatible_Hashtable>
- void
- _M_merge_unique(_Compatible_Hashtable& __src)
- {
-   static_assert(is_same_v<typename _Compatible_Hashtable::node_type,
-       node_type>, "Node types are compatible");
-   do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(get_allocator() == __src.get_allocator()), false)) std::__glibcxx_assert_fail(); } while (false);
-
-   auto __n_elt = __src.size();
-   for (auto __i = __src.cbegin(), __end = __src.cend(); __i != __end;)
-     {
-       auto __pos = __i++;
-       const size_type __size = size();
-       const key_type& __k = _ExtractKey{}(*__pos);
-       if (__size <= __small_size_threshold())
-  {
-    bool __found = false;
-    for (auto __n = _M_begin(); __n; __n = __n->_M_next())
-      if (this->_M_key_equals(__k, *__n))
-        {
-   __found = true;
-   break;
-        }
-
-    if (__found)
-      {
-        if (__n_elt != 1)
-   --__n_elt;
-        continue;
-      }
-  }
-
-       __hash_code __code
-  = _M_src_hash_code(__src.hash_function(), __k, *__pos._M_cur);
-       size_type __bkt = _M_bucket_index(__code);
-       if (__size <= __small_size_threshold()
-    || _M_find_node(__bkt, __k, __code) == nullptr)
-  {
-    auto __nh = __src.extract(__pos);
-    _M_insert_unique_node(__bkt, __code, __nh._M_ptr, __n_elt);
-    __nh.release();
-    __n_elt = 1;
-  }
-       else if (__n_elt != 1)
-  --__n_elt;
-     }
- }
-
-
-      template<typename _Compatible_Hashtable>
- void
- _M_merge_multi(_Compatible_Hashtable& __src)
- {
-   static_assert(is_same_v<typename _Compatible_Hashtable::node_type,
-       node_type>, "Node types are compatible");
-   do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(get_allocator() == __src.get_allocator()), false)) std::__glibcxx_assert_fail(); } while (false);
-
-   __node_ptr __hint = nullptr;
-   this->reserve(size() + __src.size());
-   for (auto __i = __src.cbegin(), __end = __src.cend(); __i != __end;)
-     {
-       auto __pos = __i++;
-       const key_type& __k = _ExtractKey{}(*__pos);
-       __hash_code __code
-  = _M_src_hash_code(__src.hash_function(), __k, *__pos._M_cur);
-       auto __nh = __src.extract(__pos);
-       __hint = _M_insert_multi_node(__hint, __code, __nh._M_ptr)._M_cur;
-       __nh.release();
-     }
- }
-
-
-    private:
-
-      void _M_rehash(size_type __bkt_count, true_type __uks);
-
-
-      void _M_rehash(size_type __bkt_count, false_type __uks);
-    };
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _Hashtable(size_type __bkt_count_hint,
-        const _Hash& __h, const _Equal& __eq, const allocator_type& __a)
-    : _Hashtable(__h, __eq, __a)
-    {
-      auto __bkt_count = _M_rehash_policy._M_next_bkt(__bkt_count_hint);
-      if (__bkt_count > _M_bucket_count)
- {
-   _M_buckets = _M_allocate_buckets(__bkt_count);
-   _M_bucket_count = __bkt_count;
- }
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    template<typename _InputIterator>
-      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-   _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-      _Hashtable(_InputIterator __f, _InputIterator __l,
-   size_type __bkt_count_hint,
-   const _Hash& __h, const _Equal& __eq,
-   const allocator_type& __a, true_type )
-      : _Hashtable(__bkt_count_hint, __h, __eq, __a)
-      { this->insert(__f, __l); }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    template<typename _InputIterator>
-      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-   _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-      _Hashtable(_InputIterator __f, _InputIterator __l,
-   size_type __bkt_count_hint,
-   const _Hash& __h, const _Equal& __eq,
-   const allocator_type& __a, false_type __uks)
-      : _Hashtable(__h, __eq, __a)
-      {
- auto __nb_elems = __detail::__distance_fw(__f, __l);
- auto __bkt_count =
-   _M_rehash_policy._M_next_bkt(
-     std::max(_M_rehash_policy._M_bkt_for_elements(__nb_elems),
-       __bkt_count_hint));
-
- if (__bkt_count > _M_bucket_count)
-   {
-     _M_buckets = _M_allocate_buckets(__bkt_count);
-     _M_bucket_count = __bkt_count;
-   }
-
- __alloc_node_gen_t __node_gen(*this);
- for (; __f != __l; ++__f)
-   _M_insert(*__f, __node_gen, __uks);
-      }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    operator=(const _Hashtable& __ht)
-    -> _Hashtable&
-    {
-      if (&__ht == this)
- return *this;
-
-      if (__node_alloc_traits::_S_propagate_on_copy_assign())
- {
-   auto& __this_alloc = this->_M_node_allocator();
-   auto& __that_alloc = __ht._M_node_allocator();
-   if (!__node_alloc_traits::_S_always_equal()
-       && __this_alloc != __that_alloc)
-     {
-
-       this->_M_deallocate_nodes(_M_begin());
-       _M_before_begin._M_nxt = nullptr;
-       _M_deallocate_buckets();
-       _M_buckets = nullptr;
-       std::__alloc_on_copy(__this_alloc, __that_alloc);
-       __hashtable_base::operator=(__ht);
-       _M_bucket_count = __ht._M_bucket_count;
-       _M_element_count = __ht._M_element_count;
-       _M_rehash_policy = __ht._M_rehash_policy;
-       __alloc_node_gen_t __alloc_node_gen(*this);
-       try
-  {
-    _M_assign(__ht, __alloc_node_gen);
-  }
-       catch(...)
-  {
-
-
-    _M_reset();
-    throw;
-  }
-       return *this;
-     }
-   std::__alloc_on_copy(__this_alloc, __that_alloc);
- }
-
-
-      _M_assign_elements(__ht);
-      return *this;
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    template<typename _Ht>
-      void
-      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-   _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-      _M_assign_elements(_Ht&& __ht)
-      {
- __buckets_ptr __former_buckets = nullptr;
- std::size_t __former_bucket_count = _M_bucket_count;
- __rehash_guard_t __rehash_guard(_M_rehash_policy);
-
- if (_M_bucket_count != __ht._M_bucket_count)
-   {
-     __former_buckets = _M_buckets;
-     _M_buckets = _M_allocate_buckets(__ht._M_bucket_count);
-     _M_bucket_count = __ht._M_bucket_count;
-   }
- else
-   __builtin_memset(_M_buckets, 0,
-      _M_bucket_count * sizeof(__node_base_ptr));
-
- try
-   {
-     __hashtable_base::operator=(std::forward<_Ht>(__ht));
-     _M_element_count = __ht._M_element_count;
-     _M_rehash_policy = __ht._M_rehash_policy;
-     __reuse_or_alloc_node_gen_t __roan(_M_begin(), *this);
-     _M_before_begin._M_nxt = nullptr;
-     _M_assign(std::forward<_Ht>(__ht), __roan);
-     if (__former_buckets)
-       _M_deallocate_buckets(__former_buckets, __former_bucket_count);
-     __rehash_guard._M_guarded_obj = nullptr;
-   }
- catch(...)
-   {
-     if (__former_buckets)
-       {
-
-  _M_deallocate_buckets();
-  _M_buckets = __former_buckets;
-  _M_bucket_count = __former_bucket_count;
-       }
-     __builtin_memset(_M_buckets, 0,
-        _M_bucket_count * sizeof(__node_base_ptr));
-     throw;
-   }
-      }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    template<typename _Ht, typename _NodeGenerator>
-      void
-      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-   _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-      _M_assign(_Ht&& __ht, const _NodeGenerator& __node_gen)
-      {
- __buckets_ptr __buckets = nullptr;
- if (!_M_buckets)
-   _M_buckets = __buckets = _M_allocate_buckets(_M_bucket_count);
-
- try
-   {
-     if (!__ht._M_before_begin._M_nxt)
-       return;
-
-
-
-     __node_ptr __ht_n = __ht._M_begin();
-     __node_ptr __this_n
-       = __node_gen(__fwd_value_for<_Ht>(__ht_n->_M_v()));
-     this->_M_copy_code(*__this_n, *__ht_n);
-     _M_update_bbegin(__this_n);
-
-
-     __node_ptr __prev_n = __this_n;
-     for (__ht_n = __ht_n->_M_next(); __ht_n; __ht_n = __ht_n->_M_next())
-       {
-  __this_n = __node_gen(__fwd_value_for<_Ht>(__ht_n->_M_v()));
-  __prev_n->_M_nxt = __this_n;
-  this->_M_copy_code(*__this_n, *__ht_n);
-  size_type __bkt = _M_bucket_index(*__this_n);
-  if (!_M_buckets[__bkt])
-    _M_buckets[__bkt] = __prev_n;
-  __prev_n = __this_n;
-       }
-   }
- catch(...)
-   {
-     clear();
-     if (__buckets)
-       _M_deallocate_buckets();
-     throw;
-   }
-      }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    void
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _M_reset() noexcept
-    {
-      _M_rehash_policy._M_reset();
-      _M_bucket_count = 1;
-      _M_single_bucket = nullptr;
-      _M_buckets = &_M_single_bucket;
-      _M_before_begin._M_nxt = nullptr;
-      _M_element_count = 0;
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    void
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _M_move_assign(_Hashtable&& __ht, true_type)
-    {
-      if (__builtin_expect(std::__addressof(__ht) == this, false))
- return;
-
-      this->_M_deallocate_nodes(_M_begin());
-      _M_deallocate_buckets();
-      __hashtable_base::operator=(std::move(__ht));
-      _M_rehash_policy = __ht._M_rehash_policy;
-      if (!__ht._M_uses_single_bucket())
- _M_buckets = __ht._M_buckets;
-      else
- {
-   _M_buckets = &_M_single_bucket;
-   _M_single_bucket = __ht._M_single_bucket;
- }
-
-      _M_bucket_count = __ht._M_bucket_count;
-      _M_before_begin._M_nxt = __ht._M_before_begin._M_nxt;
-      _M_element_count = __ht._M_element_count;
-      std::__alloc_on_move(this->_M_node_allocator(), __ht._M_node_allocator());
-
-
-      _M_update_bbegin();
-      __ht._M_reset();
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    void
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _M_move_assign(_Hashtable&& __ht, false_type)
-    {
-      if (__ht._M_node_allocator() == this->_M_node_allocator())
- _M_move_assign(std::move(__ht), true_type{});
-      else
- {
-
-   _M_assign_elements(std::move(__ht));
-   __ht.clear();
- }
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _Hashtable(const _Hashtable& __ht)
-    : __hashtable_base(__ht),
-      __map_base(__ht),
-      __rehash_base(__ht),
-      __hashtable_alloc(
- __node_alloc_traits::_S_select_on_copy(__ht._M_node_allocator())),
-      __enable_default_ctor(__ht),
-      _M_buckets(nullptr),
-      _M_bucket_count(__ht._M_bucket_count),
-      _M_element_count(__ht._M_element_count),
-      _M_rehash_policy(__ht._M_rehash_policy)
-    {
-      __alloc_node_gen_t __alloc_node_gen(*this);
-      _M_assign(__ht, __alloc_node_gen);
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _Hashtable(_Hashtable&& __ht, __node_alloc_type&& __a,
-        true_type )
-    noexcept(_S_nothrow_move())
-    : __hashtable_base(__ht),
-      __map_base(__ht),
-      __rehash_base(__ht),
-      __hashtable_alloc(std::move(__a)),
-      __enable_default_ctor(__ht),
-      _M_buckets(__ht._M_buckets),
-      _M_bucket_count(__ht._M_bucket_count),
-      _M_before_begin(__ht._M_before_begin._M_nxt),
-      _M_element_count(__ht._M_element_count),
-      _M_rehash_policy(__ht._M_rehash_policy)
-    {
-
-      if (__ht._M_uses_single_bucket())
- {
-   _M_buckets = &_M_single_bucket;
-   _M_single_bucket = __ht._M_single_bucket;
- }
-
-
-      _M_update_bbegin();
-
-      __ht._M_reset();
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _Hashtable(const _Hashtable& __ht, const allocator_type& __a)
-    : __hashtable_base(__ht),
-      __map_base(__ht),
-      __rehash_base(__ht),
-      __hashtable_alloc(__node_alloc_type(__a)),
-      __enable_default_ctor(__ht),
-      _M_buckets(),
-      _M_bucket_count(__ht._M_bucket_count),
-      _M_element_count(__ht._M_element_count),
-      _M_rehash_policy(__ht._M_rehash_policy)
-    {
-      __alloc_node_gen_t __alloc_node_gen(*this);
-      _M_assign(__ht, __alloc_node_gen);
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _Hashtable(_Hashtable&& __ht, __node_alloc_type&& __a,
-        false_type )
-    : __hashtable_base(__ht),
-      __map_base(__ht),
-      __rehash_base(__ht),
-      __hashtable_alloc(std::move(__a)),
-      __enable_default_ctor(__ht),
-      _M_buckets(nullptr),
-      _M_bucket_count(__ht._M_bucket_count),
-      _M_element_count(__ht._M_element_count),
-      _M_rehash_policy(__ht._M_rehash_policy)
-    {
-      if (__ht._M_node_allocator() == this->_M_node_allocator())
- {
-   if (__ht._M_uses_single_bucket())
-     {
-       _M_buckets = &_M_single_bucket;
-       _M_single_bucket = __ht._M_single_bucket;
-     }
-   else
-     _M_buckets = __ht._M_buckets;
-
-
-
-   _M_update_bbegin(__ht._M_begin());
-
-   __ht._M_reset();
- }
-      else
- {
-   __alloc_node_gen_t __alloc_gen(*this);
-
-   using _Fwd_Ht = __conditional_t<
-     __move_if_noexcept_cond<value_type>::value,
-     const _Hashtable&, _Hashtable&&>;
-   _M_assign(std::forward<_Fwd_Ht>(__ht), __alloc_gen);
-   __ht.clear();
- }
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    ~_Hashtable() noexcept
-    {
-
-
-
-      static_assert(noexcept(declval<const __hash_code_base_access&>()
-   ._M_bucket_index(declval<const __node_value_type&>(),
-      (std::size_t)0)),
-      "Cache the hash code or qualify your functors involved"
-      " in hash code and bucket index computation with noexcept");
-
-      clear();
-      _M_deallocate_buckets();
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    void
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    swap(_Hashtable& __x)
-    noexcept(__and_<__is_nothrow_swappable<_Hash>,
-   __is_nothrow_swappable<_Equal>>::value)
-    {
-
-
-
-      this->_M_swap(__x);
-
-      std::__alloc_on_swap(this->_M_node_allocator(), __x._M_node_allocator());
-      std::swap(_M_rehash_policy, __x._M_rehash_policy);
-
-
-      if (this->_M_uses_single_bucket())
- {
-   if (!__x._M_uses_single_bucket())
-     {
-       _M_buckets = __x._M_buckets;
-       __x._M_buckets = &__x._M_single_bucket;
-     }
- }
-      else if (__x._M_uses_single_bucket())
- {
-   __x._M_buckets = _M_buckets;
-   _M_buckets = &_M_single_bucket;
- }
-      else
- std::swap(_M_buckets, __x._M_buckets);
-
-      std::swap(_M_bucket_count, __x._M_bucket_count);
-      std::swap(_M_before_begin._M_nxt, __x._M_before_begin._M_nxt);
-      std::swap(_M_element_count, __x._M_element_count);
-      std::swap(_M_single_bucket, __x._M_single_bucket);
-
-
-
-      _M_update_bbegin();
-      __x._M_update_bbegin();
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    find(const key_type& __k)
-    -> iterator
-    {
-      if (size() <= __small_size_threshold())
- {
-   for (auto __it = _M_begin(); __it; __it = __it->_M_next())
-     if (this->_M_key_equals(__k, *__it))
-       return iterator(__it);
-   return end();
- }
-
-      __hash_code __code = this->_M_hash_code(__k);
-      std::size_t __bkt = _M_bucket_index(__code);
-      return iterator(_M_find_node(__bkt, __k, __code));
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    find(const key_type& __k) const
-    -> const_iterator
-    {
-      if (size() <= __small_size_threshold())
- {
-   for (auto __it = _M_begin(); __it; __it = __it->_M_next())
-     if (this->_M_key_equals(__k, *__it))
-       return const_iterator(__it);
-   return end();
- }
-
-      __hash_code __code = this->_M_hash_code(__k);
-      std::size_t __bkt = _M_bucket_index(__code);
-      return const_iterator(_M_find_node(__bkt, __k, __code));
-    }
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    template<typename _Kt, typename, typename>
-      auto
-      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-   _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-      _M_find_tr(const _Kt& __k)
-      -> iterator
-      {
- if (size() <= __small_size_threshold())
-   {
-     for (auto __n = _M_begin(); __n; __n = __n->_M_next())
-       if (this->_M_key_equals_tr(__k, *__n))
-  return iterator(__n);
-     return end();
-   }
-
- __hash_code __code = this->_M_hash_code_tr(__k);
- std::size_t __bkt = _M_bucket_index(__code);
- return iterator(_M_find_node_tr(__bkt, __k, __code));
-      }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    template<typename _Kt, typename, typename>
-      auto
-      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-   _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-      _M_find_tr(const _Kt& __k) const
-      -> const_iterator
-      {
- if (size() <= __small_size_threshold())
-   {
-     for (auto __n = _M_begin(); __n; __n = __n->_M_next())
-       if (this->_M_key_equals_tr(__k, *__n))
-  return const_iterator(__n);
-     return end();
-   }
-
- __hash_code __code = this->_M_hash_code_tr(__k);
- std::size_t __bkt = _M_bucket_index(__code);
- return const_iterator(_M_find_node_tr(__bkt, __k, __code));
-      }
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    count(const key_type& __k) const
-    -> size_type
-    {
-      auto __it = find(__k);
-      if (!__it._M_cur)
- return 0;
-
-      if (__unique_keys::value)
- return 1;
-
-      size_type __result = 1;
-      for (auto __ref = __it++;
-    __it._M_cur && this->_M_node_equals(*__ref._M_cur, *__it._M_cur);
-    ++__it)
- ++__result;
-
-      return __result;
-    }
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    template<typename _Kt, typename, typename>
-      auto
-      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-   _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-      _M_count_tr(const _Kt& __k) const
-      -> size_type
-      {
- if (size() <= __small_size_threshold())
-   {
-     size_type __result = 0;
-     for (auto __n = _M_begin(); __n; __n = __n->_M_next())
-       {
-  if (this->_M_key_equals_tr(__k, *__n))
-    {
-      ++__result;
-      continue;
-    }
-
-  if (__result)
-    break;
-       }
-
-     return __result;
-   }
-
- __hash_code __code = this->_M_hash_code_tr(__k);
- std::size_t __bkt = _M_bucket_index(__code);
- auto __n = _M_find_node_tr(__bkt, __k, __code);
- if (!__n)
-   return 0;
-
- iterator __it(__n);
- size_type __result = 1;
- for (++__it;
-      __it._M_cur && this->_M_equals_tr(__k, __code, *__it._M_cur);
-      ++__it)
-   ++__result;
-
- return __result;
-      }
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    equal_range(const key_type& __k)
-    -> pair<iterator, iterator>
-    {
-      auto __ite = find(__k);
-      if (!__ite._M_cur)
- return { __ite, __ite };
-
-      auto __beg = __ite++;
-      if (__unique_keys::value)
- return { __beg, __ite };
-
-      while (__ite._M_cur && this->_M_node_equals(*__beg._M_cur, *__ite._M_cur))
- ++__ite;
-
-      return { __beg, __ite };
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    equal_range(const key_type& __k) const
-    -> pair<const_iterator, const_iterator>
-    {
-      auto __ite = find(__k);
-      if (!__ite._M_cur)
- return { __ite, __ite };
-
-      auto __beg = __ite++;
-      if (__unique_keys::value)
- return { __beg, __ite };
-
-      while (__ite._M_cur && this->_M_node_equals(*__beg._M_cur, *__ite._M_cur))
- ++__ite;
-
-      return { __beg, __ite };
-    }
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    template<typename _Kt, typename, typename>
-      auto
-      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-   _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-      _M_equal_range_tr(const _Kt& __k)
-      -> pair<iterator, iterator>
-      {
- if (size() <= __small_size_threshold())
-   {
-     __node_ptr __n, __beg = nullptr;
-     for (__n = _M_begin(); __n; __n = __n->_M_next())
-       {
-  if (this->_M_key_equals_tr(__k, *__n))
-    {
-      if (!__beg)
-        __beg = __n;
-      continue;
-    }
-
-  if (__beg)
-    break;
-       }
-
-     return { iterator(__beg), iterator(__n) };
-   }
-
- __hash_code __code = this->_M_hash_code_tr(__k);
- std::size_t __bkt = _M_bucket_index(__code);
- auto __n = _M_find_node_tr(__bkt, __k, __code);
- iterator __ite(__n);
- if (!__n)
-   return { __ite, __ite };
-
- auto __beg = __ite++;
- while (__ite._M_cur && this->_M_equals_tr(__k, __code, *__ite._M_cur))
-   ++__ite;
-
- return { __beg, __ite };
-      }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    template<typename _Kt, typename, typename>
-      auto
-      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-   _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-      _M_equal_range_tr(const _Kt& __k) const
-      -> pair<const_iterator, const_iterator>
-      {
- if (size() <= __small_size_threshold())
-   {
-     __node_ptr __n, __beg = nullptr;
-     for (__n = _M_begin(); __n; __n = __n->_M_next())
-       {
-  if (this->_M_key_equals_tr(__k, *__n))
-    {
-      if (!__beg)
-        __beg = __n;
-      continue;
-    }
-
-  if (__beg)
-    break;
-       }
-
-     return { const_iterator(__beg), const_iterator(__n) };
-   }
-
- __hash_code __code = this->_M_hash_code_tr(__k);
- std::size_t __bkt = _M_bucket_index(__code);
- auto __n = _M_find_node_tr(__bkt, __k, __code);
- const_iterator __ite(__n);
- if (!__n)
-   return { __ite, __ite };
-
- auto __beg = __ite++;
- while (__ite._M_cur && this->_M_equals_tr(__k, __code, *__ite._M_cur))
-   ++__ite;
-
- return { __beg, __ite };
-      }
-
-
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _M_find_before_node(const key_type& __k)
-    -> __node_base_ptr
-    {
-      __node_base_ptr __prev_p = &_M_before_begin;
-      if (!__prev_p->_M_nxt)
- return nullptr;
-
-      for (__node_ptr __p = static_cast<__node_ptr>(__prev_p->_M_nxt);
-    __p != nullptr;
-    __p = __p->_M_next())
- {
-   if (this->_M_key_equals(__k, *__p))
-     return __prev_p;
-
-   __prev_p = __p;
- }
-
-      return nullptr;
-    }
-
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _M_find_before_node(size_type __bkt, const key_type& __k,
-   __hash_code __code) const
-    -> __node_base_ptr
-    {
-      __node_base_ptr __prev_p = _M_buckets[__bkt];
-      if (!__prev_p)
- return nullptr;
-
-      for (__node_ptr __p = static_cast<__node_ptr>(__prev_p->_M_nxt);;
-    __p = __p->_M_next())
- {
-   if (this->_M_equals(__k, __code, *__p))
-     return __prev_p;
-
-   if (!__p->_M_nxt || _M_bucket_index(*__p->_M_next()) != __bkt)
-     break;
-   __prev_p = __p;
- }
-
-      return nullptr;
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    template<typename _Kt>
-      auto
-      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-   _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-      _M_find_before_node_tr(size_type __bkt, const _Kt& __k,
-        __hash_code __code) const
-      -> __node_base_ptr
-      {
- __node_base_ptr __prev_p = _M_buckets[__bkt];
- if (!__prev_p)
-   return nullptr;
-
- for (__node_ptr __p = static_cast<__node_ptr>(__prev_p->_M_nxt);;
-      __p = __p->_M_next())
-   {
-     if (this->_M_equals_tr(__k, __code, *__p))
-       return __prev_p;
-
-     if (!__p->_M_nxt || _M_bucket_index(*__p->_M_next()) != __bkt)
-       break;
-     __prev_p = __p;
-   }
-
- return nullptr;
-      }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _M_get_previous_node(size_type __bkt, __node_ptr __n)
-    -> __node_base_ptr
-    {
-      __node_base_ptr __prev_n = _M_buckets[__bkt];
-      while (__prev_n->_M_nxt != __n)
- __prev_n = __prev_n->_M_nxt;
-      return __prev_n;
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    template<typename... _Args>
-      auto
-      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-   _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-      _M_emplace(true_type , _Args&&... __args)
-      -> pair<iterator, bool>
-      {
-
- _Scoped_node __node { this, std::forward<_Args>(__args)... };
- const key_type& __k = _ExtractKey{}(__node._M_node->_M_v());
- const size_type __size = size();
- if (__size <= __small_size_threshold())
-   {
-     for (auto __it = _M_begin(); __it; __it = __it->_M_next())
-       if (this->_M_key_equals(__k, *__it))
-
-  return { iterator(__it), false };
-   }
-
- __hash_code __code = this->_M_hash_code(__k);
- size_type __bkt = _M_bucket_index(__code);
- if (__size > __small_size_threshold())
-   if (__node_ptr __p = _M_find_node(__bkt, __k, __code))
-
-     return { iterator(__p), false };
-
-
- auto __pos = _M_insert_unique_node(__bkt, __code, __node._M_node);
- __node._M_node = nullptr;
- return { __pos, true };
-      }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    template<typename... _Args>
-      auto
-      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-   _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-      _M_emplace(const_iterator __hint, false_type ,
-   _Args&&... __args)
-      -> iterator
-      {
-
- _Scoped_node __node { this, std::forward<_Args>(__args)... };
- const key_type& __k = _ExtractKey{}(__node._M_node->_M_v());
-
- auto __res = this->_M_compute_hash_code(__hint._M_cur, __k);
- auto __pos
-   = _M_insert_multi_node(__res.first, __res.second, __node._M_node);
- __node._M_node = nullptr;
- return __pos;
-      }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _M_compute_hash_code(__node_ptr __hint, const key_type& __k) const
-    -> pair<__node_ptr, __hash_code>
-    {
-      if (size() <= __small_size_threshold())
- {
-   if (__hint)
-     {
-       for (auto __it = __hint; __it; __it = __it->_M_next())
-  if (this->_M_key_equals(__k, *__it))
-    return { __it, this->_M_hash_code(*__it) };
-     }
-
-   for (auto __it = _M_begin(); __it != __hint; __it = __it->_M_next())
-     if (this->_M_key_equals(__k, *__it))
-       return { __it, this->_M_hash_code(*__it) };
-
-   __hint = nullptr;
- }
-
-      return { __hint, this->_M_hash_code(__k) };
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _M_insert_unique_node(size_type __bkt, __hash_code __code,
-     __node_ptr __node, size_type __n_elt)
-    -> iterator
-    {
-      __rehash_guard_t __rehash_guard(_M_rehash_policy);
-      std::pair<bool, std::size_t> __do_rehash
- = _M_rehash_policy._M_need_rehash(_M_bucket_count, _M_element_count,
-       __n_elt);
-
-      if (__do_rehash.first)
- {
-   _M_rehash(__do_rehash.second, true_type{});
-   __bkt = _M_bucket_index(__code);
- }
-
-      __rehash_guard._M_guarded_obj = nullptr;
-      this->_M_store_code(*__node, __code);
-
-
-      _M_insert_bucket_begin(__bkt, __node);
-      ++_M_element_count;
-      return iterator(__node);
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _M_insert_multi_node(__node_ptr __hint,
-    __hash_code __code, __node_ptr __node)
-    -> iterator
-    {
-      __rehash_guard_t __rehash_guard(_M_rehash_policy);
-      std::pair<bool, std::size_t> __do_rehash
- = _M_rehash_policy._M_need_rehash(_M_bucket_count, _M_element_count, 1);
-
-      if (__do_rehash.first)
- _M_rehash(__do_rehash.second, false_type{});
-
-      __rehash_guard._M_guarded_obj = nullptr;
-      this->_M_store_code(*__node, __code);
-      const key_type& __k = _ExtractKey{}(__node->_M_v());
-      size_type __bkt = _M_bucket_index(__code);
-
-
-
-      __node_base_ptr __prev
- = __builtin_expect(__hint != nullptr, false)
-   && this->_M_equals(__k, __code, *__hint)
-     ? __hint
-     : _M_find_before_node(__bkt, __k, __code);
-
-      if (__prev)
- {
-
-   __node->_M_nxt = __prev->_M_nxt;
-   __prev->_M_nxt = __node;
-   if (__builtin_expect(__prev == __hint, false))
-
-
-     if (__node->_M_nxt
-  && !this->_M_equals(__k, __code, *__node->_M_next()))
-       {
-  size_type __next_bkt = _M_bucket_index(*__node->_M_next());
-  if (__next_bkt != __bkt)
-    _M_buckets[__next_bkt] = __node;
-       }
- }
-      else
-
-
-
- _M_insert_bucket_begin(__bkt, __node);
-      ++_M_element_count;
-      return iterator(__node);
-    }
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    template<typename _Kt, typename _Arg, typename _NodeGenerator>
-      auto
-      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-   _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-      _M_insert_unique(_Kt&& __k, _Arg&& __v,
-         const _NodeGenerator& __node_gen)
-      -> pair<iterator, bool>
-      {
- const size_type __size = size();
- if (__size <= __small_size_threshold())
-   for (auto __it = _M_begin(); __it; __it = __it->_M_next())
-     if (this->_M_key_equals_tr(__k, *__it))
-       return { iterator(__it), false };
-
- __hash_code __code = this->_M_hash_code_tr(__k);
- size_type __bkt = _M_bucket_index(__code);
-
- if (__size > __small_size_threshold())
-   if (__node_ptr __node = _M_find_node_tr(__bkt, __k, __code))
-     return { iterator(__node), false };
-
- _Scoped_node __node {
-   __node_builder_t::_S_build(std::forward<_Kt>(__k),
-         std::forward<_Arg>(__v),
-         __node_gen),
-   this
- };
- auto __pos
-   = _M_insert_unique_node(__bkt, __code, __node._M_node);
- __node._M_node = nullptr;
- return { __pos, true };
-      }
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    template<typename _Arg, typename _NodeGenerator>
-      auto
-      _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-   _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-      _M_insert(const_iterator __hint, _Arg&& __v,
-  const _NodeGenerator& __node_gen,
-  false_type )
-      -> iterator
-      {
-
- _Scoped_node __node{ __node_gen(std::forward<_Arg>(__v)), this };
-
-
- auto __res = this->_M_compute_hash_code(
-   __hint._M_cur, _ExtractKey{}(__node._M_node->_M_v()));
-
- auto __pos
-   = _M_insert_multi_node(__res.first, __res.second, __node._M_node);
- __node._M_node = nullptr;
- return __pos;
-      }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    erase(const_iterator __it)
-    -> iterator
-    {
-      __node_ptr __n = __it._M_cur;
-      std::size_t __bkt = _M_bucket_index(*__n);
-
-
-
-
-      __node_base_ptr __prev_n = _M_get_previous_node(__bkt, __n);
-      return _M_erase(__bkt, __prev_n, __n);
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _M_erase(size_type __bkt, __node_base_ptr __prev_n, __node_ptr __n)
-    -> iterator
-    {
-      if (__prev_n == _M_buckets[__bkt])
- _M_remove_bucket_begin(__bkt, __n->_M_next(),
-   __n->_M_nxt ? _M_bucket_index(*__n->_M_next()) : 0);
-      else if (__n->_M_nxt)
- {
-   size_type __next_bkt = _M_bucket_index(*__n->_M_next());
-   if (__next_bkt != __bkt)
-     _M_buckets[__next_bkt] = __prev_n;
- }
-
-      __prev_n->_M_nxt = __n->_M_nxt;
-      iterator __result(__n->_M_next());
-      this->_M_deallocate_node(__n);
-      --_M_element_count;
-
-      return __result;
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _M_erase(true_type , const key_type& __k)
-    -> size_type
-    {
-      __node_base_ptr __prev_n;
-      __node_ptr __n;
-      std::size_t __bkt;
-      if (size() <= __small_size_threshold())
- {
-   __prev_n = _M_find_before_node(__k);
-   if (!__prev_n)
-     return 0;
-
-
-   __n = static_cast<__node_ptr>(__prev_n->_M_nxt);
-   __bkt = _M_bucket_index(*__n);
- }
-      else
- {
-   __hash_code __code = this->_M_hash_code(__k);
-   __bkt = _M_bucket_index(__code);
-
-
-   __prev_n = _M_find_before_node(__bkt, __k, __code);
-   if (!__prev_n)
-     return 0;
-
-
-   __n = static_cast<__node_ptr>(__prev_n->_M_nxt);
- }
-
-      _M_erase(__bkt, __prev_n, __n);
-      return 1;
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _M_erase(false_type , const key_type& __k)
-    -> size_type
-    {
-      std::size_t __bkt;
-      __node_base_ptr __prev_n;
-      __node_ptr __n;
-      if (size() <= __small_size_threshold())
- {
-   __prev_n = _M_find_before_node(__k);
-   if (!__prev_n)
-     return 0;
-
-
-   __n = static_cast<__node_ptr>(__prev_n->_M_nxt);
-   __bkt = _M_bucket_index(*__n);
- }
-      else
- {
-   __hash_code __code = this->_M_hash_code(__k);
-   __bkt = _M_bucket_index(__code);
-
-
-   __prev_n = _M_find_before_node(__bkt, __k, __code);
-   if (!__prev_n)
-     return 0;
-
-   __n = static_cast<__node_ptr>(__prev_n->_M_nxt);
- }
-
-
-
-
-
-
-
-      __node_ptr __n_last = __n->_M_next();
-      while (__n_last && this->_M_node_equals(*__n, *__n_last))
- __n_last = __n_last->_M_next();
-
-      std::size_t __n_last_bkt = __n_last ? _M_bucket_index(*__n_last) : __bkt;
-
-
-      size_type __result = 0;
-      do
- {
-   __node_ptr __p = __n->_M_next();
-   this->_M_deallocate_node(__n);
-   __n = __p;
-   ++__result;
- }
-      while (__n != __n_last);
-
-      _M_element_count -= __result;
-      if (__prev_n == _M_buckets[__bkt])
- _M_remove_bucket_begin(__bkt, __n_last, __n_last_bkt);
-      else if (__n_last_bkt != __bkt)
- _M_buckets[__n_last_bkt] = __prev_n;
-      __prev_n->_M_nxt = __n_last;
-      return __result;
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    auto
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    erase(const_iterator __first, const_iterator __last)
-    -> iterator
-    {
-      __node_ptr __n = __first._M_cur;
-      __node_ptr __last_n = __last._M_cur;
-      if (__n == __last_n)
- return iterator(__n);
-
-      std::size_t __bkt = _M_bucket_index(*__n);
-
-      __node_base_ptr __prev_n = _M_get_previous_node(__bkt, __n);
-      bool __is_bucket_begin = __n == _M_bucket_begin(__bkt);
-      std::size_t __n_bkt = __bkt;
-      for (;;)
- {
-   do
-     {
-       __node_ptr __tmp = __n;
-       __n = __n->_M_next();
-       this->_M_deallocate_node(__tmp);
-       --_M_element_count;
-       if (!__n)
-  break;
-       __n_bkt = _M_bucket_index(*__n);
-     }
-   while (__n != __last_n && __n_bkt == __bkt);
-   if (__is_bucket_begin)
-     _M_remove_bucket_begin(__bkt, __n, __n_bkt);
-   if (__n == __last_n)
-     break;
-   __is_bucket_begin = true;
-   __bkt = __n_bkt;
- }
-
-      if (__n && (__n_bkt != __bkt || __is_bucket_begin))
- _M_buckets[__n_bkt] = __prev_n;
-      __prev_n->_M_nxt = __n;
-      return iterator(__n);
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    void
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    clear() noexcept
-    {
-      this->_M_deallocate_nodes(_M_begin());
-      __builtin_memset(_M_buckets, 0,
-         _M_bucket_count * sizeof(__node_base_ptr));
-      _M_element_count = 0;
-      _M_before_begin._M_nxt = nullptr;
-    }
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    void
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    rehash(size_type __bkt_count)
-    {
-      __rehash_guard_t __rehash_guard(_M_rehash_policy);
-      __bkt_count
- = std::max(_M_rehash_policy._M_bkt_for_elements(_M_element_count + 1),
-     __bkt_count);
-      __bkt_count = _M_rehash_policy._M_next_bkt(__bkt_count);
-
-      if (__bkt_count != _M_bucket_count)
- {
-   _M_rehash(__bkt_count, __unique_keys{});
-   __rehash_guard._M_guarded_obj = nullptr;
- }
-    }
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    void
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _M_rehash(size_type __bkt_count, true_type )
-    {
-      __buckets_ptr __new_buckets = _M_allocate_buckets(__bkt_count);
-      __node_ptr __p = _M_begin();
-      _M_before_begin._M_nxt = nullptr;
-      std::size_t __bbegin_bkt = 0;
-      while (__p)
- {
-   __node_ptr __next = __p->_M_next();
-   std::size_t __bkt
-     = __hash_code_base::_M_bucket_index(*__p, __bkt_count);
-   if (!__new_buckets[__bkt])
-     {
-       __p->_M_nxt = _M_before_begin._M_nxt;
-       _M_before_begin._M_nxt = __p;
-       __new_buckets[__bkt] = &_M_before_begin;
-       if (__p->_M_nxt)
-  __new_buckets[__bbegin_bkt] = __p;
-       __bbegin_bkt = __bkt;
-     }
-   else
-     {
-       __p->_M_nxt = __new_buckets[__bkt]->_M_nxt;
-       __new_buckets[__bkt]->_M_nxt = __p;
-     }
-
-   __p = __next;
- }
-
-      _M_deallocate_buckets();
-      _M_bucket_count = __bkt_count;
-      _M_buckets = __new_buckets;
-    }
-
-
-
-  template<typename _Key, typename _Value, typename _Alloc,
-    typename _ExtractKey, typename _Equal,
-    typename _Hash, typename _RangeHash, typename _Unused,
-    typename _RehashPolicy, typename _Traits>
-    void
-    _Hashtable<_Key, _Value, _Alloc, _ExtractKey, _Equal,
-        _Hash, _RangeHash, _Unused, _RehashPolicy, _Traits>::
-    _M_rehash(size_type __bkt_count, false_type )
-    {
-      __buckets_ptr __new_buckets = _M_allocate_buckets(__bkt_count);
-      __node_ptr __p = _M_begin();
-      _M_before_begin._M_nxt = nullptr;
-      std::size_t __bbegin_bkt = 0;
-      std::size_t __prev_bkt = 0;
-      __node_ptr __prev_p = nullptr;
-      bool __check_bucket = false;
-
-      while (__p)
- {
-   __node_ptr __next = __p->_M_next();
-   std::size_t __bkt
-     = __hash_code_base::_M_bucket_index(*__p, __bkt_count);
-
-   if (__prev_p && __prev_bkt == __bkt)
-     {
-
-
-
-       __p->_M_nxt = __prev_p->_M_nxt;
-       __prev_p->_M_nxt = __p;
-
-
-
-
-
-
-       __check_bucket = true;
-     }
-   else
-     {
-       if (__check_bucket)
-  {
-
-
-    if (__prev_p->_M_nxt)
-      {
-        std::size_t __next_bkt
-   = __hash_code_base::_M_bucket_index(
-     *__prev_p->_M_next(), __bkt_count);
-        if (__next_bkt != __prev_bkt)
-   __new_buckets[__next_bkt] = __prev_p;
-      }
-    __check_bucket = false;
-  }
-
-       if (!__new_buckets[__bkt])
-  {
-    __p->_M_nxt = _M_before_begin._M_nxt;
-    _M_before_begin._M_nxt = __p;
-    __new_buckets[__bkt] = &_M_before_begin;
-    if (__p->_M_nxt)
-      __new_buckets[__bbegin_bkt] = __p;
-    __bbegin_bkt = __bkt;
-  }
-       else
-  {
-    __p->_M_nxt = __new_buckets[__bkt]->_M_nxt;
-    __new_buckets[__bkt]->_M_nxt = __p;
-  }
-     }
-   __prev_p = __p;
-   __prev_bkt = __bkt;
-   __p = __next;
- }
-
-      if (__check_bucket && __prev_p->_M_nxt)
- {
-   std::size_t __next_bkt
-     = __hash_code_base::_M_bucket_index(*__prev_p->_M_next(),
-      __bkt_count);
-   if (__next_bkt != __prev_bkt)
-     __new_buckets[__next_bkt] = __prev_p;
- }
-
-      _M_deallocate_buckets();
-      _M_bucket_count = __bkt_count;
-      _M_buckets = __new_buckets;
-    }
-
-
-  template<typename, typename, typename> class _Hash_merge_helper { };
-
-
-
-
-  template<typename _Hash>
-    using _RequireNotAllocatorOrIntegral
-      = __enable_if_t<!__or_<is_integral<_Hash>, __is_allocator<_Hash>>::value>;
-
-
-
-
-}
-# 34 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 2 3
-
-
-
-
-namespace std
-{
-
-
-
-
-  template<bool _Cache>
-    using __umap_traits = __detail::_Hashtable_traits<_Cache, false, true>;
-
-  template<typename _Key,
-    typename _Tp,
-    typename _Hash = hash<_Key>,
-    typename _Pred = std::equal_to<_Key>,
-    typename _Alloc = std::allocator<std::pair<const _Key, _Tp> >,
-    typename _Tr = __umap_traits<__cache_default<_Key, _Hash>::value>>
-    using __umap_hashtable = _Hashtable<_Key, std::pair<const _Key, _Tp>,
-                                        _Alloc, __detail::_Select1st,
-            _Pred, _Hash,
-            __detail::_Mod_range_hashing,
-            __detail::_Default_ranged_hash,
-            __detail::_Prime_rehash_policy, _Tr>;
-
-
-  template<bool _Cache>
-    using __ummap_traits = __detail::_Hashtable_traits<_Cache, false, false>;
-
-  template<typename _Key,
-    typename _Tp,
-    typename _Hash = hash<_Key>,
-    typename _Pred = std::equal_to<_Key>,
-    typename _Alloc = std::allocator<std::pair<const _Key, _Tp> >,
-    typename _Tr = __ummap_traits<__cache_default<_Key, _Hash>::value>>
-    using __ummap_hashtable = _Hashtable<_Key, std::pair<const _Key, _Tp>,
-      _Alloc, __detail::_Select1st,
-      _Pred, _Hash,
-      __detail::_Mod_range_hashing,
-      __detail::_Default_ranged_hash,
-      __detail::_Prime_rehash_policy, _Tr>;
-
-  template<class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
-    class unordered_multimap;
-# 105 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-  template<typename _Key, typename _Tp,
-    typename _Hash = hash<_Key>,
-    typename _Pred = equal_to<_Key>,
-    typename _Alloc = allocator<std::pair<const _Key, _Tp>>>
-    class unordered_map
-    {
-      typedef __umap_hashtable<_Key, _Tp, _Hash, _Pred, _Alloc> _Hashtable;
-      _Hashtable _M_h;
-
-    public:
-
-
-
-      typedef typename _Hashtable::key_type key_type;
-      typedef typename _Hashtable::value_type value_type;
-      typedef typename _Hashtable::mapped_type mapped_type;
-      typedef typename _Hashtable::hasher hasher;
-      typedef typename _Hashtable::key_equal key_equal;
-      typedef typename _Hashtable::allocator_type allocator_type;
-
-
-
-
-      typedef typename _Hashtable::pointer pointer;
-      typedef typename _Hashtable::const_pointer const_pointer;
-      typedef typename _Hashtable::reference reference;
-      typedef typename _Hashtable::const_reference const_reference;
-      typedef typename _Hashtable::iterator iterator;
-      typedef typename _Hashtable::const_iterator const_iterator;
-      typedef typename _Hashtable::local_iterator local_iterator;
-      typedef typename _Hashtable::const_local_iterator const_local_iterator;
-      typedef typename _Hashtable::size_type size_type;
-      typedef typename _Hashtable::difference_type difference_type;
-
-
-
-      using node_type = typename _Hashtable::node_type;
-      using insert_return_type = typename _Hashtable::insert_return_type;
-
-
-
-
-
-      unordered_map() = default;
-# 157 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      explicit
-      unordered_map(size_type __n,
-      const hasher& __hf = hasher(),
-      const key_equal& __eql = key_equal(),
-      const allocator_type& __a = allocator_type())
-      : _M_h(__n, __hf, __eql, __a)
-      { }
-# 178 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      template<typename _InputIterator>
- unordered_map(_InputIterator __first, _InputIterator __last,
-        size_type __n = 0,
-        const hasher& __hf = hasher(),
-        const key_equal& __eql = key_equal(),
-        const allocator_type& __a = allocator_type())
- : _M_h(__first, __last, __n, __hf, __eql, __a)
- { }
-
-
-      unordered_map(const unordered_map&) = default;
-
-
-      unordered_map(unordered_map&&) = default;
-
-
-
-
-
-      explicit
-      unordered_map(const allocator_type& __a)
- : _M_h(__a)
-      { }
-
-
-
-
-
-
-      unordered_map(const unordered_map& __umap,
-      const allocator_type& __a)
-      : _M_h(__umap._M_h, __a)
-      { }
-
-
-
-
-
-
-      unordered_map(unordered_map&& __umap,
-      const allocator_type& __a)
- noexcept( noexcept(_Hashtable(std::move(__umap._M_h), __a)) )
-      : _M_h(std::move(__umap._M_h), __a)
-      { }
-# 234 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      unordered_map(initializer_list<value_type> __l,
-      size_type __n = 0,
-      const hasher& __hf = hasher(),
-      const key_equal& __eql = key_equal(),
-      const allocator_type& __a = allocator_type())
-      : _M_h(__l, __n, __hf, __eql, __a)
-      { }
-
-      unordered_map(size_type __n, const allocator_type& __a)
-      : unordered_map(__n, hasher(), key_equal(), __a)
-      { }
-
-      unordered_map(size_type __n, const hasher& __hf,
-      const allocator_type& __a)
-      : unordered_map(__n, __hf, key_equal(), __a)
-      { }
-
-      template<typename _InputIterator>
- unordered_map(_InputIterator __first, _InputIterator __last,
-        size_type __n,
-        const allocator_type& __a)
- : unordered_map(__first, __last, __n, hasher(), key_equal(), __a)
- { }
-
-      template<typename _InputIterator>
- unordered_map(_InputIterator __first, _InputIterator __last,
-        size_type __n, const hasher& __hf,
-        const allocator_type& __a)
-   : unordered_map(__first, __last, __n, __hf, key_equal(), __a)
- { }
-
-      unordered_map(initializer_list<value_type> __l,
-      size_type __n,
-      const allocator_type& __a)
-      : unordered_map(__l, __n, hasher(), key_equal(), __a)
-      { }
-
-      unordered_map(initializer_list<value_type> __l,
-      size_type __n, const hasher& __hf,
-      const allocator_type& __a)
-      : unordered_map(__l, __n, __hf, key_equal(), __a)
-      { }
-
-
-      unordered_map&
-      operator=(const unordered_map&) = default;
-
-
-      unordered_map&
-      operator=(unordered_map&&) = default;
-# 296 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      unordered_map&
-      operator=(initializer_list<value_type> __l)
-      {
- _M_h = __l;
- return *this;
-      }
-
-
-      allocator_type
-      get_allocator() const noexcept
-      { return _M_h.get_allocator(); }
-
-
-
-
-      [[__nodiscard__]] bool
-      empty() const noexcept
-      { return _M_h.empty(); }
-
-
-      size_type
-      size() const noexcept
-      { return _M_h.size(); }
-
-
-      size_type
-      max_size() const noexcept
-      { return _M_h.max_size(); }
-
-
-
-
-
-
-
-      iterator
-      begin() noexcept
-      { return _M_h.begin(); }
-
-
-
-
-
-
-      const_iterator
-      begin() const noexcept
-      { return _M_h.begin(); }
-
-      const_iterator
-      cbegin() const noexcept
-      { return _M_h.begin(); }
-
-
-
-
-
-
-      iterator
-      end() noexcept
-      { return _M_h.end(); }
-
-
-
-
-
-
-      const_iterator
-      end() const noexcept
-      { return _M_h.end(); }
-
-      const_iterator
-      cend() const noexcept
-      { return _M_h.end(); }
-# 393 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      template<typename... _Args>
- std::pair<iterator, bool>
- emplace(_Args&&... __args)
- { return _M_h.emplace(std::forward<_Args>(__args)...); }
-# 424 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      template<typename... _Args>
- iterator
- emplace_hint(const_iterator __pos, _Args&&... __args)
- { return _M_h.emplace_hint(__pos, std::forward<_Args>(__args)...); }
-
-
-
-      node_type
-      extract(const_iterator __pos)
-      {
- do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(__pos != end()), false)) std::__glibcxx_assert_fail(); } while (false);
- return _M_h.extract(__pos);
-      }
-
-
-      node_type
-      extract(const key_type& __key)
-      { return _M_h.extract(__key); }
-
-
-      insert_return_type
-      insert(node_type&& __nh)
-      { return _M_h._M_reinsert_node(std::move(__nh)); }
-
-
-      iterator
-      insert(const_iterator, node_type&& __nh)
-      { return _M_h._M_reinsert_node(std::move(__nh)).position; }
-# 477 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      template <typename... _Args>
- pair<iterator, bool>
- try_emplace(const key_type& __k, _Args&&... __args)
- {
-   return _M_h.try_emplace(cend(), __k, std::forward<_Args>(__args)...);
- }
-
-
-      template <typename... _Args>
- pair<iterator, bool>
- try_emplace(key_type&& __k, _Args&&... __args)
- {
-   return _M_h.try_emplace(cend(), std::move(__k),
-      std::forward<_Args>(__args)...);
- }
-# 521 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      template <typename... _Args>
- iterator
- try_emplace(const_iterator __hint, const key_type& __k,
-      _Args&&... __args)
- {
-   return _M_h.try_emplace(__hint, __k,
-      std::forward<_Args>(__args)...).first;
- }
-
-
-      template <typename... _Args>
- iterator
- try_emplace(const_iterator __hint, key_type&& __k, _Args&&... __args)
- {
-   return _M_h.try_emplace(__hint, std::move(__k),
-      std::forward<_Args>(__args)...).first;
- }
-# 558 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      std::pair<iterator, bool>
-      insert(const value_type& __x)
-      { return _M_h.insert(__x); }
-
-
-
-      std::pair<iterator, bool>
-      insert(value_type&& __x)
-      { return _M_h.insert(std::move(__x)); }
-
-      template<typename _Pair>
- __enable_if_t<is_constructible<value_type, _Pair&&>::value,
-        pair<iterator, bool>>
- insert(_Pair&& __x)
-        { return _M_h.emplace(std::forward<_Pair>(__x)); }
-# 597 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      iterator
-      insert(const_iterator __hint, const value_type& __x)
-      { return _M_h.insert(__hint, __x); }
-
-
-
-      iterator
-      insert(const_iterator __hint, value_type&& __x)
-      { return _M_h.insert(__hint, std::move(__x)); }
-
-      template<typename _Pair>
- __enable_if_t<is_constructible<value_type, _Pair&&>::value, iterator>
- insert(const_iterator __hint, _Pair&& __x)
- { return _M_h.emplace_hint(__hint, std::forward<_Pair>(__x)); }
-# 622 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      template<typename _InputIterator>
- void
- insert(_InputIterator __first, _InputIterator __last)
- { _M_h.insert(__first, __last); }
-# 634 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      void
-      insert(initializer_list<value_type> __l)
-      { _M_h.insert(__l); }
-# 660 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      template <typename _Obj>
- pair<iterator, bool>
- insert_or_assign(const key_type& __k, _Obj&& __obj)
- {
-   auto __ret = _M_h.try_emplace(cend(), __k,
-     std::forward<_Obj>(__obj));
-   if (!__ret.second)
-     __ret.first->second = std::forward<_Obj>(__obj);
-   return __ret;
- }
-
-
-      template <typename _Obj>
- pair<iterator, bool>
- insert_or_assign(key_type&& __k, _Obj&& __obj)
- {
-   auto __ret = _M_h.try_emplace(cend(), std::move(__k),
-     std::forward<_Obj>(__obj));
-   if (!__ret.second)
-     __ret.first->second = std::forward<_Obj>(__obj);
-   return __ret;
- }
-# 709 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      template <typename _Obj>
- iterator
- insert_or_assign(const_iterator __hint, const key_type& __k,
-    _Obj&& __obj)
- {
-   auto __ret = _M_h.try_emplace(__hint, __k, std::forward<_Obj>(__obj));
-   if (!__ret.second)
-     __ret.first->second = std::forward<_Obj>(__obj);
-   return __ret.first;
- }
-
-
-      template <typename _Obj>
- iterator
- insert_or_assign(const_iterator __hint, key_type&& __k, _Obj&& __obj)
- {
-   auto __ret = _M_h.try_emplace(__hint, std::move(__k),
-     std::forward<_Obj>(__obj));
-   if (!__ret.second)
-     __ret.first->second = std::forward<_Obj>(__obj);
-   return __ret.first;
- }
-# 747 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      iterator
-      erase(const_iterator __position)
-      { return _M_h.erase(__position); }
-
-
-      iterator
-      erase(iterator __position)
-      { return _M_h.erase(__position); }
-# 769 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      size_type
-      erase(const key_type& __x)
-      { return _M_h.erase(__x); }
-# 787 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      iterator
-      erase(const_iterator __first, const_iterator __last)
-      { return _M_h.erase(__first, __last); }
-
-
-
-
-
-
-
-      void
-      clear() noexcept
-      { _M_h.clear(); }
-# 811 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      void
-      swap(unordered_map& __x)
-      noexcept( noexcept(_M_h.swap(__x._M_h)) )
-      { _M_h.swap(__x._M_h); }
-
-
-      template<typename, typename, typename>
- friend class std::_Hash_merge_helper;
-
-      template<typename _H2, typename _P2>
- void
- merge(unordered_map<_Key, _Tp, _H2, _P2, _Alloc>& __source)
- {
-   using _Merge_helper = _Hash_merge_helper<unordered_map, _H2, _P2>;
-   _M_h._M_merge_unique(_Merge_helper::_S_get_table(__source));
- }
-
-      template<typename _H2, typename _P2>
- void
- merge(unordered_map<_Key, _Tp, _H2, _P2, _Alloc>&& __source)
- { merge(__source); }
-
-      template<typename _H2, typename _P2>
- void
- merge(unordered_multimap<_Key, _Tp, _H2, _P2, _Alloc>& __source)
- {
-   using _Merge_helper = _Hash_merge_helper<unordered_map, _H2, _P2>;
-   _M_h._M_merge_unique(_Merge_helper::_S_get_table(__source));
- }
-
-      template<typename _H2, typename _P2>
- void
- merge(unordered_multimap<_Key, _Tp, _H2, _P2, _Alloc>&& __source)
- { merge(__source); }
-
-
-
-
-
-
-      hasher
-      hash_function() const
-      { return _M_h.hash_function(); }
-
-
-
-      key_equal
-      key_eq() const
-      { return _M_h.key_eq(); }
-# 875 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      iterator
-      find(const key_type& __x)
-      { return _M_h.find(__x); }
-
-
-      template<typename _Kt>
- auto
- find(const _Kt& __x) -> decltype(_M_h._M_find_tr(__x))
- { return _M_h._M_find_tr(__x); }
-
-
-      const_iterator
-      find(const key_type& __x) const
-      { return _M_h.find(__x); }
-
-
-      template<typename _Kt>
- auto
- find(const _Kt& __x) const -> decltype(_M_h._M_find_tr(__x))
- { return _M_h._M_find_tr(__x); }
-# 908 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      size_type
-      count(const key_type& __x) const
-      { return _M_h.count(__x); }
-
-
-      template<typename _Kt>
- auto
- count(const _Kt& __x) const -> decltype(_M_h._M_count_tr(__x))
- { return _M_h._M_count_tr(__x); }
-# 927 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      bool
-      contains(const key_type& __x) const
-      { return _M_h.find(__x) != _M_h.end(); }
-
-      template<typename _Kt>
- auto
- contains(const _Kt& __x) const
- -> decltype(_M_h._M_find_tr(__x), void(), true)
- { return _M_h._M_find_tr(__x) != _M_h.end(); }
-# 948 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      std::pair<iterator, iterator>
-      equal_range(const key_type& __x)
-      { return _M_h.equal_range(__x); }
-
-
-      template<typename _Kt>
- auto
- equal_range(const _Kt& __x)
- -> decltype(_M_h._M_equal_range_tr(__x))
- { return _M_h._M_equal_range_tr(__x); }
-
-
-      std::pair<const_iterator, const_iterator>
-      equal_range(const key_type& __x) const
-      { return _M_h.equal_range(__x); }
-
-
-      template<typename _Kt>
- auto
- equal_range(const _Kt& __x) const
- -> decltype(_M_h._M_equal_range_tr(__x))
- { return _M_h._M_equal_range_tr(__x); }
-# 986 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      mapped_type&
-      operator[](const key_type& __k)
-      { return _M_h[__k]; }
-
-      mapped_type&
-      operator[](key_type&& __k)
-      { return _M_h[std::move(__k)]; }
-# 1003 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      mapped_type&
-      at(const key_type& __k)
-      { return _M_h.at(__k); }
-
-      const mapped_type&
-      at(const key_type& __k) const
-      { return _M_h.at(__k); }
-
-
-
-
-
-      size_type
-      bucket_count() const noexcept
-      { return _M_h.bucket_count(); }
-
-
-      size_type
-      max_bucket_count() const noexcept
-      { return _M_h.max_bucket_count(); }
-
-
-
-
-
-
-      size_type
-      bucket_size(size_type __n) const
-      { return _M_h.bucket_size(__n); }
-
-
-
-
-
-
-      size_type
-      bucket(const key_type& __key) const
-      { return _M_h.bucket(__key); }
-
-
-
-
-
-
-
-      local_iterator
-      begin(size_type __n)
-      { return _M_h.begin(__n); }
-# 1059 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      const_local_iterator
-      begin(size_type __n) const
-      { return _M_h.begin(__n); }
-
-      const_local_iterator
-      cbegin(size_type __n) const
-      { return _M_h.cbegin(__n); }
-# 1074 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      local_iterator
-      end(size_type __n)
-      { return _M_h.end(__n); }
-# 1085 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      const_local_iterator
-      end(size_type __n) const
-      { return _M_h.end(__n); }
-
-      const_local_iterator
-      cend(size_type __n) const
-      { return _M_h.cend(__n); }
-
-
-
-
-
-      float
-      load_factor() const noexcept
-      { return _M_h.load_factor(); }
-
-
-
-      float
-      max_load_factor() const noexcept
-      { return _M_h.max_load_factor(); }
-
-
-
-
-
-      void
-      max_load_factor(float __z)
-      { _M_h.max_load_factor(__z); }
-# 1122 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      void
-      rehash(size_type __n)
-      { _M_h.rehash(__n); }
-# 1133 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      void
-      reserve(size_type __n)
-      { _M_h.reserve(__n); }
-
-      template<typename _Key1, typename _Tp1, typename _Hash1, typename _Pred1,
-        typename _Alloc1>
-        friend bool
- operator==(const unordered_map<_Key1, _Tp1, _Hash1, _Pred1, _Alloc1>&,
-     const unordered_map<_Key1, _Tp1, _Hash1, _Pred1, _Alloc1>&);
-    };
-
-
-
-  template<typename _InputIterator,
-    typename _Hash = hash<__iter_key_t<_InputIterator>>,
-    typename _Pred = equal_to<__iter_key_t<_InputIterator>>,
-    typename _Allocator = allocator<__iter_to_alloc_t<_InputIterator>>,
-    typename = _RequireInputIter<_InputIterator>,
-    typename = _RequireNotAllocatorOrIntegral<_Hash>,
-    typename = _RequireNotAllocator<_Pred>,
-    typename = _RequireAllocator<_Allocator>>
-    unordered_map(_InputIterator, _InputIterator,
-    typename unordered_map<int, int>::size_type = {},
-    _Hash = _Hash(), _Pred = _Pred(), _Allocator = _Allocator())
-    -> unordered_map<__iter_key_t<_InputIterator>,
-       __iter_val_t<_InputIterator>,
-       _Hash, _Pred, _Allocator>;
-
-  template<typename _Key, typename _Tp, typename _Hash = hash<_Key>,
-    typename _Pred = equal_to<_Key>,
-    typename _Allocator = allocator<pair<const _Key, _Tp>>,
-    typename = _RequireNotAllocatorOrIntegral<_Hash>,
-    typename = _RequireNotAllocator<_Pred>,
-    typename = _RequireAllocator<_Allocator>>
-    unordered_map(initializer_list<pair<_Key, _Tp>>,
-    typename unordered_map<int, int>::size_type = {},
-    _Hash = _Hash(), _Pred = _Pred(), _Allocator = _Allocator())
-    -> unordered_map<_Key, _Tp, _Hash, _Pred, _Allocator>;
-
-  template<typename _InputIterator, typename _Allocator,
-    typename = _RequireInputIter<_InputIterator>,
-    typename = _RequireAllocator<_Allocator>>
-    unordered_map(_InputIterator, _InputIterator,
-    typename unordered_map<int, int>::size_type, _Allocator)
-    -> unordered_map<__iter_key_t<_InputIterator>,
-       __iter_val_t<_InputIterator>,
-       hash<__iter_key_t<_InputIterator>>,
-       equal_to<__iter_key_t<_InputIterator>>,
-       _Allocator>;
-
-  template<typename _InputIterator, typename _Allocator,
-    typename = _RequireInputIter<_InputIterator>,
-    typename = _RequireAllocator<_Allocator>>
-    unordered_map(_InputIterator, _InputIterator, _Allocator)
-    -> unordered_map<__iter_key_t<_InputIterator>,
-       __iter_val_t<_InputIterator>,
-       hash<__iter_key_t<_InputIterator>>,
-       equal_to<__iter_key_t<_InputIterator>>,
-       _Allocator>;
-
-  template<typename _InputIterator, typename _Hash, typename _Allocator,
-    typename = _RequireInputIter<_InputIterator>,
-    typename = _RequireNotAllocatorOrIntegral<_Hash>,
-    typename = _RequireAllocator<_Allocator>>
-    unordered_map(_InputIterator, _InputIterator,
-    typename unordered_map<int, int>::size_type,
-    _Hash, _Allocator)
-    -> unordered_map<__iter_key_t<_InputIterator>,
-       __iter_val_t<_InputIterator>, _Hash,
-       equal_to<__iter_key_t<_InputIterator>>, _Allocator>;
-
-  template<typename _Key, typename _Tp, typename _Allocator,
-    typename = _RequireAllocator<_Allocator>>
-    unordered_map(initializer_list<pair<_Key, _Tp>>,
-    typename unordered_map<int, int>::size_type,
-    _Allocator)
-    -> unordered_map<_Key, _Tp, hash<_Key>, equal_to<_Key>, _Allocator>;
-
-  template<typename _Key, typename _Tp, typename _Allocator,
-    typename = _RequireAllocator<_Allocator>>
-    unordered_map(initializer_list<pair<_Key, _Tp>>, _Allocator)
-    -> unordered_map<_Key, _Tp, hash<_Key>, equal_to<_Key>, _Allocator>;
-
-  template<typename _Key, typename _Tp, typename _Hash, typename _Allocator,
-    typename = _RequireNotAllocatorOrIntegral<_Hash>,
-    typename = _RequireAllocator<_Allocator>>
-    unordered_map(initializer_list<pair<_Key, _Tp>>,
-    typename unordered_map<int, int>::size_type,
-    _Hash, _Allocator)
-    -> unordered_map<_Key, _Tp, _Hash, equal_to<_Key>, _Allocator>;
-# 1251 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-  template<typename _Key, typename _Tp,
-    typename _Hash = hash<_Key>,
-    typename _Pred = equal_to<_Key>,
-    typename _Alloc = allocator<std::pair<const _Key, _Tp>>>
-    class unordered_multimap
-    {
-      typedef __ummap_hashtable<_Key, _Tp, _Hash, _Pred, _Alloc> _Hashtable;
-      _Hashtable _M_h;
-
-    public:
-
-
-
-      typedef typename _Hashtable::key_type key_type;
-      typedef typename _Hashtable::value_type value_type;
-      typedef typename _Hashtable::mapped_type mapped_type;
-      typedef typename _Hashtable::hasher hasher;
-      typedef typename _Hashtable::key_equal key_equal;
-      typedef typename _Hashtable::allocator_type allocator_type;
-
-
-
-
-      typedef typename _Hashtable::pointer pointer;
-      typedef typename _Hashtable::const_pointer const_pointer;
-      typedef typename _Hashtable::reference reference;
-      typedef typename _Hashtable::const_reference const_reference;
-      typedef typename _Hashtable::iterator iterator;
-      typedef typename _Hashtable::const_iterator const_iterator;
-      typedef typename _Hashtable::local_iterator local_iterator;
-      typedef typename _Hashtable::const_local_iterator const_local_iterator;
-      typedef typename _Hashtable::size_type size_type;
-      typedef typename _Hashtable::difference_type difference_type;
-
-
-
-      using node_type = typename _Hashtable::node_type;
-
-
-
-
-
-      unordered_multimap() = default;
-# 1302 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      explicit
-      unordered_multimap(size_type __n,
-    const hasher& __hf = hasher(),
-    const key_equal& __eql = key_equal(),
-    const allocator_type& __a = allocator_type())
-      : _M_h(__n, __hf, __eql, __a)
-      { }
-# 1323 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      template<typename _InputIterator>
- unordered_multimap(_InputIterator __first, _InputIterator __last,
-      size_type __n = 0,
-      const hasher& __hf = hasher(),
-      const key_equal& __eql = key_equal(),
-      const allocator_type& __a = allocator_type())
- : _M_h(__first, __last, __n, __hf, __eql, __a)
- { }
-
-
-      unordered_multimap(const unordered_multimap&) = default;
-
-
-      unordered_multimap(unordered_multimap&&) = default;
-
-
-
-
-
-      explicit
-      unordered_multimap(const allocator_type& __a)
-      : _M_h(__a)
-      { }
-
-
-
-
-
-
-      unordered_multimap(const unordered_multimap& __ummap,
-    const allocator_type& __a)
-      : _M_h(__ummap._M_h, __a)
-      { }
-
-
-
-
-
-
-      unordered_multimap(unordered_multimap&& __ummap,
-    const allocator_type& __a)
- noexcept( noexcept(_Hashtable(std::move(__ummap._M_h), __a)) )
-      : _M_h(std::move(__ummap._M_h), __a)
-      { }
-# 1379 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      unordered_multimap(initializer_list<value_type> __l,
-    size_type __n = 0,
-    const hasher& __hf = hasher(),
-    const key_equal& __eql = key_equal(),
-    const allocator_type& __a = allocator_type())
-      : _M_h(__l, __n, __hf, __eql, __a)
-      { }
-
-      unordered_multimap(size_type __n, const allocator_type& __a)
-      : unordered_multimap(__n, hasher(), key_equal(), __a)
-      { }
-
-      unordered_multimap(size_type __n, const hasher& __hf,
-    const allocator_type& __a)
-      : unordered_multimap(__n, __hf, key_equal(), __a)
-      { }
-
-      template<typename _InputIterator>
- unordered_multimap(_InputIterator __first, _InputIterator __last,
-      size_type __n,
-      const allocator_type& __a)
- : unordered_multimap(__first, __last, __n, hasher(), key_equal(), __a)
- { }
-
-      template<typename _InputIterator>
- unordered_multimap(_InputIterator __first, _InputIterator __last,
-      size_type __n, const hasher& __hf,
-      const allocator_type& __a)
- : unordered_multimap(__first, __last, __n, __hf, key_equal(), __a)
- { }
-
-      unordered_multimap(initializer_list<value_type> __l,
-    size_type __n,
-    const allocator_type& __a)
-      : unordered_multimap(__l, __n, hasher(), key_equal(), __a)
-      { }
-
-      unordered_multimap(initializer_list<value_type> __l,
-    size_type __n, const hasher& __hf,
-    const allocator_type& __a)
-      : unordered_multimap(__l, __n, __hf, key_equal(), __a)
-      { }
-
-
-      unordered_multimap&
-      operator=(const unordered_multimap&) = default;
-
-
-      unordered_multimap&
-      operator=(unordered_multimap&&) = default;
-# 1441 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      unordered_multimap&
-      operator=(initializer_list<value_type> __l)
-      {
- _M_h = __l;
- return *this;
-      }
-
-
-      allocator_type
-      get_allocator() const noexcept
-      { return _M_h.get_allocator(); }
-
-
-
-
-      [[__nodiscard__]] bool
-      empty() const noexcept
-      { return _M_h.empty(); }
-
-
-      size_type
-      size() const noexcept
-      { return _M_h.size(); }
-
-
-      size_type
-      max_size() const noexcept
-      { return _M_h.max_size(); }
-
-
-
-
-
-
-
-      iterator
-      begin() noexcept
-      { return _M_h.begin(); }
-
-
-
-
-
-
-      const_iterator
-      begin() const noexcept
-      { return _M_h.begin(); }
-
-      const_iterator
-      cbegin() const noexcept
-      { return _M_h.begin(); }
-
-
-
-
-
-
-      iterator
-      end() noexcept
-      { return _M_h.end(); }
-
-
-
-
-
-
-      const_iterator
-      end() const noexcept
-      { return _M_h.end(); }
-
-      const_iterator
-      cend() const noexcept
-      { return _M_h.end(); }
-# 1533 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      template<typename... _Args>
- iterator
- emplace(_Args&&... __args)
- { return _M_h.emplace(std::forward<_Args>(__args)...); }
-# 1560 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      template<typename... _Args>
- iterator
- emplace_hint(const_iterator __pos, _Args&&... __args)
- { return _M_h.emplace_hint(__pos, std::forward<_Args>(__args)...); }
-# 1575 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      iterator
-      insert(const value_type& __x)
-      { return _M_h.insert(__x); }
-
-      iterator
-      insert(value_type&& __x)
-      { return _M_h.insert(std::move(__x)); }
-
-      template<typename _Pair>
- __enable_if_t<is_constructible<value_type, _Pair&&>::value, iterator>
- insert(_Pair&& __x)
-        { return _M_h.emplace(std::forward<_Pair>(__x)); }
-# 1609 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      iterator
-      insert(const_iterator __hint, const value_type& __x)
-      { return _M_h.insert(__hint, __x); }
-
-
-
-      iterator
-      insert(const_iterator __hint, value_type&& __x)
-      { return _M_h.insert(__hint, std::move(__x)); }
-
-      template<typename _Pair>
- __enable_if_t<is_constructible<value_type, _Pair&&>::value, iterator>
- insert(const_iterator __hint, _Pair&& __x)
-        { return _M_h.emplace_hint(__hint, std::forward<_Pair>(__x)); }
-# 1634 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      template<typename _InputIterator>
- void
- insert(_InputIterator __first, _InputIterator __last)
- { _M_h.insert(__first, __last); }
-# 1647 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      void
-      insert(initializer_list<value_type> __l)
-      { _M_h.insert(__l); }
-
-
-
-      node_type
-      extract(const_iterator __pos)
-      {
- do { if (std::__is_constant_evaluated()) if (__builtin_expect(!bool(__pos != end()), false)) std::__glibcxx_assert_fail(); } while (false);
- return _M_h.extract(__pos);
-      }
-
-
-      node_type
-      extract(const key_type& __key)
-      { return _M_h.extract(__key); }
-
-
-      iterator
-      insert(node_type&& __nh)
-      { return _M_h._M_reinsert_node_multi(cend(), std::move(__nh)); }
-
-
-      iterator
-      insert(const_iterator __hint, node_type&& __nh)
-      { return _M_h._M_reinsert_node_multi(__hint, std::move(__nh)); }
-# 1690 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      iterator
-      erase(const_iterator __position)
-      { return _M_h.erase(__position); }
-
-
-      iterator
-      erase(iterator __position)
-      { return _M_h.erase(__position); }
-# 1711 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      size_type
-      erase(const key_type& __x)
-      { return _M_h.erase(__x); }
-# 1730 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      iterator
-      erase(const_iterator __first, const_iterator __last)
-      { return _M_h.erase(__first, __last); }
-
-
-
-
-
-
-
-      void
-      clear() noexcept
-      { _M_h.clear(); }
-# 1754 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      void
-      swap(unordered_multimap& __x)
-      noexcept( noexcept(_M_h.swap(__x._M_h)) )
-      { _M_h.swap(__x._M_h); }
-
-
-      template<typename, typename, typename>
- friend class std::_Hash_merge_helper;
-
-      template<typename _H2, typename _P2>
- void
- merge(unordered_multimap<_Key, _Tp, _H2, _P2, _Alloc>& __source)
- {
-   using _Merge_helper
-     = _Hash_merge_helper<unordered_multimap, _H2, _P2>;
-   _M_h._M_merge_multi(_Merge_helper::_S_get_table(__source));
- }
-
-      template<typename _H2, typename _P2>
- void
- merge(unordered_multimap<_Key, _Tp, _H2, _P2, _Alloc>&& __source)
- { merge(__source); }
-
-      template<typename _H2, typename _P2>
- void
- merge(unordered_map<_Key, _Tp, _H2, _P2, _Alloc>& __source)
- {
-   using _Merge_helper
-     = _Hash_merge_helper<unordered_multimap, _H2, _P2>;
-   _M_h._M_merge_multi(_Merge_helper::_S_get_table(__source));
- }
-
-      template<typename _H2, typename _P2>
- void
- merge(unordered_map<_Key, _Tp, _H2, _P2, _Alloc>&& __source)
- { merge(__source); }
-
-
-
-
-
-
-      hasher
-      hash_function() const
-      { return _M_h.hash_function(); }
-
-
-
-      key_equal
-      key_eq() const
-      { return _M_h.key_eq(); }
-# 1820 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      iterator
-      find(const key_type& __x)
-      { return _M_h.find(__x); }
-
-
-      template<typename _Kt>
- auto
- find(const _Kt& __x) -> decltype(_M_h._M_find_tr(__x))
- { return _M_h._M_find_tr(__x); }
-
-
-      const_iterator
-      find(const key_type& __x) const
-      { return _M_h.find(__x); }
-
-
-      template<typename _Kt>
- auto
- find(const _Kt& __x) const -> decltype(_M_h._M_find_tr(__x))
- { return _M_h._M_find_tr(__x); }
-# 1849 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      size_type
-      count(const key_type& __x) const
-      { return _M_h.count(__x); }
-
-
-      template<typename _Kt>
- auto
- count(const _Kt& __x) const -> decltype(_M_h._M_count_tr(__x))
- { return _M_h._M_count_tr(__x); }
-# 1868 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      bool
-      contains(const key_type& __x) const
-      { return _M_h.find(__x) != _M_h.end(); }
-
-      template<typename _Kt>
- auto
- contains(const _Kt& __x) const
- -> decltype(_M_h._M_find_tr(__x), void(), true)
- { return _M_h._M_find_tr(__x) != _M_h.end(); }
-# 1887 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      std::pair<iterator, iterator>
-      equal_range(const key_type& __x)
-      { return _M_h.equal_range(__x); }
-
-
-      template<typename _Kt>
- auto
- equal_range(const _Kt& __x)
- -> decltype(_M_h._M_equal_range_tr(__x))
- { return _M_h._M_equal_range_tr(__x); }
-
-
-      std::pair<const_iterator, const_iterator>
-      equal_range(const key_type& __x) const
-      { return _M_h.equal_range(__x); }
-
-
-      template<typename _Kt>
- auto
- equal_range(const _Kt& __x) const
- -> decltype(_M_h._M_equal_range_tr(__x))
- { return _M_h._M_equal_range_tr(__x); }
-
-
-
-
-
-
-      size_type
-      bucket_count() const noexcept
-      { return _M_h.bucket_count(); }
-
-
-      size_type
-      max_bucket_count() const noexcept
-      { return _M_h.max_bucket_count(); }
-
-
-
-
-
-
-      size_type
-      bucket_size(size_type __n) const
-      { return _M_h.bucket_size(__n); }
-
-
-
-
-
-
-      size_type
-      bucket(const key_type& __key) const
-      { return _M_h.bucket(__key); }
-
-
-
-
-
-
-
-      local_iterator
-      begin(size_type __n)
-      { return _M_h.begin(__n); }
-# 1959 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      const_local_iterator
-      begin(size_type __n) const
-      { return _M_h.begin(__n); }
-
-      const_local_iterator
-      cbegin(size_type __n) const
-      { return _M_h.cbegin(__n); }
-# 1974 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      local_iterator
-      end(size_type __n)
-      { return _M_h.end(__n); }
-# 1985 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      const_local_iterator
-      end(size_type __n) const
-      { return _M_h.end(__n); }
-
-      const_local_iterator
-      cend(size_type __n) const
-      { return _M_h.cend(__n); }
-
-
-
-
-
-      float
-      load_factor() const noexcept
-      { return _M_h.load_factor(); }
-
-
-
-      float
-      max_load_factor() const noexcept
-      { return _M_h.max_load_factor(); }
-
-
-
-
-
-      void
-      max_load_factor(float __z)
-      { _M_h.max_load_factor(__z); }
-# 2022 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      void
-      rehash(size_type __n)
-      { _M_h.rehash(__n); }
-# 2033 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-      void
-      reserve(size_type __n)
-      { _M_h.reserve(__n); }
-
-      template<typename _Key1, typename _Tp1, typename _Hash1, typename _Pred1,
-        typename _Alloc1>
-        friend bool
- operator==(const unordered_multimap<_Key1, _Tp1,
-         _Hash1, _Pred1, _Alloc1>&,
-     const unordered_multimap<_Key1, _Tp1,
-         _Hash1, _Pred1, _Alloc1>&);
-    };
-
-
-
-  template<typename _InputIterator,
-    typename _Hash = hash<__iter_key_t<_InputIterator>>,
-    typename _Pred = equal_to<__iter_key_t<_InputIterator>>,
-    typename _Allocator = allocator<__iter_to_alloc_t<_InputIterator>>,
-    typename = _RequireInputIter<_InputIterator>,
-    typename = _RequireNotAllocatorOrIntegral<_Hash>,
-    typename = _RequireNotAllocator<_Pred>,
-    typename = _RequireAllocator<_Allocator>>
-    unordered_multimap(_InputIterator, _InputIterator,
-         unordered_multimap<int, int>::size_type = {},
-         _Hash = _Hash(), _Pred = _Pred(),
-         _Allocator = _Allocator())
-    -> unordered_multimap<__iter_key_t<_InputIterator>,
-     __iter_val_t<_InputIterator>, _Hash, _Pred,
-     _Allocator>;
-
-  template<typename _Key, typename _Tp, typename _Hash = hash<_Key>,
-    typename _Pred = equal_to<_Key>,
-    typename _Allocator = allocator<pair<const _Key, _Tp>>,
-    typename = _RequireNotAllocatorOrIntegral<_Hash>,
-    typename = _RequireNotAllocator<_Pred>,
-    typename = _RequireAllocator<_Allocator>>
-    unordered_multimap(initializer_list<pair<_Key, _Tp>>,
-         unordered_multimap<int, int>::size_type = {},
-         _Hash = _Hash(), _Pred = _Pred(),
-         _Allocator = _Allocator())
-    -> unordered_multimap<_Key, _Tp, _Hash, _Pred, _Allocator>;
-
-  template<typename _InputIterator, typename _Allocator,
-    typename = _RequireInputIter<_InputIterator>,
-    typename = _RequireAllocator<_Allocator>>
-    unordered_multimap(_InputIterator, _InputIterator,
-         unordered_multimap<int, int>::size_type, _Allocator)
-    -> unordered_multimap<__iter_key_t<_InputIterator>,
-     __iter_val_t<_InputIterator>,
-     hash<__iter_key_t<_InputIterator>>,
-     equal_to<__iter_key_t<_InputIterator>>, _Allocator>;
-
-  template<typename _InputIterator, typename _Allocator,
-    typename = _RequireInputIter<_InputIterator>,
-    typename = _RequireAllocator<_Allocator>>
-    unordered_multimap(_InputIterator, _InputIterator, _Allocator)
-    -> unordered_multimap<__iter_key_t<_InputIterator>,
-     __iter_val_t<_InputIterator>,
-     hash<__iter_key_t<_InputIterator>>,
-     equal_to<__iter_key_t<_InputIterator>>, _Allocator>;
-
-  template<typename _InputIterator, typename _Hash, typename _Allocator,
-    typename = _RequireInputIter<_InputIterator>,
-    typename = _RequireNotAllocatorOrIntegral<_Hash>,
-    typename = _RequireAllocator<_Allocator>>
-    unordered_multimap(_InputIterator, _InputIterator,
-         unordered_multimap<int, int>::size_type, _Hash,
-         _Allocator)
-    -> unordered_multimap<__iter_key_t<_InputIterator>,
-     __iter_val_t<_InputIterator>, _Hash,
-     equal_to<__iter_key_t<_InputIterator>>, _Allocator>;
-
-  template<typename _Key, typename _Tp, typename _Allocator,
-    typename = _RequireAllocator<_Allocator>>
-    unordered_multimap(initializer_list<pair<_Key, _Tp>>,
-         unordered_multimap<int, int>::size_type,
-         _Allocator)
-    -> unordered_multimap<_Key, _Tp, hash<_Key>, equal_to<_Key>, _Allocator>;
-
-  template<typename _Key, typename _Tp, typename _Allocator,
-    typename = _RequireAllocator<_Allocator>>
-    unordered_multimap(initializer_list<pair<_Key, _Tp>>, _Allocator)
-    -> unordered_multimap<_Key, _Tp, hash<_Key>, equal_to<_Key>, _Allocator>;
-
-  template<typename _Key, typename _Tp, typename _Hash, typename _Allocator,
-    typename = _RequireNotAllocatorOrIntegral<_Hash>,
-    typename = _RequireAllocator<_Allocator>>
-    unordered_multimap(initializer_list<pair<_Key, _Tp>>,
-         unordered_multimap<int, int>::size_type,
-         _Hash, _Allocator)
-    -> unordered_multimap<_Key, _Tp, _Hash, equal_to<_Key>, _Allocator>;
-
-
-
-  template<class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
-    inline void
-    swap(unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
-  unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __y)
-    noexcept(noexcept(__x.swap(__y)))
-    { __x.swap(__y); }
-
-  template<class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
-    inline void
-    swap(unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
-  unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __y)
-    noexcept(noexcept(__x.swap(__y)))
-    { __x.swap(__y); }
-
-  template<class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
-    inline bool
-    operator==(const unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
-        const unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __y)
-    { return __x._M_h._M_equal(__y._M_h); }
-# 2156 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-  template<class _Key, class _Tp, class _Hash, class _Pred, class _Alloc>
-    inline bool
-    operator==(const unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
-        const unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __y)
-    { return __x._M_h._M_equal(__y._M_h); }
-# 2170 "C:/mingw64/include/c++/14.2.0/bits/unordered_map.h" 3
-
-
-
-
-  template<typename _Key, typename _Val, typename _Hash1, typename _Eq1,
-    typename _Alloc, typename _Hash2, typename _Eq2>
-    struct _Hash_merge_helper<
-      std::unordered_map<_Key, _Val, _Hash1, _Eq1, _Alloc>,
-      _Hash2, _Eq2>
-    {
-    private:
-      template<typename... _Tp>
- using unordered_map = std::unordered_map<_Tp...>;
-      template<typename... _Tp>
- using unordered_multimap = std::unordered_multimap<_Tp...>;
-
-      friend unordered_map<_Key, _Val, _Hash1, _Eq1, _Alloc>;
-
-      static auto&
-      _S_get_table(unordered_map<_Key, _Val, _Hash2, _Eq2, _Alloc>& __map)
-      { return __map._M_h; }
-
-      static auto&
-      _S_get_table(unordered_multimap<_Key, _Val, _Hash2, _Eq2, _Alloc>& __map)
-      { return __map._M_h; }
-    };
-
-
-  template<typename _Key, typename _Val, typename _Hash1, typename _Eq1,
-    typename _Alloc, typename _Hash2, typename _Eq2>
-    struct _Hash_merge_helper<
-      std::unordered_multimap<_Key, _Val, _Hash1, _Eq1, _Alloc>,
-      _Hash2, _Eq2>
-    {
-    private:
-      template<typename... _Tp>
- using unordered_map = std::unordered_map<_Tp...>;
-      template<typename... _Tp>
- using unordered_multimap = std::unordered_multimap<_Tp...>;
-
-      friend unordered_multimap<_Key, _Val, _Hash1, _Eq1, _Alloc>;
-
-      static auto&
-      _S_get_table(unordered_map<_Key, _Val, _Hash2, _Eq2, _Alloc>& __map)
-      { return __map._M_h; }
-
-      static auto&
-      _S_get_table(unordered_multimap<_Key, _Val, _Hash2, _Eq2, _Alloc>& __map)
-      { return __map._M_h; }
-    };
-
-
-
-}
-# 42 "C:/mingw64/include/c++/14.2.0/unordered_map" 2 3
-
-# 1 "C:/mingw64/include/c++/14.2.0/bits/erase_if.h" 1 3
-# 33 "C:/mingw64/include/c++/14.2.0/bits/erase_if.h" 3
-       
-# 34 "C:/mingw64/include/c++/14.2.0/bits/erase_if.h" 3
-
-
-
-
-
-namespace std
-{
-
-
-  namespace __detail
-  {
-    template<typename _Container, typename _UnsafeContainer,
-      typename _Predicate>
-      typename _Container::size_type
-      __erase_nodes_if(_Container& __cont, _UnsafeContainer& __ucont,
-         _Predicate __pred)
-      {
- typename _Container::size_type __num = 0;
- for (auto __iter = __ucont.begin(), __last = __ucont.end();
-      __iter != __last;)
-   {
-     if (__pred(*__iter))
-       {
-  __iter = __cont.erase(__iter);
-  ++__num;
-       }
-     else
-       ++__iter;
-   }
- return __num;
-      }
-  }
-
-
-}
-# 44 "C:/mingw64/include/c++/14.2.0/unordered_map" 2 3
-# 55 "C:/mingw64/include/c++/14.2.0/unordered_map" 3
-# 1 "C:/mingw64/include/c++/14.2.0/bits/version.h" 1 3
-# 47 "C:/mingw64/include/c++/14.2.0/bits/version.h" 3
-       
-# 48 "C:/mingw64/include/c++/14.2.0/bits/version.h" 3
-# 56 "C:/mingw64/include/c++/14.2.0/unordered_map" 2 3
-
-
-
-namespace std
-{
-
-  namespace pmr
-  {
-    template<typename _Key, typename _Tp, typename _Hash = std::hash<_Key>,
-      typename _Pred = std::equal_to<_Key>>
-      using unordered_map
- = std::unordered_map<_Key, _Tp, _Hash, _Pred,
-        polymorphic_allocator<pair<const _Key, _Tp>>>;
-    template<typename _Key, typename _Tp, typename _Hash = std::hash<_Key>,
-      typename _Pred = std::equal_to<_Key>>
-      using unordered_multimap
- = std::unordered_multimap<_Key, _Tp, _Hash, _Pred,
-      polymorphic_allocator<pair<const _Key, _Tp>>>;
-  }
-
-}
-
-
-
-namespace std
-{
-
-  template<typename _Key, typename _Tp, typename _Hash, typename _CPred,
-    typename _Alloc, typename _Predicate>
-    inline typename unordered_map<_Key, _Tp, _Hash, _CPred, _Alloc>::size_type
-    erase_if(unordered_map<_Key, _Tp, _Hash, _CPred, _Alloc>& __cont,
-      _Predicate __pred)
-    {
-      std::unordered_map<_Key, _Tp, _Hash, _CPred, _Alloc>&
- __ucont = __cont;
-      return __detail::__erase_nodes_if(__cont, __ucont, __pred);
-    }
-
-  template<typename _Key, typename _Tp, typename _Hash, typename _CPred,
-    typename _Alloc, typename _Predicate>
-    inline typename unordered_multimap<_Key, _Tp, _Hash, _CPred, _Alloc>::
-      size_type
-    erase_if(unordered_multimap<_Key, _Tp, _Hash, _CPred, _Alloc>& __cont,
-      _Predicate __pred)
-    {
-      std::unordered_multimap<_Key, _Tp, _Hash, _CPred, _Alloc>&
- __ucont = __cont;
-      return __detail::__erase_nodes_if(__cont, __ucont, __pred);
-    }
-
-}
-# 42 "C:/SFML/include/SFML/Graphics/Font.hpp" 2
-# 55 "C:/SFML/include/SFML/Graphics/Font.hpp"
-
-# 55 "C:/SFML/include/SFML/Graphics/Font.hpp"
-namespace sf
-{
-class InputStream;
-
-
-
-
-
-class __attribute__((dllimport)) Font
-{
-public:
-
-
-
-
-    struct Info
-    {
-        std::string family;
-    };
-
-
-
-
-
-
-
-    Font() = default;
-# 103 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    explicit Font(const std::filesystem::path& filename);
-# 124 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    Font(const void* data, std::size_t sizeInBytes);
-# 146 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    explicit Font(InputStream& stream);
-# 168 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    [[nodiscard]] bool openFromFile(const std::filesystem::path& filename);
-# 189 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    [[nodiscard]] bool openFromMemory(const void* data, std::size_t sizeInBytes);
-# 208 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    [[nodiscard]] bool openFromStream(InputStream& stream);
-
-
-
-
-
-
-
-    [[nodiscard]] const Info& getInfo() const;
-# 240 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    [[nodiscard]] const Glyph& getGlyph(char32_t codePoint, unsigned int characterSize, bool bold, float outlineThickness = 0) const;
-# 258 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    [[nodiscard]] bool hasGlyph(char32_t codePoint) const;
-# 277 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    [[nodiscard]] float getKerning(std::uint32_t first, std::uint32_t second, unsigned int characterSize, bool bold = false) const;
-# 290 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    [[nodiscard]] float getLineSpacing(unsigned int characterSize) const;
-# 305 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    [[nodiscard]] float getUnderlinePosition(unsigned int characterSize) const;
-# 319 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    [[nodiscard]] float getUnderlineThickness(unsigned int characterSize) const;
-# 333 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    [[nodiscard]] const Texture& getTexture(unsigned int characterSize) const;
-# 349 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    void setSmooth(bool smooth);
-# 359 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    [[nodiscard]] bool isSmooth() const;
-
-private:
-
-
-
-
-    struct Row
-    {
-        Row(unsigned int rowTop, unsigned int rowHeight) : top(rowTop), height(rowHeight)
-        {
-        }
-
-        unsigned int width{};
-        unsigned int top;
-        unsigned int height;
-    };
-
-
-
-
-    using GlyphTable = std::unordered_map<std::uint64_t, Glyph>;
-
-
-
-
-
-    struct Page
-    {
-        explicit Page(bool smooth);
-
-        GlyphTable glyphs;
-        Texture texture;
-        unsigned int nextRow{3};
-        std::vector<Row> rows;
-    };
-
-
-
-
-
-    void cleanup();
-# 410 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    Page& loadPage(unsigned int characterSize) const;
-# 423 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    Glyph loadGlyph(char32_t codePoint, unsigned int characterSize, bool bold, float outlineThickness) const;
-# 434 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    IntRect findGlyphRect(Page& page, Vector2u size) const;
-# 444 "C:/SFML/include/SFML/Graphics/Font.hpp"
-    [[nodiscard]] bool setCurrentSize(unsigned int characterSize) const;
-
-
-
-
-    struct FontHandles;
-    using PageTable = std::unordered_map<unsigned int, Page>;
-
-
-
-
-    std::shared_ptr<FontHandles> m_fontHandles;
-    bool m_isSmooth{true};
-    Info m_info;
-    mutable PageTable m_pages;
-    mutable std::vector<std::uint8_t> m_pixelBuffer;
-
-
-
-};
-
-}
-# 37 "C:/SFML/include/SFML/Graphics.hpp" 2
-
-# 1 "C:/SFML/include/SFML/Graphics/Image.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/Image.hpp"
-       
-# 46 "C:/SFML/include/SFML/Graphics/Image.hpp"
-namespace sf
-{
-class InputStream;
-
-
-
-
-
-class __attribute__((dllimport)) Image
-{
-public:
-# 65 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    Image() = default;
-# 74 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    explicit Image(Vector2u size, Color color = Color::Black);
-# 87 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    Image(Vector2u size, const std::uint8_t* pixels);
-# 103 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    explicit Image(const std::filesystem::path& filename);
-# 120 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    Image(const void* data, std::size_t size);
-# 136 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    explicit Image(InputStream& stream);
-# 145 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    void resize(Vector2u size, Color color = Color::Black);
-# 158 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    void resize(Vector2u size, const std::uint8_t* pixels);
-# 175 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    [[nodiscard]] bool loadFromFile(const std::filesystem::path& filename);
-# 193 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    [[nodiscard]] bool loadFromMemory(const void* data, std::size_t size);
-# 210 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    [[nodiscard]] bool loadFromStream(InputStream& stream);
-# 227 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    [[nodiscard]] bool saveToFile(const std::filesystem::path& filename) const;
-# 245 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    [[nodiscard]] std::optional<std::vector<std::uint8_t>> saveToMemory(std::string_view format) const;
-
-
-
-
-
-
-
-    [[nodiscard]] Vector2u getSize() const;
-# 266 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    void createMaskFromColor(Color color, std::uint8_t alpha = 0);
-# 300 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    [[nodiscard]] bool copy(const Image& source, Vector2u dest, const IntRect& sourceRect = {}, bool applyAlpha = false);
-# 315 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    void setPixel(Vector2u coords, Color color);
-# 331 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    [[nodiscard]] Color getPixel(Vector2u coords) const;
-# 346 "C:/SFML/include/SFML/Graphics/Image.hpp"
-    [[nodiscard]] const std::uint8_t* getPixelsPtr() const;
-
-
-
-
-
-    void flipHorizontally();
-
-
-
-
-
-    void flipVertically();
-
-private:
-
-
-
-    Vector2u m_size;
-    std::vector<std::uint8_t> m_pixels;
-};
-
-}
-# 39 "C:/SFML/include/SFML/Graphics.hpp" 2
-
-
-# 1 "C:/SFML/include/SFML/Graphics/RectangleShape.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/RectangleShape.hpp"
-       
-# 39 "C:/SFML/include/SFML/Graphics/RectangleShape.hpp"
-namespace sf
-{
-
-
-
-
-class __attribute__((dllimport)) RectangleShape : public Shape
-{
-public:
-
-
-
-
-
-
-    explicit RectangleShape(Vector2f size = {});
-# 64 "C:/SFML/include/SFML/Graphics/RectangleShape.hpp"
-    void setSize(Vector2f size);
-# 74 "C:/SFML/include/SFML/Graphics/RectangleShape.hpp"
-    [[nodiscard]] Vector2f getSize() const;
-# 83 "C:/SFML/include/SFML/Graphics/RectangleShape.hpp"
-    [[nodiscard]] std::size_t getPointCount() const override;
-# 98 "C:/SFML/include/SFML/Graphics/RectangleShape.hpp"
-    [[nodiscard]] Vector2f getPoint(std::size_t index) const override;
-# 110 "C:/SFML/include/SFML/Graphics/RectangleShape.hpp"
-    [[nodiscard]] Vector2f getGeometricCenter() const override;
-
-private:
-
-
-
-    Vector2f m_size;
-};
-
-}
-# 42 "C:/SFML/include/SFML/Graphics.hpp" 2
-
-# 1 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-       
-# 40 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-# 1 "C:/SFML/include/SFML/Graphics/View.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/View.hpp"
-       
-# 39 "C:/SFML/include/SFML/Graphics/View.hpp"
-namespace sf
-{
-
-
-
-
-class __attribute__((dllimport)) View
-{
-public:
-
-
-
-
-
-
-    View() = default;
-
-
-
-
-
-
-
-    explicit View(const FloatRect& rectangle);
-# 71 "C:/SFML/include/SFML/Graphics/View.hpp"
-    View(Vector2f center, Vector2f size);
-# 81 "C:/SFML/include/SFML/Graphics/View.hpp"
-    void setCenter(Vector2f center);
-# 91 "C:/SFML/include/SFML/Graphics/View.hpp"
-    void setSize(Vector2f size);
-# 103 "C:/SFML/include/SFML/Graphics/View.hpp"
-    void setRotation(Angle angle);
-# 120 "C:/SFML/include/SFML/Graphics/View.hpp"
-    void setViewport(const FloatRect& viewport);
-# 144 "C:/SFML/include/SFML/Graphics/View.hpp"
-    void setScissor(const FloatRect& scissor);
-# 154 "C:/SFML/include/SFML/Graphics/View.hpp"
-    [[nodiscard]] Vector2f getCenter() const;
-# 164 "C:/SFML/include/SFML/Graphics/View.hpp"
-    [[nodiscard]] Vector2f getSize() const;
-# 174 "C:/SFML/include/SFML/Graphics/View.hpp"
-    [[nodiscard]] Angle getRotation() const;
-# 184 "C:/SFML/include/SFML/Graphics/View.hpp"
-    [[nodiscard]] const FloatRect& getViewport() const;
-# 194 "C:/SFML/include/SFML/Graphics/View.hpp"
-    [[nodiscard]] const FloatRect& getScissor() const;
-# 204 "C:/SFML/include/SFML/Graphics/View.hpp"
-    void move(Vector2f offset);
-# 214 "C:/SFML/include/SFML/Graphics/View.hpp"
-    void rotate(Angle angle);
-# 231 "C:/SFML/include/SFML/Graphics/View.hpp"
-    void zoom(float factor);
-# 243 "C:/SFML/include/SFML/Graphics/View.hpp"
-    [[nodiscard]] const Transform& getTransform() const;
-# 255 "C:/SFML/include/SFML/Graphics/View.hpp"
-    [[nodiscard]] const Transform& getInverseTransform() const;
-
-private:
-
-
-
-    Vector2f m_center{500, 500};
-    Vector2f m_size{1000, 1000};
-    Angle m_rotation;
-    FloatRect m_viewport{{0, 0}, {1, 1}};
-    FloatRect m_scissor{{0, 0}, {1, 1}};
-    mutable Transform m_transform;
-    mutable Transform m_inverseTransform;
-    mutable bool m_transformUpdated{};
-    mutable bool m_invTransformUpdated{};
-};
-
-}
-# 41 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp" 2
-# 50 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-namespace sf
-{
-class Drawable;
-class Shader;
-class Texture;
-class Transform;
-class VertexBuffer;
-
-
-
-
-
-class __attribute__((dllimport)) RenderTarget
-{
-public:
-
-
-
-
-    virtual ~RenderTarget() = default;
-
-
-
-
-
-    RenderTarget(const RenderTarget&) = delete;
-
-
-
-
-
-    RenderTarget& operator=(const RenderTarget&) = delete;
-
-
-
-
-
-    RenderTarget(RenderTarget&&) noexcept = default;
-
-
-
-
-
-    RenderTarget& operator=(RenderTarget&&) noexcept = default;
-# 104 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    void clear(Color color = Color::Black);
-# 115 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    void clearStencil(StencilValue stencilValue);
-# 127 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    void clear(Color color, StencilValue stencilValue);
-# 148 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    void setView(const View& view);
-# 158 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    [[nodiscard]] const View& getView() const;
-# 171 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    [[nodiscard]] const View& getDefaultView() const;
-# 186 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    [[nodiscard]] IntRect getViewport(const View& view) const;
-# 201 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    [[nodiscard]] IntRect getScissor(const View& view) const;
-# 221 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    [[nodiscard]] Vector2f mapPixelToCoords(Vector2i point) const;
-# 252 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    [[nodiscard]] Vector2f mapPixelToCoords(Vector2i point, const View& view) const;
-# 272 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    [[nodiscard]] Vector2i mapCoordsToPixel(Vector2f point) const;
-# 299 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    [[nodiscard]] Vector2i mapCoordsToPixel(Vector2f point, const View& view) const;
-# 308 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    void draw(const Drawable& drawable, const RenderStates& states = RenderStates::Default);
-# 319 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    void draw(const Vertex* vertices,
-              std::size_t vertexCount,
-              PrimitiveType type,
-              const RenderStates& states = RenderStates::Default);
-# 331 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    void draw(const VertexBuffer& vertexBuffer, const RenderStates& states = RenderStates::Default);
-# 342 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    void draw(const VertexBuffer& vertexBuffer,
-              std::size_t firstVertex,
-              std::size_t vertexCount,
-              const RenderStates& states = RenderStates::Default);
-
-
-
-
-
-
-
-    [[nodiscard]] virtual Vector2u getSize() const = 0;
-
-
-
-
-
-
-
-    [[nodiscard]] virtual bool isSrgb() const;
-# 383 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    [[nodiscard]] virtual bool setActive(bool active = true);
-# 417 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    void pushGLStates();
-# 428 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    void popGLStates();
-# 451 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    void resetGLStates();
-
-protected:
-
-
-
-
-    RenderTarget() = default;
-# 467 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    void initialize();
-
-private:
-
-
-
-
-    void applyCurrentView();
-
-
-
-
-
-
-
-    void applyBlendMode(const BlendMode& mode);
-
-
-
-
-
-
-
-    void applyStencilMode(const StencilMode& mode);
-
-
-
-
-
-
-
-    void applyTransform(const Transform& transform);
-# 507 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    void applyTexture(const Texture* texture, CoordinateType coordinateType = CoordinateType::Pixels);
-
-
-
-
-
-
-
-    void applyShader(const Shader* shader);
-# 524 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    void setupDraw(bool useVertexCache, const RenderStates& states);
-# 534 "C:/SFML/include/SFML/Graphics/RenderTarget.hpp"
-    void drawPrimitives(PrimitiveType type, std::size_t firstVertex, std::size_t vertexCount);
-
-
-
-
-
-
-
-    void cleanupDraw(const RenderStates& states);
-
-
-
-
-
-    struct StatesCache
-    {
-        bool enable{};
-        bool glStatesSet{};
-        bool viewChanged{};
-        bool scissorEnabled{};
-        bool stencilEnabled{};
-        BlendMode lastBlendMode;
-        StencilMode lastStencilMode;
-        std::uint64_t lastTextureId{};
-        CoordinateType lastCoordinateType{};
-        bool texCoordsArrayEnabled{};
-        bool useVertexCache{};
-        std::array<Vertex, 4> vertexCache{};
-    };
-
-
-
-
-    View m_defaultView;
-    View m_view;
-    StatesCache m_cache{};
-    std::uint64_t m_id{};
-};
-
-}
-# 44 "C:/SFML/include/SFML/Graphics.hpp" 2
-# 1 "C:/SFML/include/SFML/Graphics/RenderTexture.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/RenderTexture.hpp"
-       
-# 35 "C:/SFML/include/SFML/Graphics/RenderTexture.hpp"
-# 1 "C:/SFML/include/SFML/Window/ContextSettings.hpp" 1
-# 25 "C:/SFML/include/SFML/Window/ContextSettings.hpp"
-       
-
-
-
-
-
-namespace sf
-{
-
-
-
-
-
-struct ContextSettings
-{
-
-
-
-
-    enum Attribute
-    {
-        Default = 0,
-        Core = 1 << 0,
-        Debug = 1 << 2
-    };
-
-
-
-
-
-    unsigned int depthBits{};
-    unsigned int stencilBits{};
-    unsigned int antiAliasingLevel{};
-    unsigned int majorVersion{1};
-    unsigned int minorVersion{1};
-    std::uint32_t attributeFlags{Attribute::Default};
-    bool sRgbCapable{};
-};
-
-}
-# 36 "C:/SFML/include/SFML/Graphics/RenderTexture.hpp" 2
-
-
-
-
-
-
-namespace sf
-{
-namespace priv
-{
-class RenderTextureImpl;
-}
-
-
-
-
-
-class __attribute__((dllimport)) RenderTexture : public RenderTarget
-{
-public:
-# 64 "C:/SFML/include/SFML/Graphics/RenderTexture.hpp"
-    RenderTexture();
-# 83 "C:/SFML/include/SFML/Graphics/RenderTexture.hpp"
-    RenderTexture(Vector2u size, const ContextSettings& settings = {});
-
-
-
-
-
-    ~RenderTexture() override;
-
-
-
-
-
-    RenderTexture(const RenderTexture&) = delete;
-
-
-
-
-
-    RenderTexture& operator=(const RenderTexture&) = delete;
-
-
-
-
-
-    RenderTexture(RenderTexture&&) noexcept;
-
-
-
-
-
-    RenderTexture& operator=(RenderTexture&&) noexcept;
-# 132 "C:/SFML/include/SFML/Graphics/RenderTexture.hpp"
-    [[nodiscard]] bool resize(Vector2u size, const ContextSettings& settings = {});
-
-
-
-
-
-
-
-    [[nodiscard]] static unsigned int getMaximumAntiAliasingLevel();
-# 153 "C:/SFML/include/SFML/Graphics/RenderTexture.hpp"
-    void setSmooth(bool smooth);
-# 163 "C:/SFML/include/SFML/Graphics/RenderTexture.hpp"
-    [[nodiscard]] bool isSmooth() const;
-# 176 "C:/SFML/include/SFML/Graphics/RenderTexture.hpp"
-    void setRepeated(bool repeated);
-# 186 "C:/SFML/include/SFML/Graphics/RenderTexture.hpp"
-    [[nodiscard]] bool isRepeated() const;
-# 202 "C:/SFML/include/SFML/Graphics/RenderTexture.hpp"
-    [[nodiscard]] bool generateMipmap();
-# 219 "C:/SFML/include/SFML/Graphics/RenderTexture.hpp"
-    [[nodiscard]] bool setActive(bool active = true) override;
-# 230 "C:/SFML/include/SFML/Graphics/RenderTexture.hpp"
-    void display();
-# 241 "C:/SFML/include/SFML/Graphics/RenderTexture.hpp"
-    [[nodiscard]] Vector2u getSize() const override;
-# 252 "C:/SFML/include/SFML/Graphics/RenderTexture.hpp"
-    [[nodiscard]] bool isSrgb() const override;
-# 268 "C:/SFML/include/SFML/Graphics/RenderTexture.hpp"
-    [[nodiscard]] const Texture& getTexture() const;
-
-private:
-
-
-
-    std::unique_ptr<priv::RenderTextureImpl> m_impl;
-    Texture m_texture;
-};
-
-}
-# 45 "C:/SFML/include/SFML/Graphics.hpp" 2
-# 1 "C:/SFML/include/SFML/Graphics/RenderWindow.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/RenderWindow.hpp"
-       
-# 35 "C:/SFML/include/SFML/Graphics/RenderWindow.hpp"
-# 1 "C:/SFML/include/SFML/Window/VideoMode.hpp" 1
-# 25 "C:/SFML/include/SFML/Window/VideoMode.hpp"
-       
-# 37 "C:/SFML/include/SFML/Window/VideoMode.hpp"
-namespace sf
-{
-
-
-
-
-class __attribute__((dllimport)) VideoMode
-{
-public:
-
-
-
-
-
-
-    VideoMode() = default;
-# 61 "C:/SFML/include/SFML/Window/VideoMode.hpp"
-    explicit VideoMode(Vector2u modeSize, unsigned int modeBitsPerPixel = 32);
-
-
-
-
-
-
-
-    [[nodiscard]] static VideoMode getDesktopMode();
-# 85 "C:/SFML/include/SFML/Window/VideoMode.hpp"
-    [[nodiscard]] static const std::vector<VideoMode>& getFullscreenModes();
-# 97 "C:/SFML/include/SFML/Window/VideoMode.hpp"
-    [[nodiscard]] bool isValid() const;
-
-
-
-
-    Vector2u size;
-    unsigned int bitsPerPixel{};
-};
-# 116 "C:/SFML/include/SFML/Window/VideoMode.hpp"
-[[nodiscard]] __attribute__((dllimport)) bool operator==(const VideoMode& left, const VideoMode& right);
-# 128 "C:/SFML/include/SFML/Window/VideoMode.hpp"
-[[nodiscard]] __attribute__((dllimport)) bool operator!=(const VideoMode& left, const VideoMode& right);
-# 140 "C:/SFML/include/SFML/Window/VideoMode.hpp"
-[[nodiscard]] __attribute__((dllimport)) bool operator<(const VideoMode& left, const VideoMode& right);
-# 152 "C:/SFML/include/SFML/Window/VideoMode.hpp"
-[[nodiscard]] __attribute__((dllimport)) bool operator>(const VideoMode& left, const VideoMode& right);
-# 164 "C:/SFML/include/SFML/Window/VideoMode.hpp"
-[[nodiscard]] __attribute__((dllimport)) bool operator<=(const VideoMode& left, const VideoMode& right);
-# 176 "C:/SFML/include/SFML/Window/VideoMode.hpp"
-[[nodiscard]] __attribute__((dllimport)) bool operator>=(const VideoMode& left, const VideoMode& right);
-
-}
-# 36 "C:/SFML/include/SFML/Graphics/RenderWindow.hpp" 2
-# 1 "C:/SFML/include/SFML/Window/Window.hpp" 1
-# 25 "C:/SFML/include/SFML/Window/Window.hpp"
-       
-
-
-
-
-
-
-# 1 "C:/SFML/include/SFML/Window/WindowBase.hpp" 1
-# 25 "C:/SFML/include/SFML/Window/WindowBase.hpp"
-       
-
-
-
-
-
-
-# 1 "C:/SFML/include/SFML/Window/Vulkan.hpp" 1
-# 25 "C:/SFML/include/SFML/Window/Vulkan.hpp"
-       
-# 35 "C:/SFML/include/SFML/Window/Vulkan.hpp"
-using VkInstance = struct VkInstance_T*;
-
-
-
-
-using VkSurfaceKHR = struct VkSurfaceKHR_T*;
-# 51 "C:/SFML/include/SFML/Window/Vulkan.hpp"
-struct VkAllocationCallbacks;
-
-
-namespace sf
-{
-
-using VulkanFunctionPointer = void (*)();
-
-
-
-
-
-namespace Vulkan
-{
-# 81 "C:/SFML/include/SFML/Window/Vulkan.hpp"
-[[nodiscard]] __attribute__((dllimport)) bool isAvailable(bool requireGraphics = true);
-# 91 "C:/SFML/include/SFML/Window/Vulkan.hpp"
-[[nodiscard]] __attribute__((dllimport)) VulkanFunctionPointer getFunction(const char* name);
-
-
-
-
-
-
-
-[[nodiscard]] __attribute__((dllimport)) const std::vector<const char*>& getGraphicsRequiredInstanceExtensions();
-}
-
-}
-# 33 "C:/SFML/include/SFML/Window/WindowBase.hpp" 2
-# 1 "C:/SFML/include/SFML/Window/WindowEnums.hpp" 1
-# 25 "C:/SFML/include/SFML/Window/WindowEnums.hpp"
-       
-
-
-namespace sf
-{
-namespace Style
-{
-
-
-
-
-
-enum
-{
-    None = 0,
-    Titlebar = 1 << 0,
-    Resize = 1 << 1,
-    Close = 1 << 2,
-
-    Default = Titlebar | Resize | Close
-};
-
-}
-
-
-
-
-
-
-enum class State
-{
-    Windowed,
-    Fullscreen
-};
-
-}
-# 34 "C:/SFML/include/SFML/Window/WindowBase.hpp" 2
-# 1 "C:/SFML/include/SFML/Window/WindowHandle.hpp" 1
-# 25 "C:/SFML/include/SFML/Window/WindowHandle.hpp"
-       
-# 34 "C:/SFML/include/SFML/Window/WindowHandle.hpp"
-struct HWND__;
-
-
-namespace sf
-{
-
-
-
-using WindowHandle = HWND__*;
-# 72 "C:/SFML/include/SFML/Window/WindowHandle.hpp"
-}
-# 35 "C:/SFML/include/SFML/Window/WindowBase.hpp" 2
-
-# 1 "C:/SFML/include/SFML/System/Time.hpp" 1
-# 25 "C:/SFML/include/SFML/System/Time.hpp"
-       
-
-
-
-
-# 1 "C:/mingw64/include/c++/14.2.0/chrono" 1 3
-# 33 "C:/mingw64/include/c++/14.2.0/chrono" 3
-       
-# 34 "C:/mingw64/include/c++/14.2.0/chrono" 3
-# 48 "C:/mingw64/include/c++/14.2.0/chrono" 3
 # 1 "C:/mingw64/include/c++/14.2.0/bits/stl_algo.h" 1 3
 # 59 "C:/mingw64/include/c++/14.2.0/bits/stl_algo.h" 3
 # 1 "C:/mingw64/include/c++/14.2.0/bits/algorithmfwd.h" 1 3
 # 33 "C:/mingw64/include/c++/14.2.0/bits/algorithmfwd.h" 3
        
 # 34 "C:/mingw64/include/c++/14.2.0/bits/algorithmfwd.h" 3
-# 42 "C:/mingw64/include/c++/14.2.0/bits/algorithmfwd.h" 3
-
 # 42 "C:/mingw64/include/c++/14.2.0/bits/algorithmfwd.h" 3
 namespace std
 {
@@ -89958,7 +75067,4832 @@ namespace __detail
 
 
 
+# 1 "C:/mingw64/include/c++/14.2.0/iomanip" 1 3
+# 36 "C:/mingw64/include/c++/14.2.0/iomanip" 3
+       
+# 37 "C:/mingw64/include/c++/14.2.0/iomanip" 3
+# 45 "C:/mingw64/include/c++/14.2.0/iomanip" 3
+# 1 "C:/mingw64/include/c++/14.2.0/bits/version.h" 1 3
+# 47 "C:/mingw64/include/c++/14.2.0/bits/version.h" 3
+       
+# 48 "C:/mingw64/include/c++/14.2.0/bits/version.h" 3
+# 46 "C:/mingw64/include/c++/14.2.0/iomanip" 2 3
 
+
+# 1 "C:/mingw64/include/c++/14.2.0/locale" 1 3
+# 36 "C:/mingw64/include/c++/14.2.0/locale" 3
+       
+# 37 "C:/mingw64/include/c++/14.2.0/locale" 3
+
+
+
+
+
+
+# 1 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 1 3
+# 37 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+       
+# 38 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+
+# 1 "C:/mingw64/include/c++/14.2.0/ctime" 1 3
+# 39 "C:/mingw64/include/c++/14.2.0/ctime" 3
+       
+# 40 "C:/mingw64/include/c++/14.2.0/ctime" 3
+# 40 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 2 3
+
+namespace std
+{
+
+# 52 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+  class time_base
+  {
+  public:
+    enum dateorder { no_order, dmy, mdy, ymd, ydm };
+  };
+
+  template<typename _CharT>
+    struct __timepunct_cache : public locale::facet
+    {
+
+      static const _CharT* _S_timezones[14];
+
+      const _CharT* _M_date_format;
+      const _CharT* _M_date_era_format;
+      const _CharT* _M_time_format;
+      const _CharT* _M_time_era_format;
+      const _CharT* _M_date_time_format;
+      const _CharT* _M_date_time_era_format;
+      const _CharT* _M_am;
+      const _CharT* _M_pm;
+      const _CharT* _M_am_pm_format;
+
+
+      const _CharT* _M_day1;
+      const _CharT* _M_day2;
+      const _CharT* _M_day3;
+      const _CharT* _M_day4;
+      const _CharT* _M_day5;
+      const _CharT* _M_day6;
+      const _CharT* _M_day7;
+
+
+      const _CharT* _M_aday1;
+      const _CharT* _M_aday2;
+      const _CharT* _M_aday3;
+      const _CharT* _M_aday4;
+      const _CharT* _M_aday5;
+      const _CharT* _M_aday6;
+      const _CharT* _M_aday7;
+
+
+      const _CharT* _M_month01;
+      const _CharT* _M_month02;
+      const _CharT* _M_month03;
+      const _CharT* _M_month04;
+      const _CharT* _M_month05;
+      const _CharT* _M_month06;
+      const _CharT* _M_month07;
+      const _CharT* _M_month08;
+      const _CharT* _M_month09;
+      const _CharT* _M_month10;
+      const _CharT* _M_month11;
+      const _CharT* _M_month12;
+
+
+      const _CharT* _M_amonth01;
+      const _CharT* _M_amonth02;
+      const _CharT* _M_amonth03;
+      const _CharT* _M_amonth04;
+      const _CharT* _M_amonth05;
+      const _CharT* _M_amonth06;
+      const _CharT* _M_amonth07;
+      const _CharT* _M_amonth08;
+      const _CharT* _M_amonth09;
+      const _CharT* _M_amonth10;
+      const _CharT* _M_amonth11;
+      const _CharT* _M_amonth12;
+
+      bool _M_allocated;
+
+      __timepunct_cache(size_t __refs = 0) : facet(__refs),
+      _M_date_format(0), _M_date_era_format(0), _M_time_format(0),
+      _M_time_era_format(0), _M_date_time_format(0),
+      _M_date_time_era_format(0), _M_am(0), _M_pm(0),
+      _M_am_pm_format(0), _M_day1(0), _M_day2(0), _M_day3(0),
+      _M_day4(0), _M_day5(0), _M_day6(0), _M_day7(0),
+      _M_aday1(0), _M_aday2(0), _M_aday3(0), _M_aday4(0),
+      _M_aday5(0), _M_aday6(0), _M_aday7(0), _M_month01(0),
+      _M_month02(0), _M_month03(0), _M_month04(0), _M_month05(0),
+      _M_month06(0), _M_month07(0), _M_month08(0), _M_month09(0),
+      _M_month10(0), _M_month11(0), _M_month12(0), _M_amonth01(0),
+      _M_amonth02(0), _M_amonth03(0), _M_amonth04(0),
+      _M_amonth05(0), _M_amonth06(0), _M_amonth07(0),
+      _M_amonth08(0), _M_amonth09(0), _M_amonth10(0),
+      _M_amonth11(0), _M_amonth12(0), _M_allocated(false)
+      { }
+
+      ~__timepunct_cache();
+
+    private:
+      __timepunct_cache&
+      operator=(const __timepunct_cache&);
+
+      explicit
+      __timepunct_cache(const __timepunct_cache&);
+    };
+
+  template<typename _CharT>
+    __timepunct_cache<_CharT>::~__timepunct_cache()
+    {
+      if (_M_allocated)
+ {
+
+ }
+    }
+
+
+  template<>
+    const char*
+    __timepunct_cache<char>::_S_timezones[14];
+
+
+  template<>
+    const wchar_t*
+    __timepunct_cache<wchar_t>::_S_timezones[14];
+
+
+
+  template<typename _CharT>
+    const _CharT* __timepunct_cache<_CharT>::_S_timezones[14];
+
+  template<typename _CharT>
+    class __timepunct : public locale::facet
+    {
+    public:
+
+      typedef _CharT __char_type;
+      typedef __timepunct_cache<_CharT> __cache_type;
+
+    protected:
+      __cache_type* _M_data;
+      __c_locale _M_c_locale_timepunct;
+      const char* _M_name_timepunct;
+
+    public:
+
+      static locale::id id;
+
+      explicit
+      __timepunct(size_t __refs = 0);
+
+      explicit
+      __timepunct(__cache_type* __cache, size_t __refs = 0);
+# 206 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      explicit
+      __timepunct(__c_locale __cloc, const char* __s, size_t __refs = 0);
+
+
+
+      void
+      _M_put(_CharT* __s, size_t __maxlen, const _CharT* __format,
+      const tm* __tm) const throw ();
+
+      void
+      _M_date_formats(const _CharT** __date) const
+      {
+
+ __date[0] = _M_data->_M_date_format;
+ __date[1] = _M_data->_M_date_era_format;
+      }
+
+      void
+      _M_time_formats(const _CharT** __time) const
+      {
+
+ __time[0] = _M_data->_M_time_format;
+ __time[1] = _M_data->_M_time_era_format;
+      }
+
+      void
+      _M_date_time_formats(const _CharT** __dt) const
+      {
+
+ __dt[0] = _M_data->_M_date_time_format;
+ __dt[1] = _M_data->_M_date_time_era_format;
+      }
+
+
+      void
+      _M_am_pm_format(const _CharT*) const
+      { }
+
+
+      void
+      _M_am_pm_format(const _CharT** __ampm_format) const
+      {
+ __ampm_format[0] = _M_data->_M_am_pm_format;
+      }
+
+      void
+      _M_am_pm(const _CharT** __ampm) const
+      {
+ __ampm[0] = _M_data->_M_am;
+ __ampm[1] = _M_data->_M_pm;
+      }
+
+      void
+      _M_days(const _CharT** __days) const
+      {
+ __days[0] = _M_data->_M_day1;
+ __days[1] = _M_data->_M_day2;
+ __days[2] = _M_data->_M_day3;
+ __days[3] = _M_data->_M_day4;
+ __days[4] = _M_data->_M_day5;
+ __days[5] = _M_data->_M_day6;
+ __days[6] = _M_data->_M_day7;
+      }
+
+      void
+      _M_days_abbreviated(const _CharT** __days) const
+      {
+ __days[0] = _M_data->_M_aday1;
+ __days[1] = _M_data->_M_aday2;
+ __days[2] = _M_data->_M_aday3;
+ __days[3] = _M_data->_M_aday4;
+ __days[4] = _M_data->_M_aday5;
+ __days[5] = _M_data->_M_aday6;
+ __days[6] = _M_data->_M_aday7;
+      }
+
+      void
+      _M_months(const _CharT** __months) const
+      {
+ __months[0] = _M_data->_M_month01;
+ __months[1] = _M_data->_M_month02;
+ __months[2] = _M_data->_M_month03;
+ __months[3] = _M_data->_M_month04;
+ __months[4] = _M_data->_M_month05;
+ __months[5] = _M_data->_M_month06;
+ __months[6] = _M_data->_M_month07;
+ __months[7] = _M_data->_M_month08;
+ __months[8] = _M_data->_M_month09;
+ __months[9] = _M_data->_M_month10;
+ __months[10] = _M_data->_M_month11;
+ __months[11] = _M_data->_M_month12;
+      }
+
+      void
+      _M_months_abbreviated(const _CharT** __months) const
+      {
+ __months[0] = _M_data->_M_amonth01;
+ __months[1] = _M_data->_M_amonth02;
+ __months[2] = _M_data->_M_amonth03;
+ __months[3] = _M_data->_M_amonth04;
+ __months[4] = _M_data->_M_amonth05;
+ __months[5] = _M_data->_M_amonth06;
+ __months[6] = _M_data->_M_amonth07;
+ __months[7] = _M_data->_M_amonth08;
+ __months[8] = _M_data->_M_amonth09;
+ __months[9] = _M_data->_M_amonth10;
+ __months[10] = _M_data->_M_amonth11;
+ __months[11] = _M_data->_M_amonth12;
+      }
+
+    protected:
+      virtual
+      ~__timepunct();
+
+
+      void
+      _M_initialize_timepunct(__c_locale __cloc = 0);
+    };
+
+  template<typename _CharT>
+    locale::id __timepunct<_CharT>::id;
+
+
+  template<>
+    void
+    __timepunct<char>::_M_initialize_timepunct(__c_locale __cloc);
+
+  template<>
+    void
+    __timepunct<char>::_M_put(char*, size_t, const char*, const tm*) const throw ();
+
+
+  template<>
+    void
+    __timepunct<wchar_t>::_M_initialize_timepunct(__c_locale __cloc);
+
+  template<>
+    void
+    __timepunct<wchar_t>::_M_put(wchar_t*, size_t, const wchar_t*,
+     const tm*) const throw ();
+
+
+
+}
+
+
+# 1 "C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h" 1 3
+# 37 "C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h" 3
+namespace std
+{
+
+
+  template<typename _CharT>
+    __timepunct<_CharT>::__timepunct(size_t __refs)
+    : facet(__refs), _M_data(0)
+    {
+      _M_name_timepunct = _S_get_c_name();
+      _M_initialize_timepunct();
+    }
+
+  template<typename _CharT>
+    __timepunct<_CharT>::__timepunct(__cache_type* __cache, size_t __refs)
+    : facet(__refs), _M_data(__cache)
+    {
+      _M_name_timepunct = _S_get_c_name();
+      _M_initialize_timepunct();
+    }
+
+  template<typename _CharT>
+    __timepunct<_CharT>::__timepunct(__c_locale __cloc, const char* __s,
+         size_t __refs)
+    : facet(__refs), _M_data(0)
+    {
+      if (__builtin_strcmp(__s, _S_get_c_name()) != 0)
+ {
+   const size_t __len = __builtin_strlen(__s) + 1;
+   char* __tmp = new char[__len];
+   __builtin_memcpy(__tmp, __s, __len);
+   _M_name_timepunct = __tmp;
+ }
+      else
+ _M_name_timepunct = _S_get_c_name();
+
+      try
+ { _M_initialize_timepunct(__cloc); }
+      catch(...)
+ {
+   if (_M_name_timepunct != _S_get_c_name())
+     delete [] _M_name_timepunct;
+   throw;
+ }
+    }
+
+  template<typename _CharT>
+    __timepunct<_CharT>::~__timepunct()
+    {
+      if (_M_name_timepunct != _S_get_c_name())
+ delete [] _M_name_timepunct;
+      delete _M_data;
+      _S_destroy_c_locale(_M_c_locale_timepunct);
+    }
+
+
+}
+# 353 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 2 3
+
+namespace std
+{
+
+
+  struct __time_get_state
+  {
+
+    void
+    _M_finalize_state(tm* __tm);
+
+    unsigned int _M_have_I : 1;
+    unsigned int _M_have_wday : 1;
+    unsigned int _M_have_yday : 1;
+    unsigned int _M_have_mon : 1;
+    unsigned int _M_have_mday : 1;
+    unsigned int _M_have_uweek : 1;
+    unsigned int _M_have_wweek : 1;
+    unsigned int _M_have_century : 1;
+    unsigned int _M_is_pm : 1;
+    unsigned int _M_want_century : 1;
+    unsigned int _M_want_xday : 1;
+    unsigned int _M_pad1 : 5;
+    unsigned int _M_week_no : 6;
+    unsigned int _M_pad2 : 10;
+    int _M_century;
+    int _M_pad3;
+  };
+
+namespace __cxx11 {
+# 397 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+  template<typename _CharT, typename _InIter>
+    class time_get : public locale::facet, public time_base
+    {
+    public:
+
+
+
+      typedef _CharT char_type;
+      typedef _InIter iter_type;
+
+
+
+      static locale::id id;
+# 418 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      explicit
+      time_get(size_t __refs = 0)
+      : facet (__refs) { }
+# 435 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      dateorder
+      date_order() const
+      { return this->do_date_order(); }
+# 459 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      iter_type
+      get_time(iter_type __beg, iter_type __end, ios_base& __io,
+        ios_base::iostate& __err, tm* __tm) const
+      { return this->do_get_time(__beg, __end, __io, __err, __tm); }
+# 484 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      iter_type
+      get_date(iter_type __beg, iter_type __end, ios_base& __io,
+        ios_base::iostate& __err, tm* __tm) const
+      { return this->do_get_date(__beg, __end, __io, __err, __tm); }
+# 512 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      iter_type
+      get_weekday(iter_type __beg, iter_type __end, ios_base& __io,
+    ios_base::iostate& __err, tm* __tm) const
+      { return this->do_get_weekday(__beg, __end, __io, __err, __tm); }
+# 541 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      iter_type
+      get_monthname(iter_type __beg, iter_type __end, ios_base& __io,
+      ios_base::iostate& __err, tm* __tm) const
+      { return this->do_get_monthname(__beg, __end, __io, __err, __tm); }
+# 567 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      iter_type
+      get_year(iter_type __beg, iter_type __end, ios_base& __io,
+        ios_base::iostate& __err, tm* __tm) const
+      { return this->do_get_year(__beg, __end, __io, __err, __tm); }
+# 588 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      inline
+      iter_type get(iter_type __s, iter_type __end, ios_base& __io,
+                    ios_base::iostate& __err, tm* __tm, char __format,
+                    char __modifier = 0) const
+      {
+        return this->do_get(__s, __end, __io, __err, __tm, __format,
+                            __modifier);
+      }
+# 615 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      iter_type get(iter_type __s, iter_type __end, ios_base& __io,
+                    ios_base::iostate& __err, tm* __tm, const char_type* __fmt,
+                    const char_type* __fmtend) const;
+
+
+    protected:
+
+      virtual
+      ~time_get() { }
+# 635 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual dateorder
+      do_date_order() const;
+# 653 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual iter_type
+      do_get_time(iter_type __beg, iter_type __end, ios_base& __io,
+    ios_base::iostate& __err, tm* __tm) const;
+# 672 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual iter_type
+      do_get_date(iter_type __beg, iter_type __end, ios_base& __io,
+    ios_base::iostate& __err, tm* __tm) const;
+# 691 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual iter_type
+      do_get_weekday(iter_type __beg, iter_type __end, ios_base&,
+       ios_base::iostate& __err, tm* __tm) const;
+# 710 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual iter_type
+      do_get_monthname(iter_type __beg, iter_type __end, ios_base&,
+         ios_base::iostate& __err, tm* __tm) const;
+# 729 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual iter_type
+      do_get_year(iter_type __beg, iter_type __end, ios_base& __io,
+    ios_base::iostate& __err, tm* __tm) const;
+# 752 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual
+
+      iter_type
+      do_get(iter_type __s, iter_type __end, ios_base& __f,
+             ios_base::iostate& __err, tm* __tm,
+             char __format, char __modifier) const;
+
+
+
+      iter_type
+      _M_extract_num(iter_type __beg, iter_type __end, int& __member,
+       int __min, int __max, size_t __len,
+       ios_base& __io, ios_base::iostate& __err) const;
+
+
+      iter_type
+      _M_extract_name(iter_type __beg, iter_type __end, int& __member,
+        const _CharT** __names, size_t __indexlen,
+        ios_base& __io, ios_base::iostate& __err) const;
+
+
+      iter_type
+      _M_extract_wday_or_month(iter_type __beg, iter_type __end, int& __member,
+          const _CharT** __names, size_t __indexlen,
+          ios_base& __io, ios_base::iostate& __err) const;
+
+
+      iter_type
+      _M_extract_via_format(iter_type __beg, iter_type __end, ios_base& __io,
+       ios_base::iostate& __err, tm* __tm,
+       const _CharT* __format) const;
+
+
+
+      iter_type
+      _M_extract_via_format(iter_type __beg, iter_type __end, ios_base& __io,
+       ios_base::iostate& __err, tm* __tm,
+       const _CharT* __format,
+       __time_get_state &__state) const;
+    };
+
+  template<typename _CharT, typename _InIter>
+    locale::id time_get<_CharT, _InIter>::id;
+
+
+  template<typename _CharT, typename _InIter>
+    class time_get_byname : public time_get<_CharT, _InIter>
+    {
+    public:
+
+      typedef _CharT char_type;
+      typedef _InIter iter_type;
+
+      explicit
+      time_get_byname(const char*, size_t __refs = 0)
+      : time_get<_CharT, _InIter>(__refs) { }
+
+
+      explicit
+      time_get_byname(const string& __s, size_t __refs = 0)
+      : time_get_byname(__s.c_str(), __refs) { }
+
+
+    protected:
+      virtual
+      ~time_get_byname() { }
+    };
+
+}
+# 834 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+  template<typename _CharT, typename _OutIter>
+    class time_put : public locale::facet
+    {
+    public:
+
+
+
+      typedef _CharT char_type;
+      typedef _OutIter iter_type;
+
+
+
+      static locale::id id;
+# 855 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      explicit
+      time_put(size_t __refs = 0)
+      : facet(__refs) { }
+# 874 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      iter_type
+      put(iter_type __s, ios_base& __io, char_type __fill, const tm* __tm,
+   const _CharT* __beg, const _CharT* __end) const;
+# 894 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      iter_type
+      put(iter_type __s, ios_base& __io, char_type __fill,
+   const tm* __tm, char __format, char __mod = 0) const
+      { return this->do_put(__s, __io, __fill, __tm, __format, __mod); }
+
+    protected:
+
+      virtual
+      ~time_put()
+      { }
+# 921 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual iter_type
+      do_put(iter_type __s, ios_base& __io, char_type __fill, const tm* __tm,
+      char __format, char __mod) const;
+    };
+
+  template<typename _CharT, typename _OutIter>
+    locale::id time_put<_CharT, _OutIter>::id;
+
+
+  template<typename _CharT, typename _OutIter>
+    class time_put_byname : public time_put<_CharT, _OutIter>
+    {
+    public:
+
+      typedef _CharT char_type;
+      typedef _OutIter iter_type;
+
+      explicit
+      time_put_byname(const char*, size_t __refs = 0)
+      : time_put<_CharT, _OutIter>(__refs)
+      { }
+
+
+      explicit
+      time_put_byname(const string& __s, size_t __refs = 0)
+      : time_put_byname(__s.c_str(), __refs) { }
+
+
+    protected:
+      virtual
+      ~time_put_byname() { }
+    };
+# 966 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+  class money_base
+  {
+  public:
+    enum part { none, space, symbol, sign, value };
+    struct pattern { char field[4]; };
+
+    static const pattern _S_default_pattern;
+
+    enum
+    {
+      _S_minus,
+      _S_zero,
+      _S_end = 11
+    };
+
+
+
+    static const char* _S_atoms;
+
+
+
+    __attribute__ ((__const__)) static pattern
+    _S_construct_pattern(char __precedes, char __space, char __posn) throw ();
+  };
+
+  template<typename _CharT, bool _Intl>
+    struct __moneypunct_cache : public locale::facet
+    {
+      const char* _M_grouping;
+      size_t _M_grouping_size;
+      bool _M_use_grouping;
+      _CharT _M_decimal_point;
+      _CharT _M_thousands_sep;
+      const _CharT* _M_curr_symbol;
+      size_t _M_curr_symbol_size;
+      const _CharT* _M_positive_sign;
+      size_t _M_positive_sign_size;
+      const _CharT* _M_negative_sign;
+      size_t _M_negative_sign_size;
+      int _M_frac_digits;
+      money_base::pattern _M_pos_format;
+      money_base::pattern _M_neg_format;
+
+
+
+
+      _CharT _M_atoms[money_base::_S_end];
+
+      bool _M_allocated;
+
+      __moneypunct_cache(size_t __refs = 0) : facet(__refs),
+      _M_grouping(0), _M_grouping_size(0), _M_use_grouping(false),
+      _M_decimal_point(_CharT()), _M_thousands_sep(_CharT()),
+      _M_curr_symbol(0), _M_curr_symbol_size(0),
+      _M_positive_sign(0), _M_positive_sign_size(0),
+      _M_negative_sign(0), _M_negative_sign_size(0),
+      _M_frac_digits(0),
+      _M_pos_format(money_base::pattern()),
+      _M_neg_format(money_base::pattern()), _M_allocated(false)
+      { }
+
+      ~__moneypunct_cache();
+
+      void
+      _M_cache(const locale& __loc);
+
+    private:
+      __moneypunct_cache&
+      operator=(const __moneypunct_cache&);
+
+      explicit
+      __moneypunct_cache(const __moneypunct_cache&);
+    };
+
+  template<typename _CharT, bool _Intl>
+    __moneypunct_cache<_CharT, _Intl>::~__moneypunct_cache()
+    {
+      if (_M_allocated)
+ {
+   delete [] _M_grouping;
+   delete [] _M_curr_symbol;
+   delete [] _M_positive_sign;
+   delete [] _M_negative_sign;
+ }
+    }
+
+namespace __cxx11 {
+# 1061 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+  template<typename _CharT, bool _Intl>
+    class moneypunct : public locale::facet, public money_base
+    {
+    public:
+
+
+
+      typedef _CharT char_type;
+      typedef basic_string<_CharT> string_type;
+
+      typedef __moneypunct_cache<_CharT, _Intl> __cache_type;
+
+    private:
+      __cache_type* _M_data;
+
+    public:
+
+
+      static const bool intl = _Intl;
+
+      static locale::id id;
+# 1090 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      explicit
+      moneypunct(size_t __refs = 0)
+      : facet(__refs), _M_data(0)
+      { _M_initialize_moneypunct(); }
+# 1103 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      explicit
+      moneypunct(__cache_type* __cache, size_t __refs = 0)
+      : facet(__refs), _M_data(__cache)
+      { _M_initialize_moneypunct(); }
+# 1118 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      explicit
+      moneypunct(__c_locale __cloc, const char* __s, size_t __refs = 0)
+      : facet(__refs), _M_data(0)
+      { _M_initialize_moneypunct(__cloc, __s); }
+# 1132 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      char_type
+      decimal_point() const
+      { return this->do_decimal_point(); }
+# 1145 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      char_type
+      thousands_sep() const
+      { return this->do_thousands_sep(); }
+# 1175 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      string
+      grouping() const
+      { return this->do_grouping(); }
+# 1188 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      string_type
+      curr_symbol() const
+      { return this->do_curr_symbol(); }
+# 1205 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      string_type
+      positive_sign() const
+      { return this->do_positive_sign(); }
+# 1222 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      string_type
+      negative_sign() const
+      { return this->do_negative_sign(); }
+# 1238 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      int
+      frac_digits() const
+      { return this->do_frac_digits(); }
+# 1274 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      pattern
+      pos_format() const
+      { return this->do_pos_format(); }
+
+      pattern
+      neg_format() const
+      { return this->do_neg_format(); }
+
+
+    protected:
+
+      virtual
+      ~moneypunct();
+# 1296 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual char_type
+      do_decimal_point() const
+      { return _M_data->_M_decimal_point; }
+# 1308 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual char_type
+      do_thousands_sep() const
+      { return _M_data->_M_thousands_sep; }
+# 1321 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual string
+      do_grouping() const
+      { return _M_data->_M_grouping; }
+# 1334 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual string_type
+      do_curr_symbol() const
+      { return _M_data->_M_curr_symbol; }
+# 1347 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual string_type
+      do_positive_sign() const
+      { return _M_data->_M_positive_sign; }
+# 1360 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual string_type
+      do_negative_sign() const
+      { return _M_data->_M_negative_sign; }
+# 1374 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual int
+      do_frac_digits() const
+      { return _M_data->_M_frac_digits; }
+# 1388 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual pattern
+      do_pos_format() const
+      { return _M_data->_M_pos_format; }
+# 1402 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual pattern
+      do_neg_format() const
+      { return _M_data->_M_neg_format; }
+
+
+       void
+       _M_initialize_moneypunct(__c_locale __cloc = 0,
+    const char* __name = 0);
+    };
+
+  template<typename _CharT, bool _Intl>
+    locale::id moneypunct<_CharT, _Intl>::id;
+
+  template<typename _CharT, bool _Intl>
+    const bool moneypunct<_CharT, _Intl>::intl;
+
+  template<>
+    moneypunct<char, true>::~moneypunct();
+
+  template<>
+    moneypunct<char, false>::~moneypunct();
+
+  template<>
+    void
+    moneypunct<char, true>::_M_initialize_moneypunct(__c_locale, const char*);
+
+  template<>
+    void
+    moneypunct<char, false>::_M_initialize_moneypunct(__c_locale, const char*);
+
+
+  template<>
+    moneypunct<wchar_t, true>::~moneypunct();
+
+  template<>
+    moneypunct<wchar_t, false>::~moneypunct();
+
+  template<>
+    void
+    moneypunct<wchar_t, true>::_M_initialize_moneypunct(__c_locale,
+       const char*);
+
+  template<>
+    void
+    moneypunct<wchar_t, false>::_M_initialize_moneypunct(__c_locale,
+        const char*);
+
+
+
+  template<typename _CharT, bool _Intl>
+    class moneypunct_byname : public moneypunct<_CharT, _Intl>
+    {
+    public:
+      typedef _CharT char_type;
+      typedef basic_string<_CharT> string_type;
+
+      static const bool intl = _Intl;
+
+      explicit
+      moneypunct_byname(const char* __s, size_t __refs = 0)
+      : moneypunct<_CharT, _Intl>(__refs)
+      {
+ if (__builtin_strcmp(__s, "C") != 0
+     && __builtin_strcmp(__s, "POSIX") != 0)
+   {
+     __c_locale __tmp;
+     this->_S_create_c_locale(__tmp, __s);
+     this->_M_initialize_moneypunct(__tmp);
+     this->_S_destroy_c_locale(__tmp);
+   }
+      }
+
+
+      explicit
+      moneypunct_byname(const string& __s, size_t __refs = 0)
+      : moneypunct_byname(__s.c_str(), __refs) { }
+
+
+    protected:
+      virtual
+      ~moneypunct_byname() { }
+    };
+
+  template<typename _CharT, bool _Intl>
+    const bool moneypunct_byname<_CharT, _Intl>::intl;
+
+}
+
+namespace __cxx11 {
+# 1505 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+  template<typename _CharT, typename _InIter>
+    class money_get : public locale::facet
+    {
+    public:
+
+
+
+      typedef _CharT char_type;
+      typedef _InIter iter_type;
+      typedef basic_string<_CharT> string_type;
+
+
+
+      static locale::id id;
+# 1527 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      explicit
+      money_get(size_t __refs = 0) : facet(__refs) { }
+# 1557 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      iter_type
+      get(iter_type __s, iter_type __end, bool __intl, ios_base& __io,
+   ios_base::iostate& __err, long double& __units) const
+      { return this->do_get(__s, __end, __intl, __io, __err, __units); }
+# 1588 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      iter_type
+      get(iter_type __s, iter_type __end, bool __intl, ios_base& __io,
+   ios_base::iostate& __err, string_type& __digits) const
+      { return this->do_get(__s, __end, __intl, __io, __err, __digits); }
+
+    protected:
+
+      virtual
+      ~money_get() { }
+# 1612 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual iter_type
+      do_get(iter_type __s, iter_type __end, bool __intl, ios_base& __io,
+      ios_base::iostate& __err, long double& __units) const;
+# 1624 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual iter_type
+      do_get(iter_type __s, iter_type __end, bool __intl, ios_base& __io,
+      ios_base::iostate& __err, string_type& __digits) const;
+# 1644 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      template<bool _Intl>
+        iter_type
+        _M_extract(iter_type __s, iter_type __end, ios_base& __io,
+     ios_base::iostate& __err, string& __digits) const;
+    };
+
+  template<typename _CharT, typename _InIter>
+    locale::id money_get<_CharT, _InIter>::id;
+# 1666 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+  template<typename _CharT, typename _OutIter>
+    class money_put : public locale::facet
+    {
+    public:
+
+
+      typedef _CharT char_type;
+      typedef _OutIter iter_type;
+      typedef basic_string<_CharT> string_type;
+
+
+
+      static locale::id id;
+# 1687 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      explicit
+      money_put(size_t __refs = 0) : facet(__refs) { }
+# 1707 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      iter_type
+      put(iter_type __s, bool __intl, ios_base& __io,
+   char_type __fill, long double __units) const
+      { return this->do_put(__s, __intl, __io, __fill, __units); }
+# 1730 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      iter_type
+      put(iter_type __s, bool __intl, ios_base& __io,
+   char_type __fill, const string_type& __digits) const
+      { return this->do_put(__s, __intl, __io, __fill, __digits); }
+
+    protected:
+
+      virtual
+      ~money_put() { }
+# 1765 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual iter_type
+      do_put(iter_type __s, bool __intl, ios_base& __io, char_type __fill,
+      long double __units) const;
+# 1789 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual iter_type
+      do_put(iter_type __s, bool __intl, ios_base& __io, char_type __fill,
+      const string_type& __digits) const;
+# 1809 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      template<bool _Intl>
+        iter_type
+        _M_insert(iter_type __s, ios_base& __io, char_type __fill,
+    const string_type& __digits) const;
+    };
+
+  template<typename _CharT, typename _OutIter>
+    locale::id money_put<_CharT, _OutIter>::id;
+
+}
+
+
+
+
+
+  struct messages_base
+  {
+    typedef int catalog;
+  };
+
+namespace __cxx11 {
+# 1852 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+  template<typename _CharT>
+    class messages : public locale::facet, public messages_base
+    {
+    public:
+
+
+
+      typedef _CharT char_type;
+      typedef basic_string<_CharT> string_type;
+
+
+    protected:
+
+
+      __c_locale _M_c_locale_messages;
+      const char* _M_name_messages;
+
+    public:
+
+      static locale::id id;
+# 1880 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      explicit
+      messages(size_t __refs = 0);
+# 1894 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      explicit
+      messages(__c_locale __cloc, const char* __s, size_t __refs = 0);
+# 1907 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      catalog
+      open(const basic_string<char>& __s, const locale& __loc) const
+      { return this->do_open(__s, __loc); }
+# 1925 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      catalog
+      open(const basic_string<char>&, const locale&, const char*) const;
+# 1943 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      string_type
+      get(catalog __c, int __set, int __msgid, const string_type& __s) const
+      { return this->do_get(__c, __set, __msgid, __s); }
+# 1954 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      void
+      close(catalog __c) const
+      { return this->do_close(__c); }
+
+    protected:
+
+      virtual
+      ~messages();
+# 1974 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual catalog
+      do_open(const basic_string<char>&, const locale&) const;
+# 1993 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 3
+      virtual string_type
+      do_get(catalog, int, int, const string_type& __dfault) const;
+
+
+
+
+
+
+      virtual void
+      do_close(catalog) const;
+
+
+      char*
+      _M_convert_to_char(const string_type& __msg) const
+      {
+
+ return reinterpret_cast<char*>(const_cast<_CharT*>(__msg.c_str()));
+      }
+
+
+      string_type
+      _M_convert_from_char(char*) const
+      {
+
+ return string_type();
+      }
+     };
+
+  template<typename _CharT>
+    locale::id messages<_CharT>::id;
+
+
+  template<>
+    string
+    messages<char>::do_get(catalog, int, int, const string&) const;
+
+
+  template<>
+    wstring
+    messages<wchar_t>::do_get(catalog, int, int, const wstring&) const;
+
+
+
+   template<typename _CharT>
+    class messages_byname : public messages<_CharT>
+    {
+    public:
+      typedef _CharT char_type;
+      typedef basic_string<_CharT> string_type;
+
+      explicit
+      messages_byname(const char* __s, size_t __refs = 0);
+
+
+      explicit
+      messages_byname(const string& __s, size_t __refs = 0)
+      : messages_byname(__s.c_str(), __refs) { }
+
+
+    protected:
+      virtual
+      ~messages_byname()
+      { }
+    };
+
+}
+
+
+}
+
+
+# 1 "C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h" 1 3
+# 36 "C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h" 3
+namespace std
+{
+
+
+
+  template<typename _CharT>
+     messages<_CharT>::messages(size_t __refs)
+     : facet(__refs)
+     { _M_c_locale_messages = _S_get_c_locale(); }
+
+  template<typename _CharT>
+     messages<_CharT>::messages(__c_locale, const char*, size_t __refs)
+     : facet(__refs)
+     { _M_c_locale_messages = _S_get_c_locale(); }
+
+  template<typename _CharT>
+    typename messages<_CharT>::catalog
+    messages<_CharT>::open(const basic_string<char>& __s, const locale& __loc,
+      const char*) const
+    { return this->do_open(__s, __loc); }
+
+
+  template<typename _CharT>
+    messages<_CharT>::~messages()
+    { _S_destroy_c_locale(_M_c_locale_messages); }
+
+  template<typename _CharT>
+    typename messages<_CharT>::catalog
+    messages<_CharT>::do_open(const basic_string<char>&, const locale&) const
+    { return 0; }
+
+  template<typename _CharT>
+    typename messages<_CharT>::string_type
+    messages<_CharT>::do_get(catalog, int, int,
+        const string_type& __dfault) const
+    { return __dfault; }
+
+  template<typename _CharT>
+    void
+    messages<_CharT>::do_close(catalog) const
+    { }
+
+
+   template<typename _CharT>
+     messages_byname<_CharT>::messages_byname(const char* __s, size_t __refs)
+     : messages<_CharT>(__refs)
+     {
+ if (__builtin_strcmp(__s, "C") != 0
+     && __builtin_strcmp(__s, "POSIX") != 0)
+   {
+     this->_S_destroy_c_locale(this->_M_c_locale_messages);
+     this->_S_create_c_locale(this->_M_c_locale_messages, __s);
+   }
+     }
+
+
+}
+# 2065 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 2 3
+
+
+# 1 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 1 3
+# 39 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 3
+       
+# 40 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 3
+
+
+
+
+namespace std
+{
+
+
+
+  class codecvt_base
+  {
+  public:
+    enum result
+    {
+      ok,
+      partial,
+      error,
+      noconv
+    };
+  };
+# 70 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 3
+  template<typename _InternT, typename _ExternT, typename _StateT>
+    class __codecvt_abstract_base
+    : public locale::facet, public codecvt_base
+    {
+    public:
+
+      typedef codecvt_base::result result;
+      typedef _InternT intern_type;
+      typedef _ExternT extern_type;
+      typedef _StateT state_type;
+# 118 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 3
+      result
+      out(state_type& __state, const intern_type* __from,
+   const intern_type* __from_end, const intern_type*& __from_next,
+   extern_type* __to, extern_type* __to_end,
+   extern_type*& __to_next) const
+      {
+ return this->do_out(__state, __from, __from_end, __from_next,
+       __to, __to_end, __to_next);
+      }
+# 157 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 3
+      result
+      unshift(state_type& __state, extern_type* __to, extern_type* __to_end,
+       extern_type*& __to_next) const
+      { return this->do_unshift(__state, __to,__to_end,__to_next); }
+# 198 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 3
+      result
+      in(state_type& __state, const extern_type* __from,
+  const extern_type* __from_end, const extern_type*& __from_next,
+  intern_type* __to, intern_type* __to_end,
+  intern_type*& __to_next) const
+      {
+ return this->do_in(__state, __from, __from_end, __from_next,
+      __to, __to_end, __to_next);
+      }
+
+      int
+      encoding() const throw()
+      { return this->do_encoding(); }
+
+      bool
+      always_noconv() const throw()
+      { return this->do_always_noconv(); }
+
+      int
+      length(state_type& __state, const extern_type* __from,
+      const extern_type* __end, size_t __max) const
+      { return this->do_length(__state, __from, __end, __max); }
+
+      int
+      max_length() const throw()
+      { return this->do_max_length(); }
+
+    protected:
+      explicit
+      __codecvt_abstract_base(size_t __refs = 0) : locale::facet(__refs) { }
+
+      virtual
+      ~__codecvt_abstract_base() { }
+# 239 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 3
+      virtual result
+      do_out(state_type& __state, const intern_type* __from,
+      const intern_type* __from_end, const intern_type*& __from_next,
+      extern_type* __to, extern_type* __to_end,
+      extern_type*& __to_next) const = 0;
+
+      virtual result
+      do_unshift(state_type& __state, extern_type* __to,
+   extern_type* __to_end, extern_type*& __to_next) const = 0;
+
+      virtual result
+      do_in(state_type& __state, const extern_type* __from,
+     const extern_type* __from_end, const extern_type*& __from_next,
+     intern_type* __to, intern_type* __to_end,
+     intern_type*& __to_next) const = 0;
+
+      virtual int
+      do_encoding() const throw() = 0;
+
+      virtual bool
+      do_always_noconv() const throw() = 0;
+
+      virtual int
+      do_length(state_type&, const extern_type* __from,
+  const extern_type* __end, size_t __max) const = 0;
+
+      virtual int
+      do_max_length() const throw() = 0;
+    };
+# 276 "C:/mingw64/include/c++/14.2.0/bits/codecvt.h" 3
+   template<typename _InternT, typename _ExternT, typename _StateT>
+    class codecvt
+    : public __codecvt_abstract_base<_InternT, _ExternT, _StateT>
+    {
+    public:
+
+      typedef codecvt_base::result result;
+      typedef _InternT intern_type;
+      typedef _ExternT extern_type;
+      typedef _StateT state_type;
+
+    protected:
+      __c_locale _M_c_locale_codecvt;
+
+    public:
+      static locale::id id;
+
+      explicit
+      codecvt(size_t __refs = 0)
+      : __codecvt_abstract_base<_InternT, _ExternT, _StateT> (__refs),
+ _M_c_locale_codecvt(0)
+      { }
+
+      explicit
+      codecvt(__c_locale __cloc, size_t __refs = 0);
+
+    protected:
+      virtual
+      ~codecvt() { }
+
+      virtual result
+      do_out(state_type& __state, const intern_type* __from,
+      const intern_type* __from_end, const intern_type*& __from_next,
+      extern_type* __to, extern_type* __to_end,
+      extern_type*& __to_next) const;
+
+      virtual result
+      do_unshift(state_type& __state, extern_type* __to,
+   extern_type* __to_end, extern_type*& __to_next) const;
+
+      virtual result
+      do_in(state_type& __state, const extern_type* __from,
+     const extern_type* __from_end, const extern_type*& __from_next,
+     intern_type* __to, intern_type* __to_end,
+     intern_type*& __to_next) const;
+
+      virtual int
+      do_encoding() const throw();
+
+      virtual bool
+      do_always_noconv() const throw();
+
+      virtual int
+      do_length(state_type&, const extern_type* __from,
+  const extern_type* __end, size_t __max) const;
+
+      virtual int
+      do_max_length() const throw();
+    };
+
+  template<typename _InternT, typename _ExternT, typename _StateT>
+    locale::id codecvt<_InternT, _ExternT, _StateT>::id;
+
+
+  template<>
+    class codecvt<char, char, mbstate_t>
+    : public __codecvt_abstract_base<char, char, mbstate_t>
+    {
+      friend class messages<char>;
+
+    public:
+
+      typedef char intern_type;
+      typedef char extern_type;
+      typedef mbstate_t state_type;
+
+    protected:
+      __c_locale _M_c_locale_codecvt;
+
+    public:
+      static locale::id id;
+
+      explicit
+      codecvt(size_t __refs = 0);
+
+      explicit
+      codecvt(__c_locale __cloc, size_t __refs = 0);
+
+    protected:
+      virtual
+      ~codecvt();
+
+      virtual result
+      do_out(state_type& __state, const intern_type* __from,
+      const intern_type* __from_end, const intern_type*& __from_next,
+      extern_type* __to, extern_type* __to_end,
+      extern_type*& __to_next) const;
+
+      virtual result
+      do_unshift(state_type& __state, extern_type* __to,
+   extern_type* __to_end, extern_type*& __to_next) const;
+
+      virtual result
+      do_in(state_type& __state, const extern_type* __from,
+     const extern_type* __from_end, const extern_type*& __from_next,
+     intern_type* __to, intern_type* __to_end,
+     intern_type*& __to_next) const;
+
+      virtual int
+      do_encoding() const throw();
+
+      virtual bool
+      do_always_noconv() const throw();
+
+      virtual int
+      do_length(state_type&, const extern_type* __from,
+  const extern_type* __end, size_t __max) const;
+
+      virtual int
+      do_max_length() const throw();
+  };
+
+
+
+
+
+
+  template<>
+    class codecvt<wchar_t, char, mbstate_t>
+    : public __codecvt_abstract_base<wchar_t, char, mbstate_t>
+    {
+      friend class messages<wchar_t>;
+
+    public:
+
+      typedef wchar_t intern_type;
+      typedef char extern_type;
+      typedef mbstate_t state_type;
+
+    protected:
+      __c_locale _M_c_locale_codecvt;
+
+    public:
+      static locale::id id;
+
+      explicit
+      codecvt(size_t __refs = 0);
+
+      explicit
+      codecvt(__c_locale __cloc, size_t __refs = 0);
+
+    protected:
+      virtual
+      ~codecvt();
+
+      virtual result
+      do_out(state_type& __state, const intern_type* __from,
+      const intern_type* __from_end, const intern_type*& __from_next,
+      extern_type* __to, extern_type* __to_end,
+      extern_type*& __to_next) const;
+
+      virtual result
+      do_unshift(state_type& __state,
+   extern_type* __to, extern_type* __to_end,
+   extern_type*& __to_next) const;
+
+      virtual result
+      do_in(state_type& __state,
+      const extern_type* __from, const extern_type* __from_end,
+      const extern_type*& __from_next,
+      intern_type* __to, intern_type* __to_end,
+      intern_type*& __to_next) const;
+
+      virtual
+      int do_encoding() const throw();
+
+      virtual
+      bool do_always_noconv() const throw();
+
+      virtual
+      int do_length(state_type&, const extern_type* __from,
+      const extern_type* __end, size_t __max) const;
+
+      virtual int
+      do_max_length() const throw();
+    };
+
+
+
+
+
+
+
+  template<>
+    class codecvt<char16_t, char, mbstate_t>
+    : public __codecvt_abstract_base<char16_t, char, mbstate_t>
+    {
+    public:
+
+      typedef char16_t intern_type;
+      typedef char extern_type;
+      typedef mbstate_t state_type;
+
+    public:
+      static locale::id id;
+
+      explicit
+      codecvt(size_t __refs = 0)
+      : __codecvt_abstract_base<char16_t, char, mbstate_t>(__refs) { }
+
+    protected:
+      virtual
+      ~codecvt();
+
+      virtual result
+      do_out(state_type& __state, const intern_type* __from,
+      const intern_type* __from_end, const intern_type*& __from_next,
+      extern_type* __to, extern_type* __to_end,
+      extern_type*& __to_next) const;
+
+      virtual result
+      do_unshift(state_type& __state,
+   extern_type* __to, extern_type* __to_end,
+   extern_type*& __to_next) const;
+
+      virtual result
+      do_in(state_type& __state,
+      const extern_type* __from, const extern_type* __from_end,
+      const extern_type*& __from_next,
+      intern_type* __to, intern_type* __to_end,
+      intern_type*& __to_next) const;
+
+      virtual
+      int do_encoding() const throw();
+
+      virtual
+      bool do_always_noconv() const throw();
+
+      virtual
+      int do_length(state_type&, const extern_type* __from,
+      const extern_type* __end, size_t __max) const;
+
+      virtual int
+      do_max_length() const throw();
+    };
+
+
+
+
+
+  template<>
+    class codecvt<char32_t, char, mbstate_t>
+    : public __codecvt_abstract_base<char32_t, char, mbstate_t>
+    {
+    public:
+
+      typedef char32_t intern_type;
+      typedef char extern_type;
+      typedef mbstate_t state_type;
+
+    public:
+      static locale::id id;
+
+      explicit
+      codecvt(size_t __refs = 0)
+      : __codecvt_abstract_base<char32_t, char, mbstate_t>(__refs) { }
+
+    protected:
+      virtual
+      ~codecvt();
+
+      virtual result
+      do_out(state_type& __state, const intern_type* __from,
+      const intern_type* __from_end, const intern_type*& __from_next,
+      extern_type* __to, extern_type* __to_end,
+      extern_type*& __to_next) const;
+
+      virtual result
+      do_unshift(state_type& __state,
+   extern_type* __to, extern_type* __to_end,
+   extern_type*& __to_next) const;
+
+      virtual result
+      do_in(state_type& __state,
+      const extern_type* __from, const extern_type* __from_end,
+      const extern_type*& __from_next,
+      intern_type* __to, intern_type* __to_end,
+      intern_type*& __to_next) const;
+
+      virtual
+      int do_encoding() const throw();
+
+      virtual
+      bool do_always_noconv() const throw();
+
+      virtual
+      int do_length(state_type&, const extern_type* __from,
+      const extern_type* __end, size_t __max) const;
+
+      virtual int
+      do_max_length() const throw();
+    };
+
+
+
+
+
+
+  template<>
+    class codecvt<char16_t, char8_t, mbstate_t>
+    : public __codecvt_abstract_base<char16_t, char8_t, mbstate_t>
+    {
+    public:
+
+      typedef char16_t intern_type;
+      typedef char8_t extern_type;
+      typedef mbstate_t state_type;
+
+    public:
+      static locale::id id;
+
+      explicit
+      codecvt(size_t __refs = 0)
+      : __codecvt_abstract_base<char16_t, char8_t, mbstate_t>(__refs) { }
+
+    protected:
+      virtual
+      ~codecvt();
+
+      virtual result
+      do_out(state_type& __state, const intern_type* __from,
+      const intern_type* __from_end, const intern_type*& __from_next,
+      extern_type* __to, extern_type* __to_end,
+      extern_type*& __to_next) const;
+
+      virtual result
+      do_unshift(state_type& __state,
+   extern_type* __to, extern_type* __to_end,
+   extern_type*& __to_next) const;
+
+      virtual result
+      do_in(state_type& __state,
+      const extern_type* __from, const extern_type* __from_end,
+      const extern_type*& __from_next,
+      intern_type* __to, intern_type* __to_end,
+      intern_type*& __to_next) const;
+
+      virtual
+      int do_encoding() const throw();
+
+      virtual
+      bool do_always_noconv() const throw();
+
+      virtual
+      int do_length(state_type&, const extern_type* __from,
+      const extern_type* __end, size_t __max) const;
+
+      virtual int
+      do_max_length() const throw();
+    };
+
+
+
+
+
+  template<>
+    class codecvt<char32_t, char8_t, mbstate_t>
+    : public __codecvt_abstract_base<char32_t, char8_t, mbstate_t>
+    {
+    public:
+
+      typedef char32_t intern_type;
+      typedef char8_t extern_type;
+      typedef mbstate_t state_type;
+
+    public:
+      static locale::id id;
+
+      explicit
+      codecvt(size_t __refs = 0)
+      : __codecvt_abstract_base<char32_t, char8_t, mbstate_t>(__refs) { }
+
+    protected:
+      virtual
+      ~codecvt();
+
+      virtual result
+      do_out(state_type& __state, const intern_type* __from,
+      const intern_type* __from_end, const intern_type*& __from_next,
+      extern_type* __to, extern_type* __to_end,
+      extern_type*& __to_next) const;
+
+      virtual result
+      do_unshift(state_type& __state,
+   extern_type* __to, extern_type* __to_end,
+   extern_type*& __to_next) const;
+
+      virtual result
+      do_in(state_type& __state,
+      const extern_type* __from, const extern_type* __from_end,
+      const extern_type*& __from_next,
+      intern_type* __to, intern_type* __to_end,
+      intern_type*& __to_next) const;
+
+      virtual
+      int do_encoding() const throw();
+
+      virtual
+      bool do_always_noconv() const throw();
+
+      virtual
+      int do_length(state_type&, const extern_type* __from,
+      const extern_type* __end, size_t __max) const;
+
+      virtual int
+      do_max_length() const throw();
+    };
+
+
+
+
+
+  template<typename _InternT, typename _ExternT, typename _StateT>
+    class codecvt_byname : public codecvt<_InternT, _ExternT, _StateT>
+    {
+    public:
+      explicit
+      codecvt_byname(const char* __s, size_t __refs = 0)
+      : codecvt<_InternT, _ExternT, _StateT>(__refs)
+      {
+ if (__builtin_strcmp(__s, "C") != 0
+     && __builtin_strcmp(__s, "POSIX") != 0)
+   {
+     this->_S_destroy_c_locale(this->_M_c_locale_codecvt);
+     this->_S_create_c_locale(this->_M_c_locale_codecvt, __s);
+   }
+      }
+
+
+      explicit
+      codecvt_byname(const string& __s, size_t __refs = 0)
+      : codecvt_byname(__s.c_str(), __refs) { }
+
+
+    protected:
+      virtual
+      ~codecvt_byname() { }
+    };
+
+
+  template<>
+    class codecvt_byname<char16_t, char, mbstate_t>
+    : public codecvt<char16_t, char, mbstate_t>
+    {
+    public:
+      explicit
+      codecvt_byname(const char*, size_t __refs = 0)
+      : codecvt<char16_t, char, mbstate_t>(__refs) { }
+
+      explicit
+      codecvt_byname(const string& __s, size_t __refs = 0)
+      : codecvt_byname(__s.c_str(), __refs) { }
+
+    protected:
+      virtual
+      ~codecvt_byname() { }
+    };
+
+  template<>
+    class codecvt_byname<char32_t, char, mbstate_t>
+    : public codecvt<char32_t, char, mbstate_t>
+    {
+    public:
+      explicit
+      codecvt_byname(const char*, size_t __refs = 0)
+      : codecvt<char32_t, char, mbstate_t>(__refs) { }
+
+      explicit
+      codecvt_byname(const string& __s, size_t __refs = 0)
+      : codecvt_byname(__s.c_str(), __refs) { }
+
+    protected:
+      virtual
+      ~codecvt_byname() { }
+    };
+
+
+  template<>
+    class codecvt_byname<char16_t, char8_t, mbstate_t>
+    : public codecvt<char16_t, char8_t, mbstate_t>
+    {
+    public:
+      explicit
+      codecvt_byname(const char*, size_t __refs = 0)
+      : codecvt<char16_t, char8_t, mbstate_t>(__refs) { }
+
+      explicit
+      codecvt_byname(const string& __s, size_t __refs = 0)
+      : codecvt_byname(__s.c_str(), __refs) { }
+
+    protected:
+      virtual
+      ~codecvt_byname() { }
+    };
+
+  template<>
+    class codecvt_byname<char32_t, char8_t, mbstate_t>
+    : public codecvt<char32_t, char8_t, mbstate_t>
+    {
+    public:
+      explicit
+      codecvt_byname(const char*, size_t __refs = 0)
+      : codecvt<char32_t, char8_t, mbstate_t>(__refs) { }
+
+      explicit
+      codecvt_byname(const string& __s, size_t __refs = 0)
+      : codecvt_byname(__s.c_str(), __refs) { }
+
+    protected:
+      virtual
+      ~codecvt_byname() { }
+    };
+
+
+
+
+
+
+
+  extern template class codecvt_byname<char, char, mbstate_t>;
+
+  extern template
+    const codecvt<char, char, mbstate_t>&
+    use_facet<codecvt<char, char, mbstate_t> >(const locale&);
+
+  extern template
+    bool
+    has_facet<codecvt<char, char, mbstate_t> >(const locale&);
+
+
+  extern template class codecvt_byname<wchar_t, char, mbstate_t>;
+
+  extern template
+    const codecvt<wchar_t, char, mbstate_t>&
+    use_facet<codecvt<wchar_t, char, mbstate_t> >(const locale&);
+
+  extern template
+    bool
+    has_facet<codecvt<wchar_t, char, mbstate_t> >(const locale&);
+
+
+
+  extern template class codecvt_byname<char16_t, char, mbstate_t>;
+  extern template class codecvt_byname<char32_t, char, mbstate_t>;
+
+
+  extern template class codecvt_byname<char16_t, char8_t, mbstate_t>;
+  extern template class codecvt_byname<char32_t, char8_t, mbstate_t>;
+
+
+
+
+
+
+
+}
+# 2068 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 2 3
+
+# 1 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc" 1 3
+# 33 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc" 3
+       
+# 34 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc" 3
+
+namespace std
+{
+
+
+  template<typename _CharT, bool _Intl>
+    struct __use_cache<__moneypunct_cache<_CharT, _Intl> >
+    {
+      const __moneypunct_cache<_CharT, _Intl>*
+      operator() (const locale& __loc) const
+      {
+ const size_t __i = moneypunct<_CharT, _Intl>::id._M_id();
+ const locale::facet** __caches = __loc._M_impl->_M_caches;
+ if (!__caches[__i])
+   {
+     __moneypunct_cache<_CharT, _Intl>* __tmp = 0;
+     try
+       {
+  __tmp = new __moneypunct_cache<_CharT, _Intl>;
+  __tmp->_M_cache(__loc);
+       }
+     catch(...)
+       {
+  delete __tmp;
+  throw;
+       }
+     __loc._M_impl->_M_install_cache(__tmp, __i);
+   }
+ return static_cast<
+   const __moneypunct_cache<_CharT, _Intl>*>(__caches[__i]);
+      }
+    };
+
+  template<typename _CharT, bool _Intl>
+    void
+    __moneypunct_cache<_CharT, _Intl>::_M_cache(const locale& __loc)
+    {
+      const moneypunct<_CharT, _Intl>& __mp =
+ use_facet<moneypunct<_CharT, _Intl> >(__loc);
+
+      struct _Scoped_str
+      {
+ size_t _M_len;
+ _CharT* _M_str;
+
+ explicit
+ _Scoped_str(const basic_string<_CharT>& __str)
+ : _M_len(__str.size()), _M_str(new _CharT[_M_len])
+ { __str.copy(_M_str, _M_len); }
+
+ ~_Scoped_str() { delete[] _M_str; }
+
+ void
+ _M_release(const _CharT*& __p, size_t& __n)
+ {
+   __p = _M_str;
+   __n = _M_len;
+   _M_str = 0;
+ }
+      };
+
+      _Scoped_str __curr_symbol(__mp.curr_symbol());
+      _Scoped_str __positive_sign(__mp.positive_sign());
+      _Scoped_str __negative_sign(__mp.negative_sign());
+
+      const string& __g = __mp.grouping();
+      const size_t __g_size = __g.size();
+      char* const __grouping = new char[__g_size];
+      __g.copy(__grouping, __g_size);
+
+
+
+      _M_grouping = __grouping;
+      _M_grouping_size = __g_size;
+      _M_use_grouping = (__g_size
+    && static_cast<signed char>(__grouping[0]) > 0
+    && (__grouping[0]
+        != __gnu_cxx::__numeric_traits<char>::__max));
+
+      _M_decimal_point = __mp.decimal_point();
+      _M_thousands_sep = __mp.thousands_sep();
+
+      __curr_symbol._M_release(_M_curr_symbol, _M_curr_symbol_size);
+      __positive_sign._M_release(_M_positive_sign, _M_positive_sign_size);
+      __negative_sign._M_release(_M_negative_sign, _M_negative_sign_size);
+
+      _M_frac_digits = __mp.frac_digits();
+      _M_pos_format = __mp.pos_format();
+      _M_neg_format = __mp.neg_format();
+
+      const ctype<_CharT>& __ct = use_facet<ctype<_CharT> >(__loc);
+      __ct.widen(money_base::_S_atoms,
+   money_base::_S_atoms + money_base::_S_end, _M_atoms);
+
+      _M_allocated = true;
+    }
+
+namespace __cxx11 {
+
+  template<typename _CharT, typename _InIter>
+    template<bool _Intl>
+      _InIter
+      money_get<_CharT, _InIter>::
+      _M_extract(iter_type __beg, iter_type __end, ios_base& __io,
+   ios_base::iostate& __err, string& __units) const
+      {
+ typedef char_traits<_CharT> __traits_type;
+ typedef typename string_type::size_type size_type;
+ typedef money_base::part part;
+ typedef __moneypunct_cache<_CharT, _Intl> __cache_type;
+
+ const locale& __loc = __io._M_getloc();
+ const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
+
+ __use_cache<__cache_type> __uc;
+ const __cache_type* __lc = __uc(__loc);
+ const char_type* __lit = __lc->_M_atoms;
+
+
+ bool __negative = false;
+
+ size_type __sign_size = 0;
+
+ const bool __mandatory_sign = (__lc->_M_positive_sign_size
+           && __lc->_M_negative_sign_size);
+
+ string __grouping_tmp;
+ if (__lc->_M_use_grouping)
+   __grouping_tmp.reserve(32);
+
+ int __last_pos = 0;
+
+ int __n = 0;
+
+ bool __testvalid = true;
+
+ bool __testdecfound = false;
+
+
+ string __res;
+ __res.reserve(32);
+
+ const char_type* __lit_zero = __lit + money_base::_S_zero;
+ const money_base::pattern __p = __lc->_M_neg_format;
+ for (int __i = 0; __i < 4 && __testvalid; ++__i)
+   {
+     const part __which = static_cast<part>(__p.field[__i]);
+     switch (__which)
+       {
+       case money_base::symbol:
+
+
+
+
+  if (__io.flags() & ios_base::showbase || __sign_size > 1
+      || __i == 0
+      || (__i == 1 && (__mandatory_sign
+         || (static_cast<part>(__p.field[0])
+      == money_base::sign)
+         || (static_cast<part>(__p.field[2])
+      == money_base::space)))
+      || (__i == 2 && ((static_cast<part>(__p.field[3])
+          == money_base::value)
+         || (__mandatory_sign
+      && (static_cast<part>(__p.field[3])
+          == money_base::sign)))))
+    {
+      const size_type __len = __lc->_M_curr_symbol_size;
+      size_type __j = 0;
+      for (; __beg != __end && __j < __len
+      && *__beg == __lc->_M_curr_symbol[__j];
+    ++__beg, (void)++__j);
+      if (__j != __len
+   && (__j || __io.flags() & ios_base::showbase))
+        __testvalid = false;
+    }
+  break;
+       case money_base::sign:
+
+  if (__lc->_M_positive_sign_size && __beg != __end
+      && *__beg == __lc->_M_positive_sign[0])
+    {
+      __sign_size = __lc->_M_positive_sign_size;
+      ++__beg;
+    }
+  else if (__lc->_M_negative_sign_size && __beg != __end
+    && *__beg == __lc->_M_negative_sign[0])
+    {
+      __negative = true;
+      __sign_size = __lc->_M_negative_sign_size;
+      ++__beg;
+    }
+  else if (__lc->_M_positive_sign_size
+    && !__lc->_M_negative_sign_size)
+
+
+    __negative = true;
+  else if (__mandatory_sign)
+    __testvalid = false;
+  break;
+       case money_base::value:
+
+
+  for (; __beg != __end; ++__beg)
+    {
+      const char_type __c = *__beg;
+      const char_type* __q = __traits_type::find(__lit_zero,
+              10, __c);
+      if (__q != 0)
+        {
+   __res += money_base::_S_atoms[__q - __lit];
+   ++__n;
+        }
+      else if (__c == __lc->_M_decimal_point
+        && !__testdecfound)
+        {
+   if (__lc->_M_frac_digits <= 0)
+     break;
+
+   __last_pos = __n;
+   __n = 0;
+   __testdecfound = true;
+        }
+      else if (__lc->_M_use_grouping
+        && __c == __lc->_M_thousands_sep
+        && !__testdecfound)
+        {
+   if (__n)
+     {
+
+       __grouping_tmp += static_cast<char>(__n);
+       __n = 0;
+     }
+   else
+     {
+       __testvalid = false;
+       break;
+     }
+        }
+      else
+        break;
+    }
+  if (__res.empty())
+    __testvalid = false;
+  break;
+       case money_base::space:
+
+  if (__beg != __end && __ctype.is(ctype_base::space, *__beg))
+    ++__beg;
+  else
+    __testvalid = false;
+
+       case money_base::none:
+
+  if (__i != 3)
+    for (; __beg != __end
+    && __ctype.is(ctype_base::space, *__beg); ++__beg);
+  break;
+       }
+   }
+
+
+ if (__sign_size > 1 && __testvalid)
+   {
+     const char_type* __sign = __negative ? __lc->_M_negative_sign
+                                          : __lc->_M_positive_sign;
+     size_type __i = 1;
+     for (; __beg != __end && __i < __sign_size
+     && *__beg == __sign[__i]; ++__beg, (void)++__i);
+
+     if (__i != __sign_size)
+       __testvalid = false;
+   }
+
+ if (__testvalid)
+   {
+
+     if (__res.size() > 1)
+       {
+  const size_type __first = __res.find_first_not_of('0');
+  const bool __only_zeros = __first == string::npos;
+  if (__first)
+    __res.erase(0, __only_zeros ? __res.size() - 1 : __first);
+       }
+
+
+     if (__negative && __res[0] != '0')
+       __res.insert(__res.begin(), '-');
+
+
+     if (__grouping_tmp.size())
+       {
+
+  __grouping_tmp += static_cast<char>(__testdecfound ? __last_pos
+                         : __n);
+  if (!std::__verify_grouping(__lc->_M_grouping,
+         __lc->_M_grouping_size,
+         __grouping_tmp))
+    __err |= ios_base::failbit;
+       }
+
+
+     if (__testdecfound && __n != __lc->_M_frac_digits)
+       __testvalid = false;
+   }
+
+
+ if (!__testvalid)
+   __err |= ios_base::failbit;
+ else
+   __units.swap(__res);
+
+
+ if (__beg == __end)
+   __err |= ios_base::eofbit;
+ return __beg;
+      }
+# 368 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc" 3
+  template<typename _CharT, typename _InIter>
+    _InIter
+    money_get<_CharT, _InIter>::
+    do_get(iter_type __beg, iter_type __end, bool __intl, ios_base& __io,
+    ios_base::iostate& __err, long double& __units) const
+    {
+      string __str;
+      __beg = __intl ? _M_extract<true>(__beg, __end, __io, __err, __str)
+              : _M_extract<false>(__beg, __end, __io, __err, __str);
+      std::__convert_to_v(__str.c_str(), __units, __err, _S_get_c_locale());
+      return __beg;
+    }
+
+  template<typename _CharT, typename _InIter>
+    _InIter
+    money_get<_CharT, _InIter>::
+    do_get(iter_type __beg, iter_type __end, bool __intl, ios_base& __io,
+    ios_base::iostate& __err, string_type& __digits) const
+    {
+      typedef typename string::size_type size_type;
+
+      const locale& __loc = __io._M_getloc();
+      const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
+
+      string __str;
+      __beg = __intl ? _M_extract<true>(__beg, __end, __io, __err, __str)
+              : _M_extract<false>(__beg, __end, __io, __err, __str);
+      const size_type __len = __str.size();
+      if (__len)
+ {
+   __digits.resize(__len);
+   __ctype.widen(__str.data(), __str.data() + __len, &__digits[0]);
+ }
+      return __beg;
+    }
+# 420 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc" 3
+  template<typename _CharT, typename _OutIter>
+    template<bool _Intl>
+      _OutIter
+      money_put<_CharT, _OutIter>::
+      _M_insert(iter_type __s, ios_base& __io, char_type __fill,
+  const string_type& __digits) const
+      {
+ typedef typename string_type::size_type size_type;
+ typedef money_base::part part;
+ typedef __moneypunct_cache<_CharT, _Intl> __cache_type;
+
+ const locale& __loc = __io._M_getloc();
+ const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
+
+ __use_cache<__cache_type> __uc;
+ const __cache_type* __lc = __uc(__loc);
+ const char_type* __lit = __lc->_M_atoms;
+
+
+
+ const char_type* __beg = __digits.data();
+
+ money_base::pattern __p;
+ const char_type* __sign;
+ size_type __sign_size;
+ if (!(*__beg == __lit[money_base::_S_minus]))
+   {
+     __p = __lc->_M_pos_format;
+     __sign = __lc->_M_positive_sign;
+     __sign_size = __lc->_M_positive_sign_size;
+   }
+ else
+   {
+     __p = __lc->_M_neg_format;
+     __sign = __lc->_M_negative_sign;
+     __sign_size = __lc->_M_negative_sign_size;
+     if (__digits.size())
+       ++__beg;
+   }
+
+
+ size_type __len = __ctype.scan_not(ctype_base::digit, __beg,
+        __beg + __digits.size()) - __beg;
+ if (__len)
+   {
+
+
+
+     string_type __value;
+     __value.reserve(2 * __len);
+
+
+
+     long __paddec = __len - __lc->_M_frac_digits;
+     if (__paddec > 0)
+       {
+  if (__lc->_M_frac_digits < 0)
+    __paddec = __len;
+  if (__lc->_M_grouping_size)
+    {
+      __value.assign(2 * __paddec, char_type());
+      _CharT* __vend =
+        std::__add_grouping(&__value[0], __lc->_M_thousands_sep,
+       __lc->_M_grouping,
+       __lc->_M_grouping_size,
+       __beg, __beg + __paddec);
+      __value.erase(__vend - &__value[0]);
+    }
+  else
+    __value.assign(__beg, __paddec);
+       }
+
+
+     if (__lc->_M_frac_digits > 0)
+       {
+  __value += __lc->_M_decimal_point;
+  if (__paddec >= 0)
+    __value.append(__beg + __paddec, __lc->_M_frac_digits);
+  else
+    {
+
+      __value.append(-__paddec, __lit[money_base::_S_zero]);
+      __value.append(__beg, __len);
+    }
+       }
+
+
+     const ios_base::fmtflags __f = __io.flags()
+                                    & ios_base::adjustfield;
+     __len = __value.size() + __sign_size;
+     __len += ((__io.flags() & ios_base::showbase)
+        ? __lc->_M_curr_symbol_size : 0);
+
+     string_type __res;
+     __res.reserve(2 * __len);
+
+     const size_type __width = static_cast<size_type>(__io.width());
+     const bool __testipad = (__f == ios_base::internal
+         && __len < __width);
+
+     for (int __i = 0; __i < 4; ++__i)
+       {
+  const part __which = static_cast<part>(__p.field[__i]);
+  switch (__which)
+    {
+    case money_base::symbol:
+      if (__io.flags() & ios_base::showbase)
+        __res.append(__lc->_M_curr_symbol,
+       __lc->_M_curr_symbol_size);
+      break;
+    case money_base::sign:
+
+
+
+      if (__sign_size)
+        __res += __sign[0];
+      break;
+    case money_base::value:
+      __res += __value;
+      break;
+    case money_base::space:
+
+
+
+      if (__testipad)
+        __res.append(__width - __len, __fill);
+      else
+        __res += __fill;
+      break;
+    case money_base::none:
+      if (__testipad)
+        __res.append(__width - __len, __fill);
+      break;
+    }
+       }
+
+
+     if (__sign_size > 1)
+       __res.append(__sign + 1, __sign_size - 1);
+
+
+     __len = __res.size();
+     if (__width > __len)
+       {
+  if (__f == ios_base::left)
+
+    __res.append(__width - __len, __fill);
+  else
+
+    __res.insert(0, __width - __len, __fill);
+  __len = __width;
+       }
+
+
+     __s = std::__write(__s, __res.data(), __len);
+   }
+ __io.width(0);
+ return __s;
+      }
+# 590 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc" 3
+  template<typename _CharT, typename _OutIter>
+    _OutIter
+    money_put<_CharT, _OutIter>::
+    do_put(iter_type __s, bool __intl, ios_base& __io, char_type __fill,
+    long double __units) const
+    {
+      const locale __loc = __io.getloc();
+      const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
+
+
+      int __cs_size = 64;
+      char* __cs = static_cast<char*>(__builtin_alloca(__cs_size));
+
+
+      int __len = std::__convert_from_v(_S_get_c_locale(), __cs, __cs_size,
+     "%.*Lf", 0, __units);
+
+      if (__len >= __cs_size)
+ {
+   __cs_size = __len + 1;
+   __cs = static_cast<char*>(__builtin_alloca(__cs_size));
+   __len = std::__convert_from_v(_S_get_c_locale(), __cs, __cs_size,
+     "%.*Lf", 0, __units);
+ }
+# 622 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc" 3
+      string_type __digits(__len, char_type());
+      __ctype.widen(__cs, __cs + __len, &__digits[0]);
+      return __intl ? _M_insert<true>(__s, __io, __fill, __digits)
+             : _M_insert<false>(__s, __io, __fill, __digits);
+    }
+
+  template<typename _CharT, typename _OutIter>
+    _OutIter
+    money_put<_CharT, _OutIter>::
+    do_put(iter_type __s, bool __intl, ios_base& __io, char_type __fill,
+    const string_type& __digits) const
+    { return __intl ? _M_insert<true>(__s, __io, __fill, __digits)
+             : _M_insert<false>(__s, __io, __fill, __digits); }
+# 674 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc" 3
+}
+
+
+
+
+  template<typename _CharT, typename _InIter>
+    time_base::dateorder
+    time_get<_CharT, _InIter>::do_date_order() const
+    { return time_base::no_order; }
+
+
+
+  template<typename _CharT, typename _InIter>
+    _InIter
+    time_get<_CharT, _InIter>::
+    _M_extract_via_format(iter_type __beg, iter_type __end, ios_base& __io,
+     ios_base::iostate& __err, tm* __tm,
+     const _CharT* __format,
+     __time_get_state &__state) const
+    {
+      const locale& __loc = __io._M_getloc();
+      const __timepunct<_CharT>& __tp = use_facet<__timepunct<_CharT> >(__loc);
+      const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
+      const size_t __len = char_traits<_CharT>::length(__format);
+
+      ios_base::iostate __tmperr = ios_base::goodbit;
+      size_t __i = 0;
+      for (; __beg != __end && __i < __len && !__tmperr; ++__i)
+ {
+   if (__ctype.narrow(__format[__i], 0) == '%')
+     {
+
+       char __c = __ctype.narrow(__format[++__i], 0);
+       int __mem = 0;
+       if (__c == 'E' || __c == 'O')
+  __c = __ctype.narrow(__format[++__i], 0);
+       switch (__c)
+  {
+    const char* __cs;
+    _CharT __wcs[10];
+  case 'a':
+  case 'A':
+
+    const char_type* __days[14];
+    __tp._M_days(&__days[0]);
+    __tp._M_days_abbreviated(&__days[7]);
+    __beg = _M_extract_name(__beg, __end, __mem, __days,
+       14, __io, __tmperr);
+    if (!__tmperr)
+      {
+        __tm->tm_wday = __mem % 7;
+        __state._M_have_wday = 1;
+      }
+    break;
+  case 'h':
+  case 'b':
+  case 'B':
+
+    const char_type* __months[24];
+    __tp._M_months(&__months[0]);
+    __tp._M_months_abbreviated(&__months[12]);
+    __beg = _M_extract_name(__beg, __end, __mem,
+       __months, 24, __io, __tmperr);
+    if (!__tmperr)
+      {
+        __tm->tm_mon = __mem % 12;
+        __state._M_have_mon = 1;
+        __state._M_want_xday = 1;
+      }
+    break;
+  case 'c':
+
+    const char_type* __dt[2];
+    __tp._M_date_time_formats(__dt);
+    __beg = _M_extract_via_format(__beg, __end, __io, __tmperr,
+      __tm, __dt[0], __state);
+    if (!__tmperr)
+      __state._M_want_xday = 1;
+    break;
+  case 'C':
+
+    __beg = _M_extract_num(__beg, __end, __mem, 0, 99, 2,
+      __io, __tmperr);
+    if (!__tmperr)
+      {
+        __state._M_century = __mem;
+        __state._M_have_century = 1;
+        __state._M_want_xday = 1;
+      }
+    break;
+  case 'd':
+  case 'e':
+
+    if (__ctype.is(ctype_base::space, *__beg))
+      ++__beg;
+    __beg = _M_extract_num(__beg, __end, __mem, 1, 31, 2,
+      __io, __tmperr);
+    if (!__tmperr)
+      {
+        __tm->tm_mday = __mem;
+        __state._M_have_mday = 1;
+        __state._M_want_xday = 1;
+      }
+    break;
+  case 'D':
+
+    __cs = "%m/%d/%y";
+    __ctype.widen(__cs, __cs + 9, __wcs);
+    __beg = _M_extract_via_format(__beg, __end, __io, __tmperr,
+      __tm, __wcs, __state);
+    if (!__tmperr)
+      __state._M_want_xday = 1;
+    break;
+  case 'H':
+
+    __beg = _M_extract_num(__beg, __end, __mem, 0, 23, 2,
+      __io, __tmperr);
+    if (!__tmperr)
+      {
+        __tm->tm_hour = __mem;
+        __state._M_have_I = 0;
+      }
+    break;
+  case 'I':
+
+    __beg = _M_extract_num(__beg, __end, __mem, 1, 12, 2,
+      __io, __tmperr);
+    if (!__tmperr)
+      {
+        __tm->tm_hour = __mem % 12;
+        __state._M_have_I = 1;
+      }
+    break;
+  case 'j':
+
+    __beg = _M_extract_num(__beg, __end, __mem, 1, 366, 3,
+      __io, __tmperr);
+    if (!__tmperr)
+      {
+        __tm->tm_yday = __mem - 1;
+        __state._M_have_yday = 1;
+      }
+    break;
+  case 'm':
+
+    __beg = _M_extract_num(__beg, __end, __mem, 1, 12, 2,
+      __io, __tmperr);
+    if (!__tmperr)
+      {
+        __tm->tm_mon = __mem - 1;
+        __state._M_have_mon = 1;
+      }
+    break;
+  case 'M':
+
+    __beg = _M_extract_num(__beg, __end, __mem, 0, 59, 2,
+      __io, __tmperr);
+    if (!__tmperr)
+      __tm->tm_min = __mem;
+    break;
+  case 'n':
+  case 't':
+    while (__beg != __end
+    && __ctype.is(ctype_base::space, *__beg))
+      ++__beg;
+    break;
+  case 'p':
+
+    const char_type* __ampm[2];
+    __tp._M_am_pm(&__ampm[0]);
+    if (!__ampm[0][0] || !__ampm[1][0])
+      break;
+    __beg = _M_extract_name(__beg, __end, __mem, __ampm,
+       2, __io, __tmperr);
+    if (!__tmperr && __mem)
+      __state._M_is_pm = 1;
+    break;
+  case 'r':
+
+    const char_type* __ampm_format;
+    __tp._M_am_pm_format(&__ampm_format);
+    __beg = _M_extract_via_format(__beg, __end, __io, __tmperr,
+      __tm, __ampm_format, __state);
+    break;
+  case 'R':
+
+    __cs = "%H:%M";
+    __ctype.widen(__cs, __cs + 6, __wcs);
+    __beg = _M_extract_via_format(__beg, __end, __io, __tmperr,
+      __tm, __wcs, __state);
+    break;
+  case 'S':
+
+
+
+    __beg = _M_extract_num(__beg, __end, __mem, 0, 60, 2,
+
+
+
+      __io, __tmperr);
+    if (!__tmperr)
+      __tm->tm_sec = __mem;
+    break;
+  case 'T':
+
+    __cs = "%H:%M:%S";
+    __ctype.widen(__cs, __cs + 9, __wcs);
+    __beg = _M_extract_via_format(__beg, __end, __io, __tmperr,
+      __tm, __wcs, __state);
+    break;
+  case 'U':
+
+    __beg = _M_extract_num(__beg, __end, __mem, 0, 53, 2,
+      __io, __tmperr);
+    if (!__tmperr)
+      {
+        __state._M_week_no = __mem;
+        __state._M_have_uweek = 1;
+      }
+    break;
+  case 'w':
+
+    __beg = _M_extract_num(__beg, __end, __mem, 0, 6, 1,
+      __io, __tmperr);
+    if (!__tmperr)
+      {
+        __tm->tm_wday = __mem;
+        __state._M_have_wday = 1;
+      }
+    break;
+  case 'W':
+
+    __beg = _M_extract_num(__beg, __end, __mem, 0, 53, 2,
+      __io, __tmperr);
+    if (!__tmperr)
+      {
+        __state._M_week_no = __mem;
+        __state._M_have_wweek = 1;
+      }
+    break;
+  case 'x':
+
+    const char_type* __dates[2];
+    __tp._M_date_formats(__dates);
+    __beg = _M_extract_via_format(__beg, __end, __io, __tmperr,
+      __tm, __dates[0], __state);
+    break;
+  case 'X':
+
+    const char_type* __times[2];
+    __tp._M_time_formats(__times);
+    __beg = _M_extract_via_format(__beg, __end, __io, __tmperr,
+      __tm, __times[0], __state);
+    break;
+  case 'y':
+
+    __beg = _M_extract_num(__beg, __end, __mem, 0, 99, 2,
+      __io, __tmperr);
+    if (!__tmperr)
+      {
+        __state._M_want_century = 1;
+        __state._M_want_xday = 1;
+
+
+        __c = 0;
+        if (__beg != __end)
+   __c = __ctype.narrow(*__beg, '*');
+        if (__c >= '0' && __c <= '9')
+   {
+     ++__beg;
+     __mem = __mem * 10 + (__c - '0');
+     if (__beg != __end)
+       {
+         __c = __ctype.narrow(*__beg, '*');
+         if (__c >= '0' && __c <= '9')
+    {
+      ++__beg;
+      __mem = __mem * 10 + (__c - '0');
+    }
+       }
+     __mem -= 1900;
+     __state._M_want_century = 0;
+   }
+
+
+        else if (__mem < 69)
+   __mem += 100;
+        __tm->tm_year = __mem;
+      }
+    break;
+  case 'Y':
+
+    __beg = _M_extract_num(__beg, __end, __mem, 0, 9999, 4,
+      __io, __tmperr);
+    if (!__tmperr)
+      {
+        __tm->tm_year = __mem - 1900;
+        __state._M_want_century = 0;
+        __state._M_want_xday = 1;
+      }
+    break;
+  case 'Z':
+
+    if (__ctype.is(ctype_base::upper, *__beg))
+      {
+        int __tmp;
+        __beg = _M_extract_name(__beg, __end, __tmp,
+           __timepunct_cache<_CharT>::_S_timezones,
+           14, __io, __tmperr);
+
+
+        if (__beg != __end && !__tmperr && __tmp == 0
+     && (*__beg == __ctype.widen('-')
+         || *__beg == __ctype.widen('+')))
+   {
+     __beg = _M_extract_num(__beg, __end, __tmp, 0, 23, 2,
+       __io, __tmperr);
+     __beg = _M_extract_num(__beg, __end, __tmp, 0, 59, 2,
+       __io, __tmperr);
+   }
+      }
+    else
+      __tmperr |= ios_base::failbit;
+    break;
+  case '%':
+    if (*__beg == __ctype.widen('%'))
+      ++__beg;
+    else
+      __tmperr |= ios_base::failbit;
+    break;
+  default:
+
+    __tmperr |= ios_base::failbit;
+  }
+     }
+   else if (__ctype.is(ctype_base::space, __format[__i]))
+     {
+
+       while (__beg != __end
+       && __ctype.is(ctype_base::space, *__beg))
+  ++__beg;
+     }
+   else
+     {
+
+
+       if (__ctype.tolower(__format[__i]) == __ctype.tolower(*__beg)
+    || __ctype.toupper(__format[__i]) == __ctype.toupper(*__beg))
+  ++__beg;
+       else
+  __tmperr |= ios_base::failbit;
+     }
+ }
+
+      if (__tmperr || __i != __len)
+ __err |= ios_base::failbit;
+
+      return __beg;
+    }
+
+  template<typename _CharT, typename _InIter>
+    _InIter
+    time_get<_CharT, _InIter>::
+    _M_extract_via_format(iter_type __beg, iter_type __end, ios_base& __io,
+     ios_base::iostate& __err, tm* __tm,
+     const _CharT* __format) const
+    {
+      __time_get_state __state = __time_get_state();
+      return _M_extract_via_format(__beg, __end, __io, __err, __tm,
+       __format, __state);
+    }
+
+  template<typename _CharT, typename _InIter>
+    _InIter
+    time_get<_CharT, _InIter>::
+    _M_extract_num(iter_type __beg, iter_type __end, int& __member,
+     int __min, int __max, size_t __len,
+     ios_base& __io, ios_base::iostate& __err) const
+    {
+      const locale& __loc = __io._M_getloc();
+      const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
+
+      size_t __i = 0;
+      int __value = 0;
+      for (; __beg != __end && __i < __len; ++__beg, (void)++__i)
+ {
+   const char __c = __ctype.narrow(*__beg, '*');
+   if (__c >= '0' && __c <= '9')
+     {
+       __value = __value * 10 + (__c - '0');
+       if (__value > __max)
+  break;
+     }
+   else
+     break;
+ }
+      if (__i && __value >= __min && __value <= __max)
+ __member = __value;
+      else
+ __err |= ios_base::failbit;
+
+      return __beg;
+    }
+
+
+
+
+
+
+  template<typename _CharT, typename _InIter>
+    _InIter
+    time_get<_CharT, _InIter>::
+    _M_extract_name(iter_type __beg, iter_type __end, int& __member,
+      const _CharT** __names, size_t __indexlen,
+      ios_base& __io, ios_base::iostate& __err) const
+    {
+      typedef char_traits<_CharT> __traits_type;
+      const locale& __loc = __io._M_getloc();
+      const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
+
+      size_t* __matches
+ = static_cast<size_t*>(__builtin_alloca(2 * sizeof(size_t)
+      * __indexlen));
+      size_t* __lengths = __matches + __indexlen;
+      size_t __nmatches = 0;
+      size_t __pos = 0;
+      bool __testvalid = true;
+      const char_type* __name;
+      bool __begupdated = false;
+
+
+      if (__beg != __end)
+ {
+   const char_type __c = *__beg;
+
+   const char_type __cl = __ctype.tolower(__c);
+   const char_type __cu = __ctype.toupper(__c);
+   for (size_t __i1 = 0; __i1 < __indexlen; ++__i1)
+     if (__cl == __ctype.tolower(__names[__i1][0])
+  || __cu == __ctype.toupper(__names[__i1][0]))
+       {
+  __lengths[__nmatches]
+    = __traits_type::length(__names[__i1]);
+  __matches[__nmatches++] = __i1;
+       }
+ }
+
+      while (__nmatches > 1)
+ {
+
+   size_t __minlen = __lengths[0];
+   for (size_t __i2 = 1; __i2 < __nmatches; ++__i2)
+     __minlen = std::min(__minlen, __lengths[__i2]);
+   ++__pos;
+   ++__beg;
+   if (__pos == __minlen)
+     {
+
+
+
+
+
+
+       bool __match_longer = false;
+
+       if (__beg != __end)
+  {
+
+    const char_type __cl = __ctype.tolower(*__beg);
+    const char_type __cu = __ctype.toupper(*__beg);
+    for (size_t __i3 = 0; __i3 < __nmatches; ++__i3)
+      {
+        __name = __names[__matches[__i3]];
+        if (__lengths[__i3] > __pos
+     && (__ctype.tolower(__name[__pos]) == __cl
+         || __ctype.toupper(__name[__pos]) == __cu))
+   {
+     __match_longer = true;
+     break;
+   }
+      }
+  }
+       for (size_t __i4 = 0; __i4 < __nmatches;)
+  if (__match_longer == (__lengths[__i4] == __pos))
+    {
+      __matches[__i4] = __matches[--__nmatches];
+      __lengths[__i4] = __lengths[__nmatches];
+    }
+  else
+    ++__i4;
+       if (__match_longer)
+  {
+    __minlen = __lengths[0];
+    for (size_t __i5 = 1; __i5 < __nmatches; ++__i5)
+      __minlen = std::min(__minlen, __lengths[__i5]);
+  }
+       else
+  {
+
+
+    if (__nmatches == 2 && (__indexlen & 1) == 0)
+      {
+        if (__matches[0] < __indexlen / 2)
+   {
+     if (__matches[1] == __matches[0] + __indexlen / 2)
+       __nmatches = 1;
+   }
+        else if (__matches[1] == __matches[0] - __indexlen / 2)
+   {
+     __matches[0] = __matches[1];
+     __lengths[0] = __lengths[1];
+     __nmatches = 1;
+   }
+      }
+    __begupdated = true;
+    break;
+  }
+     }
+   if (__pos < __minlen && __beg != __end)
+     {
+
+       const char_type __cl = __ctype.tolower(*__beg);
+       const char_type __cu = __ctype.toupper(*__beg);
+       for (size_t __i6 = 0; __i6 < __nmatches;)
+  {
+    __name = __names[__matches[__i6]];
+    if (__ctype.tolower(__name[__pos]) != __cl
+        && __ctype.toupper(__name[__pos]) != __cu)
+      {
+        __matches[__i6] = __matches[--__nmatches];
+        __lengths[__i6] = __lengths[__nmatches];
+      }
+    else
+      ++__i6;
+  }
+     }
+   else
+     break;
+ }
+
+      if (__nmatches == 1)
+ {
+
+   if (!__begupdated)
+     {
+       ++__beg;
+       ++__pos;
+     }
+   __name = __names[__matches[0]];
+   const size_t __len = __lengths[0];
+   while (__pos < __len
+   && __beg != __end
+
+   && (__ctype.tolower(__name[__pos]) == __ctype.tolower(*__beg)
+       || (__ctype.toupper(__name[__pos])
+    == __ctype.toupper(*__beg))))
+     ++__beg, (void)++__pos;
+
+   if (__len == __pos)
+     __member = __matches[0];
+   else
+     __testvalid = false;
+ }
+      else
+ __testvalid = false;
+      if (!__testvalid)
+ __err |= ios_base::failbit;
+
+      return __beg;
+    }
+
+  template<typename _CharT, typename _InIter>
+    _InIter
+    time_get<_CharT, _InIter>::
+    _M_extract_wday_or_month(iter_type __beg, iter_type __end, int& __member,
+        const _CharT** __names, size_t __indexlen,
+        ios_base& __io, ios_base::iostate& __err) const
+    {
+      typedef char_traits<_CharT> __traits_type;
+      const locale& __loc = __io._M_getloc();
+      const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
+
+      int* __matches = static_cast<int*>(__builtin_alloca(2 * sizeof(int)
+         * __indexlen));
+      size_t __nmatches = 0;
+      size_t* __matches_lengths = 0;
+      size_t __pos = 0;
+
+      if (__beg != __end)
+ {
+   const char_type __c = *__beg;
+   for (size_t __i = 0; __i < 2 * __indexlen; ++__i)
+     if (__c == __names[__i][0]
+  || __c == __ctype.toupper(__names[__i][0]))
+       __matches[__nmatches++] = __i;
+ }
+
+      if (__nmatches)
+ {
+   ++__beg;
+   ++__pos;
+
+   __matches_lengths
+     = static_cast<size_t*>(__builtin_alloca(sizeof(size_t)
+          * __nmatches));
+   for (size_t __i = 0; __i < __nmatches; ++__i)
+     __matches_lengths[__i]
+       = __traits_type::length(__names[__matches[__i]]);
+ }
+
+      for (; __beg != __end; ++__beg, (void)++__pos)
+ {
+   size_t __nskipped = 0;
+   const char_type __c = *__beg;
+   for (size_t __i = 0; __i < __nmatches;)
+     {
+       const char_type* __name = __names[__matches[__i]];
+       if (__pos >= __matches_lengths[__i])
+  ++__nskipped, ++__i;
+       else if (!(__name[__pos] == __c))
+  {
+    --__nmatches;
+    __matches[__i] = __matches[__nmatches];
+    __matches_lengths[__i] = __matches_lengths[__nmatches];
+  }
+       else
+  ++__i;
+     }
+   if (__nskipped == __nmatches)
+     break;
+ }
+
+      if ((__nmatches == 1 && __matches_lengths[0] == __pos)
+   || (__nmatches == 2 && (__matches_lengths[0] == __pos
+      || __matches_lengths[1] == __pos)))
+ __member = (__matches[0] >= (int)__indexlen
+      ? __matches[0] - (int)__indexlen : __matches[0]);
+      else
+ __err |= ios_base::failbit;
+
+      return __beg;
+    }
+
+  template<typename _CharT, typename _InIter>
+    _InIter
+    time_get<_CharT, _InIter>::
+    do_get_time(iter_type __beg, iter_type __end, ios_base& __io,
+  ios_base::iostate& __err, tm* __tm) const
+    {
+      const locale& __loc = __io._M_getloc();
+      const __timepunct<_CharT>& __tp = use_facet<__timepunct<_CharT> >(__loc);
+      const char_type* __times[2];
+      __tp._M_time_formats(__times);
+      __time_get_state __state = __time_get_state();
+      __beg = _M_extract_via_format(__beg, __end, __io, __err,
+        __tm, __times[0], __state);
+      __state._M_finalize_state(__tm);
+      if (__beg == __end)
+ __err |= ios_base::eofbit;
+      return __beg;
+    }
+
+  template<typename _CharT, typename _InIter>
+    _InIter
+    time_get<_CharT, _InIter>::
+    do_get_date(iter_type __beg, iter_type __end, ios_base& __io,
+  ios_base::iostate& __err, tm* __tm) const
+    {
+      const locale& __loc = __io._M_getloc();
+      const __timepunct<_CharT>& __tp = use_facet<__timepunct<_CharT> >(__loc);
+      const char_type* __dates[2];
+      __tp._M_date_formats(__dates);
+      __time_get_state __state = __time_get_state();
+      __beg = _M_extract_via_format(__beg, __end, __io, __err,
+        __tm, __dates[0], __state);
+      __state._M_finalize_state(__tm);
+      if (__beg == __end)
+ __err |= ios_base::eofbit;
+      return __beg;
+    }
+
+  template<typename _CharT, typename _InIter>
+    _InIter
+    time_get<_CharT, _InIter>::
+    do_get_weekday(iter_type __beg, iter_type __end, ios_base& __io,
+     ios_base::iostate& __err, tm* __tm) const
+    {
+      const locale& __loc = __io._M_getloc();
+      const __timepunct<_CharT>& __tp = use_facet<__timepunct<_CharT> >(__loc);
+      const char_type* __days[14];
+      __tp._M_days_abbreviated(__days);
+      __tp._M_days(__days + 7);
+      int __tmpwday;
+      ios_base::iostate __tmperr = ios_base::goodbit;
+
+      __beg = _M_extract_wday_or_month(__beg, __end, __tmpwday, __days, 7,
+           __io, __tmperr);
+      if (!__tmperr)
+ __tm->tm_wday = __tmpwday;
+      else
+ __err |= ios_base::failbit;
+
+      if (__beg == __end)
+ __err |= ios_base::eofbit;
+      return __beg;
+     }
+
+  template<typename _CharT, typename _InIter>
+    _InIter
+    time_get<_CharT, _InIter>::
+    do_get_monthname(iter_type __beg, iter_type __end,
+                     ios_base& __io, ios_base::iostate& __err, tm* __tm) const
+    {
+      const locale& __loc = __io._M_getloc();
+      const __timepunct<_CharT>& __tp = use_facet<__timepunct<_CharT> >(__loc);
+      const char_type* __months[24];
+      __tp._M_months_abbreviated(__months);
+      __tp._M_months(__months + 12);
+      int __tmpmon;
+      ios_base::iostate __tmperr = ios_base::goodbit;
+
+      __beg = _M_extract_wday_or_month(__beg, __end, __tmpmon, __months, 12,
+           __io, __tmperr);
+      if (!__tmperr)
+ __tm->tm_mon = __tmpmon;
+      else
+ __err |= ios_base::failbit;
+
+      if (__beg == __end)
+ __err |= ios_base::eofbit;
+      return __beg;
+    }
+
+  template<typename _CharT, typename _InIter>
+    _InIter
+    time_get<_CharT, _InIter>::
+    do_get_year(iter_type __beg, iter_type __end, ios_base& __io,
+  ios_base::iostate& __err, tm* __tm) const
+    {
+      int __tmpyear;
+      ios_base::iostate __tmperr = ios_base::goodbit;
+      const locale& __loc = __io._M_getloc();
+      const ctype<_CharT>& __ctype = use_facet<ctype<_CharT> >(__loc);
+
+      __beg = _M_extract_num(__beg, __end, __tmpyear, 0, 99, 2,
+        __io, __tmperr);
+      if (!__tmperr)
+ {
+   char __c = 0;
+   if (__beg != __end)
+     __c = __ctype.narrow(*__beg, '*');
+
+
+
+   if (__c >= '0' && __c <= '9')
+     {
+       ++__beg;
+       __tmpyear = __tmpyear * 10 + (__c - '0');
+       if (__beg != __end)
+  {
+    __c = __ctype.narrow(*__beg, '*');
+    if (__c >= '0' && __c <= '9')
+      {
+        ++__beg;
+        __tmpyear = __tmpyear * 10 + (__c - '0');
+      }
+  }
+       __tmpyear -= 1900;
+     }
+   else if (__tmpyear < 69)
+     __tmpyear += 100;
+   __tm->tm_year = __tmpyear;
+ }
+      else
+ __err |= ios_base::failbit;
+
+      if (__beg == __end)
+ __err |= ios_base::eofbit;
+      return __beg;
+    }
+
+
+  template<typename _CharT, typename _InIter>
+    inline
+    _InIter
+    time_get<_CharT, _InIter>::
+    get(iter_type __s, iter_type __end, ios_base& __io,
+        ios_base::iostate& __err, tm* __tm, const char_type* __fmt,
+        const char_type* __fmtend) const
+    {
+      const locale& __loc = __io._M_getloc();
+      ctype<_CharT> const& __ctype = use_facet<ctype<_CharT> >(__loc);
+      __err = ios_base::goodbit;
+      bool __use_state = false;
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpmf-conversions"
+
+
+
+
+
+
+      if ((void*)(this->*(&time_get::do_get)) == (void*)(&time_get::do_get))
+ __use_state = true;
+#pragma GCC diagnostic pop
+
+      __time_get_state __state = __time_get_state();
+      while (__fmt != __fmtend &&
+             __err == ios_base::goodbit)
+        {
+          if (__s == __end)
+            {
+              __err = ios_base::eofbit | ios_base::failbit;
+              break;
+            }
+          else if (__ctype.narrow(*__fmt, 0) == '%')
+            {
+       const char_type* __fmt_start = __fmt;
+              char __format;
+              char __mod = 0;
+              if (++__fmt == __fmtend)
+                {
+                  __err = ios_base::failbit;
+                  break;
+                }
+              const char __c = __ctype.narrow(*__fmt, 0);
+              if (__c != 'E' && __c != 'O')
+                __format = __c;
+              else if (++__fmt != __fmtend)
+                {
+                  __mod = __c;
+                  __format = __ctype.narrow(*__fmt, 0);
+                }
+              else
+                {
+                  __err = ios_base::failbit;
+                  break;
+                }
+       if (__use_state)
+  {
+    char_type __new_fmt[4];
+    __new_fmt[0] = __fmt_start[0];
+    __new_fmt[1] = __fmt_start[1];
+    if (__mod)
+      {
+        __new_fmt[2] = __fmt_start[2];
+        __new_fmt[3] = char_type();
+      }
+    else
+      __new_fmt[2] = char_type();
+    __s = _M_extract_via_format(__s, __end, __io, __err, __tm,
+           __new_fmt, __state);
+    if (__s == __end)
+      __err |= ios_base::eofbit;
+  }
+       else
+  __s = this->do_get(__s, __end, __io, __err, __tm, __format,
+       __mod);
+              ++__fmt;
+            }
+          else if (__ctype.is(ctype_base::space, *__fmt))
+            {
+              ++__fmt;
+              while (__fmt != __fmtend &&
+                     __ctype.is(ctype_base::space, *__fmt))
+                ++__fmt;
+
+              while (__s != __end &&
+                     __ctype.is(ctype_base::space, *__s))
+                ++__s;
+            }
+
+          else if (__ctype.tolower(*__s) == __ctype.tolower(*__fmt) ||
+                   __ctype.toupper(*__s) == __ctype.toupper(*__fmt))
+            {
+              ++__s;
+              ++__fmt;
+            }
+          else
+            {
+              __err = ios_base::failbit;
+              break;
+            }
+        }
+      if (__use_state)
+ __state._M_finalize_state(__tm);
+      return __s;
+    }
+
+  template<typename _CharT, typename _InIter>
+    inline
+    _InIter
+    time_get<_CharT, _InIter>::
+    do_get(iter_type __beg, iter_type __end, ios_base& __io,
+           ios_base::iostate& __err, tm* __tm,
+           char __format, char __mod) const
+    {
+      const locale& __loc = __io._M_getloc();
+      ctype<_CharT> const& __ctype = use_facet<ctype<_CharT> >(__loc);
+      __err = ios_base::goodbit;
+
+      char_type __fmt[4];
+      __fmt[0] = __ctype.widen('%');
+      if (!__mod)
+        {
+          __fmt[1] = __format;
+          __fmt[2] = char_type();
+        }
+      else
+        {
+          __fmt[1] = __mod;
+          __fmt[2] = __format;
+          __fmt[3] = char_type();
+        }
+
+      __time_get_state __state = __time_get_state();
+      __beg = _M_extract_via_format(__beg, __end, __io, __err, __tm, __fmt,
+        __state);
+      __state._M_finalize_state(__tm);
+      if (__beg == __end)
+ __err |= ios_base::eofbit;
+      return __beg;
+    }
+
+
+
+  template<typename _CharT, typename _OutIter>
+    _OutIter
+    time_put<_CharT, _OutIter>::
+    put(iter_type __s, ios_base& __io, char_type __fill, const tm* __tm,
+ const _CharT* __beg, const _CharT* __end) const
+    {
+      const locale& __loc = __io._M_getloc();
+      ctype<_CharT> const& __ctype = use_facet<ctype<_CharT> >(__loc);
+      for (; __beg != __end; ++__beg)
+ if (__ctype.narrow(*__beg, 0) != '%')
+   {
+     *__s = *__beg;
+     ++__s;
+   }
+ else if (++__beg != __end)
+   {
+     char __format;
+     char __mod = 0;
+     const char __c = __ctype.narrow(*__beg, 0);
+     if (__c != 'E' && __c != 'O')
+       __format = __c;
+     else if (++__beg != __end)
+       {
+  __mod = __c;
+  __format = __ctype.narrow(*__beg, 0);
+       }
+     else
+       break;
+     __s = this->do_put(__s, __io, __fill, __tm, __format, __mod);
+   }
+ else
+   break;
+      return __s;
+    }
+
+  template<typename _CharT, typename _OutIter>
+    _OutIter
+    time_put<_CharT, _OutIter>::
+    do_put(iter_type __s, ios_base& __io, char_type, const tm* __tm,
+    char __format, char __mod) const
+    {
+      const locale& __loc = __io._M_getloc();
+      ctype<_CharT> const& __ctype = use_facet<ctype<_CharT> >(__loc);
+      __timepunct<_CharT> const& __tp = use_facet<__timepunct<_CharT> >(__loc);
+
+
+
+      const size_t __maxlen = 128;
+      char_type __res[__maxlen];
+
+
+
+
+
+
+      char_type __fmt[4];
+      __fmt[0] = __ctype.widen('%');
+      if (!__mod)
+ {
+   __fmt[1] = __format;
+   __fmt[2] = char_type();
+ }
+      else
+ {
+   __fmt[1] = __mod;
+   __fmt[2] = __format;
+   __fmt[3] = char_type();
+ }
+
+      __tp._M_put(__res, __maxlen, __fmt, __tm);
+
+
+      return std::__write(__s, __res, char_traits<char_type>::length(__res));
+    }
+
+
+
+
+
+  extern template class moneypunct<char, false>;
+  extern template class moneypunct<char, true>;
+  extern template class moneypunct_byname<char, false>;
+  extern template class moneypunct_byname<char, true>;
+  extern template class __cxx11:: money_get<char>;
+  extern template class __cxx11:: money_put<char>;
+  extern template class __timepunct<char>;
+  extern template class time_put<char>;
+  extern template class time_put_byname<char>;
+  extern template class time_get<char>;
+  extern template class time_get_byname<char>;
+  extern template class messages<char>;
+  extern template class messages_byname<char>;
+
+  extern template
+    const moneypunct<char, true>*
+    __try_use_facet<moneypunct<char, true> >(const locale&) noexcept;
+
+  extern template
+    const moneypunct<char, false>*
+    __try_use_facet<moneypunct<char, false> >(const locale&) noexcept;
+
+  extern template
+    const money_put<char>*
+    __try_use_facet<money_put<char> >(const locale&) noexcept;
+
+  extern template
+    const money_get<char>*
+    __try_use_facet<money_get<char> >(const locale&) noexcept;
+
+  extern template
+    const __timepunct<char>*
+    __try_use_facet<__timepunct<char> >(const locale&) noexcept;
+
+  extern template
+    const time_put<char>*
+    __try_use_facet<time_put<char> >(const locale&) noexcept;
+
+  extern template
+    const time_get<char>*
+    __try_use_facet<time_get<char> >(const locale&) noexcept;
+
+  extern template
+    const messages<char>*
+    __try_use_facet<messages<char> >(const locale&) noexcept;
+
+  extern template
+    const moneypunct<char, true>&
+    use_facet<moneypunct<char, true> >(const locale&);
+
+  extern template
+    const moneypunct<char, false>&
+    use_facet<moneypunct<char, false> >(const locale&);
+
+  extern template
+    const money_put<char>&
+    use_facet<money_put<char> >(const locale&);
+
+  extern template
+    const money_get<char>&
+    use_facet<money_get<char> >(const locale&);
+
+  extern template
+    const __timepunct<char>&
+    use_facet<__timepunct<char> >(const locale&);
+
+  extern template
+    const time_put<char>&
+    use_facet<time_put<char> >(const locale&);
+
+  extern template
+    const time_get<char>&
+    use_facet<time_get<char> >(const locale&);
+
+  extern template
+    const messages<char>&
+    use_facet<messages<char> >(const locale&);
+
+  extern template
+    bool
+    has_facet<moneypunct<char> >(const locale&);
+
+  extern template
+    bool
+    has_facet<money_put<char> >(const locale&);
+
+  extern template
+    bool
+    has_facet<money_get<char> >(const locale&);
+
+  extern template
+    bool
+    has_facet<__timepunct<char> >(const locale&);
+
+  extern template
+    bool
+    has_facet<time_put<char> >(const locale&);
+
+  extern template
+    bool
+    has_facet<time_get<char> >(const locale&);
+
+  extern template
+    bool
+    has_facet<messages<char> >(const locale&);
+
+
+  extern template class moneypunct<wchar_t, false>;
+  extern template class moneypunct<wchar_t, true>;
+  extern template class moneypunct_byname<wchar_t, false>;
+  extern template class moneypunct_byname<wchar_t, true>;
+  extern template class __cxx11:: money_get<wchar_t>;
+  extern template class __cxx11:: money_put<wchar_t>;
+  extern template class __timepunct<wchar_t>;
+  extern template class time_put<wchar_t>;
+  extern template class time_put_byname<wchar_t>;
+  extern template class time_get<wchar_t>;
+  extern template class time_get_byname<wchar_t>;
+  extern template class messages<wchar_t>;
+  extern template class messages_byname<wchar_t>;
+
+  extern template
+    const moneypunct<wchar_t, true>*
+    __try_use_facet<moneypunct<wchar_t, true> >(const locale&) noexcept;
+
+  extern template
+    const moneypunct<wchar_t, false>*
+    __try_use_facet<moneypunct<wchar_t, false> >(const locale&) noexcept;
+
+  extern template
+    const money_put<wchar_t>*
+    __try_use_facet<money_put<wchar_t> >(const locale&) noexcept;
+
+  extern template
+    const money_get<wchar_t>*
+    __try_use_facet<money_get<wchar_t> >(const locale&) noexcept;
+
+  extern template
+    const __timepunct<wchar_t>*
+    __try_use_facet<__timepunct<wchar_t> >(const locale&) noexcept;
+
+  extern template
+    const time_put<wchar_t>*
+    __try_use_facet<time_put<wchar_t> >(const locale&) noexcept;
+
+  extern template
+    const time_get<wchar_t>*
+    __try_use_facet<time_get<wchar_t> >(const locale&) noexcept;
+
+  extern template
+    const messages<wchar_t>*
+    __try_use_facet<messages<wchar_t> >(const locale&) noexcept;
+
+  extern template
+    const moneypunct<wchar_t, true>&
+    use_facet<moneypunct<wchar_t, true> >(const locale&);
+
+  extern template
+    const moneypunct<wchar_t, false>&
+    use_facet<moneypunct<wchar_t, false> >(const locale&);
+
+  extern template
+    const money_put<wchar_t>&
+    use_facet<money_put<wchar_t> >(const locale&);
+
+  extern template
+    const money_get<wchar_t>&
+    use_facet<money_get<wchar_t> >(const locale&);
+
+  extern template
+    const __timepunct<wchar_t>&
+    use_facet<__timepunct<wchar_t> >(const locale&);
+
+  extern template
+    const time_put<wchar_t>&
+    use_facet<time_put<wchar_t> >(const locale&);
+
+  extern template
+    const time_get<wchar_t>&
+    use_facet<time_get<wchar_t> >(const locale&);
+
+  extern template
+    const messages<wchar_t>&
+    use_facet<messages<wchar_t> >(const locale&);
+
+  extern template
+    bool
+    has_facet<moneypunct<wchar_t> >(const locale&);
+
+  extern template
+    bool
+    has_facet<money_put<wchar_t> >(const locale&);
+
+  extern template
+    bool
+    has_facet<money_get<wchar_t> >(const locale&);
+
+  extern template
+    bool
+    has_facet<__timepunct<wchar_t> >(const locale&);
+
+  extern template
+    bool
+    has_facet<time_put<wchar_t> >(const locale&);
+
+  extern template
+    bool
+    has_facet<time_get<wchar_t> >(const locale&);
+
+  extern template
+    bool
+    has_facet<messages<wchar_t> >(const locale&);
+
+
+
+
+}
+# 2070 "C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h" 2 3
+# 44 "C:/mingw64/include/c++/14.2.0/locale" 2 3
+
+# 1 "C:/mingw64/include/c++/14.2.0/bits/locale_conv.h" 1 3
+# 42 "C:/mingw64/include/c++/14.2.0/bits/locale_conv.h" 3
+namespace std
+{
+
+
+
+
+
+
+
+  template<typename _OutStr, typename _InChar, typename _Codecvt,
+    typename _State, typename _Fn>
+    bool
+    __do_str_codecvt(const _InChar* __first, const _InChar* __last,
+       _OutStr& __outstr, const _Codecvt& __cvt, _State& __state,
+       size_t& __count, _Fn __fn)
+    {
+      if (__first == __last)
+ {
+   __outstr.clear();
+   __count = 0;
+   return true;
+ }
+
+      size_t __outchars = 0;
+      auto __next = __first;
+      const auto __maxlen = __cvt.max_length() + 1;
+
+      codecvt_base::result __result;
+      do
+ {
+   __outstr.resize(__outstr.size() + (__last - __next) * __maxlen);
+   auto __outnext = &__outstr.front() + __outchars;
+   auto const __outlast = &__outstr.back() + 1;
+   __result = (__cvt.*__fn)(__state, __next, __last, __next,
+     __outnext, __outlast, __outnext);
+   __outchars = __outnext - &__outstr.front();
+ }
+      while (__result == codecvt_base::partial && __next != __last
+      && ptrdiff_t(__outstr.size() - __outchars) < __maxlen);
+
+      if (__result == codecvt_base::error)
+ {
+   __count = __next - __first;
+   return false;
+ }
+
+
+
+      if constexpr (is_same<typename _Codecvt::intern_type,
+           typename _Codecvt::extern_type>())
+ if (__result == codecvt_base::noconv)
+   {
+     __outstr.assign(__first, __last);
+     __count = __last - __first;
+     return true;
+   }
+
+      __outstr.resize(__outchars);
+      __count = __next - __first;
+      return true;
+    }
+
+
+  template<typename _CharT, typename _Traits, typename _Alloc, typename _State>
+    inline bool
+    __str_codecvt_in(const char* __first, const char* __last,
+       basic_string<_CharT, _Traits, _Alloc>& __outstr,
+       const codecvt<_CharT, char, _State>& __cvt,
+       _State& __state, size_t& __count)
+    {
+      using _Codecvt = codecvt<_CharT, char, _State>;
+      using _ConvFn
+ = codecvt_base::result
+   (_Codecvt::*)(_State&, const char*, const char*, const char*&,
+   _CharT*, _CharT*, _CharT*&) const;
+      _ConvFn __fn = &codecvt<_CharT, char, _State>::in;
+      return __do_str_codecvt(__first, __last, __outstr, __cvt, __state,
+         __count, __fn);
+    }
+
+
+  template<typename _CharT, typename _Traits, typename _Alloc, typename _State>
+    inline bool
+    __str_codecvt_in(const char* __first, const char* __last,
+       basic_string<_CharT, _Traits, _Alloc>& __outstr,
+       const codecvt<_CharT, char, _State>& __cvt)
+    {
+      _State __state = {};
+      size_t __n;
+      return __str_codecvt_in(__first, __last, __outstr, __cvt, __state, __n);
+    }
+
+
+  template<typename _CharT, typename _Traits, typename _Alloc, typename _State>
+    inline bool
+    __str_codecvt_in_all(const char* __first, const char* __last,
+    basic_string<_CharT, _Traits, _Alloc>& __outstr,
+    const codecvt<_CharT, char, _State>& __cvt)
+    {
+      _State __state = {};
+      size_t __n;
+      return __str_codecvt_in(__first, __last, __outstr, __cvt, __state, __n)
+ && (__n == size_t(__last - __first));
+    }
+
+
+  template<typename _CharT, typename _Traits, typename _Alloc, typename _State>
+    inline bool
+    __str_codecvt_out(const _CharT* __first, const _CharT* __last,
+        basic_string<char, _Traits, _Alloc>& __outstr,
+        const codecvt<_CharT, char, _State>& __cvt,
+        _State& __state, size_t& __count)
+    {
+      using _Codecvt = codecvt<_CharT, char, _State>;
+      using _ConvFn
+ = codecvt_base::result
+   (_Codecvt::*)(_State&, const _CharT*, const _CharT*, const _CharT*&,
+   char*, char*, char*&) const;
+      _ConvFn __fn = &codecvt<_CharT, char, _State>::out;
+      return __do_str_codecvt(__first, __last, __outstr, __cvt, __state,
+         __count, __fn);
+    }
+
+
+  template<typename _CharT, typename _Traits, typename _Alloc, typename _State>
+    inline bool
+    __str_codecvt_out(const _CharT* __first, const _CharT* __last,
+        basic_string<char, _Traits, _Alloc>& __outstr,
+        const codecvt<_CharT, char, _State>& __cvt)
+    {
+      _State __state = {};
+      size_t __n;
+      return __str_codecvt_out(__first, __last, __outstr, __cvt, __state, __n);
+    }
+
+
+  template<typename _CharT, typename _Traits, typename _Alloc, typename _State>
+    inline bool
+    __str_codecvt_out_all(const _CharT* __first, const _CharT* __last,
+     basic_string<char, _Traits, _Alloc>& __outstr,
+     const codecvt<_CharT, char, _State>& __cvt)
+    {
+      _State __state = {};
+      size_t __n;
+      return __str_codecvt_out(__first, __last, __outstr, __cvt, __state, __n)
+ && (__n == size_t(__last - __first));
+    }
+
+
+
+
+  template<typename _CharT, typename _Traits, typename _Alloc, typename _State>
+    inline bool
+    __str_codecvt_out(const _CharT* __first, const _CharT* __last,
+        basic_string<char8_t, _Traits, _Alloc>& __outstr,
+        const codecvt<_CharT, char8_t, _State>& __cvt,
+        _State& __state, size_t& __count)
+    {
+      using _Codecvt = codecvt<_CharT, char8_t, _State>;
+      using _ConvFn
+ = codecvt_base::result
+   (_Codecvt::*)(_State&, const _CharT*, const _CharT*, const _CharT*&,
+   char8_t*, char8_t*, char8_t*&) const;
+      _ConvFn __fn = &codecvt<_CharT, char8_t, _State>::out;
+      return __do_str_codecvt(__first, __last, __outstr, __cvt, __state,
+         __count, __fn);
+    }
+
+  template<typename _CharT, typename _Traits, typename _Alloc, typename _State>
+    inline bool
+    __str_codecvt_out(const _CharT* __first, const _CharT* __last,
+        basic_string<char8_t, _Traits, _Alloc>& __outstr,
+        const codecvt<_CharT, char8_t, _State>& __cvt)
+    {
+      _State __state = {};
+      size_t __n;
+      return __str_codecvt_out(__first, __last, __outstr, __cvt, __state, __n);
+    }
+
+
+
+  namespace __detail
+  {
+    template<typename _Tp>
+      struct _Scoped_ptr
+      {
+ __attribute__((__nonnull__(2)))
+ explicit
+ _Scoped_ptr(_Tp* __ptr) noexcept
+ : _M_ptr(__ptr)
+ { }
+
+ _Scoped_ptr(_Tp* __ptr, const char* __msg)
+ : _M_ptr(__ptr)
+ {
+   if (!__ptr)
+     __throw_logic_error(__msg);
+ }
+
+ ~_Scoped_ptr() { delete _M_ptr; }
+
+ _Scoped_ptr(const _Scoped_ptr&) = delete;
+ _Scoped_ptr& operator=(const _Scoped_ptr&) = delete;
+
+ __attribute__((__returns_nonnull__))
+ _Tp* operator->() const noexcept { return _M_ptr; }
+
+ _Tp& operator*() const noexcept { return *_M_ptr; }
+
+      private:
+ _Tp* _M_ptr;
+      };
+  }
+
+namespace __cxx11 {
+
+
+  template<typename _Codecvt, typename _Elem = wchar_t,
+    typename _Wide_alloc = allocator<_Elem>,
+    typename _Byte_alloc = allocator<char>>
+    class wstring_convert
+    {
+    public:
+      typedef basic_string<char, char_traits<char>, _Byte_alloc> byte_string;
+      typedef basic_string<_Elem, char_traits<_Elem>, _Wide_alloc> wide_string;
+      typedef typename _Codecvt::state_type state_type;
+      typedef typename wide_string::traits_type::int_type int_type;
+
+
+      wstring_convert() : _M_cvt(new _Codecvt()) { }
+
+
+
+
+
+
+
+      explicit
+      wstring_convert(_Codecvt* __pcvt) : _M_cvt(__pcvt, "wstring_convert")
+      { }
+# 291 "C:/mingw64/include/c++/14.2.0/bits/locale_conv.h" 3
+      wstring_convert(_Codecvt* __pcvt, state_type __state)
+      : _M_cvt(__pcvt, "wstring_convert"),
+ _M_state(__state), _M_with_cvtstate(true)
+      { }
+
+
+
+
+
+
+      explicit
+      wstring_convert(const byte_string& __byte_err,
+        const wide_string& __wide_err = wide_string())
+      : _M_cvt(new _Codecvt),
+ _M_byte_err_string(__byte_err), _M_wide_err_string(__wide_err),
+ _M_with_strings(true)
+      { }
+
+      ~wstring_convert() = default;
+
+
+
+      wstring_convert(const wstring_convert&) = delete;
+      wstring_convert& operator=(const wstring_convert&) = delete;
+
+
+      wide_string
+      from_bytes(char __byte)
+      {
+ char __bytes[2] = { __byte };
+ return from_bytes(__bytes, __bytes+1);
+      }
+
+      wide_string
+      from_bytes(const char* __ptr)
+      { return from_bytes(__ptr, __ptr+char_traits<char>::length(__ptr)); }
+
+      wide_string
+      from_bytes(const byte_string& __str)
+      {
+ auto __ptr = __str.data();
+ return from_bytes(__ptr, __ptr + __str.size());
+      }
+
+      wide_string
+      from_bytes(const char* __first, const char* __last)
+      {
+ if (!_M_with_cvtstate)
+   _M_state = state_type();
+ wide_string __out{ _M_wide_err_string.get_allocator() };
+ if (__str_codecvt_in(__first, __last, __out, *_M_cvt, _M_state,
+        _M_count))
+   return __out;
+ if (_M_with_strings)
+   return _M_wide_err_string;
+ __throw_range_error("wstring_convert::from_bytes");
+      }
+
+
+
+      byte_string
+      to_bytes(_Elem __wchar)
+      {
+ _Elem __wchars[2] = { __wchar };
+ return to_bytes(__wchars, __wchars+1);
+      }
+
+      byte_string
+      to_bytes(const _Elem* __ptr)
+      {
+ return to_bytes(__ptr, __ptr+wide_string::traits_type::length(__ptr));
+      }
+
+      byte_string
+      to_bytes(const wide_string& __wstr)
+      {
+ auto __ptr = __wstr.data();
+ return to_bytes(__ptr, __ptr + __wstr.size());
+      }
+
+      byte_string
+      to_bytes(const _Elem* __first, const _Elem* __last)
+      {
+ if (!_M_with_cvtstate)
+   _M_state = state_type();
+ byte_string __out{ _M_byte_err_string.get_allocator() };
+ if (__str_codecvt_out(__first, __last, __out, *_M_cvt, _M_state,
+         _M_count))
+   return __out;
+ if (_M_with_strings)
+   return _M_byte_err_string;
+ __throw_range_error("wstring_convert::to_bytes");
+      }
+
+
+
+
+
+      size_t converted() const noexcept { return _M_count; }
+
+
+      state_type state() const { return _M_state; }
+
+    private:
+      __detail::_Scoped_ptr<_Codecvt> _M_cvt;
+      byte_string _M_byte_err_string;
+      wide_string _M_wide_err_string;
+      state_type _M_state = state_type();
+      size_t _M_count = 0;
+      bool _M_with_cvtstate = false;
+      bool _M_with_strings = false;
+    };
+
+}
+
+
+  template<typename _Codecvt, typename _Elem = wchar_t,
+    typename _Tr = char_traits<_Elem>>
+    class wbuffer_convert : public basic_streambuf<_Elem, _Tr>
+    {
+      typedef basic_streambuf<_Elem, _Tr> _Wide_streambuf;
+
+    public:
+      typedef typename _Codecvt::state_type state_type;
+
+
+      wbuffer_convert() : wbuffer_convert(nullptr) { }
+# 427 "C:/mingw64/include/c++/14.2.0/bits/locale_conv.h" 3
+      explicit
+      wbuffer_convert(streambuf* __bytebuf, _Codecvt* __pcvt = new _Codecvt,
+        state_type __state = state_type())
+      : _M_buf(__bytebuf), _M_cvt(__pcvt, "wbuffer_convert"),
+ _M_state(__state), _M_always_noconv(_M_cvt->always_noconv())
+      {
+ if (_M_buf)
+   {
+     this->setp(_M_put_area, _M_put_area + _S_buffer_length);
+     this->setg(_M_get_area + _S_putback_length,
+         _M_get_area + _S_putback_length,
+         _M_get_area + _S_putback_length);
+   }
+      }
+
+      ~wbuffer_convert() = default;
+
+
+
+      wbuffer_convert(const wbuffer_convert&) = delete;
+      wbuffer_convert& operator=(const wbuffer_convert&) = delete;
+
+      streambuf* rdbuf() const noexcept { return _M_buf; }
+
+      streambuf*
+      rdbuf(streambuf *__bytebuf) noexcept
+      {
+ auto __prev = _M_buf;
+ _M_buf = __bytebuf;
+ return __prev;
+      }
+
+
+      state_type state() const noexcept { return _M_state; }
+
+    protected:
+      int
+      sync()
+      { return _M_buf && _M_conv_put() && !_M_buf->pubsync() ? 0 : -1; }
+
+      typename _Wide_streambuf::int_type
+      overflow(typename _Wide_streambuf::int_type __out)
+      {
+ if (!_M_buf || !_M_conv_put())
+   return _Tr::eof();
+ else if (!_Tr::eq_int_type(__out, _Tr::eof()))
+   return this->sputc(__out);
+ return _Tr::not_eof(__out);
+      }
+
+      typename _Wide_streambuf::int_type
+      underflow()
+      {
+ if (!_M_buf)
+   return _Tr::eof();
+
+ if (this->gptr() < this->egptr() || (_M_buf && _M_conv_get()))
+   return _Tr::to_int_type(*this->gptr());
+ else
+   return _Tr::eof();
+      }
+
+      streamsize
+      xsputn(const typename _Wide_streambuf::char_type* __s, streamsize __n)
+      {
+ if (!_M_buf || __n == 0)
+   return 0;
+ streamsize __done = 0;
+ do
+ {
+   auto __nn = std::min<streamsize>(this->epptr() - this->pptr(),
+        __n - __done);
+   _Tr::copy(this->pptr(), __s + __done, __nn);
+   this->pbump(__nn);
+   __done += __nn;
+ } while (__done < __n && _M_conv_put());
+ return __done;
+      }
+
+    private:
+
+      bool
+      _M_conv_get()
+      {
+ const streamsize __pb1 = this->gptr() - this->eback();
+ const streamsize __pb2 = _S_putback_length;
+ const streamsize __npb = std::min(__pb1, __pb2);
+
+ _Tr::move(_M_get_area + _S_putback_length - __npb,
+    this->gptr() - __npb, __npb);
+
+ streamsize __nbytes = sizeof(_M_get_buf) - _M_unconv;
+ __nbytes = std::min(__nbytes, _M_buf->in_avail());
+ if (__nbytes < 1)
+   __nbytes = 1;
+ __nbytes = _M_buf->sgetn(_M_get_buf + _M_unconv, __nbytes);
+ if (__nbytes < 1)
+   return false;
+ __nbytes += _M_unconv;
+
+
+
+ _Elem* __outbuf = _M_get_area + _S_putback_length;
+ _Elem* __outnext = __outbuf;
+ const char* __bnext = _M_get_buf;
+
+ codecvt_base::result __result;
+ if (_M_always_noconv)
+   __result = codecvt_base::noconv;
+ else
+   {
+     _Elem* __outend = _M_get_area + _S_buffer_length;
+
+     __result = _M_cvt->in(_M_state,
+      __bnext, __bnext + __nbytes, __bnext,
+      __outbuf, __outend, __outnext);
+   }
+
+ if (__result == codecvt_base::noconv)
+   {
+
+     auto __get_buf = reinterpret_cast<const _Elem*>(_M_get_buf);
+     _Tr::copy(__outbuf, __get_buf, __nbytes);
+     _M_unconv = 0;
+     return true;
+   }
+
+ if ((_M_unconv = _M_get_buf + __nbytes - __bnext))
+   char_traits<char>::move(_M_get_buf, __bnext, _M_unconv);
+
+ this->setg(__outbuf, __outbuf, __outnext);
+
+ return __result != codecvt_base::error;
+      }
+
+
+      bool
+      _M_put(...)
+      { return false; }
+
+      bool
+      _M_put(const char* __p, streamsize __n)
+      {
+ if (_M_buf->sputn(__p, __n) < __n)
+   return false;
+ return true;
+      }
+
+
+      bool
+      _M_conv_put()
+      {
+ _Elem* const __first = this->pbase();
+ const _Elem* const __last = this->pptr();
+ const streamsize __pending = __last - __first;
+
+ if (_M_always_noconv)
+   return _M_put(__first, __pending);
+
+ char __outbuf[2 * _S_buffer_length];
+
+ const _Elem* __next = __first;
+ const _Elem* __start;
+ do
+   {
+     __start = __next;
+     char* __outnext = __outbuf;
+     char* const __outlast = __outbuf + sizeof(__outbuf);
+     auto __result = _M_cvt->out(_M_state, __next, __last, __next,
+     __outnext, __outlast, __outnext);
+     if (__result == codecvt_base::error)
+       return false;
+     else if (__result == codecvt_base::noconv)
+       return _M_put(__next, __pending);
+
+     if (!_M_put(__outbuf, __outnext - __outbuf))
+       return false;
+   }
+ while (__next != __last && __next != __start);
+
+ if (__next != __last)
+   _Tr::move(__first, __next, __last - __next);
+
+ this->pbump(__first - __next);
+ return __next != __first;
+      }
+
+      streambuf* _M_buf;
+      __detail::_Scoped_ptr<_Codecvt> _M_cvt;
+      state_type _M_state;
+
+      static const streamsize _S_buffer_length = 32;
+      static const streamsize _S_putback_length = 3;
+      _Elem _M_put_area[_S_buffer_length];
+      _Elem _M_get_area[_S_buffer_length];
+      streamsize _M_unconv = 0;
+      char _M_get_buf[_S_buffer_length-_S_putback_length];
+      bool _M_always_noconv;
+    };
+
+
+
+
+}
+# 46 "C:/mingw64/include/c++/14.2.0/locale" 2 3
+# 49 "C:/mingw64/include/c++/14.2.0/iomanip" 2 3
+
+# 1 "C:/mingw64/include/c++/14.2.0/bits/quoted_string.h" 1 3
+# 33 "C:/mingw64/include/c++/14.2.0/bits/quoted_string.h" 3
+       
+# 34 "C:/mingw64/include/c++/14.2.0/bits/quoted_string.h" 3
+
+
+
+
+
+
+namespace std
+{
+
+
+  namespace __detail {
+
+
+
+    template<typename _String, typename _CharT>
+      struct _Quoted_string
+      {
+ static_assert(is_reference<_String>::value
+     || is_pointer<_String>::value,
+        "String type must be pointer or reference");
+
+ _Quoted_string(_String __str, _CharT __del, _CharT __esc)
+ : _M_string(__str), _M_delim{__del}, _M_escape{__esc}
+ { }
+
+ _Quoted_string&
+ operator=(_Quoted_string&) = delete;
+
+ _String _M_string;
+ _CharT _M_delim;
+ _CharT _M_escape;
+      };
+
+
+    template<typename _CharT, typename _Traits>
+      struct _Quoted_string<basic_string_view<_CharT, _Traits>, _CharT>
+      {
+ _Quoted_string(basic_string_view<_CharT, _Traits> __str,
+         _CharT __del, _CharT __esc)
+ : _M_string(__str), _M_delim{__del}, _M_escape{__esc}
+ { }
+
+ _Quoted_string&
+ operator=(_Quoted_string&) = delete;
+
+ basic_string_view<_CharT, _Traits> _M_string;
+ _CharT _M_delim;
+ _CharT _M_escape;
+      };
+
+
+
+
+
+
+
+    template<typename _CharT, typename _Traits>
+      std::basic_ostream<_CharT, _Traits>&
+      operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+   const _Quoted_string<const _CharT*, _CharT>& __str)
+      {
+
+
+ std::basic_ostringstream<_CharT, _Traits> __ostr;
+ __ostr << __str._M_delim;
+ for (const _CharT* __c = __str._M_string; *__c; ++__c)
+   {
+     if (*__c == __str._M_delim || *__c == __str._M_escape)
+       __ostr << __str._M_escape;
+     __ostr << *__c;
+   }
+ __ostr << __str._M_delim;
+
+ return __os << __ostr.str();
+      }
+
+
+
+
+
+
+    template<typename _CharT, typename _Traits, typename _String>
+      std::basic_ostream<_CharT, _Traits>&
+      operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+   const _Quoted_string<_String, _CharT>& __str)
+      {
+
+
+ std::basic_ostringstream<_CharT, _Traits> __ostr;
+ __ostr << __str._M_delim;
+ for (auto __c : __str._M_string)
+   {
+     if (__c == __str._M_delim || __c == __str._M_escape)
+       __ostr << __str._M_escape;
+     __ostr << __c;
+   }
+ __ostr << __str._M_delim;
+
+ return __os << __ostr.str();
+      }
+
+
+
+
+
+
+
+    template<typename _CharT, typename _Traits, typename _Alloc>
+      std::basic_istream<_CharT, _Traits>&
+      operator>>(std::basic_istream<_CharT, _Traits>& __is,
+   const _Quoted_string<basic_string<_CharT, _Traits, _Alloc>&,
+          _CharT>& __str)
+      {
+ _CharT __c;
+ __is >> __c;
+ if (!__is.good())
+   return __is;
+ if (__c != __str._M_delim)
+   {
+     __is.unget();
+     __is >> __str._M_string;
+     return __is;
+   }
+ __str._M_string.clear();
+ std::ios_base::fmtflags __flags
+   = __is.flags(__is.flags() & ~std::ios_base::skipws);
+ do
+   {
+     __is >> __c;
+     if (!__is.good())
+       break;
+     if (__c == __str._M_escape)
+       {
+  __is >> __c;
+  if (!__is.good())
+    break;
+       }
+     else if (__c == __str._M_delim)
+       break;
+     __str._M_string += __c;
+   }
+ while (true);
+ __is.setf(__flags);
+
+ return __is;
+      }
+  }
+
+
+}
+# 51 "C:/mingw64/include/c++/14.2.0/iomanip" 2 3
+
+
+
+namespace std
+{
+
+
+
+
+
+  struct _Resetiosflags { ios_base::fmtflags _M_mask; };
+# 70 "C:/mingw64/include/c++/14.2.0/iomanip" 3
+  inline _Resetiosflags
+  resetiosflags(ios_base::fmtflags __mask)
+  { return { __mask }; }
+
+  template<typename _CharT, typename _Traits>
+    inline basic_istream<_CharT, _Traits>&
+    operator>>(basic_istream<_CharT, _Traits>& __is, _Resetiosflags __f)
+    {
+      __is.setf(ios_base::fmtflags(0), __f._M_mask);
+      return __is;
+    }
+
+  template<typename _CharT, typename _Traits>
+    inline basic_ostream<_CharT, _Traits>&
+    operator<<(basic_ostream<_CharT, _Traits>& __os, _Resetiosflags __f)
+    {
+      __os.setf(ios_base::fmtflags(0), __f._M_mask);
+      return __os;
+    }
+
+
+  struct _Setiosflags { ios_base::fmtflags _M_mask; };
+# 100 "C:/mingw64/include/c++/14.2.0/iomanip" 3
+  inline _Setiosflags
+  setiosflags(ios_base::fmtflags __mask)
+  { return { __mask }; }
+
+  template<typename _CharT, typename _Traits>
+    inline basic_istream<_CharT, _Traits>&
+    operator>>(basic_istream<_CharT, _Traits>& __is, _Setiosflags __f)
+    {
+      __is.setf(__f._M_mask);
+      return __is;
+    }
+
+  template<typename _CharT, typename _Traits>
+    inline basic_ostream<_CharT, _Traits>&
+    operator<<(basic_ostream<_CharT, _Traits>& __os, _Setiosflags __f)
+    {
+      __os.setf(__f._M_mask);
+      return __os;
+    }
+
+
+  struct _Setbase { int _M_base; };
+# 131 "C:/mingw64/include/c++/14.2.0/iomanip" 3
+  inline _Setbase
+  setbase(int __base)
+  { return { __base }; }
+
+  template<typename _CharT, typename _Traits>
+    inline basic_istream<_CharT, _Traits>&
+    operator>>(basic_istream<_CharT, _Traits>& __is, _Setbase __f)
+    {
+      __is.setf(__f._M_base == 8 ? ios_base::oct :
+  __f._M_base == 10 ? ios_base::dec :
+  __f._M_base == 16 ? ios_base::hex :
+  ios_base::fmtflags(0), ios_base::basefield);
+      return __is;
+    }
+
+  template<typename _CharT, typename _Traits>
+    inline basic_ostream<_CharT, _Traits>&
+    operator<<(basic_ostream<_CharT, _Traits>& __os, _Setbase __f)
+    {
+      __os.setf(__f._M_base == 8 ? ios_base::oct :
+  __f._M_base == 10 ? ios_base::dec :
+  __f._M_base == 16 ? ios_base::hex :
+  ios_base::fmtflags(0), ios_base::basefield);
+      return __os;
+    }
+
+
+  template<typename _CharT>
+    struct _Setfill { _CharT _M_c; };
+# 168 "C:/mingw64/include/c++/14.2.0/iomanip" 3
+  template<typename _CharT>
+    inline _Setfill<_CharT>
+    setfill(_CharT __c)
+    { return { __c }; }
+
+  template<typename _CharT, typename _Traits>
+    __attribute__((__deprecated__("'std::setfill' should only be used with "
+      "output streams")))
+    inline basic_istream<_CharT, _Traits>&
+    operator>>(basic_istream<_CharT, _Traits>& __is, _Setfill<_CharT> __f)
+    {
+      __is.fill(__f._M_c);
+      return __is;
+    }
+
+  template<typename _CharT, typename _Traits>
+    inline basic_ostream<_CharT, _Traits>&
+    operator<<(basic_ostream<_CharT, _Traits>& __os, _Setfill<_CharT> __f)
+    {
+      __os.fill(__f._M_c);
+      return __os;
+    }
+
+
+  struct _Setprecision { int _M_n; };
+# 201 "C:/mingw64/include/c++/14.2.0/iomanip" 3
+  inline _Setprecision
+  setprecision(int __n)
+  { return { __n }; }
+
+  template<typename _CharT, typename _Traits>
+    inline basic_istream<_CharT, _Traits>&
+    operator>>(basic_istream<_CharT, _Traits>& __is, _Setprecision __f)
+    {
+      __is.precision(__f._M_n);
+      return __is;
+    }
+
+  template<typename _CharT, typename _Traits>
+    inline basic_ostream<_CharT, _Traits>&
+    operator<<(basic_ostream<_CharT, _Traits>& __os, _Setprecision __f)
+    {
+      __os.precision(__f._M_n);
+      return __os;
+    }
+
+
+  struct _Setw { int _M_n; };
+# 231 "C:/mingw64/include/c++/14.2.0/iomanip" 3
+  inline _Setw
+  setw(int __n)
+  { return { __n }; }
+
+  template<typename _CharT, typename _Traits>
+    inline basic_istream<_CharT, _Traits>&
+    operator>>(basic_istream<_CharT, _Traits>& __is, _Setw __f)
+    {
+      __is.width(__f._M_n);
+      return __is;
+    }
+
+  template<typename _CharT, typename _Traits>
+    inline basic_ostream<_CharT, _Traits>&
+    operator<<(basic_ostream<_CharT, _Traits>& __os, _Setw __f)
+    {
+      __os.width(__f._M_n);
+      return __os;
+    }
+
+
+
+  template<typename _MoneyT>
+    struct _Get_money { _MoneyT& _M_mon; bool _M_intl; };
+# 264 "C:/mingw64/include/c++/14.2.0/iomanip" 3
+  template<typename _MoneyT>
+    inline _Get_money<_MoneyT>
+    get_money(_MoneyT& __mon, bool __intl = false)
+    { return { __mon, __intl }; }
+
+  template<typename _CharT, typename _Traits, typename _MoneyT>
+    basic_istream<_CharT, _Traits>&
+    operator>>(basic_istream<_CharT, _Traits>& __is, _Get_money<_MoneyT> __f)
+    {
+      typename basic_istream<_CharT, _Traits>::sentry __cerb(__is, false);
+      if (__cerb)
+ {
+   ios_base::iostate __err = ios_base::goodbit;
+   try
+     {
+       typedef istreambuf_iterator<_CharT, _Traits> _Iter;
+       typedef money_get<_CharT, _Iter> _MoneyGet;
+
+       const _MoneyGet& __mg = use_facet<_MoneyGet>(__is.getloc());
+       __mg.get(_Iter(__is.rdbuf()), _Iter(), __f._M_intl,
+         __is, __err, __f._M_mon);
+     }
+   catch(__cxxabiv1::__forced_unwind&)
+     {
+       __is._M_setstate(ios_base::badbit);
+       throw;
+     }
+   catch(...)
+     { __is._M_setstate(ios_base::badbit); }
+   if (__err)
+     __is.setstate(__err);
+ }
+      return __is;
+    }
+
+
+  template<typename _MoneyT>
+    struct _Put_money { const _MoneyT& _M_mon; bool _M_intl; };
+# 311 "C:/mingw64/include/c++/14.2.0/iomanip" 3
+  template<typename _MoneyT>
+    inline _Put_money<_MoneyT>
+    put_money(const _MoneyT& __mon, bool __intl = false)
+    { return { __mon, __intl }; }
+
+  template<typename _CharT, typename _Traits, typename _MoneyT>
+    basic_ostream<_CharT, _Traits>&
+    operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_money<_MoneyT> __f)
+    {
+      typename basic_ostream<_CharT, _Traits>::sentry __cerb(__os);
+      if (__cerb)
+ {
+   ios_base::iostate __err = ios_base::goodbit;
+   try
+     {
+       typedef ostreambuf_iterator<_CharT, _Traits> _Iter;
+       typedef money_put<_CharT, _Iter> _MoneyPut;
+
+       const _MoneyPut& __mp = use_facet<_MoneyPut>(__os.getloc());
+       if (__mp.put(_Iter(__os.rdbuf()), __f._M_intl, __os,
+      __os.fill(), __f._M_mon).failed())
+  __err |= ios_base::badbit;
+     }
+   catch(__cxxabiv1::__forced_unwind&)
+     {
+       __os._M_setstate(ios_base::badbit);
+       throw;
+     }
+   catch(...)
+     { __os._M_setstate(ios_base::badbit); }
+   if (__err)
+     __os.setstate(__err);
+ }
+      return __os;
+    }
+
+  template<typename _CharT>
+    struct _Put_time
+    {
+      const std::tm* _M_tmb;
+      const _CharT* _M_fmt;
+    };
+# 363 "C:/mingw64/include/c++/14.2.0/iomanip" 3
+  template<typename _CharT>
+    inline _Put_time<_CharT>
+    put_time(const std::tm* __tmb, const _CharT* __fmt)
+    { return { __tmb, __fmt }; }
+
+  template<typename _CharT, typename _Traits>
+    basic_ostream<_CharT, _Traits>&
+    operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_time<_CharT> __f)
+    {
+      typename basic_ostream<_CharT, _Traits>::sentry __cerb(__os);
+      if (__cerb)
+        {
+          ios_base::iostate __err = ios_base::goodbit;
+          try
+            {
+              typedef ostreambuf_iterator<_CharT, _Traits> _Iter;
+              typedef time_put<_CharT, _Iter> _TimePut;
+
+              const _CharT* const __fmt_end = __f._M_fmt +
+                _Traits::length(__f._M_fmt);
+
+              const _TimePut& __mp = use_facet<_TimePut>(__os.getloc());
+              if (__mp.put(_Iter(__os.rdbuf()), __os, __os.fill(),
+                           __f._M_tmb, __f._M_fmt, __fmt_end).failed())
+                __err |= ios_base::badbit;
+            }
+          catch(__cxxabiv1::__forced_unwind&)
+            {
+              __os._M_setstate(ios_base::badbit);
+              throw;
+            }
+          catch(...)
+            { __os._M_setstate(ios_base::badbit); }
+          if (__err)
+            __os.setstate(__err);
+        }
+      return __os;
+    }
+
+  template<typename _CharT>
+    struct _Get_time
+    {
+      std::tm* _M_tmb;
+      const _CharT* _M_fmt;
+    };
+# 418 "C:/mingw64/include/c++/14.2.0/iomanip" 3
+  template<typename _CharT>
+    inline _Get_time<_CharT>
+    get_time(std::tm* __tmb, const _CharT* __fmt)
+    { return { __tmb, __fmt }; }
+
+  template<typename _CharT, typename _Traits>
+    basic_istream<_CharT, _Traits>&
+    operator>>(basic_istream<_CharT, _Traits>& __is, _Get_time<_CharT> __f)
+    {
+      typename basic_istream<_CharT, _Traits>::sentry __cerb(__is, false);
+      if (__cerb)
+        {
+          ios_base::iostate __err = ios_base::goodbit;
+          try
+            {
+              typedef istreambuf_iterator<_CharT, _Traits> _Iter;
+              typedef time_get<_CharT, _Iter> _TimeGet;
+
+              const _CharT* const __fmt_end = __f._M_fmt +
+                _Traits::length(__f._M_fmt);
+
+              const _TimeGet& __mg = use_facet<_TimeGet>(__is.getloc());
+              __mg.get(_Iter(__is.rdbuf()), _Iter(), __is,
+                       __err, __f._M_tmb, __f._M_fmt, __fmt_end);
+            }
+          catch(__cxxabiv1::__forced_unwind&)
+            {
+              __is._M_setstate(ios_base::badbit);
+              throw;
+            }
+          catch(...)
+            { __is._M_setstate(ios_base::badbit); }
+          if (__err)
+            __is.setstate(__err);
+        }
+      return __is;
+    }
+# 465 "C:/mingw64/include/c++/14.2.0/iomanip" 3
+  template<typename _CharT>
+    inline auto
+    quoted(const _CharT* __string,
+    _CharT __delim = _CharT('"'), _CharT __escape = _CharT('\\'))
+    {
+      return __detail::_Quoted_string<const _CharT*, _CharT>(__string, __delim,
+            __escape);
+    }
+
+  template<typename _CharT, typename _Traits, typename _Alloc>
+    inline auto
+    quoted(const basic_string<_CharT, _Traits, _Alloc>& __string,
+    _CharT __delim = _CharT('"'), _CharT __escape = _CharT('\\'))
+    {
+      return __detail::_Quoted_string<
+ const basic_string<_CharT, _Traits, _Alloc>&, _CharT>(
+     __string, __delim, __escape);
+    }
+
+  template<typename _CharT, typename _Traits, typename _Alloc>
+    inline auto
+    quoted(basic_string<_CharT, _Traits, _Alloc>& __string,
+    _CharT __delim = _CharT('"'), _CharT __escape = _CharT('\\'))
+    {
+      return __detail::_Quoted_string<
+ basic_string<_CharT, _Traits, _Alloc>&, _CharT>(
+     __string, __delim, __escape);
+    }
+
+
+
+
+  template<typename _CharT, typename _Traits>
+    inline auto
+    quoted(basic_string_view<_CharT, _Traits> __sv,
+    _CharT __delim = _CharT('"'), _CharT __escape = _CharT('\\'))
+    {
+      return __detail::_Quoted_string<
+ basic_string_view<_CharT, _Traits>, _CharT>(__sv, __delim, __escape);
+    }
+# 514 "C:/mingw64/include/c++/14.2.0/iomanip" 3
+  extern template ostream& operator<<(ostream&, _Setfill<char>);
+  extern template ostream& operator<<(ostream&, _Setiosflags);
+  extern template ostream& operator<<(ostream&, _Resetiosflags);
+  extern template ostream& operator<<(ostream&, _Setbase);
+  extern template ostream& operator<<(ostream&, _Setprecision);
+  extern template ostream& operator<<(ostream&, _Setw);
+  extern template istream& operator>>(istream&, _Setfill<char>);
+  extern template istream& operator>>(istream&, _Setiosflags);
+  extern template istream& operator>>(istream&, _Resetiosflags);
+  extern template istream& operator>>(istream&, _Setbase);
+  extern template istream& operator>>(istream&, _Setprecision);
+  extern template istream& operator>>(istream&, _Setw);
+
+
+  extern template wostream& operator<<(wostream&, _Setfill<wchar_t>);
+  extern template wostream& operator<<(wostream&, _Setiosflags);
+  extern template wostream& operator<<(wostream&, _Resetiosflags);
+  extern template wostream& operator<<(wostream&, _Setbase);
+  extern template wostream& operator<<(wostream&, _Setprecision);
+  extern template wostream& operator<<(wostream&, _Setw);
+  extern template wistream& operator>>(wistream&, _Setfill<wchar_t>);
+  extern template wistream& operator>>(wistream&, _Setiosflags);
+  extern template wistream& operator>>(wistream&, _Resetiosflags);
+  extern template wistream& operator>>(wistream&, _Setbase);
+  extern template wistream& operator>>(wistream&, _Setprecision);
+  extern template wistream& operator>>(wistream&, _Setw);
+
+
+
+
+}
+# 39 "C:/mingw64/include/c++/14.2.0/bits/chrono_io.h" 2 3
 # 1 "C:/mingw64/include/c++/14.2.0/format" 1 3
 # 32 "C:/mingw64/include/c++/14.2.0/format" 3
        
@@ -106290,9 +96224,9 @@ private:
 };
 
 }
-# 46 "C:/SFML/include/SFML/Graphics.hpp" 2
-# 1 "C:/SFML/include/SFML/Graphics/Shader.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/Shader.hpp"
+# 6 "F:/Programming/C++/sfml/sfmlTest/Utils.cpp" 2
+# 1 "C:/SFML/include/SFML/Graphics/Sprite.hpp" 1
+# 25 "C:/SFML/include/SFML/Graphics/Sprite.hpp"
        
 
 
@@ -106300,379 +96234,117 @@ private:
 
 
 
-# 1 "C:/SFML/include/SFML/Graphics/Glsl.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/Glsl.hpp"
+# 1 "C:/SFML/include/SFML/Graphics/Drawable.hpp" 1
+# 25 "C:/SFML/include/SFML/Graphics/Drawable.hpp"
        
-# 36 "C:/SFML/include/SFML/Graphics/Glsl.hpp"
+
+
+
+
+
+
+
 namespace sf
 {
-namespace priv
-{
+class RenderTarget;
+struct RenderStates;
 
-template <std::size_t Columns, std::size_t Rows>
-struct Matrix;
 
-template <typename T>
-struct Vector4;
 
-}
 
 
 
-
-
-
-namespace Glsl
-{
-
-
-
-
-
-using Vec2 = Vector2<float>;
-
-
-
-
-
-using Ivec2 = Vector2<int>;
-
-
-
-
-
-using Bvec2 = Vector2<bool>;
-
-
-
-
-
-using Vec3 = Vector3<float>;
-
-
-
-
-
-using Ivec3 = Vector3<int>;
-
-
-
-
-
-using Bvec3 = Vector3<bool>;
-# 182 "C:/SFML/include/SFML/Graphics/Glsl.hpp"
-using Vec4 = priv::Vector4<float>;
-using Ivec4 = priv::Vector4<int>;
-using Bvec4 = priv::Vector4<bool>;
-using Mat3 = priv::Matrix<3, 3>;
-using Mat4 = priv::Matrix<4, 4>;
-
-
-
-}
-}
-
-# 1 "C:/SFML/include/SFML/Graphics/Glsl.inl" 1
-# 38 "C:/SFML/include/SFML/Graphics/Glsl.inl"
-namespace sf
-{
-class Transform;
-}
-
-namespace sf::priv
-{
-
-
-
-
-void __attribute__((dllimport)) copyMatrix(const Transform& source, Matrix<3, 3>& dest);
-void __attribute__((dllimport)) copyMatrix(const Transform& source, Matrix<4, 4>& dest);
-# 59 "C:/SFML/include/SFML/Graphics/Glsl.inl"
-void __attribute__((dllimport)) copyMatrix(const float* source, std::size_t elements, float* dest);
-
-
-
-
-
-
-template <std::size_t Columns, std::size_t Rows>
-struct Matrix
-{
-# 77 "C:/SFML/include/SFML/Graphics/Glsl.inl"
-    explicit Matrix(const float* pointer)
-    {
-        copyMatrix(pointer, Columns * Rows, array.data());
-    }
-# 91 "C:/SFML/include/SFML/Graphics/Glsl.inl"
-    Matrix(const Transform& transform)
-    {
-        copyMatrix(transform, *this);
-    }
-
-    std::array<float, Columns * Rows> array{};
-};
-
-
-
-
-
-template <typename T>
-struct Vector4
-{
-
-
-
-
-    constexpr Vector4() = default;
-# 122 "C:/SFML/include/SFML/Graphics/Glsl.inl"
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wshadow"
-
-    constexpr Vector4(T x, T y, T z, T w) : x(x), y(y), z(z), w(w)
-    {
-    }
-
-#pragma GCC diagnostic pop
-
-
-
-
-
-
-    template <typename U>
-    constexpr explicit operator Vector4<U>() const
-    {
-        return Vector4<U>(static_cast<U>(x), static_cast<U>(y), static_cast<U>(z), static_cast<U>(w));
-    }
-# 151 "C:/SFML/include/SFML/Graphics/Glsl.inl"
-    constexpr Vector4(Color color);
-
-    T x{};
-    T y{};
-    T z{};
-    T w{};
-};
-
-
-
-template <>
-constexpr Vector4<float>::Vector4(Color color) :
-x(color.r / 255.f),
-y(color.g / 255.f),
-z(color.b / 255.f),
-w(color.a / 255.f)
-{
-}
-
-
-
-template <>
-constexpr Vector4<int>::Vector4(Color color) : x(color.r), y(color.g), z(color.b), w(color.a)
-{
-}
-
-}
-# 194 "C:/SFML/include/SFML/Graphics/Glsl.hpp" 2
-# 33 "C:/SFML/include/SFML/Graphics/Shader.hpp" 2
-# 44 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-namespace sf
-{
-class InputStream;
-class Texture;
-
-
-
-
-
-class __attribute__((dllimport)) Shader : GlResource
+class __attribute__((dllimport)) Drawable
 {
 public:
 
 
 
 
-    enum class Type
-    {
-        Vertex,
-        Geometry,
-        Fragment
-    };
-# 74 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    struct CurrentTextureType
-    {
-    };
-# 85 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    static inline CurrentTextureType CurrentTexture;
-# 96 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    Shader() = default;
+    virtual ~Drawable() = default;
 
-
-
-
-
-    ~Shader();
-
-
-
-
-
-    Shader(const Shader&) = delete;
-
-
-
-
-
-    Shader& operator=(const Shader&) = delete;
-
-
-
-
-
-    Shader(Shader&& source) noexcept;
-
-
-
-
-
-    Shader& operator=(Shader&& right) noexcept;
-# 147 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    Shader(const std::filesystem::path& filename, Type type);
-# 168 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    Shader(const std::filesystem::path& vertexShaderFilename, const std::filesystem::path& fragmentShaderFilename);
-# 190 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    Shader(const std::filesystem::path& vertexShaderFilename,
-           const std::filesystem::path& geometryShaderFilename,
-           const std::filesystem::path& fragmentShaderFilename);
-# 212 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    Shader(std::string_view shader, Type type);
-# 233 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    Shader(std::string_view vertexShader, std::string_view fragmentShader);
-# 255 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    Shader(std::string_view vertexShader, std::string_view geometryShader, std::string_view fragmentShader);
-# 275 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    Shader(InputStream& stream, Type type);
-# 296 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    Shader(InputStream& vertexShaderStream, InputStream& fragmentShaderStream);
-# 318 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    Shader(InputStream& vertexShaderStream, InputStream& geometryShaderStream, InputStream& fragmentShaderStream);
-# 339 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    [[nodiscard]] bool loadFromFile(const std::filesystem::path& filename, Type type);
-# 360 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    [[nodiscard]] bool loadFromFile(const std::filesystem::path& vertexShaderFilename,
-                                    const std::filesystem::path& fragmentShaderFilename);
-# 383 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    [[nodiscard]] bool loadFromFile(const std::filesystem::path& vertexShaderFilename,
-                                    const std::filesystem::path& geometryShaderFilename,
-                                    const std::filesystem::path& fragmentShaderFilename);
-# 405 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    [[nodiscard]] bool loadFromMemory(std::string_view shader, Type type);
-# 426 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    [[nodiscard]] bool loadFromMemory(std::string_view vertexShader, std::string_view fragmentShader);
-# 448 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    [[nodiscard]] bool loadFromMemory(std::string_view vertexShader,
-                                      std::string_view geometryShader,
-                                      std::string_view fragmentShader);
-# 470 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    [[nodiscard]] bool loadFromStream(InputStream& stream, Type type);
-# 491 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    [[nodiscard]] bool loadFromStream(InputStream& vertexShaderStream, InputStream& fragmentShaderStream);
-# 513 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    [[nodiscard]] bool loadFromStream(InputStream& vertexShaderStream,
-                                      InputStream& geometryShaderStream,
-                                      InputStream& fragmentShaderStream);
-# 524 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniform(const std::string& name, float x);
-# 533 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniform(const std::string& name, Glsl::Vec2 vector);
-# 542 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniform(const std::string& name, const Glsl::Vec3& vector);
-# 560 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniform(const std::string& name, const Glsl::Vec4& vector);
-# 569 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniform(const std::string& name, int x);
-# 578 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniform(const std::string& name, Glsl::Ivec2 vector);
-# 587 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniform(const std::string& name, const Glsl::Ivec3& vector);
-# 604 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniform(const std::string& name, const Glsl::Ivec4& vector);
-# 613 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniform(const std::string& name, bool x);
-# 622 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniform(const std::string& name, Glsl::Bvec2 vector);
-# 631 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniform(const std::string& name, const Glsl::Bvec3& vector);
-# 640 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniform(const std::string& name, const Glsl::Bvec4& vector);
-# 649 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniform(const std::string& name, const Glsl::Mat3& matrix);
-# 658 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniform(const std::string& name, const Glsl::Mat4& matrix);
-# 690 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniform(const std::string& name, const Texture& texture);
-
-
-
-
-
-    void setUniform(const std::string& name, const Texture&& texture) = delete;
-# 719 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniform(const std::string& name, CurrentTextureType);
-# 729 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniformArray(const std::string& name, const float* scalarArray, std::size_t length);
-# 739 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniformArray(const std::string& name, const Glsl::Vec2* vectorArray, std::size_t length);
-# 749 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniformArray(const std::string& name, const Glsl::Vec3* vectorArray, std::size_t length);
-# 759 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniformArray(const std::string& name, const Glsl::Vec4* vectorArray, std::size_t length);
-# 769 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniformArray(const std::string& name, const Glsl::Mat3* matrixArray, std::size_t length);
-# 779 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void setUniformArray(const std::string& name, const Glsl::Mat4* matrixArray, std::size_t length);
-# 791 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    [[nodiscard]] unsigned int getNativeHandle() const;
-# 814 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    static void bind(const Shader* shader);
-# 826 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    [[nodiscard]] static bool isAvailable();
-# 845 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    [[nodiscard]] static bool isGeometryAvailable();
-
-private:
-# 861 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    [[nodiscard]] bool compile(std::string_view vertexShaderCode,
-                               std::string_view geometryShaderCode,
-                               std::string_view fragmentShaderCode);
-# 872 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    void bindTextures() const;
-# 882 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    int getUniformLocation(const std::string& name);
-# 891 "C:/SFML/include/SFML/Graphics/Shader.hpp"
-    struct UniformBinder;
-
-
-
-
-    using TextureTable = std::unordered_map<int, const Texture*>;
-    using UniformTable = std::unordered_map<std::string, int>;
-
-
-
-
-    unsigned int m_shaderProgram{};
-    int m_currentTexture{-1};
-    TextureTable m_textures;
-    UniformTable m_uniforms;
+protected:
+    friend class RenderTarget;
+# 66 "C:/SFML/include/SFML/Graphics/Drawable.hpp"
+    virtual void draw(RenderTarget& target, RenderStates states) const = 0;
 };
 
 }
-# 47 "C:/SFML/include/SFML/Graphics.hpp" 2
+# 33 "C:/SFML/include/SFML/Graphics/Sprite.hpp" 2
 
-# 1 "C:/SFML/include/SFML/Graphics/Sprite.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/Sprite.hpp"
+
+# 1 "C:/SFML/include/SFML/Graphics/Transformable.hpp" 1
+# 25 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
        
-# 41 "C:/SFML/include/SFML/Graphics/Sprite.hpp"
+# 37 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
+namespace sf
+{
+
+
+
+
+class __attribute__((dllimport)) Transformable
+{
+public:
+
+
+
+
+    Transformable() = default;
+
+
+
+
+
+    virtual ~Transformable() = default;
+# 70 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
+    void setPosition(Vector2f position);
+# 84 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
+    void setRotation(Angle angle);
+# 98 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
+    void setScale(Vector2f factors);
+# 115 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
+    void setOrigin(Vector2f origin);
+# 125 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
+    [[nodiscard]] Vector2f getPosition() const;
+# 137 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
+    [[nodiscard]] Angle getRotation() const;
+# 147 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
+    [[nodiscard]] Vector2f getScale() const;
+# 157 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
+    [[nodiscard]] Vector2f getOrigin() const;
+# 174 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
+    void move(Vector2f offset);
+# 189 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
+    void rotate(Angle angle);
+# 207 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
+    void scale(Vector2f factor);
+# 217 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
+    [[nodiscard]] const Transform& getTransform() const;
+# 227 "C:/SFML/include/SFML/Graphics/Transformable.hpp"
+    [[nodiscard]] const Transform& getInverseTransform() const;
+
+private:
+
+
+
+    Vector2f m_origin;
+    Vector2f m_position;
+    Angle m_rotation;
+    Vector2f m_scale{1, 1};
+    mutable Transform m_transform;
+    mutable Transform m_inverseTransform;
+    mutable bool m_transformNeedUpdate{true};
+    mutable bool m_inverseTransformNeedUpdate{true};
+};
+
+}
+# 36 "C:/SFML/include/SFML/Graphics/Sprite.hpp" 2
+
+
+
+
+
 namespace sf
 {
 class Texture;
@@ -106749,794 +96421,7 @@ private:
 };
 
 }
-# 49 "C:/SFML/include/SFML/Graphics.hpp" 2
-
-# 1 "C:/SFML/include/SFML/Graphics/Text.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/Text.hpp"
-       
-# 47 "C:/SFML/include/SFML/Graphics/Text.hpp"
-namespace sf
-{
-class Font;
-class RenderTarget;
-
-
-
-
-
-class __attribute__((dllimport)) Text : public Drawable, public Transformable
-{
-public:
-
-
-
-
-    enum Style
-    {
-        Regular = 0,
-        Bold = 1 << 0,
-        Italic = 1 << 1,
-        Underlined = 1 << 2,
-        StrikeThrough = 1 << 3
-    };
-# 87 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    Text(const Font& font, String string = "", unsigned int characterSize = 30);
-
-
-
-
-
-    Text(const Font&& font, String string = "", unsigned int characterSize = 30) = delete;
-# 114 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    void setString(const String& string);
-# 131 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    void setFont(const Font& font);
-
-
-
-
-
-    void setFont(const Font&& font) = delete;
-# 156 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    void setCharacterSize(unsigned int size);
-# 170 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    void setLineSpacing(float spacingFactor);
-# 189 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    void setLetterSpacing(float spacingFactor);
-# 203 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    void setStyle(std::uint32_t style);
-# 217 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    void setFillColor(Color color);
-# 229 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    void setOutlineColor(Color color);
-# 244 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    void setOutlineThickness(float thickness);
-# 263 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    [[nodiscard]] const String& getString() const;
-# 276 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    [[nodiscard]] const Font& getFont() const;
-# 286 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    [[nodiscard]] unsigned int getCharacterSize() const;
-# 296 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    [[nodiscard]] float getLetterSpacing() const;
-# 306 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    [[nodiscard]] float getLineSpacing() const;
-# 316 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    [[nodiscard]] std::uint32_t getStyle() const;
-# 326 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    [[nodiscard]] Color getFillColor() const;
-# 336 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    [[nodiscard]] Color getOutlineColor() const;
-# 346 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    [[nodiscard]] float getOutlineThickness() const;
-# 363 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    [[nodiscard]] Vector2f findCharacterPos(std::size_t index) const;
-# 377 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    [[nodiscard]] FloatRect getLocalBounds() const;
-# 391 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    [[nodiscard]] FloatRect getGlobalBounds() const;
-
-private:
-
-
-
-
-
-
-
-    void draw(RenderTarget& target, RenderStates states) const override;
-# 410 "C:/SFML/include/SFML/Graphics/Text.hpp"
-    void ensureGeometryUpdate() const;
-
-
-
-
-    String m_string;
-    const Font* m_font{};
-    unsigned int m_characterSize{30};
-    float m_letterSpacingFactor{1.f};
-    float m_lineSpacingFactor{1.f};
-    std::uint32_t m_style{Regular};
-    Color m_fillColor{Color::White};
-    Color m_outlineColor{Color::Black};
-    float m_outlineThickness{0.f};
-    mutable VertexArray m_vertices{PrimitiveType::Triangles};
-    mutable VertexArray m_outlineVertices{PrimitiveType::Triangles};
-    mutable FloatRect m_bounds;
-    mutable bool m_geometryNeedUpdate{};
-    mutable std::uint64_t m_fontTextureId{};
-};
-
-}
-# 51 "C:/SFML/include/SFML/Graphics.hpp" 2
-
-
-
-
-
-# 1 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp" 1
-# 25 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp"
-       
-# 41 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp"
-namespace sf
-{
-class RenderTarget;
-struct Vertex;
-
-
-
-
-
-class __attribute__((dllimport)) VertexBuffer : public Drawable, private GlResource
-{
-public:
-# 63 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp"
-    enum class Usage
-    {
-        Stream,
-        Dynamic,
-        Static
-    };
-
-
-
-
-
-
-
-    VertexBuffer() = default;
-# 86 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp"
-    explicit VertexBuffer(PrimitiveType type);
-# 96 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp"
-    explicit VertexBuffer(Usage usage);
-# 108 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp"
-    VertexBuffer(PrimitiveType type, Usage usage);
-
-
-
-
-
-
-
-    VertexBuffer(const VertexBuffer& copy);
-
-
-
-
-
-    ~VertexBuffer() override;
-# 140 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp"
-    [[nodiscard]] bool create(std::size_t vertexCount);
-
-
-
-
-
-
-
-    [[nodiscard]] std::size_t getVertexCount() const;
-# 168 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp"
-    [[nodiscard]] bool update(const Vertex* vertices);
-# 201 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp"
-    [[nodiscard]] bool update(const Vertex* vertices, std::size_t vertexCount, unsigned int offset);
-# 211 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp"
-    [[nodiscard]] bool update(const VertexBuffer& vertexBuffer);
-# 221 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp"
-    VertexBuffer& operator=(const VertexBuffer& right);
-
-
-
-
-
-
-
-    void swap(VertexBuffer& right) noexcept;
-# 241 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp"
-    [[nodiscard]] unsigned int getNativeHandle() const;
-# 254 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp"
-    void setPrimitiveType(PrimitiveType type);
-
-
-
-
-
-
-
-    [[nodiscard]] PrimitiveType getPrimitiveType() const;
-# 279 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp"
-    void setUsage(Usage usage);
-
-
-
-
-
-
-
-    [[nodiscard]] Usage getUsage() const;
-# 310 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp"
-    static void bind(const VertexBuffer* vertexBuffer);
-# 322 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp"
-    [[nodiscard]] static bool isAvailable();
-
-private:
-
-
-
-
-
-
-
-    void draw(RenderTarget& target, RenderStates states) const override;
-
-
-
-
-    unsigned int m_buffer{};
-    std::size_t m_size{};
-    PrimitiveType m_primitiveType{PrimitiveType::Points};
-    Usage m_usage{Usage::Stream};
-};
-# 350 "C:/SFML/include/SFML/Graphics/VertexBuffer.hpp"
-__attribute__((dllimport)) void swap(VertexBuffer& left, VertexBuffer& right) noexcept;
-
-}
-# 57 "C:/SFML/include/SFML/Graphics.hpp" 2
-
-
-# 1 "C:/SFML/include/SFML/Window.hpp" 1
-# 25 "C:/SFML/include/SFML/Window.hpp"
-       
-
-
-
-
-
-# 1 "C:/SFML/include/SFML/Window/Clipboard.hpp" 1
-# 25 "C:/SFML/include/SFML/Window/Clipboard.hpp"
-       
-
-
-
-
-
-
-
-namespace sf
-{
-class String;
-
-
-
-
-
-namespace Clipboard
-{
-# 53 "C:/SFML/include/SFML/Window/Clipboard.hpp"
-[[nodiscard]] __attribute__((dllimport)) String getString();
-# 70 "C:/SFML/include/SFML/Window/Clipboard.hpp"
-__attribute__((dllimport)) void setString(const String& text);
-}
-
-}
-# 32 "C:/SFML/include/SFML/Window.hpp" 2
-# 1 "C:/SFML/include/SFML/Window/Context.hpp" 1
-# 25 "C:/SFML/include/SFML/Window/Context.hpp"
-       
-# 42 "C:/SFML/include/SFML/Window/Context.hpp"
-namespace sf
-{
-namespace priv
-{
-class GlContext;
-}
-
-struct ContextSettings;
-
-using GlFunctionPointer = void (*)();
-
-
-
-
-
-class __attribute__((dllimport)) Context : GlResource
-{
-public:
-
-
-
-
-
-
-    Context();
-
-
-
-
-
-
-
-    ~Context();
-
-
-
-
-
-    Context(const Context&) = delete;
-
-
-
-
-
-    Context& operator=(const Context&) = delete;
-
-
-
-
-
-    Context(Context&& context) noexcept;
-
-
-
-
-
-    Context& operator=(Context&& context) noexcept;
-# 108 "C:/SFML/include/SFML/Window/Context.hpp"
-    [[nodiscard]] bool setActive(bool active);
-# 120 "C:/SFML/include/SFML/Window/Context.hpp"
-    [[nodiscard]] const ContextSettings& getSettings() const;
-# 130 "C:/SFML/include/SFML/Window/Context.hpp"
-    [[nodiscard]] static bool isExtensionAvailable(std::string_view name);
-# 143 "C:/SFML/include/SFML/Window/Context.hpp"
-    [[nodiscard]] static GlFunctionPointer getFunction(const char* name);
-# 155 "C:/SFML/include/SFML/Window/Context.hpp"
-    [[nodiscard]] static const Context* getActiveContext();
-# 166 "C:/SFML/include/SFML/Window/Context.hpp"
-    [[nodiscard]] static std::uint64_t getActiveContextId();
-# 178 "C:/SFML/include/SFML/Window/Context.hpp"
-    Context(const ContextSettings& settings, Vector2u size);
-
-private:
-
-
-
-    std::unique_ptr<priv::GlContext> m_context;
-};
-
-}
-# 33 "C:/SFML/include/SFML/Window.hpp" 2
-
-# 1 "C:/SFML/include/SFML/Window/Cursor.hpp" 1
-# 25 "C:/SFML/include/SFML/Window/Cursor.hpp"
-       
-# 39 "C:/SFML/include/SFML/Window/Cursor.hpp"
-namespace sf
-{
-namespace priv
-{
-class CursorImpl;
-}
-
-
-
-
-
-class __attribute__((dllimport)) Cursor
-{
-public:
-# 89 "C:/SFML/include/SFML/Window/Cursor.hpp"
-    enum class Type
-    {
-        Arrow,
-        ArrowWait,
-        Wait,
-        Text,
-        Hand,
-        SizeHorizontal,
-        SizeVertical,
-        SizeTopLeftBottomRight,
-        SizeBottomLeftTopRight,
-        SizeLeft,
-        SizeRight,
-        SizeTop,
-        SizeBottom,
-        SizeTopLeft,
-        SizeBottomRight,
-        SizeBottomLeft,
-        SizeTopRight,
-        SizeAll,
-        Cross,
-        Help,
-        NotAllowed
-    };
-# 121 "C:/SFML/include/SFML/Window/Cursor.hpp"
-    ~Cursor();
-
-
-
-
-
-    Cursor(const Cursor&) = delete;
-
-
-
-
-
-    Cursor& operator=(const Cursor&) = delete;
-
-
-
-
-
-    Cursor(Cursor&&) noexcept;
-
-
-
-
-
-    Cursor& operator=(Cursor&&) noexcept;
-# 177 "C:/SFML/include/SFML/Window/Cursor.hpp"
-    Cursor(const std::uint8_t* pixels, Vector2u size, Vector2u hotspot);
-# 194 "C:/SFML/include/SFML/Window/Cursor.hpp"
-    explicit Cursor(Type type);
-# 226 "C:/SFML/include/SFML/Window/Cursor.hpp"
-    [[nodiscard]] static std::optional<Cursor> createFromPixels(const std::uint8_t* pixels, Vector2u size, Vector2u hotspot);
-# 242 "C:/SFML/include/SFML/Window/Cursor.hpp"
-    [[nodiscard]] static std::optional<Cursor> createFromSystem(Type type);
-
-private:
-    friend class WindowBase;
-
-
-
-
-
-    Cursor();
-# 262 "C:/SFML/include/SFML/Window/Cursor.hpp"
-    [[nodiscard]] const priv::CursorImpl& getImpl() const;
-
-
-
-
-    std::unique_ptr<priv::CursorImpl> m_impl;
-};
-
-}
-# 35 "C:/SFML/include/SFML/Window.hpp" 2
-
-
-
-
-
-# 1 "C:/SFML/include/SFML/Window/Touch.hpp" 1
-# 25 "C:/SFML/include/SFML/Window/Touch.hpp"
-       
-# 35 "C:/SFML/include/SFML/Window/Touch.hpp"
-namespace sf
-{
-class WindowBase;
-
-
-
-
-
-namespace Touch
-{
-# 53 "C:/SFML/include/SFML/Window/Touch.hpp"
-[[nodiscard]] __attribute__((dllimport)) bool isDown(unsigned int finger);
-# 66 "C:/SFML/include/SFML/Window/Touch.hpp"
-[[nodiscard]] __attribute__((dllimport)) Vector2i getPosition(unsigned int finger);
-# 80 "C:/SFML/include/SFML/Window/Touch.hpp"
-[[nodiscard]] __attribute__((dllimport)) Vector2i getPosition(unsigned int finger, const WindowBase& relativeTo);
-}
-
-}
-# 41 "C:/SFML/include/SFML/Window.hpp" 2
-
-
-
-
-
-# 1 "C:/SFML/include/SFML/System.hpp" 1
-# 25 "C:/SFML/include/SFML/System.hpp"
-       
-# 35 "C:/SFML/include/SFML/System.hpp"
-# 1 "C:/SFML/include/SFML/System/Err.hpp" 1
-# 25 "C:/SFML/include/SFML/System/Err.hpp"
-       
-# 35 "C:/SFML/include/SFML/System/Err.hpp"
-namespace sf
-{
-
-
-
-
-[[nodiscard]] __attribute__((dllimport)) std::ostream& err();
-
-}
-# 36 "C:/SFML/include/SFML/System.hpp" 2
-# 1 "C:/SFML/include/SFML/System/Exception.hpp" 1
-# 25 "C:/SFML/include/SFML/System/Exception.hpp"
-       
-# 35 "C:/SFML/include/SFML/System/Exception.hpp"
-namespace sf
-{
-
-
-
-
-class __attribute__((dllimport)) Exception : public std::runtime_error
-{
-public:
-    using std::runtime_error::runtime_error;
-};
-}
-# 37 "C:/SFML/include/SFML/System.hpp" 2
-# 1 "C:/SFML/include/SFML/System/FileInputStream.hpp" 1
-# 25 "C:/SFML/include/SFML/System/FileInputStream.hpp"
-       
-# 34 "C:/SFML/include/SFML/System/FileInputStream.hpp"
-# 1 "C:/SFML/include/SFML/System/InputStream.hpp" 1
-# 25 "C:/SFML/include/SFML/System/InputStream.hpp"
-       
-# 39 "C:/SFML/include/SFML/System/InputStream.hpp"
-namespace sf
-{
-
-
-
-
-class __attribute__((dllimport)) InputStream
-{
-public:
-
-
-
-
-    virtual ~InputStream() = default;
-# 66 "C:/SFML/include/SFML/System/InputStream.hpp"
-    [[nodiscard]] virtual std::optional<std::size_t> read(void* data, std::size_t size) = 0;
-# 76 "C:/SFML/include/SFML/System/InputStream.hpp"
-    [[nodiscard]] virtual std::optional<std::size_t> seek(std::size_t position) = 0;
-
-
-
-
-
-
-
-    [[nodiscard]] virtual std::optional<std::size_t> tell() = 0;
-
-
-
-
-
-
-
-    virtual std::optional<std::size_t> getSize() = 0;
-};
-
-}
-# 35 "C:/SFML/include/SFML/System/FileInputStream.hpp" 2
-
-
-
-
-
-# 1 "C:/mingw64/include/c++/14.2.0/cstdio" 1 3
-# 39 "C:/mingw64/include/c++/14.2.0/cstdio" 3
-       
-# 40 "C:/mingw64/include/c++/14.2.0/cstdio" 3
-# 41 "C:/SFML/include/SFML/System/FileInputStream.hpp" 2
-# 50 "C:/SFML/include/SFML/System/FileInputStream.hpp"
-namespace sf
-{
-
-
-
-
-class __attribute__((dllimport)) FileInputStream : public InputStream
-{
-public:
-
-
-
-
-
-
-
-    FileInputStream();
-
-
-
-
-
-    ~FileInputStream() override;
-
-
-
-
-
-    FileInputStream(const FileInputStream&) = delete;
-
-
-
-
-
-    FileInputStream& operator=(const FileInputStream&) = delete;
-
-
-
-
-
-    FileInputStream(FileInputStream&&) noexcept;
-
-
-
-
-
-    FileInputStream& operator=(FileInputStream&&) noexcept;
-# 106 "C:/SFML/include/SFML/System/FileInputStream.hpp"
-    explicit FileInputStream(const std::filesystem::path& filename);
-# 116 "C:/SFML/include/SFML/System/FileInputStream.hpp"
-    [[nodiscard]] bool open(const std::filesystem::path& filename);
-# 130 "C:/SFML/include/SFML/System/FileInputStream.hpp"
-    [[nodiscard]] std::optional<std::size_t> read(void* data, std::size_t size) override;
-# 140 "C:/SFML/include/SFML/System/FileInputStream.hpp"
-    [[nodiscard]] std::optional<std::size_t> seek(std::size_t position) override;
-
-
-
-
-
-
-
-    [[nodiscard]] std::optional<std::size_t> tell() override;
-
-
-
-
-
-
-
-    std::optional<std::size_t> getSize() override;
-
-private:
-
-
-
-
-    struct FileCloser
-    {
-        void operator()(std::FILE* file);
-    };
-# 175 "C:/SFML/include/SFML/System/FileInputStream.hpp"
-    std::unique_ptr<std::FILE, FileCloser> m_file;
-};
-
-}
-# 38 "C:/SFML/include/SFML/System.hpp" 2
-
-# 1 "C:/SFML/include/SFML/System/MemoryInputStream.hpp" 1
-# 25 "C:/SFML/include/SFML/System/MemoryInputStream.hpp"
-       
-# 40 "C:/SFML/include/SFML/System/MemoryInputStream.hpp"
-namespace sf
-{
-
-
-
-
-class __attribute__((dllimport)) MemoryInputStream : public InputStream
-{
-public:
-
-
-
-
-
-
-
-    MemoryInputStream(const void* data, std::size_t sizeInBytes);
-# 70 "C:/SFML/include/SFML/System/MemoryInputStream.hpp"
-    [[nodiscard]] std::optional<std::size_t> read(void* data, std::size_t size) override;
-# 80 "C:/SFML/include/SFML/System/MemoryInputStream.hpp"
-    [[nodiscard]] std::optional<std::size_t> seek(std::size_t position) override;
-
-
-
-
-
-
-
-    [[nodiscard]] std::optional<std::size_t> tell() override;
-
-
-
-
-
-
-
-    std::optional<std::size_t> getSize() override;
-
-private:
-
-
-
-    const std::byte* m_data{};
-    std::size_t m_size{};
-    std::size_t m_offset{};
-};
-
-}
-# 40 "C:/SFML/include/SFML/System.hpp" 2
-# 1 "C:/SFML/include/SFML/System/Sleep.hpp" 1
-# 25 "C:/SFML/include/SFML/System/Sleep.hpp"
-       
-
-
-
-
-
-
-
-namespace sf
-{
-class Time;
-# 55 "C:/SFML/include/SFML/System/Sleep.hpp"
-void __attribute__((dllimport)) sleep(Time duration);
-
-}
-# 41 "C:/SFML/include/SFML/System.hpp" 2
-# 47 "C:/SFML/include/SFML/Window.hpp" 2
-# 60 "C:/SFML/include/SFML/Graphics.hpp" 2
-# 5 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
-# 1 "F:/Programming/C++/sfml/sfmlTest/snakeGame.h" 1
-
-
-
-
-
-
-
-       
-
-void runSnakeGame();
-# 6 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
-
-# 1 "F:/Programming/C++/sfml/sfmlTest/Food.h" 1
-
-
-
-
-
-
-# 1 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 1
-
-
-
-
-
-
+# 7 "F:/Programming/C++/sfml/sfmlTest/Utils.cpp" 2
 
 # 1 "F:/Programming/C++/sfml/sfmlTest/position.h" 1
 
@@ -107549,125 +96434,29 @@ struct Position {
     float x;
     float y;
 };
-# 9 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
-class MoveableObject {
-public:
+# 9 "F:/Programming/C++/sfml/sfmlTest/Utils.cpp" 2
 
-    MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement = 0.0f);
+Position ClampToWindow(const Position& desiredPos, const sf::RenderWindow& window, sf::Sprite& sprite) {
 
 
-    const sf::Sprite& getSprite() const;
 
 
-    const Position& getPosition() const;
-    void setPosition(const Position& newPos, const sf::RenderWindow& window);
+    const float maxX = window.getSize().x - sprite.getGlobalBounds().size.x;
+    const float maxY = window.getSize().y - sprite.getGlobalBounds().size.y;;
+
+    Position allowedPosition {desiredPos.x, desiredPos.y};
 
 
-    void setMovementIncrement(float);
-    float getMovementIncrement() const;
-
-private:
-    Position position_;
+    if (desiredPos.x < 0) {allowedPosition.x = 0;}
+    if (desiredPos.y < 0) {allowedPosition.y = 0;}
 
 
-    float movementIncrement_ = 0.0f;
-    const sf::Texture texture_;
-    sf::Sprite sprite_;
-};
-# 8 "F:/Programming/C++/sfml/sfmlTest/Food.h" 2
-
-class Food : public MoveableObject {
-public:
-    Food(const sf::Texture& texture, const Position& spawnPos);
-
-private:
-
-};
-# 8 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
-
-
-void CheckForWindowEvents(sf::RenderWindow& window) {
-    while (const std::optional event = window.pollEvent()) {
-        if (event->is<sf::Event::Closed>()) {
-            window.close();
-        }
+    if (desiredPos.x > maxX) {
+        allowedPosition.x = maxX;
     }
-}
-
-void MovePlayerBasedOnKeyPresses(MoveableObject& player, sf::RenderWindow& window) {
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)) {
-        player.setPosition(Position{player.getPosition().x + player.getMovementIncrement(),player.getPosition().y}, window);
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) {
-        player.setPosition(Position{player.getPosition().x - player.getMovementIncrement(),player.getPosition().y}, window);
+    if (desiredPos.y > maxY) {
+        allowedPosition.y = maxY;
     }
 
-
-
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down)) {
-        player.setPosition(Position{player.getPosition().x, player.getPosition().y + player.getMovementIncrement()}, window);
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up)) {
-        player.setPosition(Position{player.getPosition().x, player.getPosition().y - player.getMovementIncrement()}, window);
-    }
-}
-
-void DrawSpriteToScreen(const sf::Sprite& sprite, sf::RenderWindow& window) {
-    window.draw(sprite);
-}
-
-void SetInitialSpritePos(sf::Sprite& sprite, const float& startingXPos, const float& startingYPos) {
-    const sf::Vector2f startingPos = {startingXPos, startingYPos};
-    sprite.setPosition(startingPos);
-}
-
-void SetPlayerBoundaries(sf::RenderWindow& window) {
-
-
-
-
-    float minX = 0;
-    float maxX = window.getSize().x;
-
-    float minY = 0;
-    float maxY = window.getSize().y;
-
-
-}
-
-void runSnakeGame() {
-
-    sf::RenderWindow window(sf::VideoMode({800,600}), "SFML Test", sf::Style::Titlebar);
-
-
-
-    const sf::Texture characterTexture("img/sword32.png");
-    constexpr Position startPosition = {0,0};
-    constexpr float playerMovementIncrement = 0.05f;
-    MoveableObject player(characterTexture, startPosition, playerMovementIncrement);
-
-
-    const sf::Texture foodTexture("img/banana32.png");
-    constexpr Position spawnPosition = {100,100};
-    Food food(foodTexture, spawnPosition);
-
-    while (window.isOpen()) {
-
-        CheckForWindowEvents(window);
-        MovePlayerBasedOnKeyPresses(player, window);
-
-
-
-
-        window.clear(sf::Color::Black);
-
-
-        DrawSpriteToScreen(player.getSprite(), window);
-        DrawSpriteToScreen(food.getSprite(), window);
-
-
-        window.display();
-    }
+    return allowedPosition;
 }

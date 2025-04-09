@@ -15,23 +15,23 @@ void CheckForWindowEvents(sf::RenderWindow& window) {
     }
 }
 
-void MovePlayerBasedOnKeyPresses(MoveableObject& player, const float& movementIncrement) {
+void MovePlayerBasedOnKeyPresses(MoveableObject& player, sf::RenderWindow& window) {
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)) {
-        player.setPosition(Position{player.getPosition().x + movementIncrement,player.getPosition().y});
+        player.setPosition(Position{player.getPosition().x + player.getMovementIncrement(),player.getPosition().y}, window);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) {
-        player.setPosition(Position{player.getPosition().x - movementIncrement,player.getPosition().y});
+        player.setPosition(Position{player.getPosition().x - player.getMovementIncrement(),player.getPosition().y}, window);
     }
 
     // Y positions are reversed because SFML draws the plane from the top left corner
     // i.e., a positive change in y means we are moving down
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down)) {
-        player.setPosition(Position{player.getPosition().x, player.getPosition().y + movementIncrement});
+        player.setPosition(Position{player.getPosition().x, player.getPosition().y + player.getMovementIncrement()}, window);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up)) {
-        player.setPosition(Position{player.getPosition().x, player.getPosition().y - movementIncrement});
+        player.setPosition(Position{player.getPosition().x, player.getPosition().y - player.getMovementIncrement()}, window);
     }
 }
 
@@ -48,6 +48,14 @@ void SetPlayerBoundaries(sf::RenderWindow& window) {
     // Get the size of the window from the window instance
     // this will define the minimum and maximum X and Y values
     // We can assume the window will not be resized for this example
+
+    float minX = 0;
+    float maxX = window.getSize().x;
+
+    float minY = 0;
+    float maxY = window.getSize().y;
+
+
 }
 
 void runSnakeGame() {
@@ -58,8 +66,8 @@ void runSnakeGame() {
     // Init player
     const sf::Texture characterTexture("img/sword32.png");
     constexpr Position startPosition = {0,0};
-    const float movementIncrement = 0.05f;
-    MoveableObject player(characterTexture, startPosition);
+    constexpr float playerMovementIncrement = 0.05f;
+    MoveableObject player(characterTexture, startPosition, playerMovementIncrement);
 
     //Init food (sample)
     const sf::Texture foodTexture("img/banana32.png");
@@ -69,7 +77,7 @@ void runSnakeGame() {
     while (window.isOpen()) {
         // Check for events
         CheckForWindowEvents(window);
-        MovePlayerBasedOnKeyPresses(player, movementIncrement);
+        MovePlayerBasedOnKeyPresses(player, window);
 
         // Drawing //
 

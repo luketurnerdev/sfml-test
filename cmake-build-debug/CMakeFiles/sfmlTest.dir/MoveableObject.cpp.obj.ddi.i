@@ -107540,7 +107540,7 @@ public:
 
 
     const Position& getPosition() const;
-    void setPosition(const Position& newPos);
+    void setPosition(const Position& newPos, const sf::RenderWindow& window);
 
 
     void setMovementIncrement(float);
@@ -107555,6 +107555,20 @@ private:
     sf::Sprite sprite_;
 };
 # 6 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.cpp" 2
+# 1 "F:/Programming/C++/sfml/sfmlTest/Utils.h" 1
+
+
+
+
+
+# 1 "F:/Programming/C++/sfml/sfmlTest/Position.h" 1
+# 7 "F:/Programming/C++/sfml/sfmlTest/Utils.h" 2
+
+
+
+
+Position ClampToWindow(const Position& desiredPos, const sf::RenderWindow& window, sf::Sprite& sprite);
+# 7 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.cpp" 2
 
 
 
@@ -107576,7 +107590,8 @@ const Position &MoveableObject::getPosition() const {
     return position_;
 }
 
-void MoveableObject::setPosition(const Position& newPos) {
-    position_ = newPos;
+void MoveableObject::setPosition(const Position& newPos, const sf::RenderWindow& window) {
+    Position validPos = ClampToWindow(newPos, window, sprite_);
+    position_ = validPos;
     sprite_.setPosition(sf::Vector2f(position_.x, position_.y));
 }

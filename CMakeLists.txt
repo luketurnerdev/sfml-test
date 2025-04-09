@@ -25,6 +25,8 @@ add_executable(sfmlTest
         Position.h
         Food.h
         Food.cpp
+        Utils.h
+        Utils.cpp
 )
 
 # Link SFML dynamic libraries (no -s suffix)

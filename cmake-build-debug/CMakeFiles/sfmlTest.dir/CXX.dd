@@ -7,3 +7,5 @@ build CMakeFiles/sfmlTest.dir/MoveableObject.cpp.obj: dyndep
 
 build CMakeFiles/sfmlTest.dir/Food.cpp.obj: dyndep
 
+build CMakeFiles/sfmlTest.dir/Utils.cpp.obj: dyndep
+
