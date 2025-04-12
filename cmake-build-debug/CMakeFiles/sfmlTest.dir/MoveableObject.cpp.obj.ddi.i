@@ -107518,7 +107518,10 @@ void __attribute__((dllimport)) sleep(Time duration);
 # 47 "C:/SFML/include/SFML/Window.hpp" 2
 # 60 "C:/SFML/include/SFML/Graphics.hpp" 2
 # 8 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
-# 1 "F:/Programming/C++/sfml/sfmlTest/position.h" 1
+
+# 1 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 1
+# 11 "F:/Programming/C++/sfml/sfmlTest/Boundary.h"
+# 1 "F:/Programming/C++/sfml/sfmlTest/Position.h" 1
 
 
 
@@ -107529,7 +107532,17 @@ struct Position {
     float x;
     float y;
 };
-# 9 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
+# 12 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 2
+
+struct Boundary {
+    Position topLeftCorner;
+    Position topRightCorner;
+    Position bottomLeftCorne;
+    Position bottomRightCorner;
+};
+# 10 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
+# 1 "F:/Programming/C++/sfml/sfmlTest/position.h" 1
+# 11 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
 class MoveableObject {
 public:
 
@@ -107546,8 +107559,14 @@ public:
     void setMovementIncrement(float);
     float getMovementIncrement() const;
 
+
+
+    const Boundary& getBoundary() const;
+    void setBoundary();
+
 private:
     Position position_;
+    Boundary boundary_;
 
 
     float movementIncrement_ = 0.0f;
@@ -107556,18 +107575,19 @@ private:
 };
 # 6 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.cpp" 2
 # 1 "F:/Programming/C++/sfml/sfmlTest/Utils.h" 1
-
-
-
-
-
-# 1 "F:/Programming/C++/sfml/sfmlTest/Position.h" 1
-# 7 "F:/Programming/C++/sfml/sfmlTest/Utils.h" 2
-
-
-
-
+# 12 "F:/Programming/C++/sfml/sfmlTest/Utils.h"
 Position ClampToWindow(const Position& desiredPos, const sf::RenderWindow& window, sf::Sprite& sprite);
+Boundary DetermineSpriteBoundary(const sf::Sprite& sprite, const Position& spritePositionInSpace);
+
+class Logger {
+public:
+    explicit Logger(const float intervalInSeconds);
+    void LogIfReady(const std::string& message);
+
+private:
+    float interval;
+    sf::Clock clock;
+};
 # 7 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.cpp" 2
 
 
@@ -107590,8 +107610,20 @@ const Position &MoveableObject::getPosition() const {
     return position_;
 }
 
+const Boundary &MoveableObject::getBoundary() const {
+    return boundary_;
+}
+
+
+
 void MoveableObject::setPosition(const Position& newPos, const sf::RenderWindow& window) {
-    Position validPos = ClampToWindow(newPos, window, sprite_);
+    const Position validPos = ClampToWindow(newPos, window, sprite_);
     position_ = validPos;
     sprite_.setPosition(sf::Vector2f(position_.x, position_.y));
+}
+
+void MoveableObject::setBoundary() {
+    const Boundary boundary = DetermineSpriteBoundary(sprite_, position_);
+
+    boundary_ = boundary;
 }

@@ -5,6 +5,8 @@
 #define PLAYER_H
 
 #include <SFML/Graphics.hpp>
+
+#include "Boundary.h"
 #include "position.h"
 class MoveableObject {
 public:
@@ -22,8 +24,14 @@ public:
     void setMovementIncrement(float);
     float getMovementIncrement() const;
 
+    // Boundaries / Collisions
+    // We want to get the pixel values of the outer edges of the sprite
+    const Boundary& getBoundary() const;
+    void setBoundary();
+
 private:
     Position position_;
+    Boundary boundary_;
 
     // Default value because some of our instances (i.e., food) don't need movespeed
     float movementIncrement_ = 0.0f;

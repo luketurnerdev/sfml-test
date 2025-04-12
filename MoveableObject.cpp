@@ -25,10 +25,23 @@ const Position &MoveableObject::getPosition() const {
     return position_;
 }
 
+const Boundary &MoveableObject::getBoundary() const {
+    return boundary_;
+}
+
+// Setters
+
 void MoveableObject::setPosition(const Position& newPos, const sf::RenderWindow& window) {
-    Position validPos = ClampToWindow(newPos, window, sprite_);
+    const Position validPos = ClampToWindow(newPos, window, sprite_);
     position_ = validPos;
     sprite_.setPosition(sf::Vector2f(position_.x, position_.y));
 }
+
+void MoveableObject::setBoundary() {
+    const Boundary boundary = DetermineSpriteBoundary(sprite_, position_);
+    // Maybe error handling here TODO
+    boundary_ = boundary;
+}
+
 
 

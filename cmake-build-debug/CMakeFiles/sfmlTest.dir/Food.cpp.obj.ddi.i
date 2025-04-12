@@ -107525,7 +107525,10 @@ void __attribute__((dllimport)) sleep(Time duration);
 # 47 "C:/SFML/include/SFML/Window.hpp" 2
 # 60 "C:/SFML/include/SFML/Graphics.hpp" 2
 # 8 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
-# 1 "F:/Programming/C++/sfml/sfmlTest/position.h" 1
+
+# 1 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 1
+# 11 "F:/Programming/C++/sfml/sfmlTest/Boundary.h"
+# 1 "F:/Programming/C++/sfml/sfmlTest/Position.h" 1
 
 
 
@@ -107536,7 +107539,17 @@ struct Position {
     float x;
     float y;
 };
-# 9 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
+# 12 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 2
+
+struct Boundary {
+    Position topLeftCorner;
+    Position topRightCorner;
+    Position bottomLeftCorne;
+    Position bottomRightCorner;
+};
+# 10 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
+# 1 "F:/Programming/C++/sfml/sfmlTest/position.h" 1
+# 11 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
 class MoveableObject {
 public:
 
@@ -107553,8 +107566,14 @@ public:
     void setMovementIncrement(float);
     float getMovementIncrement() const;
 
+
+
+    const Boundary& getBoundary() const;
+    void setBoundary();
+
 private:
     Position position_;
+    Boundary boundary_;
 
 
     float movementIncrement_ = 0.0f;
@@ -107562,7 +107581,7 @@ private:
     sf::Sprite sprite_;
 };
 # 8 "F:/Programming/C++/sfml/sfmlTest/Food.h" 2
-
+# 18 "F:/Programming/C++/sfml/sfmlTest/Food.h"
 class Food : public MoveableObject {
 public:
     Food(const sf::Texture& texture, const Position& spawnPos);

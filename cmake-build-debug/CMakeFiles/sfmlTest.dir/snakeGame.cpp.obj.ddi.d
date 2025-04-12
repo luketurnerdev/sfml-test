@@ -300,6 +300,10 @@ CMakeFiles\sfmlTest.dir\snakeGame.cpp.obj.ddi: \
  C:/SFML/include/SFML/System/MemoryInputStream.hpp \
  C:/SFML/include/SFML/System/Sleep.hpp \
  F:/Programming/C++/sfml/sfmlTest/snakeGame.h \
+ C:/mingw64/include/c++/14.2.0/iostream \
  F:/Programming/C++/sfml/sfmlTest/Food.h \
  F:/Programming/C++/sfml/sfmlTest/MoveableObject.h \
- F:/Programming/C++/sfml/sfmlTest/position.h
+ F:/Programming/C++/sfml/sfmlTest/Boundary.h \
+ F:/Programming/C++/sfml/sfmlTest/Position.h \
+ F:/Programming/C++/sfml/sfmlTest/position.h \
+ F:/Programming/C++/sfml/sfmlTest/Utils.h

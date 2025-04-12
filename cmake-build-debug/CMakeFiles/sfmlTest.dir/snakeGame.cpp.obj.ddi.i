@@ -107523,6 +107523,38 @@ void __attribute__((dllimport)) sleep(Time duration);
 void runSnakeGame();
 # 6 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
 
+# 1 "C:/mingw64/include/c++/14.2.0/iostream" 1 3
+# 36 "C:/mingw64/include/c++/14.2.0/iostream" 3
+       
+# 37 "C:/mingw64/include/c++/14.2.0/iostream" 3
+
+
+
+
+
+
+
+
+# 44 "C:/mingw64/include/c++/14.2.0/iostream" 3
+namespace std
+{
+
+# 62 "C:/mingw64/include/c++/14.2.0/iostream" 3
+  extern istream cin;
+  extern ostream cout;
+  extern ostream cerr;
+  extern ostream clog;
+
+
+  extern wistream wcin;
+  extern wostream wcout;
+  extern wostream wcerr;
+  extern wostream wclog;
+# 85 "C:/mingw64/include/c++/14.2.0/iostream" 3
+
+}
+# 8 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
+
 # 1 "F:/Programming/C++/sfml/sfmlTest/Food.h" 1
 
 
@@ -107531,6 +107563,10 @@ void runSnakeGame();
 
 
 # 1 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 1
+# 9 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h"
+# 1 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 1
+# 11 "F:/Programming/C++/sfml/sfmlTest/Boundary.h"
+# 1 "F:/Programming/C++/sfml/sfmlTest/Position.h" 1
 
 
 
@@ -107538,18 +107574,22 @@ void runSnakeGame();
 
 
 
-# 1 "F:/Programming/C++/sfml/sfmlTest/position.h" 1
-
-
-
-
-
-
+# 7 "F:/Programming/C++/sfml/sfmlTest/Position.h"
 struct Position {
     float x;
     float y;
 };
-# 9 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
+# 12 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 2
+
+struct Boundary {
+    Position topLeftCorner;
+    Position topRightCorner;
+    Position bottomLeftCorne;
+    Position bottomRightCorner;
+};
+# 10 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
+# 1 "F:/Programming/C++/sfml/sfmlTest/position.h" 1
+# 11 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
 class MoveableObject {
 public:
 
@@ -107566,8 +107606,14 @@ public:
     void setMovementIncrement(float);
     float getMovementIncrement() const;
 
+
+
+    const Boundary& getBoundary() const;
+    void setBoundary();
+
 private:
     Position position_;
+    Boundary boundary_;
 
 
     float movementIncrement_ = 0.0f;
@@ -107575,7 +107621,7 @@ private:
     sf::Sprite sprite_;
 };
 # 8 "F:/Programming/C++/sfml/sfmlTest/Food.h" 2
-
+# 18 "F:/Programming/C++/sfml/sfmlTest/Food.h"
 class Food : public MoveableObject {
 public:
     Food(const sf::Texture& texture, const Position& spawnPos);
@@ -107583,7 +107629,22 @@ public:
 private:
 
 };
-# 8 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
+# 10 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
+# 1 "F:/Programming/C++/sfml/sfmlTest/Utils.h" 1
+# 12 "F:/Programming/C++/sfml/sfmlTest/Utils.h"
+Position ClampToWindow(const Position& desiredPos, const sf::RenderWindow& window, sf::Sprite& sprite);
+Boundary DetermineSpriteBoundary(const sf::Sprite& sprite, const Position& spritePositionInSpace);
+
+class Logger {
+public:
+    explicit Logger(const float intervalInSeconds);
+    void LogIfReady(const std::string& message);
+
+private:
+    float interval;
+    sf::Clock clock;
+};
+# 11 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
 
 
 void CheckForWindowEvents(sf::RenderWindow& window) {
@@ -107623,20 +107684,6 @@ void SetInitialSpritePos(sf::Sprite& sprite, const float& startingXPos, const fl
     sprite.setPosition(startingPos);
 }
 
-void SetPlayerBoundaries(sf::RenderWindow& window) {
-
-
-
-
-    float minX = 0;
-    float maxX = window.getSize().x;
-
-    float minY = 0;
-    float maxY = window.getSize().y;
-
-
-}
-
 void runSnakeGame() {
 
     sf::RenderWindow window(sf::VideoMode({800,600}), "SFML Test", sf::Style::Titlebar);
@@ -107653,7 +107700,10 @@ void runSnakeGame() {
     constexpr Position spawnPosition = {100,100};
     Food food(foodTexture, spawnPosition);
 
+    Logger logger(2.0f);
     while (window.isOpen()) {
+
+
 
         CheckForWindowEvents(window);
         MovePlayerBasedOnKeyPresses(player, window);

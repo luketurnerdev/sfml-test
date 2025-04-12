@@ -1,9 +1,11 @@
 CMakeFiles\sfmlTest.dir\Utils.cpp.obj.ddi: \
  F:/Programming/C++/sfml/sfmlTest/Utils.cpp \
- C:/SFML/include/SFML/Graphics/RenderWindow.hpp \
- C:/SFML/include/SFML/Graphics/Export.hpp C:/SFML/include/SFML/Config.hpp \
- C:/SFML/include/SFML/Graphics/RenderTarget.hpp \
+ F:/Programming/C++/sfml/sfmlTest/Utils.h \
+ C:/SFML/include/SFML/Graphics.hpp \
  C:/SFML/include/SFML/Graphics/BlendMode.hpp \
+ C:/SFML/include/SFML/Graphics/Export.hpp C:/SFML/include/SFML/Config.hpp \
+ C:/SFML/include/SFML/Graphics/CircleShape.hpp \
+ C:/SFML/include/SFML/Graphics/Shape.hpp \
  C:/SFML/include/SFML/Graphics/Color.hpp \
  C:/mingw64/include/c++/14.2.0/cstdint \
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -22,7 +24,7 @@ CMakeFiles\sfmlTest.dir\Utils.cpp.obj.ddi: \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
  C:/mingw64/x86_64-w64-mingw32/include/stddef.h \
  C:/SFML/include/SFML/Graphics/Color.inl \
- C:/SFML/include/SFML/Graphics/CoordinateType.hpp \
+ C:/SFML/include/SFML/Graphics/Drawable.hpp \
  C:/SFML/include/SFML/Graphics/PrimitiveType.hpp \
  C:/SFML/include/SFML/Graphics/Rect.hpp \
  C:/SFML/include/SFML/System/Vector2.hpp \
@@ -74,6 +76,7 @@ CMakeFiles\sfmlTest.dir\Utils.cpp.obj.ddi: \
  C:/mingw64/include/c++/14.2.0/bits/invoke.h \
  C:/SFML/include/SFML/Graphics/Rect.inl \
  C:/SFML/include/SFML/Graphics/RenderStates.hpp \
+ C:/SFML/include/SFML/Graphics/CoordinateType.hpp \
  C:/SFML/include/SFML/Graphics/StencilMode.hpp \
  C:/SFML/include/SFML/Graphics/Transform.hpp \
  C:/mingw64/include/c++/14.2.0/array \
@@ -90,11 +93,9 @@ CMakeFiles\sfmlTest.dir\Utils.cpp.obj.ddi: \
  C:/mingw64/include/c++/14.2.0/bits/range_access.h \
  C:/SFML/include/SFML/Graphics/Transform.inl \
  C:/mingw64/include/c++/14.2.0/cstddef \
+ C:/SFML/include/SFML/Graphics/Transformable.hpp \
+ C:/SFML/include/SFML/Graphics/VertexArray.hpp \
  C:/SFML/include/SFML/Graphics/Vertex.hpp \
- C:/SFML/include/SFML/Graphics/View.hpp \
- C:/SFML/include/SFML/Window/ContextSettings.hpp \
- C:/SFML/include/SFML/Window/VideoMode.hpp \
- C:/SFML/include/SFML/Window/Export.hpp \
  C:/mingw64/include/c++/14.2.0/vector \
  C:/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
  C:/mingw64/include/c++/14.2.0/bits/allocator.h \
@@ -118,8 +119,12 @@ CMakeFiles\sfmlTest.dir\Utils.cpp.obj.ddi: \
  C:/mingw64/include/c++/14.2.0/bits/ranges_base.h \
  C:/mingw64/include/c++/14.2.0/bits/max_size_type.h \
  C:/mingw64/include/c++/14.2.0/numbers \
- C:/SFML/include/SFML/Window/Window.hpp \
+ C:/SFML/include/SFML/Graphics/ConvexShape.hpp \
+ C:/SFML/include/SFML/Graphics/Font.hpp \
+ C:/SFML/include/SFML/Graphics/Glyph.hpp \
+ C:/SFML/include/SFML/Graphics/Texture.hpp \
  C:/SFML/include/SFML/Window/GlResource.hpp \
+ C:/SFML/include/SFML/Window/Export.hpp \
  C:/mingw64/include/c++/14.2.0/memory \
  C:/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
  C:/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
@@ -206,26 +211,13 @@ CMakeFiles\sfmlTest.dir\Utils.cpp.obj.ddi: \
  C:/mingw64/include/c++/14.2.0/bits/ranges_algobase.h \
  C:/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
  C:/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
- C:/SFML/include/SFML/Window/WindowBase.hpp \
- C:/SFML/include/SFML/Window/Vulkan.hpp \
- C:/SFML/include/SFML/Window/WindowEnums.hpp \
- C:/SFML/include/SFML/Window/WindowHandle.hpp \
- C:/SFML/include/SFML/System/Time.hpp \
- C:/mingw64/include/c++/14.2.0/chrono \
+ C:/mingw64/include/c++/14.2.0/filesystem \
+ C:/mingw64/include/c++/14.2.0/bits/fs_fwd.h \
  C:/mingw64/include/c++/14.2.0/bits/chrono.h \
  C:/mingw64/include/c++/14.2.0/ratio C:/mingw64/include/c++/14.2.0/limits \
  C:/mingw64/include/c++/14.2.0/ctime \
  C:/mingw64/include/c++/14.2.0/bits/parse_numbers.h \
- C:/mingw64/include/c++/14.2.0/sstream \
- C:/mingw64/include/c++/14.2.0/istream \
- C:/mingw64/include/c++/14.2.0/bits/istream.tcc \
- C:/mingw64/include/c++/14.2.0/bits/sstream.tcc \
- C:/mingw64/include/c++/14.2.0/bits/stl_algo.h \
- C:/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
- C:/mingw64/include/c++/14.2.0/bits/stl_heap.h \
- C:/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
- C:/mingw64/include/c++/14.2.0/bits/chrono_io.h \
- C:/mingw64/include/c++/14.2.0/iomanip \
+ C:/mingw64/include/c++/14.2.0/bits/fs_path.h \
  C:/mingw64/include/c++/14.2.0/locale \
  C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h \
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h \
@@ -233,7 +225,41 @@ CMakeFiles\sfmlTest.dir\Utils.cpp.obj.ddi: \
  C:/mingw64/include/c++/14.2.0/bits/codecvt.h \
  C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc \
  C:/mingw64/include/c++/14.2.0/bits/locale_conv.h \
+ C:/mingw64/include/c++/14.2.0/iomanip \
  C:/mingw64/include/c++/14.2.0/bits/quoted_string.h \
+ C:/mingw64/include/c++/14.2.0/sstream \
+ C:/mingw64/include/c++/14.2.0/istream \
+ C:/mingw64/include/c++/14.2.0/bits/istream.tcc \
+ C:/mingw64/include/c++/14.2.0/bits/sstream.tcc \
+ C:/mingw64/include/c++/14.2.0/codecvt \
+ C:/mingw64/include/c++/14.2.0/bits/fs_dir.h \
+ C:/mingw64/include/c++/14.2.0/bits/fs_ops.h \
+ C:/mingw64/include/c++/14.2.0/unordered_map \
+ C:/mingw64/include/c++/14.2.0/bits/unordered_map.h \
+ C:/mingw64/include/c++/14.2.0/bits/hashtable.h \
+ C:/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
+ C:/mingw64/include/c++/14.2.0/bits/node_handle.h \
+ C:/mingw64/include/c++/14.2.0/bits/erase_if.h \
+ C:/SFML/include/SFML/Graphics/Image.hpp \
+ C:/SFML/include/SFML/Graphics/RectangleShape.hpp \
+ C:/SFML/include/SFML/Graphics/RenderTarget.hpp \
+ C:/SFML/include/SFML/Graphics/View.hpp \
+ C:/SFML/include/SFML/Graphics/RenderTexture.hpp \
+ C:/SFML/include/SFML/Window/ContextSettings.hpp \
+ C:/SFML/include/SFML/Graphics/RenderWindow.hpp \
+ C:/SFML/include/SFML/Window/VideoMode.hpp \
+ C:/SFML/include/SFML/Window/Window.hpp \
+ C:/SFML/include/SFML/Window/WindowBase.hpp \
+ C:/SFML/include/SFML/Window/Vulkan.hpp \
+ C:/SFML/include/SFML/Window/WindowEnums.hpp \
+ C:/SFML/include/SFML/Window/WindowHandle.hpp \
+ C:/SFML/include/SFML/System/Time.hpp \
+ C:/mingw64/include/c++/14.2.0/chrono \
+ C:/mingw64/include/c++/14.2.0/bits/stl_algo.h \
+ C:/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_heap.h \
+ C:/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
+ C:/mingw64/include/c++/14.2.0/bits/chrono_io.h \
  C:/mingw64/include/c++/14.2.0/format \
  C:/mingw64/include/c++/14.2.0/charconv \
  C:/mingw64/include/c++/14.2.0/span C:/mingw64/include/c++/14.2.0/variant \
@@ -257,7 +283,24 @@ CMakeFiles\sfmlTest.dir\Utils.cpp.obj.ddi: \
  C:/mingw64/include/c++/14.2.0/utility \
  C:/mingw64/include/c++/14.2.0/bits/stl_relops.h \
  C:/SFML/include/SFML/System/Clock.hpp \
+ C:/SFML/include/SFML/Graphics/Shader.hpp \
+ C:/SFML/include/SFML/Graphics/Glsl.hpp \
+ C:/SFML/include/SFML/Graphics/Glsl.inl \
  C:/SFML/include/SFML/Graphics/Sprite.hpp \
- C:/SFML/include/SFML/Graphics/Drawable.hpp \
- C:/SFML/include/SFML/Graphics/Transformable.hpp \
+ C:/SFML/include/SFML/Graphics/Text.hpp \
+ C:/SFML/include/SFML/Graphics/VertexBuffer.hpp \
+ C:/SFML/include/SFML/Window.hpp \
+ C:/SFML/include/SFML/Window/Clipboard.hpp \
+ C:/SFML/include/SFML/Window/Context.hpp \
+ C:/SFML/include/SFML/Window/Cursor.hpp \
+ C:/SFML/include/SFML/Window/Touch.hpp C:/SFML/include/SFML/System.hpp \
+ C:/SFML/include/SFML/System/Err.hpp \
+ C:/SFML/include/SFML/System/Exception.hpp \
+ C:/SFML/include/SFML/System/FileInputStream.hpp \
+ C:/SFML/include/SFML/System/InputStream.hpp \
+ C:/SFML/include/SFML/System/MemoryInputStream.hpp \
+ C:/SFML/include/SFML/System/Sleep.hpp \
+ F:/Programming/C++/sfml/sfmlTest/Boundary.h \
+ F:/Programming/C++/sfml/sfmlTest/Position.h \
+ C:/mingw64/include/c++/14.2.0/iostream \
  F:/Programming/C++/sfml/sfmlTest/position.h

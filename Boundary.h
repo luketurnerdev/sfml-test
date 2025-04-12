@@ -1,0 +1,19 @@
+﻿//
+// Created by luke on 12/04/2025.
+//
+
+#ifndef BOUNDARY_H
+#define BOUNDARY_H
+/*
+ * This file should be a data definition of the boundary of a sprite (the player or an object)
+ * The boundary of a sprite should be the x and y coords of the pixels where the sprite ends.
+ */
+#include "Position.h"
+
+struct Boundary {
+    Position topLeftCorner;
+    Position topRightCorner;
+    Position bottomLeftCorne;
+    Position bottomRightCorner;
+};
+#endif //BOUNDARY_H

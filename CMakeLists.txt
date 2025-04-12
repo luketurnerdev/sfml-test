@@ -27,6 +27,7 @@ add_executable(sfmlTest
         Food.cpp
         Utils.h
         Utils.cpp
+        Boundary.h
 )
 
 # Link SFML dynamic libraries (no -s suffix)

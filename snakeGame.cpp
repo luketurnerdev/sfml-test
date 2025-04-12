@@ -4,7 +4,10 @@
 #include <SFML/Graphics.hpp>
 #include "snakeGame.h"
 
+#include <iostream>
+
 #include "Food.h"
+#include "Utils.h"
 #include "MoveableObject.h"
 
 void CheckForWindowEvents(sf::RenderWindow& window) {
@@ -44,20 +47,6 @@ void SetInitialSpritePos(sf::Sprite& sprite, const float& startingXPos, const fl
     sprite.setPosition(startingPos);
 }
 
-void SetPlayerBoundaries(sf::RenderWindow& window) {
-    // Get the size of the window from the window instance
-    // this will define the minimum and maximum X and Y values
-    // We can assume the window will not be resized for this example
-
-    float minX = 0;
-    float maxX = window.getSize().x;
-
-    float minY = 0;
-    float maxY = window.getSize().y;
-
-
-}
-
 void runSnakeGame() {
     // Setup window
     sf::RenderWindow window(sf::VideoMode({800,600}), "SFML Test", sf::Style::Titlebar);
@@ -74,7 +63,10 @@ void runSnakeGame() {
     constexpr Position spawnPosition = {100,100};
     Food food(foodTexture, spawnPosition);
 
+    Logger logger(2.0f);
     while (window.isOpen()) {
+
+
         // Check for events
         CheckForWindowEvents(window);
         MovePlayerBasedOnKeyPresses(player, window);
