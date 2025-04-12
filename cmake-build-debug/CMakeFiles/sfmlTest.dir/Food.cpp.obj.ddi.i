@@ -107542,6 +107542,9 @@ struct Position {
 # 12 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 2
 
 
+
+
+class MoveableObject;
 struct Boundary {
     Position topLeftCorner;
     Position topRightCorner;
@@ -107550,6 +107553,8 @@ struct Boundary {
 };
 
 sf::VertexArray CreateBoundarySquare(const Boundary& boundaryToDraw);
+
+void DrawBoundarySquareOnScreenThisFrame(const MoveableObject& object, sf::RenderWindow& window);
 # 10 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
 # 1 "F:/Programming/C++/sfml/sfmlTest/position.h" 1
 # 11 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2

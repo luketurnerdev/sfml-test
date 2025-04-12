@@ -300,4 +300,6 @@ CMakeFiles\sfmlTest.dir\Boundary.cpp.obj.ddi: \
  C:/SFML/include/SFML/System/FileInputStream.hpp \
  C:/SFML/include/SFML/System/InputStream.hpp \
  C:/SFML/include/SFML/System/MemoryInputStream.hpp \
- C:/SFML/include/SFML/System/Sleep.hpp
+ C:/SFML/include/SFML/System/Sleep.hpp \
+ F:/Programming/C++/sfml/sfmlTest/MoveableObject.h \
+ F:/Programming/C++/sfml/sfmlTest/position.h

@@ -5,6 +5,8 @@
 #include "Boundary.h"
 #include <SFML/Graphics.hpp>
 
+#include "MoveableObject.h"
+
 sf::VertexArray CreateBoundarySquare(const Boundary& boundaryToDraw) {
 
  sf::VertexArray square(sf::PrimitiveType::LineStrip, 5);
@@ -15,3 +17,9 @@ sf::VertexArray CreateBoundarySquare(const Boundary& boundaryToDraw) {
     square[4].position = sf::Vector2f(boundaryToDraw.topLeftCorner.x, boundaryToDraw.topLeftCorner.y);    // Back to Top-left
     return square;
 }
+
+void DrawBoundarySquareOnScreenThisFrame(const MoveableObject& object, sf::RenderWindow& window) {
+    const sf::VertexArray square = CreateBoundarySquare(object.getBoundary());
+    window.draw(square);
+}
+

@@ -109226,6 +109226,9 @@ struct Position {
 # 12 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 2
 
 
+
+
+class MoveableObject;
 struct Boundary {
     Position topLeftCorner;
     Position topRightCorner;
@@ -109234,6 +109237,8 @@ struct Boundary {
 };
 
 sf::VertexArray CreateBoundarySquare(const Boundary& boundaryToDraw);
+
+void DrawBoundarySquareOnScreenThisFrame(const MoveableObject& object, sf::RenderWindow& window);
 # 14 "F:/Programming/C++/sfml/sfmlTest/CollisionManager.h" 2
 # 1 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 1
 # 10 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h"
@@ -109386,7 +109391,8 @@ void SetInitialSpritePos(sf::Sprite& sprite, const float& startingXPos, const fl
     const sf::Vector2f startingPos = {startingXPos, startingYPos};
     sprite.setPosition(startingPos);
 }
-# 59 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp"
+
+
 void runSnakeGame() {
 
     sf::RenderWindow window(sf::VideoMode({800,600}), "SFML Test", sf::Style::Titlebar);
@@ -109424,6 +109430,8 @@ void runSnakeGame() {
         DrawSpriteToScreen(food.getSprite(), window);
 
 
+        DrawBoundarySquareOnScreenThisFrame(player, window);
+        DrawBoundarySquareOnScreenThisFrame(food, window);
 
 
         window.display();

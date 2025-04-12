@@ -109182,6 +109182,9 @@ void __attribute__((dllimport)) sleep(Time duration);
 # 60 "C:/SFML/include/SFML/Graphics.hpp" 2
 # 13 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 2
 
+
+
+class MoveableObject;
 struct Boundary {
     Position topLeftCorner;
     Position topRightCorner;
@@ -109190,6 +109193,8 @@ struct Boundary {
 };
 
 sf::VertexArray CreateBoundarySquare(const Boundary& boundaryToDraw);
+
+void DrawBoundarySquareOnScreenThisFrame(const MoveableObject& object, sf::RenderWindow& window);
 # 14 "F:/Programming/C++/sfml/sfmlTest/CollisionManager.h" 2
 # 1 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 1
 # 10 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h"
@@ -109273,6 +109278,7 @@ private:
     static std::pair<std::string, std::string> MakeSortedKey(const std::string& a, const std::string& b);
 };
 # 6 "F:/Programming/C++/sfml/sfmlTest/CollisionManager.cpp" 2
+
 
 
 

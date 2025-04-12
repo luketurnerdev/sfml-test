@@ -5,6 +5,7 @@
 #include "CollisionManager.h"
 #include <functional>
 #include <utility>
+#include "MoveableObject.h"
 
 CollisionManager::CollisionManager() = default;
 

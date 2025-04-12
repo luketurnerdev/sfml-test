@@ -11,6 +11,9 @@
 #include "Position.h"
 #include <SFML/Graphics.hpp>
 
+// Forward declaration to avoid circular import
+
+class MoveableObject;
 struct Boundary {
     Position topLeftCorner;
     Position topRightCorner;
@@ -19,4 +22,7 @@ struct Boundary {
 };
 
 sf::VertexArray CreateBoundarySquare(const Boundary& boundaryToDraw);
+
+void DrawBoundarySquareOnScreenThisFrame(const MoveableObject& object, sf::RenderWindow& window);
+
 #endif //BOUNDARY_H

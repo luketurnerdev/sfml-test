@@ -107526,6 +107526,9 @@ void __attribute__((dllimport)) sleep(Time duration);
 # 60 "C:/SFML/include/SFML/Graphics.hpp" 2
 # 13 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 2
 
+
+
+class MoveableObject;
 struct Boundary {
     Position topLeftCorner;
     Position topRightCorner;
@@ -107534,8 +107537,46 @@ struct Boundary {
 };
 
 sf::VertexArray CreateBoundarySquare(const Boundary& boundaryToDraw);
+
+void DrawBoundarySquareOnScreenThisFrame(const MoveableObject& object, sf::RenderWindow& window);
 # 6 "F:/Programming/C++/sfml/sfmlTest/Boundary.cpp" 2
 
+
+# 1 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 1
+# 10 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h"
+# 1 "F:/Programming/C++/sfml/sfmlTest/position.h" 1
+# 11 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
+class MoveableObject {
+public:
+
+    MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement = 0.0f);
+
+
+    const sf::Sprite& getSprite() const;
+
+
+    const Position& getPosition() const;
+    void setPosition(const Position& newPos, const sf::RenderWindow& window);
+
+
+    void setMovementIncrement(float);
+    float getMovementIncrement() const;
+
+
+
+    const Boundary& getBoundary() const;
+    void setBoundary();
+
+private:
+    Position position_;
+    Boundary boundary_;
+
+
+    float movementIncrement_ = 0.0f;
+    const sf::Texture texture_;
+    sf::Sprite sprite_;
+};
+# 9 "F:/Programming/C++/sfml/sfmlTest/Boundary.cpp" 2
 
 sf::VertexArray CreateBoundarySquare(const Boundary& boundaryToDraw) {
 
@@ -107546,4 +107587,9 @@ sf::VertexArray CreateBoundarySquare(const Boundary& boundaryToDraw) {
     square[3].position = sf::Vector2f(boundaryToDraw.bottomLeftCorner.x, boundaryToDraw.bottomLeftCorner.y);
     square[4].position = sf::Vector2f(boundaryToDraw.topLeftCorner.x, boundaryToDraw.topLeftCorner.y);
     return square;
+}
+
+void DrawBoundarySquareOnScreenThisFrame(const MoveableObject& object, sf::RenderWindow& window) {
+    const sf::VertexArray square = CreateBoundarySquare(object.getBoundary());
+    window.draw(square);
 }

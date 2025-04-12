@@ -86,6 +86,10 @@ void runSnakeGame() {
         DrawSpriteToScreen(player.getSprite(), window);
         DrawSpriteToScreen(food.getSprite(), window);
 
+        // Collision squares for visibility (optional)
+        DrawBoundarySquareOnScreenThisFrame(player, window);
+        DrawBoundarySquareOnScreenThisFrame(food, window);
+
         // Display the current frame with what was drawn
         window.display();
     }
