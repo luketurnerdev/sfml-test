@@ -1,13 +1,14 @@
-# 0 "F:/Programming/C++/sfml/sfmlTest/Food.cpp"
+# 0 "F:/Programming/C++/sfml/sfmlTest/Player.cpp"
 # 1 "F:\\Programming\\C++\\sfml\\sfmlTest\\cmake-build-debug//"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "F:/Programming/C++/sfml/sfmlTest/Food.cpp"
+# 1 "F:/Programming/C++/sfml/sfmlTest/Player.cpp"
 
 
 
 
-# 1 "F:/Programming/C++/sfml/sfmlTest/Food.h" 1
+# 1 "F:/Programming/C++/sfml/sfmlTest/Player.h" 1
+
 
 
 
@@ -107583,23 +107584,21 @@ private:
     const sf::Texture texture_;
     sf::Sprite sprite_;
 };
-# 8 "F:/Programming/C++/sfml/sfmlTest/Food.h" 2
-# 18 "F:/Programming/C++/sfml/sfmlTest/Food.h"
-class Food : public MoveableObject {
+# 9 "F:/Programming/C++/sfml/sfmlTest/Player.h" 2
+
+
+
+
+class Player {
 public:
-    Food(const sf::Texture& texture, const Position& spawnPos);
-    static Food SpawnFood(const std::string& texturePath, Position spawnPosition);
+    static MoveableObject SpawnPlayer(const std::string& texturePath, const Position spawnPosition, const float playerMovementIncrement);
 };
-# 6 "F:/Programming/C++/sfml/sfmlTest/Food.cpp" 2
-
-Food::Food(const sf::Texture& texture, const Position& spawnPos) : MoveableObject(texture, spawnPos){}
-
-Food Food::SpawnFood(const std::string& texturePath, Position spawnPosition) {
-
-    const sf::Texture foodTexture(texturePath);
-    Food food(foodTexture, spawnPosition);
+# 6 "F:/Programming/C++/sfml/sfmlTest/Player.cpp" 2
 
 
-    food.setBoundary();
-    return food;
+MoveableObject Player::SpawnPlayer(const std::string& texturePath, const Position spawnPosition, const float playerMovementIncrement) {
+    const sf::Texture characterTexture(texturePath);
+    MoveableObject player(characterTexture, spawnPosition, playerMovementIncrement);
+
+    return player;
 }

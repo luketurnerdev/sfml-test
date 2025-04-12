@@ -1,5 +1,7 @@
-CMakeFiles\sfmlTest.dir\snakeGame.cpp.obj.ddi: \
- F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp \
+CMakeFiles\sfmlTest.dir\Player.cpp.obj.ddi: \
+ F:/Programming/C++/sfml/sfmlTest/Player.cpp \
+ F:/Programming/C++/sfml/sfmlTest/Player.h \
+ F:/Programming/C++/sfml/sfmlTest/MoveableObject.h \
  C:/SFML/include/SFML/Graphics.hpp \
  C:/SFML/include/SFML/Graphics/BlendMode.hpp \
  C:/SFML/include/SFML/Graphics/Export.hpp C:/SFML/include/SFML/Config.hpp \
@@ -299,15 +301,6 @@ CMakeFiles\sfmlTest.dir\snakeGame.cpp.obj.ddi: \
  C:/SFML/include/SFML/System/InputStream.hpp \
  C:/SFML/include/SFML/System/MemoryInputStream.hpp \
  C:/SFML/include/SFML/System/Sleep.hpp \
- F:/Programming/C++/sfml/sfmlTest/snakeGame.h \
- C:/mingw64/include/c++/14.2.0/iostream \
- F:/Programming/C++/sfml/sfmlTest/CollisionManager.h \
- C:/mingw64/include/c++/14.2.0/functional \
- C:/mingw64/include/c++/14.2.0/bits/std_function.h \
  F:/Programming/C++/sfml/sfmlTest/Boundary.h \
  F:/Programming/C++/sfml/sfmlTest/Position.h \
- F:/Programming/C++/sfml/sfmlTest/MoveableObject.h \
- F:/Programming/C++/sfml/sfmlTest/position.h \
- F:/Programming/C++/sfml/sfmlTest/Food.h \
- F:/Programming/C++/sfml/sfmlTest/Player.h \
- F:/Programming/C++/sfml/sfmlTest/Utils.h
+ F:/Programming/C++/sfml/sfmlTest/position.h

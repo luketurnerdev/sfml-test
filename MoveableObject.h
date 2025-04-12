@@ -1,8 +1,8 @@
 ﻿//
 // Created by luke on 9/04/2025.
 //
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef MOVEABLEOBJECT_H
+#define MOVEABLEOBJECT_H
 
 #include <SFML/Graphics.hpp>
 
@@ -39,4 +39,4 @@ private:
     sf::Sprite sprite_;
 };
 
-#endif //PLAYER_H
+#endif //MOVEABLEOBJECT_H

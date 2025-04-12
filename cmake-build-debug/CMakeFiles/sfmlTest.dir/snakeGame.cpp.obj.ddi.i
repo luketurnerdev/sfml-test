@@ -109322,11 +109322,16 @@ private:
 class Food : public MoveableObject {
 public:
     Food(const sf::Texture& texture, const Position& spawnPos);
-
-private:
-
+    static Food SpawnFood(const std::string& texturePath, Position spawnPosition);
 };
 # 11 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
+# 1 "F:/Programming/C++/sfml/sfmlTest/Player.h" 1
+# 13 "F:/Programming/C++/sfml/sfmlTest/Player.h"
+class Player {
+public:
+    static MoveableObject SpawnPlayer(const std::string& texturePath, const Position spawnPosition, const float playerMovementIncrement);
+};
+# 12 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
 # 1 "F:/Programming/C++/sfml/sfmlTest/Utils.h" 1
 # 12 "F:/Programming/C++/sfml/sfmlTest/Utils.h"
 Position ClampToWindow(const Position& desiredPos, const sf::RenderWindow& window, sf::Sprite& sprite);
@@ -109342,7 +109347,7 @@ private:
 };
 
 void LogBoundary(const Boundary& boundary, Logger& logger);
-# 12 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
+# 13 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
 
 
 void CheckForWindowEvents(sf::RenderWindow& window) {
@@ -109381,33 +109386,16 @@ void SetInitialSpritePos(sf::Sprite& sprite, const float& startingXPos, const fl
     const sf::Vector2f startingPos = {startingXPos, startingYPos};
     sprite.setPosition(startingPos);
 }
-
-Food SpawnFood(std::string texturePath, Position spawnPosition) {
-
-    const sf::Texture foodTexture(texturePath);
-    Food food(foodTexture, spawnPosition);
-
-
-    food.setBoundary();
-    return food;
-}
-
-MoveableObject SpawnPlayer(const std::string& texturePath, const Position spawnPosition, const float playerMovementIncrement) {
-    const sf::Texture characterTexture(texturePath);
-    MoveableObject player(characterTexture, spawnPosition, playerMovementIncrement);
-
-    return player;
-}
-
+# 59 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp"
 void runSnakeGame() {
 
     sf::RenderWindow window(sf::VideoMode({800,600}), "SFML Test", sf::Style::Titlebar);
 
 
-    MoveableObject player = SpawnPlayer("img/sword32.png", {0,0}, 0.05f);
+    MoveableObject player = Player::SpawnPlayer("img/sword32.png", {0,0}, 0.05f);
 
 
-    Food food = SpawnFood("img/banana32.png", {100,100});
+    Food food = Food::SpawnFood("img/banana32.png", {100,100});
 
 
     CollisionManager collisionManager;

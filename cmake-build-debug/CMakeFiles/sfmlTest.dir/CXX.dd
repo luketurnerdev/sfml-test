@@ -13,3 +13,5 @@ build CMakeFiles/sfmlTest.dir/Boundary.cpp.obj: dyndep
 
 build CMakeFiles/sfmlTest.dir/CollisionManager.cpp.obj: dyndep
 
+build CMakeFiles/sfmlTest.dir/Player.cpp.obj: dyndep
+

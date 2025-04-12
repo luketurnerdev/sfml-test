@@ -8,6 +8,7 @@
 
 #include "CollisionManager.h"
 #include "Food.h"
+#include "Player.h"
 #include "Utils.h"
 #include "MoveableObject.h"
 
@@ -48,32 +49,16 @@ void SetInitialSpritePos(sf::Sprite& sprite, const float& startingXPos, const fl
     sprite.setPosition(startingPos);
 }
 
-Food SpawnFood(std::string texturePath, Position spawnPosition) {
-    // Init food (sample)
-    const sf::Texture foodTexture(texturePath);
-    Food food(foodTexture, spawnPosition);
-
-    // Set a static boundary for the food for collisions
-    food.setBoundary();
-    return food;
-}
-
-MoveableObject SpawnPlayer(const std::string& texturePath, const Position spawnPosition, const float playerMovementIncrement) {
-    const sf::Texture characterTexture(texturePath);
-    MoveableObject player(characterTexture, spawnPosition, playerMovementIncrement);
-
-    return player;
-}
 
 void runSnakeGame() {
     // Setup window
     sf::RenderWindow window(sf::VideoMode({800,600}), "SFML Test", sf::Style::Titlebar);
 
     // Init player
-    MoveableObject player = SpawnPlayer("img/sword32.png", {0,0}, 0.05f);
+    MoveableObject player = Player::SpawnPlayer("img/sword32.png", {0,0}, 0.05f);
 
     // Spawn some food
-    Food food = SpawnFood("img/banana32.png", {100,100});
+    Food food = Food::SpawnFood("img/banana32.png", {100,100});
 
     // Register collisions
     CollisionManager collisionManager;
@@ -100,8 +85,6 @@ void runSnakeGame() {
         // Render whatever we want to
         DrawSpriteToScreen(player.getSprite(), window);
         DrawSpriteToScreen(food.getSprite(), window);
-
-
 
         // Display the current frame with what was drawn
         window.display();

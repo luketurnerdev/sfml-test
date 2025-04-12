@@ -18,8 +18,6 @@
 class Food : public MoveableObject {
 public:
     Food(const sf::Texture& texture, const Position& spawnPos);
-
-private:
-    // void getEaten(); TODO
+    static Food SpawnFood(const std::string& texturePath, Position spawnPosition);
 };
 #endif //FOOD_H
