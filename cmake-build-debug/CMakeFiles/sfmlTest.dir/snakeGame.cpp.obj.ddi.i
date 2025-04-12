@@ -109382,20 +109382,32 @@ void SetInitialSpritePos(sf::Sprite& sprite, const float& startingXPos, const fl
     sprite.setPosition(startingPos);
 }
 
+Food SpawnFood(std::string texturePath, Position spawnPosition) {
+
+    const sf::Texture foodTexture(texturePath);
+    Food food(foodTexture, spawnPosition);
+
+
+    food.setBoundary();
+    return food;
+}
+
+MoveableObject SpawnPlayer(const std::string& texturePath, const Position spawnPosition, const float playerMovementIncrement) {
+    const sf::Texture characterTexture(texturePath);
+    MoveableObject player(characterTexture, spawnPosition, playerMovementIncrement);
+
+    return player;
+}
+
 void runSnakeGame() {
 
     sf::RenderWindow window(sf::VideoMode({800,600}), "SFML Test", sf::Style::Titlebar);
 
 
-    const sf::Texture characterTexture("img/sword32.png");
-    constexpr Position startPosition = {0,0};
-    constexpr float playerMovementIncrement = 0.05f;
-    MoveableObject player(characterTexture, startPosition, playerMovementIncrement);
+    MoveableObject player = SpawnPlayer("img/sword32.png", {0,0}, 0.05f);
 
 
-    const sf::Texture foodTexture("img/banana32.png");
-    constexpr Position spawnPosition = {100,100};
-    Food food(foodTexture, spawnPosition);
+    Food food = SpawnFood("img/banana32.png", {100,100});
 
 
     CollisionManager collisionManager;
@@ -109412,14 +109424,12 @@ void runSnakeGame() {
         MovePlayerBasedOnKeyPresses(player, window);
 
 
+        collisionManager.CheckCollisions();
+
+
 
 
         window.clear(sf::Color::Black);
-
-
-        player.setBoundary();
-        food.setBoundary();
-        collisionManager.CheckCollisions();
 
 
         DrawSpriteToScreen(player.getSprite(), window);

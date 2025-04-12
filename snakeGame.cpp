@@ -48,20 +48,32 @@ void SetInitialSpritePos(sf::Sprite& sprite, const float& startingXPos, const fl
     sprite.setPosition(startingPos);
 }
 
+Food SpawnFood(std::string texturePath, Position spawnPosition) {
+    // Init food (sample)
+    const sf::Texture foodTexture(texturePath);
+    Food food(foodTexture, spawnPosition);
+
+    // Set a static boundary for the food for collisions
+    food.setBoundary();
+    return food;
+}
+
+MoveableObject SpawnPlayer(const std::string& texturePath, const Position spawnPosition, const float playerMovementIncrement) {
+    const sf::Texture characterTexture(texturePath);
+    MoveableObject player(characterTexture, spawnPosition, playerMovementIncrement);
+
+    return player;
+}
+
 void runSnakeGame() {
     // Setup window
     sf::RenderWindow window(sf::VideoMode({800,600}), "SFML Test", sf::Style::Titlebar);
 
     // Init player
-    const sf::Texture characterTexture("img/sword32.png");
-    constexpr Position startPosition = {0,0};
-    constexpr float playerMovementIncrement = 0.05f;
-    MoveableObject player(characterTexture, startPosition, playerMovementIncrement);
+    MoveableObject player = SpawnPlayer("img/sword32.png", {0,0}, 0.05f);
 
-    //Init food (sample)
-    const sf::Texture foodTexture("img/banana32.png");
-    constexpr Position spawnPosition = {100,100};
-    Food food(foodTexture, spawnPosition);
+    // Spawn some food
+    Food food = SpawnFood("img/banana32.png", {100,100});
 
     // Register collisions
     CollisionManager collisionManager;
@@ -77,15 +89,13 @@ void runSnakeGame() {
         CheckForWindowEvents(window);
         MovePlayerBasedOnKeyPresses(player, window);
 
+        // Boundary and collision stuff
+        collisionManager.CheckCollisions();
+
         // Drawing //
 
         // Clear anything previously drawn
         window.clear(sf::Color::Black);
-
-        // Boundary and collision stuff
-        player.setBoundary();
-        food.setBoundary();
-        collisionManager.CheckCollisions();
 
         // Render whatever we want to
         DrawSpriteToScreen(player.getSprite(), window);

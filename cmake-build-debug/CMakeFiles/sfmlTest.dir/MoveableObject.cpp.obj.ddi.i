@@ -107624,6 +107624,8 @@ void MoveableObject::setPosition(const Position& newPos, const sf::RenderWindow&
     position_ = validPos;
 
     sprite_.setPosition(sf::Vector2f(position_.x, position_.y));
+
+
     setBoundary();
 }
 
