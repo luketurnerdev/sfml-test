@@ -9,6 +9,7 @@
  * The boundary of a sprite should be the x and y coords of the pixels where the sprite ends.
  */
 #include "Position.h"
+#include <SFML/Graphics.hpp>
 
 struct Boundary {
     Position topLeftCorner;
@@ -16,4 +17,6 @@ struct Boundary {
     Position bottomLeftCorner;
     Position bottomRightCorner;
 };
+
+sf::VertexArray CreateBoundarySquare(const Boundary& boundaryToDraw);
 #endif //BOUNDARY_H

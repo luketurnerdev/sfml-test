@@ -107541,12 +107541,15 @@ struct Position {
 };
 # 12 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 2
 
+
 struct Boundary {
     Position topLeftCorner;
     Position topRightCorner;
     Position bottomLeftCorner;
     Position bottomRightCorner;
 };
+
+sf::VertexArray CreateBoundarySquare(const Boundary& boundaryToDraw);
 # 10 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
 # 1 "F:/Programming/C++/sfml/sfmlTest/position.h" 1
 # 11 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2

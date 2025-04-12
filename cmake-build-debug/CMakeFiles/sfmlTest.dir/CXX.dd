@@ -9,3 +9,5 @@ build CMakeFiles/sfmlTest.dir/Food.cpp.obj: dyndep
 
 build CMakeFiles/sfmlTest.dir/Utils.cpp.obj: dyndep
 
+build CMakeFiles/sfmlTest.dir/Boundary.cpp.obj: dyndep
+

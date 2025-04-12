@@ -1,19 +1,26 @@
-# 0 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.cpp"
+# 0 "F:/Programming/C++/sfml/sfmlTest/Boundary.cpp"
 # 1 "F:\\Programming\\C++\\sfml\\sfmlTest\\cmake-build-debug//"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.cpp"
+# 1 "F:/Programming/C++/sfml/sfmlTest/Boundary.cpp"
 
 
 
 
-# 1 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 1
+# 1 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 1
+# 11 "F:/Programming/C++/sfml/sfmlTest/Boundary.h"
+# 1 "F:/Programming/C++/sfml/sfmlTest/Position.h" 1
 
 
 
 
 
 
+struct Position {
+    float x;
+    float y;
+};
+# 12 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 2
 # 1 "C:/SFML/include/SFML/Graphics.hpp" 1
 # 25 "C:/SFML/include/SFML/Graphics.hpp"
        
@@ -107517,23 +107524,7 @@ void __attribute__((dllimport)) sleep(Time duration);
 # 41 "C:/SFML/include/SFML/System.hpp" 2
 # 47 "C:/SFML/include/SFML/Window.hpp" 2
 # 60 "C:/SFML/include/SFML/Graphics.hpp" 2
-# 8 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
-
-# 1 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 1
-# 11 "F:/Programming/C++/sfml/sfmlTest/Boundary.h"
-# 1 "F:/Programming/C++/sfml/sfmlTest/Position.h" 1
-
-
-
-
-
-
-struct Position {
-    float x;
-    float y;
-};
-# 12 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 2
-
+# 13 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 2
 
 struct Boundary {
     Position topLeftCorner;
@@ -107543,92 +107534,16 @@ struct Boundary {
 };
 
 sf::VertexArray CreateBoundarySquare(const Boundary& boundaryToDraw);
-# 10 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
-# 1 "F:/Programming/C++/sfml/sfmlTest/position.h" 1
-# 11 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
-class MoveableObject {
-public:
-
-    MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement = 0.0f);
+# 6 "F:/Programming/C++/sfml/sfmlTest/Boundary.cpp" 2
 
 
-    const sf::Sprite& getSprite() const;
+sf::VertexArray CreateBoundarySquare(const Boundary& boundaryToDraw) {
 
-
-    const Position& getPosition() const;
-    void setPosition(const Position& newPos, const sf::RenderWindow& window);
-
-
-    void setMovementIncrement(float);
-    float getMovementIncrement() const;
-
-
-
-    const Boundary& getBoundary() const;
-    void setBoundary();
-
-private:
-    Position position_;
-    Boundary boundary_;
-
-
-    float movementIncrement_ = 0.0f;
-    const sf::Texture texture_;
-    sf::Sprite sprite_;
-};
-# 6 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.cpp" 2
-# 1 "F:/Programming/C++/sfml/sfmlTest/Utils.h" 1
-# 12 "F:/Programming/C++/sfml/sfmlTest/Utils.h"
-Position ClampToWindow(const Position& desiredPos, const sf::RenderWindow& window, sf::Sprite& sprite);
-Boundary DetermineSpriteBoundary(const sf::Sprite& sprite, const Position& spritePositionInSpace);
-class Logger {
-public:
-    explicit Logger(const float intervalInSeconds);
-    void LogIfReady(const std::string& message);
-
-private:
-    float interval;
-    sf::Clock clock;
-};
-
-void LogBoundary(const Boundary& boundary, Logger& logger);
-# 7 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.cpp" 2
-
-
-
-MoveableObject::MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement)
-    : position_(startPos), movementIncrement_(movementIncrement), texture_(texture), sprite_(texture_)
-{
-    sprite_.setPosition(sf::Vector2f(position_.x, position_.y));
-}
-
-float MoveableObject::getMovementIncrement() const {
-    return movementIncrement_;
-}
-
-const sf::Sprite& MoveableObject::getSprite() const {
-    return sprite_;
-}
-
-const Position &MoveableObject::getPosition() const {
-    return position_;
-}
-
-const Boundary &MoveableObject::getBoundary() const {
-    return boundary_;
-}
-
-
-
-void MoveableObject::setPosition(const Position& newPos, const sf::RenderWindow& window) {
-    const Position validPos = ClampToWindow(newPos, window, sprite_);
-    position_ = validPos;
-
-    sprite_.setPosition(sf::Vector2f(position_.x, position_.y));
-    setBoundary();
-}
-
-void MoveableObject::setBoundary() {
-    const Boundary boundary = DetermineSpriteBoundary(sprite_, position_);
-    boundary_ = boundary;
+ sf::VertexArray square(sf::PrimitiveType::LineStrip, 5);
+    square[0].position = sf::Vector2f(boundaryToDraw.topLeftCorner.x, boundaryToDraw.topLeftCorner.y);
+    square[1].position = sf::Vector2f(boundaryToDraw.topRightCorner.x, boundaryToDraw.topRightCorner.y);
+    square[2].position = sf::Vector2f(boundaryToDraw.bottomRightCorner.x, boundaryToDraw.bottomRightCorner.y);
+    square[3].position = sf::Vector2f(boundaryToDraw.bottomLeftCorner.x, boundaryToDraw.bottomLeftCorner.y);
+    square[4].position = sf::Vector2f(boundaryToDraw.topLeftCorner.x, boundaryToDraw.topLeftCorner.y);
+    return square;
 }

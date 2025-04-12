@@ -107581,12 +107581,15 @@ struct Position {
 };
 # 12 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 2
 
+
 struct Boundary {
     Position topLeftCorner;
     Position topRightCorner;
     Position bottomLeftCorner;
     Position bottomRightCorner;
 };
+
+sf::VertexArray CreateBoundarySquare(const Boundary& boundaryToDraw);
 # 10 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
 # 1 "F:/Programming/C++/sfml/sfmlTest/position.h" 1
 # 11 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
@@ -107702,8 +107705,9 @@ void runSnakeGame() {
     Food food(foodTexture, spawnPosition);
 
     Logger logger(1.0f);
+
     while (window.isOpen()) {
-        LogBoundary(player.getBoundary(), logger);
+
 
 
         CheckForWindowEvents(window);
@@ -107717,6 +107721,9 @@ void runSnakeGame() {
 
         DrawSpriteToScreen(player.getSprite(), window);
         DrawSpriteToScreen(food.getSprite(), window);
+
+        sf::VertexArray square = CreateBoundarySquare(player.getBoundary());
+        window.draw(square);
 
 
         window.display();

@@ -107531,12 +107531,15 @@ struct Position {
 };
 # 12 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 2
 
+
 struct Boundary {
     Position topLeftCorner;
     Position topRightCorner;
     Position bottomLeftCorner;
     Position bottomRightCorner;
 };
+
+sf::VertexArray CreateBoundarySquare(const Boundary& boundaryToDraw);
 # 7 "F:/Programming/C++/sfml/sfmlTest/Utils.h" 2
 
 
@@ -107650,6 +107653,6 @@ void Logger::LogIfReady(const std::string& message) {
 }
 
 void LogBoundary(const Boundary& boundary, Logger& logger) {
-    std::string boundaryLog = std::format("Player boundary: [{}, {}], [{}, {}], [{}, {}], [{}, {}]", boundary.topLeftCorner.x, boundary.topLeftCorner.y, boundary.topRightCorner.x, boundary.topRightCorner.y, boundary.bottomLeftCorner.x, boundary.bottomLeftCorner.y, boundary.bottomRightCorner.x, boundary.bottomRightCorner.y);
+    const std::string boundaryLog = std::format("Player boundary: [{}, {}], [{}, {}], [{}, {}], [{}, {}]", boundary.topLeftCorner.x, boundary.topLeftCorner.y, boundary.topRightCorner.x, boundary.topRightCorner.y, boundary.bottomLeftCorner.x, boundary.bottomLeftCorner.y, boundary.bottomRightCorner.x, boundary.bottomRightCorner.y);
     logger.LogIfReady(boundaryLog);
 }

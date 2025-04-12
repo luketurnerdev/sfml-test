@@ -64,8 +64,9 @@ void runSnakeGame() {
     Food food(foodTexture, spawnPosition);
 
     Logger logger(1.0f);
+
     while (window.isOpen()) {
-        LogBoundary(player.getBoundary(), logger);
+        // LogBoundary(player.getBoundary(), logger);
 
         // Check for events
         CheckForWindowEvents(window);
@@ -79,6 +80,9 @@ void runSnakeGame() {
         // Render whatever we want to
         DrawSpriteToScreen(player.getSprite(), window);
         DrawSpriteToScreen(food.getSprite(), window);
+
+        sf::VertexArray square = CreateBoundarySquare(player.getBoundary());
+        window.draw(square);
 
         // Display the current frame with what was drawn
         window.display();
