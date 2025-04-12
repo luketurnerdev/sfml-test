@@ -107619,7 +107619,6 @@ const Boundary &MoveableObject::getBoundary() const {
 }
 
 
-
 void MoveableObject::setPosition(const Position& newPos, const sf::RenderWindow& window) {
     const Position validPos = ClampToWindow(newPos, window, sprite_);
     position_ = validPos;

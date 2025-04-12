@@ -29,6 +29,8 @@ add_executable(sfmlTest
         Utils.cpp
         Boundary.h
         Boundary.cpp
+        CollisionManager.h
+        CollisionManager.cpp
 )
 
 # Link SFML dynamic libraries (no -s suffix)

@@ -107704,11 +107704,7 @@ void runSnakeGame() {
     constexpr Position spawnPosition = {100,100};
     Food food(foodTexture, spawnPosition);
 
-    Logger logger(1.0f);
-
     while (window.isOpen()) {
-
-
 
         CheckForWindowEvents(window);
         MovePlayerBasedOnKeyPresses(player, window);
@@ -107722,8 +107718,6 @@ void runSnakeGame() {
         DrawSpriteToScreen(player.getSprite(), window);
         DrawSpriteToScreen(food.getSprite(), window);
 
-        sf::VertexArray square = CreateBoundarySquare(player.getBoundary());
-        window.draw(square);
 
 
         window.display();
