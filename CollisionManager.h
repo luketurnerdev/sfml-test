@@ -13,8 +13,15 @@
 #include "Boundary.h"
 #include "MoveableObject.h"
 
+struct PairHash {
+    std::size_t operator()(const std::pair<std::string, std::string>& pair) const {
+        return std::hash<std::string>()(pair.first) ^ std::hash<std::string>()(pair.second);
+    }
+};
+
 class CollisionManager {
 public:
+    CollisionManager();
     // Take the MoveableObject in memory and register it as a new Tag
     void RegisterObject(const std::string& tag, MoveableObject* object);
 
@@ -41,7 +48,8 @@ private:
     // A list of all registered callbacks and their associated tag pairs
     std::unordered_map<
         std::pair<std::string, std::string>,
-        std::function<void()>
+        std::function<void()>,
+        PairHash
     > callbacks;
 
     // Helper to check for overlaps

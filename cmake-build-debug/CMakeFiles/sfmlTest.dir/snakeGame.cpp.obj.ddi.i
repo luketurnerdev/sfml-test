@@ -107555,15 +107555,1659 @@ namespace std
 }
 # 8 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
 
-# 1 "F:/Programming/C++/sfml/sfmlTest/Food.h" 1
+# 1 "F:/Programming/C++/sfml/sfmlTest/CollisionManager.h" 1
+# 11 "F:/Programming/C++/sfml/sfmlTest/CollisionManager.h"
+# 1 "C:/mingw64/include/c++/14.2.0/functional" 1 3
+# 46 "C:/mingw64/include/c++/14.2.0/functional" 3
+       
+# 47 "C:/mingw64/include/c++/14.2.0/functional" 3
+# 59 "C:/mingw64/include/c++/14.2.0/functional" 3
+# 1 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 1 3
+# 33 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+       
+# 34 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+# 45 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+namespace std
+{
 
 
 
 
 
 
-# 1 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 1
-# 9 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h"
+
+  class bad_function_call : public std::exception
+  {
+  public:
+    virtual ~bad_function_call() noexcept;
+
+    const char* what() const noexcept;
+  };
+
+
+
+
+
+
+
+  template<typename _Tp>
+    struct __is_location_invariant
+    : is_trivially_copyable<_Tp>::type
+    { };
+
+  class _Undefined_class;
+
+  union _Nocopy_types
+  {
+    void* _M_object;
+    const void* _M_const_object;
+    void (*_M_function_pointer)();
+    void (_Undefined_class::*_M_member_pointer)();
+  };
+
+  union [[gnu::may_alias]] _Any_data
+  {
+    void* _M_access() noexcept { return &_M_pod_data[0]; }
+    const void* _M_access() const noexcept { return &_M_pod_data[0]; }
+
+    template<typename _Tp>
+      _Tp&
+      _M_access() noexcept
+      { return *static_cast<_Tp*>(_M_access()); }
+
+    template<typename _Tp>
+      const _Tp&
+      _M_access() const noexcept
+      { return *static_cast<const _Tp*>(_M_access()); }
+
+    _Nocopy_types _M_unused;
+    char _M_pod_data[sizeof(_Nocopy_types)];
+  };
+
+  enum _Manager_operation
+  {
+    __get_type_info,
+    __get_functor_ptr,
+    __clone_functor,
+    __destroy_functor
+  };
+
+  template<typename _Signature>
+    class function;
+
+
+  class _Function_base
+  {
+  public:
+    static const size_t _M_max_size = sizeof(_Nocopy_types);
+    static const size_t _M_max_align = __alignof__(_Nocopy_types);
+
+    template<typename _Functor>
+      class _Base_manager
+      {
+      protected:
+ static const bool __stored_locally =
+ (__is_location_invariant<_Functor>::value
+  && sizeof(_Functor) <= _M_max_size
+  && __alignof__(_Functor) <= _M_max_align
+  && (_M_max_align % __alignof__(_Functor) == 0));
+
+ using _Local_storage = integral_constant<bool, __stored_locally>;
+
+
+ static _Functor*
+ _M_get_pointer(const _Any_data& __source) noexcept
+ {
+   if constexpr (__stored_locally)
+     {
+       const _Functor& __f = __source._M_access<_Functor>();
+       return const_cast<_Functor*>(std::__addressof(__f));
+     }
+   else
+     return __source._M_access<_Functor*>();
+ }
+
+      private:
+
+
+ template<typename _Fn>
+   static void
+   _M_create(_Any_data& __dest, _Fn&& __f, true_type)
+   {
+     ::new (__dest._M_access()) _Functor(std::forward<_Fn>(__f));
+   }
+
+
+ template<typename _Fn>
+   static void
+   _M_create(_Any_data& __dest, _Fn&& __f, false_type)
+   {
+     __dest._M_access<_Functor*>()
+       = new _Functor(std::forward<_Fn>(__f));
+   }
+
+
+ static void
+ _M_destroy(_Any_data& __victim, true_type)
+ {
+   __victim._M_access<_Functor>().~_Functor();
+ }
+
+
+ static void
+ _M_destroy(_Any_data& __victim, false_type)
+ {
+   delete __victim._M_access<_Functor*>();
+ }
+
+      public:
+ static bool
+ _M_manager(_Any_data& __dest, const _Any_data& __source,
+     _Manager_operation __op)
+ {
+   switch (__op)
+     {
+     case __get_type_info:
+
+       __dest._M_access<const type_info*>() = &typeid(_Functor);
+
+
+
+       break;
+
+     case __get_functor_ptr:
+       __dest._M_access<_Functor*>() = _M_get_pointer(__source);
+       break;
+
+     case __clone_functor:
+       _M_init_functor(__dest,
+    *const_cast<const _Functor*>(_M_get_pointer(__source)));
+       break;
+
+     case __destroy_functor:
+       _M_destroy(__dest, _Local_storage());
+       break;
+     }
+   return false;
+ }
+
+ template<typename _Fn>
+   static void
+   _M_init_functor(_Any_data& __functor, _Fn&& __f)
+   noexcept(__and_<_Local_storage,
+     is_nothrow_constructible<_Functor, _Fn>>::value)
+   {
+     _M_create(__functor, std::forward<_Fn>(__f), _Local_storage());
+   }
+
+ template<typename _Signature>
+   static bool
+   _M_not_empty_function(const function<_Signature>& __f) noexcept
+   { return static_cast<bool>(__f); }
+
+ template<typename _Tp>
+   static bool
+   _M_not_empty_function(_Tp* __fp) noexcept
+   { return __fp != nullptr; }
+
+ template<typename _Class, typename _Tp>
+   static bool
+   _M_not_empty_function(_Tp _Class::* __mp) noexcept
+   { return __mp != nullptr; }
+
+ template<typename _Tp>
+   static bool
+   _M_not_empty_function(const _Tp&) noexcept
+   { return true; }
+      };
+
+    _Function_base() = default;
+
+    ~_Function_base()
+    {
+      if (_M_manager)
+ _M_manager(_M_functor, _M_functor, __destroy_functor);
+    }
+
+    bool _M_empty() const { return !_M_manager; }
+
+    using _Manager_type
+      = bool (*)(_Any_data&, const _Any_data&, _Manager_operation);
+
+    _Any_data _M_functor{};
+    _Manager_type _M_manager{};
+  };
+
+  template<typename _Signature, typename _Functor>
+    class _Function_handler;
+
+  template<typename _Res, typename _Functor, typename... _ArgTypes>
+    class _Function_handler<_Res(_ArgTypes...), _Functor>
+    : public _Function_base::_Base_manager<_Functor>
+    {
+      using _Base = _Function_base::_Base_manager<_Functor>;
+
+    public:
+      static bool
+      _M_manager(_Any_data& __dest, const _Any_data& __source,
+   _Manager_operation __op)
+      {
+ switch (__op)
+   {
+
+   case __get_type_info:
+     __dest._M_access<const type_info*>() = &typeid(_Functor);
+     break;
+
+   case __get_functor_ptr:
+     __dest._M_access<_Functor*>() = _Base::_M_get_pointer(__source);
+     break;
+
+   default:
+     _Base::_M_manager(__dest, __source, __op);
+   }
+ return false;
+      }
+
+      static _Res
+      _M_invoke(const _Any_data& __functor, _ArgTypes&&... __args)
+      {
+ return std::__invoke_r<_Res>(*_Base::_M_get_pointer(__functor),
+         std::forward<_ArgTypes>(__args)...);
+      }
+
+      template<typename _Fn>
+ static constexpr bool
+ _S_nothrow_init() noexcept
+ {
+   return __and_<typename _Base::_Local_storage,
+   is_nothrow_constructible<_Functor, _Fn>>::value;
+ }
+    };
+
+
+  template<>
+    class _Function_handler<void, void>
+    {
+    public:
+      static bool
+      _M_manager(_Any_data&, const _Any_data&, _Manager_operation)
+      { return false; }
+    };
+
+
+
+
+
+  template<typename _Signature, typename _Functor,
+    bool __valid = is_object<_Functor>::value>
+    struct _Target_handler
+    : _Function_handler<_Signature, typename remove_cv<_Functor>::type>
+    { };
+
+  template<typename _Signature, typename _Functor>
+    struct _Target_handler<_Signature, _Functor, false>
+    : _Function_handler<void, void>
+    { };
+
+
+
+
+
+
+  template<typename _Res, typename... _ArgTypes>
+    class function<_Res(_ArgTypes...)>
+    : public _Maybe_unary_or_binary_function<_Res, _ArgTypes...>,
+      private _Function_base
+    {
+
+
+      template<typename _Func,
+        bool _Self = is_same<__remove_cvref_t<_Func>, function>::value>
+ using _Decay_t
+   = typename __enable_if_t<!_Self, decay<_Func>>::type;
+
+      template<typename _Func,
+        typename _DFunc = _Decay_t<_Func>,
+        typename _Res2 = __invoke_result<_DFunc&, _ArgTypes...>>
+ struct _Callable
+ : __is_invocable_impl<_Res2, _Res>::type
+ { };
+
+      template<typename _Cond, typename _Tp = void>
+ using _Requires = __enable_if_t<_Cond::value, _Tp>;
+
+      template<typename _Functor>
+ using _Handler
+   = _Function_handler<_Res(_ArgTypes...), __decay_t<_Functor>>;
+
+    public:
+      typedef _Res result_type;
+
+
+
+
+
+
+
+      function() noexcept
+      : _Function_base() { }
+
+
+
+
+
+      function(nullptr_t) noexcept
+      : _Function_base() { }
+# 386 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+      function(const function& __x)
+      : _Function_base()
+      {
+ if (static_cast<bool>(__x))
+   {
+     __x._M_manager(_M_functor, __x._M_functor, __clone_functor);
+     _M_invoker = __x._M_invoker;
+     _M_manager = __x._M_manager;
+   }
+      }
+# 404 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+      function(function&& __x) noexcept
+      : _Function_base(), _M_invoker(__x._M_invoker)
+      {
+ if (static_cast<bool>(__x))
+   {
+     _M_functor = __x._M_functor;
+     _M_manager = __x._M_manager;
+     __x._M_manager = nullptr;
+     __x._M_invoker = nullptr;
+   }
+      }
+# 433 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+      template<typename _Functor,
+        typename _Constraints = _Requires<_Callable<_Functor>>>
+ function(_Functor&& __f)
+ noexcept(_Handler<_Functor>::template _S_nothrow_init<_Functor>())
+ : _Function_base()
+ {
+   static_assert(is_copy_constructible<__decay_t<_Functor>>::value,
+       "std::function target must be copy-constructible");
+   static_assert(is_constructible<__decay_t<_Functor>, _Functor>::value,
+       "std::function target must be constructible from the "
+       "constructor argument");
+
+   using _My_handler = _Handler<_Functor>;
+
+   if (_My_handler::_M_not_empty_function(__f))
+     {
+       _My_handler::_M_init_functor(_M_functor,
+        std::forward<_Functor>(__f));
+       _M_invoker = &_My_handler::_M_invoke;
+       _M_manager = &_My_handler::_M_manager;
+     }
+ }
+# 468 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+      function&
+      operator=(const function& __x)
+      {
+ function(__x).swap(*this);
+ return *this;
+      }
+# 486 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+      function&
+      operator=(function&& __x) noexcept
+      {
+ function(std::move(__x)).swap(*this);
+ return *this;
+      }
+# 500 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+      function&
+      operator=(nullptr_t) noexcept
+      {
+ if (_M_manager)
+   {
+     _M_manager(_M_functor, _M_functor, __destroy_functor);
+     _M_manager = nullptr;
+     _M_invoker = nullptr;
+   }
+ return *this;
+      }
+# 529 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+      template<typename _Functor>
+ _Requires<_Callable<_Functor>, function&>
+ operator=(_Functor&& __f)
+ noexcept(_Handler<_Functor>::template _S_nothrow_init<_Functor>())
+ {
+   function(std::forward<_Functor>(__f)).swap(*this);
+   return *this;
+ }
+
+
+      template<typename _Functor>
+ function&
+ operator=(reference_wrapper<_Functor> __f) noexcept
+ {
+   function(__f).swap(*this);
+   return *this;
+ }
+# 556 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+      void swap(function& __x) noexcept
+      {
+ std::swap(_M_functor, __x._M_functor);
+ std::swap(_M_manager, __x._M_manager);
+ std::swap(_M_invoker, __x._M_invoker);
+      }
+# 573 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+      explicit operator bool() const noexcept
+      { return !_M_empty(); }
+# 586 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+      _Res
+      operator()(_ArgTypes... __args) const
+      {
+ if (_M_empty())
+   __throw_bad_function_call();
+ return _M_invoker(_M_functor, std::forward<_ArgTypes>(__args)...);
+      }
+# 605 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+      const type_info&
+      target_type() const noexcept
+      {
+ if (_M_manager)
+   {
+     _Any_data __typeinfo_result;
+     _M_manager(__typeinfo_result, _M_functor, __get_type_info);
+     if (auto __ti = __typeinfo_result._M_access<const type_info*>())
+       return *__ti;
+   }
+ return typeid(void);
+      }
+# 630 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+      template<typename _Functor>
+ _Functor*
+ target() noexcept
+ {
+   const function* __const_this = this;
+   const _Functor* __func = __const_this->template target<_Functor>();
+
+
+   return *const_cast<_Functor**>(&__func);
+ }
+
+      template<typename _Functor>
+ const _Functor*
+ target() const noexcept
+ {
+   if constexpr (is_object<_Functor>::value)
+     {
+
+
+       using _Handler = _Target_handler<_Res(_ArgTypes...), _Functor>;
+
+       if (_M_manager == &_Handler::_M_manager
+
+    || (_M_manager && typeid(_Functor) == target_type())
+
+   )
+  {
+    _Any_data __ptr;
+    _M_manager(__ptr, _M_functor, __get_functor_ptr);
+    return __ptr._M_access<const _Functor*>();
+  }
+     }
+   return nullptr;
+ }
+
+
+    private:
+      using _Invoker_type = _Res (*)(const _Any_data&, _ArgTypes&&...);
+      _Invoker_type _M_invoker = nullptr;
+    };
+
+
+  template<typename>
+    struct __function_guide_helper
+    { };
+
+  template<typename _Res, typename _Tp, bool _Nx, typename... _Args>
+    struct __function_guide_helper<
+      _Res (_Tp::*) (_Args...) noexcept(_Nx)
+    >
+    { using type = _Res(_Args...); };
+
+  template<typename _Res, typename _Tp, bool _Nx, typename... _Args>
+    struct __function_guide_helper<
+      _Res (_Tp::*) (_Args...) & noexcept(_Nx)
+    >
+    { using type = _Res(_Args...); };
+
+  template<typename _Res, typename _Tp, bool _Nx, typename... _Args>
+    struct __function_guide_helper<
+      _Res (_Tp::*) (_Args...) const noexcept(_Nx)
+    >
+    { using type = _Res(_Args...); };
+
+  template<typename _Res, typename _Tp, bool _Nx, typename... _Args>
+    struct __function_guide_helper<
+      _Res (_Tp::*) (_Args...) const & noexcept(_Nx)
+    >
+    { using type = _Res(_Args...); };
+# 721 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+  template<typename _Fn, typename _Op>
+    using __function_guide_t = typename __function_guide_helper<_Op>::type;
+
+
+  template<typename _Res, typename... _ArgTypes>
+    function(_Res(*)(_ArgTypes...)) -> function<_Res(_ArgTypes...)>;
+
+  template<typename _Fn, typename _Signature
+      = __function_guide_t<_Fn, decltype(&_Fn::operator())>>
+    function(_Fn) -> function<_Signature>;
+# 741 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+  template<typename _Res, typename... _Args>
+    inline bool
+    operator==(const function<_Res(_Args...)>& __f, nullptr_t) noexcept
+    { return !static_cast<bool>(__f); }
+# 780 "C:/mingw64/include/c++/14.2.0/bits/std_function.h" 3
+  template<typename _Res, typename... _Args>
+    inline void
+    swap(function<_Res(_Args...)>& __x, function<_Res(_Args...)>& __y) noexcept
+    { __x.swap(__y); }
+
+
+  namespace __detail::__variant
+  {
+    template<typename> struct _Never_valueless_alt;
+
+
+
+    template<typename _Signature>
+      struct _Never_valueless_alt<std::function<_Signature>>
+      : std::true_type
+      { };
+  }
+
+
+
+}
+# 60 "C:/mingw64/include/c++/14.2.0/functional" 2 3
+# 88 "C:/mingw64/include/c++/14.2.0/functional" 3
+# 1 "C:/mingw64/include/c++/14.2.0/bits/version.h" 1 3
+# 47 "C:/mingw64/include/c++/14.2.0/bits/version.h" 3
+       
+# 48 "C:/mingw64/include/c++/14.2.0/bits/version.h" 3
+# 89 "C:/mingw64/include/c++/14.2.0/functional" 2 3
+
+
+
+namespace std
+{
+
+
+
+
+
+
+  template<int _Num> struct _Placeholder { };
+# 115 "C:/mingw64/include/c++/14.2.0/functional" 3
+  template<typename _Callable, typename... _Args>
+    inline constexpr invoke_result_t<_Callable, _Args...>
+    invoke(_Callable&& __fn, _Args&&... __args)
+    noexcept(is_nothrow_invocable_v<_Callable, _Args...>)
+    {
+      return std::__invoke(std::forward<_Callable>(__fn),
+      std::forward<_Args>(__args)...);
+    }
+# 148 "C:/mingw64/include/c++/14.2.0/functional" 3
+  template<typename _MemFunPtr,
+    bool __is_mem_fn = is_member_function_pointer<_MemFunPtr>::value>
+    class _Mem_fn_base
+    : public _Mem_fn_traits<_MemFunPtr>::__maybe_type
+    {
+      using _Traits = _Mem_fn_traits<_MemFunPtr>;
+
+      using _Arity = typename _Traits::__arity;
+      using _Varargs = typename _Traits::__vararg;
+
+      template<typename _Func, typename... _BoundArgs>
+ friend struct _Bind_check_arity;
+
+      _MemFunPtr _M_pmf;
+
+    public:
+
+      using result_type = typename _Traits::__result_type;
+
+      explicit constexpr
+      _Mem_fn_base(_MemFunPtr __pmf) noexcept : _M_pmf(__pmf) { }
+
+      template<typename... _Args>
+ constexpr
+ auto
+ operator()(_Args&&... __args) const
+ noexcept(noexcept(
+       std::__invoke(_M_pmf, std::forward<_Args>(__args)...)))
+ -> decltype(std::__invoke(_M_pmf, std::forward<_Args>(__args)...))
+ { return std::__invoke(_M_pmf, std::forward<_Args>(__args)...); }
+    };
+
+
+  template<typename _MemObjPtr>
+    class _Mem_fn_base<_MemObjPtr, false>
+    {
+      using _Arity = integral_constant<size_t, 0>;
+      using _Varargs = false_type;
+
+      template<typename _Func, typename... _BoundArgs>
+ friend struct _Bind_check_arity;
+
+      _MemObjPtr _M_pm;
+
+    public:
+      explicit constexpr
+      _Mem_fn_base(_MemObjPtr __pm) noexcept : _M_pm(__pm) { }
+
+      template<typename _Tp>
+ constexpr
+ auto
+ operator()(_Tp&& __obj) const
+ noexcept(noexcept(std::__invoke(_M_pm, std::forward<_Tp>(__obj))))
+ -> decltype(std::__invoke(_M_pm, std::forward<_Tp>(__obj)))
+ { return std::__invoke(_M_pm, std::forward<_Tp>(__obj)); }
+    };
+
+  template<typename _MemberPointer>
+    struct _Mem_fn;
+
+  template<typename _Res, typename _Class>
+    struct _Mem_fn<_Res _Class::*>
+    : _Mem_fn_base<_Res _Class::*>
+    {
+      using _Mem_fn_base<_Res _Class::*>::_Mem_fn_base;
+    };
+# 241 "C:/mingw64/include/c++/14.2.0/functional" 3
+  template<typename _Tp, typename _Class>
+    constexpr
+    inline _Mem_fn<_Tp _Class::*>
+    mem_fn(_Tp _Class::* __pm) noexcept
+    {
+      return _Mem_fn<_Tp _Class::*>(__pm);
+    }
+# 260 "C:/mingw64/include/c++/14.2.0/functional" 3
+  template<typename _Tp>
+    struct is_bind_expression
+    : public false_type { };
+# 272 "C:/mingw64/include/c++/14.2.0/functional" 3
+  template<typename _Tp>
+    struct is_placeholder
+    : public integral_constant<int, 0>
+    { };
+
+
+  template <typename _Tp> inline constexpr bool is_bind_expression_v
+    = is_bind_expression<_Tp>::value;
+  template <typename _Tp> inline constexpr int is_placeholder_v
+    = is_placeholder<_Tp>::value;
+
+
+
+
+
+
+
+  namespace placeholders
+  {
+# 301 "C:/mingw64/include/c++/14.2.0/functional" 3
+    inline const _Placeholder<1> _1;
+    inline const _Placeholder<2> _2;
+    inline const _Placeholder<3> _3;
+    inline const _Placeholder<4> _4;
+    inline const _Placeholder<5> _5;
+    inline const _Placeholder<6> _6;
+    inline const _Placeholder<7> _7;
+    inline const _Placeholder<8> _8;
+    inline const _Placeholder<9> _9;
+    inline const _Placeholder<10> _10;
+    inline const _Placeholder<11> _11;
+    inline const _Placeholder<12> _12;
+    inline const _Placeholder<13> _13;
+    inline const _Placeholder<14> _14;
+    inline const _Placeholder<15> _15;
+    inline const _Placeholder<16> _16;
+    inline const _Placeholder<17> _17;
+    inline const _Placeholder<18> _18;
+    inline const _Placeholder<19> _19;
+    inline const _Placeholder<20> _20;
+    inline const _Placeholder<21> _21;
+    inline const _Placeholder<22> _22;
+    inline const _Placeholder<23> _23;
+    inline const _Placeholder<24> _24;
+    inline const _Placeholder<25> _25;
+    inline const _Placeholder<26> _26;
+    inline const _Placeholder<27> _27;
+    inline const _Placeholder<28> _28;
+    inline const _Placeholder<29> _29;
+
+
+  }
+
+
+
+
+
+
+
+  template<int _Num>
+    struct is_placeholder<_Placeholder<_Num> >
+    : public integral_constant<int, _Num>
+    { };
+
+  template<int _Num>
+    struct is_placeholder<const _Placeholder<_Num> >
+    : public integral_constant<int, _Num>
+    { };
+
+
+
+
+  template<std::size_t __i, typename _Tuple>
+    using _Safe_tuple_element_t
+      = typename enable_if<(__i < tuple_size<_Tuple>::value),
+      tuple_element<__i, _Tuple>>::type::type;
+# 369 "C:/mingw64/include/c++/14.2.0/functional" 3
+  template<typename _Arg,
+    bool _IsBindExp = is_bind_expression<_Arg>::value,
+    bool _IsPlaceholder = (is_placeholder<_Arg>::value > 0)>
+    class _Mu;
+
+
+
+
+
+
+  template<typename _Tp>
+    class _Mu<reference_wrapper<_Tp>, false, false>
+    {
+    public:
+
+
+
+
+      template<typename _CVRef, typename _Tuple>
+ constexpr
+ _Tp&
+ operator()(_CVRef& __arg, _Tuple&) const volatile
+ { return __arg.get(); }
+    };
+
+
+
+
+
+
+
+  template<typename _Arg>
+    class _Mu<_Arg, true, false>
+    {
+    public:
+      template<typename _CVArg, typename... _Args>
+ constexpr
+ auto
+ operator()(_CVArg& __arg,
+     tuple<_Args...>& __tuple) const volatile
+ -> decltype(__arg(declval<_Args>()...))
+ {
+
+   typedef typename _Build_index_tuple<sizeof...(_Args)>::__type
+     _Indexes;
+   return this->__call(__arg, __tuple, _Indexes());
+ }
+
+    private:
+
+
+      template<typename _CVArg, typename... _Args, std::size_t... _Indexes>
+ constexpr
+ auto
+ __call(_CVArg& __arg, tuple<_Args...>& __tuple,
+        const _Index_tuple<_Indexes...>&) const volatile
+ -> decltype(__arg(declval<_Args>()...))
+ {
+   return __arg(std::get<_Indexes>(std::move(__tuple))...);
+ }
+    };
+
+
+
+
+
+
+  template<typename _Arg>
+    class _Mu<_Arg, false, true>
+    {
+    public:
+      template<typename _Tuple>
+ constexpr
+ _Safe_tuple_element_t<(is_placeholder<_Arg>::value - 1), _Tuple>&&
+ operator()(const volatile _Arg&, _Tuple& __tuple) const volatile
+ {
+   return
+     ::std::get<(is_placeholder<_Arg>::value - 1)>(std::move(__tuple));
+ }
+    };
+
+
+
+
+
+
+  template<typename _Arg>
+    class _Mu<_Arg, false, false>
+    {
+    public:
+      template<typename _CVArg, typename _Tuple>
+ constexpr
+ _CVArg&&
+ operator()(_CVArg&& __arg, _Tuple&) const volatile
+ { return std::forward<_CVArg>(__arg); }
+    };
+
+
+  template<std::size_t _Ind, typename... _Tp>
+    inline auto
+    __volget(volatile tuple<_Tp...>& __tuple)
+    -> __tuple_element_t<_Ind, tuple<_Tp...>> volatile&
+    { return std::get<_Ind>(const_cast<tuple<_Tp...>&>(__tuple)); }
+
+
+  template<std::size_t _Ind, typename... _Tp>
+    inline auto
+    __volget(const volatile tuple<_Tp...>& __tuple)
+    -> __tuple_element_t<_Ind, tuple<_Tp...>> const volatile&
+    { return std::get<_Ind>(const_cast<const tuple<_Tp...>&>(__tuple)); }
+# 494 "C:/mingw64/include/c++/14.2.0/functional" 3
+  template<typename _Signature>
+    class _Bind;
+
+   template<typename _Functor, typename... _Bound_args>
+    class _Bind<_Functor(_Bound_args...)>
+    : public _Weak_result_type<_Functor>
+    {
+      typedef typename _Build_index_tuple<sizeof...(_Bound_args)>::__type
+ _Bound_indexes;
+
+      _Functor _M_f;
+      tuple<_Bound_args...> _M_bound_args;
+
+
+      template<typename _Result, typename... _Args, std::size_t... _Indexes>
+ constexpr
+ _Result
+ __call(tuple<_Args...>&& __args, _Index_tuple<_Indexes...>)
+ {
+   return std::__invoke(_M_f,
+       _Mu<_Bound_args>()(std::get<_Indexes>(_M_bound_args), __args)...
+       );
+ }
+
+
+      template<typename _Result, typename... _Args, std::size_t... _Indexes>
+ constexpr
+ _Result
+ __call_c(tuple<_Args...>&& __args, _Index_tuple<_Indexes...>) const
+ {
+   return std::__invoke(_M_f,
+       _Mu<_Bound_args>()(std::get<_Indexes>(_M_bound_args), __args)...
+       );
+ }
+# 553 "C:/mingw64/include/c++/14.2.0/functional" 3
+      template<typename _BoundArg, typename _CallArgs>
+ using _Mu_type = decltype(
+     _Mu<typename remove_cv<_BoundArg>::type>()(
+       std::declval<_BoundArg&>(), std::declval<_CallArgs&>()) );
+
+      template<typename _Fn, typename _CallArgs, typename... _BArgs>
+ using _Res_type_impl
+   = __invoke_result_t<_Fn&, _Mu_type<_BArgs, _CallArgs>&&...>;
+
+      template<typename _CallArgs>
+ using _Res_type = _Res_type_impl<_Functor, _CallArgs, _Bound_args...>;
+
+      template<typename _CallArgs>
+ using __dependent = typename
+   enable_if<bool(tuple_size<_CallArgs>::value+1), _Functor>::type;
+
+      template<typename _CallArgs, template<class> class __cv_quals>
+ using _Res_type_cv = _Res_type_impl<
+   typename __cv_quals<__dependent<_CallArgs>>::type,
+   _CallArgs,
+   typename __cv_quals<_Bound_args>::type...>;
+
+     public:
+      template<typename... _Args>
+ explicit constexpr
+ _Bind(const _Functor& __f, _Args&&... __args)
+ : _M_f(__f), _M_bound_args(std::forward<_Args>(__args)...)
+ { }
+
+      template<typename... _Args>
+ explicit constexpr
+ _Bind(_Functor&& __f, _Args&&... __args)
+ : _M_f(std::move(__f)), _M_bound_args(std::forward<_Args>(__args)...)
+ { }
+
+      _Bind(const _Bind&) = default;
+      _Bind(_Bind&&) = default;
+
+
+      template<typename... _Args,
+        typename _Result = _Res_type<tuple<_Args...>>>
+ constexpr
+ _Result
+ operator()(_Args&&... __args)
+ {
+   return this->__call<_Result>(
+       std::forward_as_tuple(std::forward<_Args>(__args)...),
+       _Bound_indexes());
+ }
+
+
+      template<typename... _Args,
+        typename _Result = _Res_type_cv<tuple<_Args...>, add_const>>
+ constexpr
+ _Result
+ operator()(_Args&&... __args) const
+ {
+   return this->__call_c<_Result>(
+       std::forward_as_tuple(std::forward<_Args>(__args)...),
+       _Bound_indexes());
+ }
+# 640 "C:/mingw64/include/c++/14.2.0/functional" 3
+    };
+
+
+  template<typename _Result, typename _Signature>
+    class _Bind_result;
+
+  template<typename _Result, typename _Functor, typename... _Bound_args>
+    class _Bind_result<_Result, _Functor(_Bound_args...)>
+    {
+      typedef typename _Build_index_tuple<sizeof...(_Bound_args)>::__type
+ _Bound_indexes;
+
+      _Functor _M_f;
+      tuple<_Bound_args...> _M_bound_args;
+
+
+      template<typename _Res, typename... _Args, std::size_t... _Indexes>
+ constexpr
+ _Res
+ __call(tuple<_Args...>&& __args, _Index_tuple<_Indexes...>)
+ {
+   return std::__invoke_r<_Res>(_M_f, _Mu<_Bound_args>()
+        (std::get<_Indexes>(_M_bound_args), __args)...);
+ }
+
+
+      template<typename _Res, typename... _Args, std::size_t... _Indexes>
+ constexpr
+ _Res
+ __call(tuple<_Args...>&& __args, _Index_tuple<_Indexes...>) const
+ {
+   return std::__invoke_r<_Res>(_M_f, _Mu<_Bound_args>()
+        (std::get<_Indexes>(_M_bound_args), __args)...);
+ }
+# 696 "C:/mingw64/include/c++/14.2.0/functional" 3
+    public:
+      typedef _Result result_type;
+
+      template<typename... _Args>
+ explicit constexpr
+ _Bind_result(const _Functor& __f, _Args&&... __args)
+ : _M_f(__f), _M_bound_args(std::forward<_Args>(__args)...)
+ { }
+
+      template<typename... _Args>
+ explicit constexpr
+ _Bind_result(_Functor&& __f, _Args&&... __args)
+ : _M_f(std::move(__f)), _M_bound_args(std::forward<_Args>(__args)...)
+ { }
+
+      _Bind_result(const _Bind_result&) = default;
+      _Bind_result(_Bind_result&&) = default;
+
+
+      template<typename... _Args>
+ constexpr
+ result_type
+ operator()(_Args&&... __args)
+ {
+   return this->__call<_Result>(
+       std::forward_as_tuple(std::forward<_Args>(__args)...),
+       _Bound_indexes());
+ }
+
+
+      template<typename... _Args>
+ constexpr
+ result_type
+ operator()(_Args&&... __args) const
+ {
+   return this->__call<_Result>(
+       std::forward_as_tuple(std::forward<_Args>(__args)...),
+       _Bound_indexes());
+ }
+# 759 "C:/mingw64/include/c++/14.2.0/functional" 3
+      template<typename... _Args>
+ void operator()(_Args&&...) const volatile = delete;
+
+    };
+# 771 "C:/mingw64/include/c++/14.2.0/functional" 3
+  template<typename _Signature>
+    struct is_bind_expression<_Bind<_Signature> >
+    : public true_type { };
+
+
+
+
+
+  template<typename _Signature>
+    struct is_bind_expression<const _Bind<_Signature> >
+    : public true_type { };
+
+
+
+
+
+  template<typename _Signature>
+    struct is_bind_expression<volatile _Bind<_Signature> >
+    : public true_type { };
+
+
+
+
+
+  template<typename _Signature>
+    struct is_bind_expression<const volatile _Bind<_Signature>>
+    : public true_type { };
+
+
+
+
+
+  template<typename _Result, typename _Signature>
+    struct is_bind_expression<_Bind_result<_Result, _Signature>>
+    : public true_type { };
+
+
+
+
+
+  template<typename _Result, typename _Signature>
+    struct is_bind_expression<const _Bind_result<_Result, _Signature>>
+    : public true_type { };
+
+
+
+
+
+  template<typename _Result, typename _Signature>
+    struct is_bind_expression<volatile _Bind_result<_Result, _Signature>>
+    : public true_type { };
+
+
+
+
+
+  template<typename _Result, typename _Signature>
+    struct is_bind_expression<const volatile _Bind_result<_Result, _Signature>>
+    : public true_type { };
+
+  template<typename _Func, typename... _BoundArgs>
+    struct _Bind_check_arity { };
+
+  template<typename _Ret, typename... _Args, typename... _BoundArgs>
+    struct _Bind_check_arity<_Ret (*)(_Args...), _BoundArgs...>
+    {
+      static_assert(sizeof...(_BoundArgs) == sizeof...(_Args),
+                   "Wrong number of arguments for function");
+    };
+
+  template<typename _Ret, typename... _Args, typename... _BoundArgs>
+    struct _Bind_check_arity<_Ret (*)(_Args......), _BoundArgs...>
+    {
+      static_assert(sizeof...(_BoundArgs) >= sizeof...(_Args),
+                   "Wrong number of arguments for function");
+    };
+
+  template<typename _Tp, typename _Class, typename... _BoundArgs>
+    struct _Bind_check_arity<_Tp _Class::*, _BoundArgs...>
+    {
+      using _Arity = typename _Mem_fn<_Tp _Class::*>::_Arity;
+      using _Varargs = typename _Mem_fn<_Tp _Class::*>::_Varargs;
+      static_assert(_Varargs::value
+      ? sizeof...(_BoundArgs) >= _Arity::value + 1
+      : sizeof...(_BoundArgs) == _Arity::value + 1,
+      "Wrong number of arguments for pointer-to-member");
+    };
+
+
+
+
+  template<typename _Tp, typename _Tp2 = typename decay<_Tp>::type>
+    using __is_socketlike = __or_<is_integral<_Tp2>, is_enum<_Tp2>>;
+
+  template<bool _SocketLike, typename _Func, typename... _BoundArgs>
+    struct _Bind_helper
+    : _Bind_check_arity<typename decay<_Func>::type, _BoundArgs...>
+    {
+      typedef typename decay<_Func>::type __func_type;
+      typedef _Bind<__func_type(typename decay<_BoundArgs>::type...)> type;
+    };
+
+
+
+
+  template<typename _Func, typename... _BoundArgs>
+    struct _Bind_helper<true, _Func, _BoundArgs...>
+    { };
+
+
+
+
+
+
+  template<typename _Func, typename... _BoundArgs>
+    inline constexpr typename
+    _Bind_helper<__is_socketlike<_Func>::value, _Func, _BoundArgs...>::type
+    bind(_Func&& __f, _BoundArgs&&... __args)
+    {
+      typedef _Bind_helper<false, _Func, _BoundArgs...> __helper_type;
+      return typename __helper_type::type(std::forward<_Func>(__f),
+       std::forward<_BoundArgs>(__args)...);
+    }
+
+  template<typename _Result, typename _Func, typename... _BoundArgs>
+    struct _Bindres_helper
+    : _Bind_check_arity<typename decay<_Func>::type, _BoundArgs...>
+    {
+      typedef typename decay<_Func>::type __functor_type;
+      typedef _Bind_result<_Result,
+      __functor_type(typename decay<_BoundArgs>::type...)>
+ type;
+    };
+
+
+
+
+
+
+  template<typename _Result, typename _Func, typename... _BoundArgs>
+    inline constexpr
+    typename _Bindres_helper<_Result, _Func, _BoundArgs...>::type
+    bind(_Func&& __f, _BoundArgs&&... __args)
+    {
+      typedef _Bindres_helper<_Result, _Func, _BoundArgs...> __helper_type;
+      return typename __helper_type::type(std::forward<_Func>(__f),
+       std::forward<_BoundArgs>(__args)...);
+    }
+
+
+
+  template<typename _Fd, typename... _BoundArgs>
+    struct _Bind_front
+    {
+      static_assert(is_move_constructible_v<_Fd>);
+      static_assert((is_move_constructible_v<_BoundArgs> && ...));
+
+
+
+      template<typename _Fn, typename... _Args>
+ explicit constexpr
+ _Bind_front(int, _Fn&& __fn, _Args&&... __args)
+ noexcept(__and_<is_nothrow_constructible<_Fd, _Fn>,
+   is_nothrow_constructible<_BoundArgs, _Args>...>::value)
+ : _M_fd(std::forward<_Fn>(__fn)),
+   _M_bound_args(std::forward<_Args>(__args)...)
+ { static_assert(sizeof...(_Args) == sizeof...(_BoundArgs)); }
+# 951 "C:/mingw64/include/c++/14.2.0/functional" 3
+      template<typename... _CallArgs>
+ requires true
+ constexpr
+ invoke_result_t<_Fd&, _BoundArgs&..., _CallArgs...>
+ operator()(_CallArgs&&... __call_args) &
+ noexcept(is_nothrow_invocable_v<_Fd&, _BoundArgs&..., _CallArgs...>)
+ {
+   return _S_call(*this, _BoundIndices(),
+       std::forward<_CallArgs>(__call_args)...);
+ }
+
+      template<typename... _CallArgs>
+ requires true
+ constexpr
+ invoke_result_t<const _Fd&, const _BoundArgs&..., _CallArgs...>
+ operator()(_CallArgs&&... __call_args) const &
+ noexcept(is_nothrow_invocable_v<const _Fd&, const _BoundArgs&...,
+     _CallArgs...>)
+ {
+   return _S_call(*this, _BoundIndices(),
+       std::forward<_CallArgs>(__call_args)...);
+ }
+
+      template<typename... _CallArgs>
+ requires true
+ constexpr
+ invoke_result_t<_Fd, _BoundArgs..., _CallArgs...>
+ operator()(_CallArgs&&... __call_args) &&
+ noexcept(is_nothrow_invocable_v<_Fd, _BoundArgs..., _CallArgs...>)
+ {
+   return _S_call(std::move(*this), _BoundIndices(),
+       std::forward<_CallArgs>(__call_args)...);
+ }
+
+      template<typename... _CallArgs>
+ requires true
+ constexpr
+ invoke_result_t<const _Fd, const _BoundArgs..., _CallArgs...>
+ operator()(_CallArgs&&... __call_args) const &&
+ noexcept(is_nothrow_invocable_v<const _Fd, const _BoundArgs...,
+     _CallArgs...>)
+ {
+   return _S_call(std::move(*this), _BoundIndices(),
+       std::forward<_CallArgs>(__call_args)...);
+ }
+
+      template<typename... _CallArgs>
+ void operator()(_CallArgs&&...) & = delete;
+
+      template<typename... _CallArgs>
+ void operator()(_CallArgs&&...) const & = delete;
+
+      template<typename... _CallArgs>
+ void operator()(_CallArgs&&...) && = delete;
+
+      template<typename... _CallArgs>
+ void operator()(_CallArgs&&...) const && = delete;
+
+
+    private:
+      using _BoundIndices = index_sequence_for<_BoundArgs...>;
+
+      template<typename _Tp, size_t... _Ind, typename... _CallArgs>
+ static constexpr
+ decltype(auto)
+ _S_call(_Tp&& __g, index_sequence<_Ind...>, _CallArgs&&... __call_args)
+ {
+   return std::invoke(std::forward<_Tp>(__g)._M_fd,
+       std::get<_Ind>(std::forward<_Tp>(__g)._M_bound_args)...,
+       std::forward<_CallArgs>(__call_args)...);
+ }
+
+      [[no_unique_address]] _Fd _M_fd;
+      [[no_unique_address]] std::tuple<_BoundArgs...> _M_bound_args;
+    };
+
+  template<typename _Fn, typename... _Args>
+    using _Bind_front_t = _Bind_front<decay_t<_Fn>, decay_t<_Args>...>;
+# 1039 "C:/mingw64/include/c++/14.2.0/functional" 3
+  template<typename _Fn, typename... _Args>
+    constexpr _Bind_front_t<_Fn, _Args...>
+    bind_front(_Fn&& __fn, _Args&&... __args)
+    noexcept(is_nothrow_constructible_v<_Bind_front_t<_Fn, _Args...>,
+     int, _Fn, _Args...>)
+    {
+      return _Bind_front_t<_Fn, _Args...>(0, std::forward<_Fn>(__fn),
+       std::forward<_Args>(__args)...);
+    }
+# 1121 "C:/mingw64/include/c++/14.2.0/functional" 3
+  template<typename _Fn>
+    class _Not_fn
+    {
+      template<typename _Fn2, typename... _Args>
+ using __inv_res_t = typename __invoke_result<_Fn2, _Args...>::type;
+
+      template<typename _Tp>
+ static decltype(!std::declval<_Tp>())
+ _S_not() noexcept(noexcept(!std::declval<_Tp>()));
+
+    public:
+      template<typename _Fn2>
+ constexpr
+ _Not_fn(_Fn2&& __fn, int)
+ : _M_fn(std::forward<_Fn2>(__fn)) { }
+
+      _Not_fn(const _Not_fn& __fn) = default;
+      _Not_fn(_Not_fn&& __fn) = default;
+      ~_Not_fn() = default;
+# 1161 "C:/mingw64/include/c++/14.2.0/functional" 3
+      template<typename... _Args, typename = enable_if_t<__is_invocable<_Fn &, _Args...>::value>> constexpr decltype(_S_not<__inv_res_t<_Fn &, _Args...>>()) operator()(_Args&&... __args) & noexcept(__is_nothrow_invocable<_Fn &, _Args...>::value && noexcept(_S_not<__inv_res_t<_Fn &, _Args...>>())) { return !std::__invoke(std::forward< _Fn & >(_M_fn), std::forward<_Args>(__args)...); } template<typename... _Args, typename = enable_if_t<!__is_invocable<_Fn &, _Args...>::value>> void operator()(_Args&&... __args) & = delete;
+      template<typename... _Args, typename = enable_if_t<__is_invocable<_Fn const &, _Args...>::value>> constexpr decltype(_S_not<__inv_res_t<_Fn const &, _Args...>>()) operator()(_Args&&... __args) const & noexcept(__is_nothrow_invocable<_Fn const &, _Args...>::value && noexcept(_S_not<__inv_res_t<_Fn const &, _Args...>>())) { return !std::__invoke(std::forward< _Fn const & >(_M_fn), std::forward<_Args>(__args)...); } template<typename... _Args, typename = enable_if_t<!__is_invocable<_Fn const &, _Args...>::value>> void operator()(_Args&&... __args) const & = delete;
+      template<typename... _Args, typename = enable_if_t<__is_invocable<_Fn &&, _Args...>::value>> constexpr decltype(_S_not<__inv_res_t<_Fn &&, _Args...>>()) operator()(_Args&&... __args) && noexcept(__is_nothrow_invocable<_Fn &&, _Args...>::value && noexcept(_S_not<__inv_res_t<_Fn &&, _Args...>>())) { return !std::__invoke(std::forward< _Fn && >(_M_fn), std::forward<_Args>(__args)...); } template<typename... _Args, typename = enable_if_t<!__is_invocable<_Fn &&, _Args...>::value>> void operator()(_Args&&... __args) && = delete;
+      template<typename... _Args, typename = enable_if_t<__is_invocable<_Fn const &&, _Args...>::value>> constexpr decltype(_S_not<__inv_res_t<_Fn const &&, _Args...>>()) operator()(_Args&&... __args) const && noexcept(__is_nothrow_invocable<_Fn const &&, _Args...>::value && noexcept(_S_not<__inv_res_t<_Fn const &&, _Args...>>())) { return !std::__invoke(std::forward< _Fn const && >(_M_fn), std::forward<_Args>(__args)...); } template<typename... _Args, typename = enable_if_t<!__is_invocable<_Fn const &&, _Args...>::value>> void operator()(_Args&&... __args) const && = delete;
+
+
+    private:
+      _Fn _M_fn;
+    };
+
+  template<typename _Tp, typename _Pred>
+    struct __is_byte_like : false_type { };
+
+  template<typename _Tp>
+    struct __is_byte_like<_Tp, equal_to<_Tp>>
+    : __bool_constant<sizeof(_Tp) == 1 && is_integral<_Tp>::value> { };
+
+  template<typename _Tp>
+    struct __is_byte_like<_Tp, equal_to<void>>
+    : __bool_constant<sizeof(_Tp) == 1 && is_integral<_Tp>::value> { };
+
+
+
+  enum class byte : unsigned char;
+
+  template<>
+    struct __is_byte_like<byte, equal_to<byte>>
+    : true_type { };
+
+  template<>
+    struct __is_byte_like<byte, equal_to<void>>
+    : true_type { };
+# 1209 "C:/mingw64/include/c++/14.2.0/functional" 3
+  template<typename _Fn>
+    constexpr
+    inline auto
+    not_fn(_Fn&& __fn)
+    noexcept(std::is_nothrow_constructible<std::decay_t<_Fn>, _Fn&&>::value)
+    {
+      return _Not_fn<std::decay_t<_Fn>>{std::forward<_Fn>(__fn), 0};
+    }
+
+
+
+
+
+  template<typename _ForwardIterator1, typename _BinaryPredicate = equal_to<>>
+    class default_searcher
+    {
+    public:
+      constexpr
+      default_searcher(_ForwardIterator1 __pat_first,
+         _ForwardIterator1 __pat_last,
+         _BinaryPredicate __pred = _BinaryPredicate())
+      : _M_m(__pat_first, __pat_last, std::move(__pred))
+      { }
+
+      template<typename _ForwardIterator2>
+ constexpr
+ pair<_ForwardIterator2, _ForwardIterator2>
+ operator()(_ForwardIterator2 __first, _ForwardIterator2 __last) const
+ {
+   _ForwardIterator2 __first_ret =
+     std::search(__first, __last, std::get<0>(_M_m), std::get<1>(_M_m),
+   std::get<2>(_M_m));
+   auto __ret = std::make_pair(__first_ret, __first_ret);
+   if (__ret.first != __last)
+     std::advance(__ret.second, std::distance(std::get<0>(_M_m),
+           std::get<1>(_M_m)));
+   return __ret;
+ }
+
+    private:
+      tuple<_ForwardIterator1, _ForwardIterator1, _BinaryPredicate> _M_m;
+    };
+
+
+
+  template<typename _Key, typename _Tp, typename _Hash, typename _Pred>
+    struct __boyer_moore_map_base
+    {
+      template<typename _RAIter>
+ __boyer_moore_map_base(_RAIter __pat, size_t __patlen,
+          _Hash&& __hf, _Pred&& __pred)
+ : _M_bad_char{ __patlen, std::move(__hf), std::move(__pred) }
+ {
+   if (__patlen > 0)
+     for (__diff_type __i = 0; __i < __patlen - 1; ++__i)
+       _M_bad_char[__pat[__i]] = __patlen - 1 - __i;
+ }
+
+      using __diff_type = _Tp;
+
+      __diff_type
+      _M_lookup(_Key __key, __diff_type __not_found) const
+      {
+ auto __iter = _M_bad_char.find(__key);
+ if (__iter == _M_bad_char.end())
+   return __not_found;
+ return __iter->second;
+      }
+
+      _Pred
+      _M_pred() const { return _M_bad_char.key_eq(); }
+
+      std::unordered_map<_Key, _Tp, _Hash, _Pred> _M_bad_char;
+    };
+
+  template<typename _Tp, size_t _Len, typename _Pred>
+    struct __boyer_moore_array_base
+    {
+      template<typename _RAIter, typename _Unused>
+ __boyer_moore_array_base(_RAIter __pat, size_t __patlen,
+     _Unused&&, _Pred&& __pred)
+ : _M_bad_char{ array<_Tp, _Len>{}, std::move(__pred) }
+ {
+   std::get<0>(_M_bad_char).fill(__patlen);
+   if (__patlen > 0)
+     for (__diff_type __i = 0; __i < __patlen - 1; ++__i)
+       {
+  auto __ch = __pat[__i];
+  using _UCh = make_unsigned_t<decltype(__ch)>;
+  auto __uch = static_cast<_UCh>(__ch);
+  std::get<0>(_M_bad_char)[__uch] = __patlen - 1 - __i;
+       }
+ }
+
+      using __diff_type = _Tp;
+
+      template<typename _Key>
+ __diff_type
+ _M_lookup(_Key __key, __diff_type __not_found) const
+ {
+   auto __ukey = static_cast<make_unsigned_t<_Key>>(__key);
+   if (__ukey >= _Len)
+     return __not_found;
+   return std::get<0>(_M_bad_char)[__ukey];
+ }
+
+      const _Pred&
+      _M_pred() const { return std::get<1>(_M_bad_char); }
+
+      tuple<array<_Tp, _Len>, _Pred> _M_bad_char;
+    };
+
+
+
+  template<typename _RAIter, typename _Hash, typename _Pred,
+           typename _Val = typename iterator_traits<_RAIter>::value_type,
+    typename _Diff = typename iterator_traits<_RAIter>::difference_type>
+    using __boyer_moore_base_t
+      = __conditional_t<__is_byte_like<_Val, _Pred>::value,
+   __boyer_moore_array_base<_Diff, 256, _Pred>,
+   __boyer_moore_map_base<_Val, _Diff, _Hash, _Pred>>;
+
+  template<typename _RAIter, typename _Hash
+      = hash<typename iterator_traits<_RAIter>::value_type>,
+    typename _BinaryPredicate = equal_to<>>
+    class boyer_moore_searcher
+    : __boyer_moore_base_t<_RAIter, _Hash, _BinaryPredicate>
+    {
+      using _Base = __boyer_moore_base_t<_RAIter, _Hash, _BinaryPredicate>;
+      using typename _Base::__diff_type;
+
+    public:
+      boyer_moore_searcher(_RAIter __pat_first, _RAIter __pat_last,
+      _Hash __hf = _Hash(),
+      _BinaryPredicate __pred = _BinaryPredicate());
+
+      template<typename _RandomAccessIterator2>
+        pair<_RandomAccessIterator2, _RandomAccessIterator2>
+ operator()(_RandomAccessIterator2 __first,
+     _RandomAccessIterator2 __last) const;
+
+    private:
+      bool
+      _M_is_prefix(_RAIter __word, __diff_type __len,
+     __diff_type __pos)
+      {
+ const auto& __pred = this->_M_pred();
+ __diff_type __suffixlen = __len - __pos;
+ for (__diff_type __i = 0; __i < __suffixlen; ++__i)
+   if (!__pred(__word[__i], __word[__pos + __i]))
+     return false;
+ return true;
+      }
+
+      __diff_type
+      _M_suffix_length(_RAIter __word, __diff_type __len,
+         __diff_type __pos)
+      {
+ const auto& __pred = this->_M_pred();
+ __diff_type __i = 0;
+ while (__pred(__word[__pos - __i], __word[__len - 1 - __i])
+        && __i < __pos)
+   {
+     ++__i;
+   }
+ return __i;
+      }
+
+      template<typename _Tp>
+ __diff_type
+ _M_bad_char_shift(_Tp __c) const
+ { return this->_M_lookup(__c, _M_pat_end - _M_pat); }
+
+      _RAIter _M_pat;
+      _RAIter _M_pat_end;
+      std::vector<__diff_type> _M_good_suffix;
+    };
+
+  template<typename _RAIter, typename _Hash
+      = hash<typename iterator_traits<_RAIter>::value_type>,
+    typename _BinaryPredicate = equal_to<>>
+    class boyer_moore_horspool_searcher
+    : __boyer_moore_base_t<_RAIter, _Hash, _BinaryPredicate>
+    {
+      using _Base = __boyer_moore_base_t<_RAIter, _Hash, _BinaryPredicate>;
+      using typename _Base::__diff_type;
+
+    public:
+      boyer_moore_horspool_searcher(_RAIter __pat,
+        _RAIter __pat_end,
+        _Hash __hf = _Hash(),
+        _BinaryPredicate __pred
+        = _BinaryPredicate())
+      : _Base(__pat, __pat_end - __pat, std::move(__hf), std::move(__pred)),
+ _M_pat(__pat), _M_pat_end(__pat_end)
+      { }
+
+      template<typename _RandomAccessIterator2>
+        pair<_RandomAccessIterator2, _RandomAccessIterator2>
+ operator()(_RandomAccessIterator2 __first,
+     _RandomAccessIterator2 __last) const
+ {
+   const auto& __pred = this->_M_pred();
+   auto __patlen = _M_pat_end - _M_pat;
+   if (__patlen == 0)
+     return std::make_pair(__first, __first);
+   auto __len = __last - __first;
+   while (__len >= __patlen)
+     {
+       for (auto __scan = __patlen - 1;
+     __pred(__first[__scan], _M_pat[__scan]); --__scan)
+  if (__scan == 0)
+    return std::make_pair(__first, __first + __patlen);
+       auto __shift = _M_bad_char_shift(__first[__patlen - 1]);
+       __len -= __shift;
+       __first += __shift;
+     }
+   return std::make_pair(__last, __last);
+ }
+
+    private:
+      template<typename _Tp>
+ __diff_type
+ _M_bad_char_shift(_Tp __c) const
+ { return this->_M_lookup(__c, _M_pat_end - _M_pat); }
+
+      _RAIter _M_pat;
+      _RAIter _M_pat_end;
+    };
+
+  template<typename _RAIter, typename _Hash, typename _BinaryPredicate>
+    boyer_moore_searcher<_RAIter, _Hash, _BinaryPredicate>::
+    boyer_moore_searcher(_RAIter __pat, _RAIter __pat_end,
+    _Hash __hf, _BinaryPredicate __pred)
+    : _Base(__pat, __pat_end - __pat, std::move(__hf), std::move(__pred)),
+      _M_pat(__pat), _M_pat_end(__pat_end), _M_good_suffix(__pat_end - __pat)
+    {
+      auto __patlen = __pat_end - __pat;
+      if (__patlen == 0)
+ return;
+      __diff_type __last_prefix = __patlen - 1;
+      for (__diff_type __p = __patlen - 1; __p >= 0; --__p)
+ {
+   if (_M_is_prefix(__pat, __patlen, __p + 1))
+     __last_prefix = __p + 1;
+   _M_good_suffix[__p] = __last_prefix + (__patlen - 1 - __p);
+ }
+      for (__diff_type __p = 0; __p < __patlen - 1; ++__p)
+ {
+   auto __slen = _M_suffix_length(__pat, __patlen, __p);
+   auto __pos = __patlen - 1 - __slen;
+   if (!__pred(__pat[__p - __slen], __pat[__pos]))
+     _M_good_suffix[__pos] = __patlen - 1 - __p + __slen;
+ }
+    }
+
+  template<typename _RAIter, typename _Hash, typename _BinaryPredicate>
+  template<typename _RandomAccessIterator2>
+    pair<_RandomAccessIterator2, _RandomAccessIterator2>
+    boyer_moore_searcher<_RAIter, _Hash, _BinaryPredicate>::
+    operator()(_RandomAccessIterator2 __first,
+        _RandomAccessIterator2 __last) const
+    {
+      auto __patlen = _M_pat_end - _M_pat;
+      if (__patlen == 0)
+ return std::make_pair(__first, __first);
+      const auto& __pred = this->_M_pred();
+      __diff_type __i = __patlen - 1;
+      auto __stringlen = __last - __first;
+      while (__i < __stringlen)
+ {
+   __diff_type __j = __patlen - 1;
+   while (__j >= 0 && __pred(__first[__i], _M_pat[__j]))
+     {
+       --__i;
+       --__j;
+     }
+   if (__j < 0)
+     {
+       const auto __match = __first + __i + 1;
+       return std::make_pair(__match, __match + __patlen);
+     }
+   __i += std::max(_M_bad_char_shift(__first[__i]),
+     _M_good_suffix[__j]);
+ }
+      return std::make_pair(__last, __last);
+    }
+
+
+
+
+
+
+
+}
+# 12 "F:/Programming/C++/sfml/sfmlTest/CollisionManager.h" 2
+
 # 1 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 1
 # 11 "F:/Programming/C++/sfml/sfmlTest/Boundary.h"
 # 1 "F:/Programming/C++/sfml/sfmlTest/Position.h" 1
@@ -107590,7 +109234,9 @@ struct Boundary {
 };
 
 sf::VertexArray CreateBoundarySquare(const Boundary& boundaryToDraw);
-# 10 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
+# 14 "F:/Programming/C++/sfml/sfmlTest/CollisionManager.h" 2
+# 1 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 1
+# 10 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h"
 # 1 "F:/Programming/C++/sfml/sfmlTest/position.h" 1
 # 11 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
 class MoveableObject {
@@ -107623,7 +109269,55 @@ private:
     const sf::Texture texture_;
     sf::Sprite sprite_;
 };
-# 8 "F:/Programming/C++/sfml/sfmlTest/Food.h" 2
+# 15 "F:/Programming/C++/sfml/sfmlTest/CollisionManager.h" 2
+
+struct PairHash {
+    std::size_t operator()(const std::pair<std::string, std::string>& pair) const {
+        return std::hash<std::string>()(pair.first) ^ std::hash<std::string>()(pair.second);
+    }
+};
+
+class CollisionManager {
+public:
+    CollisionManager();
+
+    void RegisterObject(const std::string& tag, MoveableObject* object);
+
+
+    void Clear();
+
+
+    void RegisterCollisionCallback(const std::string tagA, const std::string tagB, std::function<void()> callback);
+
+
+    void CheckCollisions();
+
+private:
+
+
+    struct RegisteredObject {
+        std::string tag;
+        MoveableObject* object;
+    };
+
+
+    std::vector<RegisteredObject> objects;
+
+
+    std::unordered_map<
+        std::pair<std::string, std::string>,
+        std::function<void()>,
+        PairHash
+    > callbacks;
+
+
+    static bool IsOverlapping(const Boundary& a, const Boundary& b);
+
+
+    static std::pair<std::string, std::string> MakeSortedKey(const std::string& a, const std::string& b);
+};
+# 10 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
+# 1 "F:/Programming/C++/sfml/sfmlTest/Food.h" 1
 # 18 "F:/Programming/C++/sfml/sfmlTest/Food.h"
 class Food : public MoveableObject {
 public:
@@ -107632,7 +109326,7 @@ public:
 private:
 
 };
-# 10 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
+# 11 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
 # 1 "F:/Programming/C++/sfml/sfmlTest/Utils.h" 1
 # 12 "F:/Programming/C++/sfml/sfmlTest/Utils.h"
 Position ClampToWindow(const Position& desiredPos, const sf::RenderWindow& window, sf::Sprite& sprite);
@@ -107648,7 +109342,7 @@ private:
 };
 
 void LogBoundary(const Boundary& boundary, Logger& logger);
-# 11 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
+# 12 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
 
 
 void CheckForWindowEvents(sf::RenderWindow& window) {
@@ -107693,7 +109387,6 @@ void runSnakeGame() {
     sf::RenderWindow window(sf::VideoMode({800,600}), "SFML Test", sf::Style::Titlebar);
 
 
-
     const sf::Texture characterTexture("img/sword32.png");
     constexpr Position startPosition = {0,0};
     constexpr float playerMovementIncrement = 0.05f;
@@ -107703,6 +109396,15 @@ void runSnakeGame() {
     const sf::Texture foodTexture("img/banana32.png");
     constexpr Position spawnPosition = {100,100};
     Food food(foodTexture, spawnPosition);
+
+
+    CollisionManager collisionManager;
+    collisionManager.RegisterObject("Player", &player);
+    collisionManager.RegisterObject("Food", &food);
+
+    collisionManager.RegisterCollisionCallback("Player", "Food", []() {
+       std::cout << "Nom nom!" << std::endl;
+    });
 
     while (window.isOpen()) {
 
@@ -107715,8 +109417,14 @@ void runSnakeGame() {
         window.clear(sf::Color::Black);
 
 
+        player.setBoundary();
+        food.setBoundary();
+        collisionManager.CheckCollisions();
+
+
         DrawSpriteToScreen(player.getSprite(), window);
         DrawSpriteToScreen(food.getSprite(), window);
+
 
 
 

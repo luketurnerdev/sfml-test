@@ -6,6 +6,8 @@
 #include <functional>
 #include <utility>
 
+CollisionManager::CollisionManager() = default;
+
 void CollisionManager::RegisterObject(const std::string &tag, MoveableObject *object) {
     // add to the objects array
     objects.push_back({tag, object});
@@ -58,6 +60,11 @@ void CollisionManager::CheckCollisions() {
             }
         }
     }
+}
+
+std::pair<std::string, std::string> CollisionManager::MakeSortedKey(const std::string& a, const std::string& b) {
+    if (a < b) return {a, b};
+    else       return {b, a};
 }
 
 
