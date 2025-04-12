@@ -34,12 +34,13 @@ const Boundary &MoveableObject::getBoundary() const {
 void MoveableObject::setPosition(const Position& newPos, const sf::RenderWindow& window) {
     const Position validPos = ClampToWindow(newPos, window, sprite_);
     position_ = validPos;
+    // Update sprite position and boundary
     sprite_.setPosition(sf::Vector2f(position_.x, position_.y));
+    setBoundary();
 }
 
 void MoveableObject::setBoundary() {
     const Boundary boundary = DetermineSpriteBoundary(sprite_, position_);
-    // Maybe error handling here TODO
     boundary_ = boundary;
 }
 

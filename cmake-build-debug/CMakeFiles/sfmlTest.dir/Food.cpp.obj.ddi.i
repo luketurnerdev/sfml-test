@@ -107544,7 +107544,7 @@ struct Position {
 struct Boundary {
     Position topLeftCorner;
     Position topRightCorner;
-    Position bottomLeftCorne;
+    Position bottomLeftCorner;
     Position bottomRightCorner;
 };
 # 10 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2

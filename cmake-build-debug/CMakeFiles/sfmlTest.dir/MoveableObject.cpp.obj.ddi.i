@@ -107537,7 +107537,7 @@ struct Position {
 struct Boundary {
     Position topLeftCorner;
     Position topRightCorner;
-    Position bottomLeftCorne;
+    Position bottomLeftCorner;
     Position bottomRightCorner;
 };
 # 10 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
@@ -107619,7 +107619,9 @@ const Boundary &MoveableObject::getBoundary() const {
 void MoveableObject::setPosition(const Position& newPos, const sf::RenderWindow& window) {
     const Position validPos = ClampToWindow(newPos, window, sprite_);
     position_ = validPos;
+
     sprite_.setPosition(sf::Vector2f(position_.x, position_.y));
+    setBoundary();
 }
 
 void MoveableObject::setBoundary() {

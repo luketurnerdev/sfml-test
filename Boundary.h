@@ -13,7 +13,7 @@
 struct Boundary {
     Position topLeftCorner;
     Position topRightCorner;
-    Position bottomLeftCorne;
+    Position bottomLeftCorner;
     Position bottomRightCorner;
 };
 #endif //BOUNDARY_H

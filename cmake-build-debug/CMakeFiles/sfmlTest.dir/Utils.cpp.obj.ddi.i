@@ -107534,7 +107534,7 @@ struct Position {
 struct Boundary {
     Position topLeftCorner;
     Position topRightCorner;
-    Position bottomLeftCorne;
+    Position bottomLeftCorner;
     Position bottomRightCorner;
 };
 # 7 "F:/Programming/C++/sfml/sfmlTest/Utils.h" 2
@@ -107642,5 +107642,8 @@ Boundary DetermineSpriteBoundary(const sf::Sprite& sprite, const Position& sprit
 Logger::Logger(float intervalInSeconds) : interval(intervalInSeconds) {}
 
 void Logger::LogIfReady(const std::string& message) {
-
+    if (clock.getElapsedTime().asSeconds() >= interval) {
+        std::cout << message << std::endl;
+        clock.restart();
+    }
 }

@@ -107584,7 +107584,7 @@ struct Position {
 struct Boundary {
     Position topLeftCorner;
     Position topRightCorner;
-    Position bottomLeftCorne;
+    Position bottomLeftCorner;
     Position bottomRightCorner;
 };
 # 10 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
@@ -107700,9 +107700,16 @@ void runSnakeGame() {
     constexpr Position spawnPosition = {100,100};
     Food food(foodTexture, spawnPosition);
 
-    Logger logger(2.0f);
+    Logger logger(1.0f);
     while (window.isOpen()) {
+        std::string positionLog = std::format("Player pos: {}, {}. ", player.getPosition().x, player.getPosition().y);
+        std::string boundaryLog = std::format("Player boundary: {}, {} ",
+                player.getBoundary().topLeftCorner.x,
+                player.getBoundary().topLeftCorner.y
 
+
+                );
+        logger.LogIfReady(boundaryLog);
 
 
         CheckForWindowEvents(window);
