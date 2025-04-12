@@ -107545,7 +107545,6 @@ struct Boundary {
 
 Position ClampToWindow(const Position& desiredPos, const sf::RenderWindow& window, sf::Sprite& sprite);
 Boundary DetermineSpriteBoundary(const sf::Sprite& sprite, const Position& spritePositionInSpace);
-
 class Logger {
 public:
     explicit Logger(const float intervalInSeconds);
@@ -107555,6 +107554,8 @@ private:
     float interval;
     sf::Clock clock;
 };
+
+void LogBoundary(const Boundary& boundary, Logger& logger);
 # 6 "F:/Programming/C++/sfml/sfmlTest/Utils.cpp" 2
 
 # 1 "C:/mingw64/include/c++/14.2.0/iostream" 1 3
@@ -107646,4 +107647,9 @@ void Logger::LogIfReady(const std::string& message) {
         std::cout << message << std::endl;
         clock.restart();
     }
+}
+
+void LogBoundary(const Boundary& boundary, Logger& logger) {
+    std::string boundaryLog = std::format("Player boundary: [{}, {}], [{}, {}], [{}, {}], [{}, {}]", boundary.topLeftCorner.x, boundary.topLeftCorner.y, boundary.topRightCorner.x, boundary.topRightCorner.y, boundary.bottomLeftCorner.x, boundary.bottomLeftCorner.y, boundary.bottomRightCorner.x, boundary.bottomRightCorner.y);
+    logger.LogIfReady(boundaryLog);
 }

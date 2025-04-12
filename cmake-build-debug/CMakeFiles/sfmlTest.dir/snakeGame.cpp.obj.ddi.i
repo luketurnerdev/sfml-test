@@ -107634,7 +107634,6 @@ private:
 # 12 "F:/Programming/C++/sfml/sfmlTest/Utils.h"
 Position ClampToWindow(const Position& desiredPos, const sf::RenderWindow& window, sf::Sprite& sprite);
 Boundary DetermineSpriteBoundary(const sf::Sprite& sprite, const Position& spritePositionInSpace);
-
 class Logger {
 public:
     explicit Logger(const float intervalInSeconds);
@@ -107644,6 +107643,8 @@ private:
     float interval;
     sf::Clock clock;
 };
+
+void LogBoundary(const Boundary& boundary, Logger& logger);
 # 11 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
 
 
@@ -107702,14 +107703,7 @@ void runSnakeGame() {
 
     Logger logger(1.0f);
     while (window.isOpen()) {
-        std::string positionLog = std::format("Player pos: {}, {}. ", player.getPosition().x, player.getPosition().y);
-        std::string boundaryLog = std::format("Player boundary: {}, {} ",
-                player.getBoundary().topLeftCorner.x,
-                player.getBoundary().topLeftCorner.y
-
-
-                );
-        logger.LogIfReady(boundaryLog);
+        LogBoundary(player.getBoundary(), logger);
 
 
         CheckForWindowEvents(window);

@@ -61,3 +61,8 @@ void Logger::LogIfReady(const std::string& message) {
         clock.restart();
     }
 }
+
+void LogBoundary(const Boundary& boundary, Logger& logger) {
+    std::string boundaryLog = std::format("Player boundary: [{}, {}], [{}, {}], [{}, {}], [{}, {}]", boundary.topLeftCorner.x, boundary.topLeftCorner.y, boundary.topRightCorner.x, boundary.topRightCorner.y, boundary.bottomLeftCorner.x, boundary.bottomLeftCorner.y, boundary.bottomRightCorner.x, boundary.bottomRightCorner.y);
+    logger.LogIfReady(boundaryLog);
+}

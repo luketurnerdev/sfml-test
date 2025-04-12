@@ -65,14 +65,7 @@ void runSnakeGame() {
 
     Logger logger(1.0f);
     while (window.isOpen()) {
-        std::string positionLog = std::format("Player pos: {}, {}. ", player.getPosition().x, player.getPosition().y);
-        std::string boundaryLog = std::format("Player boundary: {}, {} ",
-                player.getBoundary().topLeftCorner.x,
-                player.getBoundary().topLeftCorner.y
-                // player.getBoundary().bottomLeftCorner.y,
-                // player.getBoundary().bottomRightCorner.y
-                );
-        logger.LogIfReady(boundaryLog);
+        LogBoundary(player.getBoundary(), logger);
 
         // Check for events
         CheckForWindowEvents(window);

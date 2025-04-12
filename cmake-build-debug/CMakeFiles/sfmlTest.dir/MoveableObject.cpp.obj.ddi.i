@@ -107578,7 +107578,6 @@ private:
 # 12 "F:/Programming/C++/sfml/sfmlTest/Utils.h"
 Position ClampToWindow(const Position& desiredPos, const sf::RenderWindow& window, sf::Sprite& sprite);
 Boundary DetermineSpriteBoundary(const sf::Sprite& sprite, const Position& spritePositionInSpace);
-
 class Logger {
 public:
     explicit Logger(const float intervalInSeconds);
@@ -107588,6 +107587,8 @@ private:
     float interval;
     sf::Clock clock;
 };
+
+void LogBoundary(const Boundary& boundary, Logger& logger);
 # 7 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.cpp" 2
 
 
@@ -107626,6 +107627,5 @@ void MoveableObject::setPosition(const Position& newPos, const sf::RenderWindow&
 
 void MoveableObject::setBoundary() {
     const Boundary boundary = DetermineSpriteBoundary(sprite_, position_);
-
     boundary_ = boundary;
 }

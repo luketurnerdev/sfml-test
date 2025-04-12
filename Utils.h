@@ -11,7 +11,6 @@
 
 Position ClampToWindow(const Position& desiredPos, const sf::RenderWindow& window, sf::Sprite& sprite);
 Boundary DetermineSpriteBoundary(const sf::Sprite& sprite, const Position& spritePositionInSpace);
-
 class Logger {
 public:
     explicit Logger(const float intervalInSeconds);
@@ -21,5 +20,7 @@ private:
     float interval;
     sf::Clock clock;
 };
+
+void LogBoundary(const Boundary& boundary, Logger& logger);
 
 #endif //UTILS_H
