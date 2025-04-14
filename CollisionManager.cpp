@@ -14,10 +14,39 @@ void CollisionManager::RegisterObject(const std::string &tag, MoveableObject *ob
     objects.push_back({tag, object});
 }
 
-void CollisionManager::Clear() {
+void CollisionManager::ClearAllCollisionObjectsAndCallbacks() {
     objects.clear();
     callbacks.clear();
 }
+
+void CollisionManager::ClearOneObjectAndCallback(MoveableObject* objectToClear) {
+    std::string tagToRemove;
+
+    // Remove from objects list
+    objects.erase(
+        std::remove_if(objects.begin(), objects.end(), [&](const RegisteredObject obj) {
+            if (obj.object == objectToClear) {
+                tagToRemove = obj.tag;
+                return true;
+            }
+            return false;
+    }),
+    objects.end()
+    );
+
+    // Remove all callbacks that this tag is used in
+
+    for (auto it = callbacks.begin(); it != callbacks.end();) {
+        const auto& key = it->first;
+
+        if (key.first == tagToRemove || key.second == tagToRemove) {
+            it = callbacks.erase(it);
+        } else {
+            ++it;
+        }
+    }
+}
+
 
 void CollisionManager::RegisterCollisionCallback(const std::string tagA, const std::string tagB, std::function<void()> callback) {
     auto key = MakeSortedKey(tagA, tagB);
@@ -25,15 +54,15 @@ void CollisionManager::RegisterCollisionCallback(const std::string tagA, const s
 }
 
 bool CollisionManager::IsOverlapping(const Boundary &a, const Boundary &b) {
-    float aLeft = a.topLeftCorner.x; // 0
-    float aRight = a.topRightCorner.x; // 10
-    float aTop = a.topLeftCorner.y; // 0
-    float aBottom = a.bottomLeftCorner.y; // 10
+    const float aLeft = a.topLeftCorner.x; // 0
+    const float aRight = a.topRightCorner.x; // 10
+    const float aTop = a.topLeftCorner.y; // 0
+    const float aBottom = a.bottomLeftCorner.y; // 10
 
-    float bLeft = b.topLeftCorner.x;
-    float bRight = b.topRightCorner.x;
-    float bTop = b.topLeftCorner.y;
-    float bBottom = b.bottomLeftCorner.y;
+    const float bLeft = b.topLeftCorner.x;
+    const float bRight = b.topRightCorner.x;
+    const float bTop = b.topLeftCorner.y;
+    const float bBottom = b.bottomLeftCorner.y;
 
     return !(aRight < bLeft ||
              aLeft > bRight ||
@@ -48,14 +77,18 @@ void CollisionManager::CheckCollisions() {
         // E.g., A-B is valid, but B-A should be skipped, as should A-A.
         // For the second tag, we
         for (size_t j = i + 1; j < objects.size(); ++j) {
+
             const auto& objA = objects[i];
             const auto& objB = objects[j];
+
+            if (objA.object == nullptr || objB.object == nullptr) {
+                continue;
+            }
 
             if (IsOverlapping(objA.object->getBoundary(), objB.object->getBoundary())) {
                 auto key = MakeSortedKey(objA.tag, objB.tag);
 
-                auto it = callbacks.find(key);
-                if (it != callbacks.end()) {
+                if (auto it = callbacks.find(key); it != callbacks.end()) {
                     it->second(); // Call it
                 }
             }

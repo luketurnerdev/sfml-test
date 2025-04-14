@@ -109284,12 +109284,21 @@ struct PairHash {
 
 class CollisionManager {
 public:
+
+    struct RegisteredObject {
+        std::string tag;
+        MoveableObject* object;
+    };
+
     CollisionManager();
+
 
     void RegisterObject(const std::string& tag, MoveableObject* object);
 
 
-    void Clear();
+    void ClearAllCollisionObjectsAndCallbacks();
+
+    void ClearOneObjectAndCallback(MoveableObject* object);
 
 
     void RegisterCollisionCallback(const std::string tagA, const std::string tagB, std::function<void()> callback);
@@ -109298,13 +109307,6 @@ public:
     void CheckCollisions();
 
 private:
-
-
-    struct RegisteredObject {
-        std::string tag;
-        MoveableObject* object;
-    };
-
 
     std::vector<RegisteredObject> objects;
 
@@ -109404,6 +109406,7 @@ void SetupCollisions(CollisionManager &collisionManager, MoveableObject &player,
 
     collisionManager.RegisterCollisionCallback("Player", "Food", [&]() {
        std::cout << "Nom nom!" << std::endl;
+        collisionManager.ClearOneObjectAndCallback(food);
         Food::DeleteFood(food);
     });
 

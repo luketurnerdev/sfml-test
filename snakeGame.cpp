@@ -58,6 +58,7 @@ void SetupCollisions(CollisionManager &collisionManager, MoveableObject &player,
 
     collisionManager.RegisterCollisionCallback("Player", "Food", [&]() {
        std::cout << "Nom nom!" << std::endl;
+        collisionManager.ClearOneObjectAndCallback(food);
         Food::DeleteFood(food);
     });
 

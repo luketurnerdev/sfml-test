@@ -21,12 +21,21 @@ struct PairHash {
 
 class CollisionManager {
 public:
+    // Properties of the object to be setup for collisions
+    struct RegisteredObject {
+        std::string tag;
+        MoveableObject* object;
+    };
+
     CollisionManager();
+
     // Take the MoveableObject in memory and register it as a new Tag
     void RegisterObject(const std::string& tag, MoveableObject* object);
 
     // Removes all registered objects and callbacks
-    void Clear();
+    void ClearAllCollisionObjectsAndCallbacks();
+
+    void ClearOneObjectAndCallback(MoveableObject* object);
 
     // Setup tagA to have a collision interaction with tagB, and fire a callback
     void RegisterCollisionCallback(const std::string tagA, const std::string tagB, std::function<void()> callback);
@@ -35,13 +44,6 @@ public:
     void CheckCollisions();
 
 private:
-
-    // Properties of the object to be setup for collisions
-    struct RegisteredObject {
-        std::string tag;
-        MoveableObject* object;
-    };
-
     // List of all registered objects
     std::vector<RegisteredObject> objects;
 
