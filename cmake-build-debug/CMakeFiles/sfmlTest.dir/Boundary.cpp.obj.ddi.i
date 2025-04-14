@@ -107559,7 +107559,7 @@ public:
     void setPosition(const Position& newPos, const sf::RenderWindow& window);
 
 
-    void setMovementIncrement(float);
+
     float getMovementIncrement() const;
 
 

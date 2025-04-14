@@ -49,6 +49,20 @@ void SetInitialSpritePos(sf::Sprite& sprite, const float& startingXPos, const fl
     sprite.setPosition(startingPos);
 }
 
+void SetupCollisions(CollisionManager &collisionManager, MoveableObject &player, Food *&food) {
+
+    // Register collisions
+
+    collisionManager.RegisterObject("Player", &player);
+    collisionManager.RegisterObject("Food", food);
+
+    collisionManager.RegisterCollisionCallback("Player", "Food", [&]() {
+       std::cout << "Nom nom!" << std::endl;
+        Food::DeleteFood(food);
+    });
+
+}
+
 
 void runSnakeGame() {
     // Setup window
@@ -58,16 +72,12 @@ void runSnakeGame() {
     MoveableObject player = Player::SpawnPlayer("img/sword32.png", {0,0}, 0.05f);
 
     // Spawn some food
-    Food food = Food::SpawnFood("img/banana32.png", {100,100});
+    sf::Texture foodTexture;
+    foodTexture.loadFromFile("img/banana32.png");
+    Food* food = Food::SpawnFood(foodTexture, {100,100});
 
-    // Register collisions
     CollisionManager collisionManager;
-    collisionManager.RegisterObject("Player", &player);
-    collisionManager.RegisterObject("Food", &food);
-
-    collisionManager.RegisterCollisionCallback("Player", "Food", []() {
-       std::cout << "Nom nom!" << std::endl;
-    });
+    SetupCollisions(collisionManager, player, *&food);
 
     while (window.isOpen()) {
         // Check for events
@@ -84,11 +94,15 @@ void runSnakeGame() {
 
         // Render whatever we want to
         DrawSpriteToScreen(player.getSprite(), window);
-        DrawSpriteToScreen(food.getSprite(), window);
 
         // Collision squares for visibility (optional)
         DrawBoundarySquareOnScreenThisFrame(player, window);
-        DrawBoundarySquareOnScreenThisFrame(food, window);
+
+        // Don't try to render food if it has been eaten
+        if (food != nullptr) {
+            DrawBoundarySquareOnScreenThisFrame(*food, window);
+            DrawSpriteToScreen(food->getSprite(), window);
+        }
 
         // Display the current frame with what was drawn
         window.display();

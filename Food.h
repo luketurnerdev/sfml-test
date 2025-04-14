@@ -18,6 +18,9 @@
 class Food : public MoveableObject {
 public:
     Food(const sf::Texture& texture, const Position& spawnPos);
-    static Food SpawnFood(const std::string& texturePath, Position spawnPosition);
+    static Food* SpawnFood(const sf::Texture& texture, Position spawnPosition);
+    
+    // Food*& is a reference to a pointer
+    static void DeleteFood(Food*& foodInstance);
 };
 #endif //FOOD_H

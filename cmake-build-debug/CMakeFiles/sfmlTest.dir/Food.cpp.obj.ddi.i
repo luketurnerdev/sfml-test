@@ -107571,7 +107571,7 @@ public:
     void setPosition(const Position& newPos, const sf::RenderWindow& window);
 
 
-    void setMovementIncrement(float);
+
     float getMovementIncrement() const;
 
 
@@ -107593,18 +107593,29 @@ private:
 class Food : public MoveableObject {
 public:
     Food(const sf::Texture& texture, const Position& spawnPos);
-    static Food SpawnFood(const std::string& texturePath, Position spawnPosition);
+    static Food* SpawnFood(const sf::Texture& texture, Position spawnPosition);
+
+
+    static void DeleteFood(Food*& foodInstance);
 };
 # 6 "F:/Programming/C++/sfml/sfmlTest/Food.cpp" 2
 
 Food::Food(const sf::Texture& texture, const Position& spawnPos) : MoveableObject(texture, spawnPos){}
 
-Food Food::SpawnFood(const std::string& texturePath, Position spawnPosition) {
+Food* Food::SpawnFood(const sf::Texture& texture, Position spawnPosition) {
 
-    const sf::Texture foodTexture(texturePath);
-    Food food(foodTexture, spawnPosition);
+    Food* food = new Food(texture, spawnPosition);
 
 
-    food.setBoundary();
+    food->setBoundary();
     return food;
+}
+
+void Food::DeleteFood(Food*& foodInstance) {
+
+
+    delete foodInstance;
+
+
+    foodInstance = nullptr;
 }

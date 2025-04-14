@@ -109257,7 +109257,7 @@ public:
     void setPosition(const Position& newPos, const sf::RenderWindow& window);
 
 
-    void setMovementIncrement(float);
+
     float getMovementIncrement() const;
 
 
@@ -109327,7 +109327,10 @@ private:
 class Food : public MoveableObject {
 public:
     Food(const sf::Texture& texture, const Position& spawnPos);
-    static Food SpawnFood(const std::string& texturePath, Position spawnPosition);
+    static Food* SpawnFood(const sf::Texture& texture, Position spawnPosition);
+
+
+    static void DeleteFood(Food*& foodInstance);
 };
 # 11 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
 # 1 "F:/Programming/C++/sfml/sfmlTest/Player.h" 1
@@ -109392,6 +109395,20 @@ void SetInitialSpritePos(sf::Sprite& sprite, const float& startingXPos, const fl
     sprite.setPosition(startingPos);
 }
 
+void SetupCollisions(CollisionManager &collisionManager, MoveableObject &player, Food *&food) {
+
+
+
+    collisionManager.RegisterObject("Player", &player);
+    collisionManager.RegisterObject("Food", food);
+
+    collisionManager.RegisterCollisionCallback("Player", "Food", [&]() {
+       std::cout << "Nom nom!" << std::endl;
+        Food::DeleteFood(food);
+    });
+
+}
+
 
 void runSnakeGame() {
 
@@ -109401,16 +109418,12 @@ void runSnakeGame() {
     MoveableObject player = Player::SpawnPlayer("img/sword32.png", {0,0}, 0.05f);
 
 
-    Food food = Food::SpawnFood("img/banana32.png", {100,100});
-
+    sf::Texture foodTexture;
+    foodTexture.loadFromFile("img/banana32.png");
+    Food* food = Food::SpawnFood(foodTexture, {100,100});
 
     CollisionManager collisionManager;
-    collisionManager.RegisterObject("Player", &player);
-    collisionManager.RegisterObject("Food", &food);
-
-    collisionManager.RegisterCollisionCallback("Player", "Food", []() {
-       std::cout << "Nom nom!" << std::endl;
-    });
+    SetupCollisions(collisionManager, player, *&food);
 
     while (window.isOpen()) {
 
@@ -109427,11 +109440,15 @@ void runSnakeGame() {
 
 
         DrawSpriteToScreen(player.getSprite(), window);
-        DrawSpriteToScreen(food.getSprite(), window);
 
 
         DrawBoundarySquareOnScreenThisFrame(player, window);
-        DrawBoundarySquareOnScreenThisFrame(food, window);
+
+
+        if (food != nullptr) {
+            DrawBoundarySquareOnScreenThisFrame(*food, window);
+            DrawSpriteToScreen(food->getSprite(), window);
+        }
 
 
         window.display();

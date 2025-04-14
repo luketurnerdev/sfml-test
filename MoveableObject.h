@@ -21,7 +21,7 @@ public:
     void setPosition(const Position& newPos, const sf::RenderWindow& window);
 
     // Movement
-    void setMovementIncrement(float);
+    // void setMovementIncrement(float);
     float getMovementIncrement() const;
 
     // Boundaries / Collisions
