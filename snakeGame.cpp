@@ -50,24 +50,21 @@ void SetInitialSpritePos(sf::Sprite& sprite, const float& startingXPos, const fl
     sprite.setPosition(startingPos);
 }
 
-void SetupCollisions(CollisionManager &collisionManager, MoveableObject &player, Food *&food) {
-
-    // Register collisions
+void SetupCollisions(SpawnManager& spawnManager, CollisionManager &collisionManager, MoveableObject &player, Food *&food) {
+    collisionManager.ClearOneObjectAndCallback(food);  // Get rid of any dangling references to old *foods
 
     collisionManager.RegisterObject("Player", &player);
     collisionManager.RegisterObject("Food", food);
 
     collisionManager.RegisterCollisionCallback("Player", "Food", [&]() {
-       std::cout << "Nom nom!" << std::endl;
+        std::cout << "Nom nom!" << std::endl;
         collisionManager.ClearOneObjectAndCallback(food);
         Food::DeleteFood(food);
+        food = nullptr;
+        spawnManager.setFoodCurrentlySpawned(false);
     });
-
 }
 
-void Init() {
-
-}
 void runSnakeGame() {
     // Setup window
     sf::RenderWindow window(sf::VideoMode({800,600}), "SFML Test", sf::Style::Titlebar);
@@ -75,19 +72,12 @@ void runSnakeGame() {
     // Spawn player
     MoveableObject player = Player::SpawnPlayer("img/sword32.png", {0,0}, 0.05f);
 
-    // Spawn some food
-    // sf::Texture foodTexture;
-    // foodTexture.loadFromFile("img/banana32.png");
-    // Food* food = Food::SpawnFood(foodTexture, {100,100});
-
-
     // Spawning system
     SpawnManager spawnManager;
-    Food* food = spawnManager.spawnFoodInRandomLocation(window);
+    Food* food = nullptr;
 
     // Collisions
     CollisionManager collisionManager;
-    SetupCollisions(collisionManager, player, *&food);
 
     while (window.isOpen()) {
         // Check for events
@@ -96,6 +86,16 @@ void runSnakeGame() {
 
         // Boundary and collision stuff
         collisionManager.CheckCollisions();
+
+        // Food spawning
+        if (!spawnManager.getFoodCurrentlySpawned()) {
+            food = spawnManager.spawnFoodInRandomLocation(window);
+
+            if (food != nullptr) {
+                SetupCollisions(spawnManager, collisionManager, player, food);
+                spawnManager.setFoodCurrentlySpawned(true);
+            }
+        }
 
         // Drawing //
 

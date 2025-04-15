@@ -107649,17 +107649,17 @@ SpawnManager::SpawnManager() {
 Food* SpawnManager::spawnFoodInRandomLocation(const sf::RenderWindow& window) {
     if (foodIsCurrentlySpawned_) {return nullptr;}
 
-    int windowX = window.getSize().x;
-    int windowY = window.getSize().y;
 
     float xPos = static_cast<float>(RandomNumber(0,window.getSize().x));
     float yPos = static_cast<float>(RandomNumber(0,window.getSize().y));
 
+
     sf::Texture foodTexture;
     foodTexture.loadFromFile("img/banana32.png");
 
-    Food* food = Food::SpawnFood(foodTexture, {xPos,yPos});
 
+    Food* food = Food::SpawnFood(foodTexture, {xPos,yPos});
+    setFoodCurrentlySpawned(true);
     return food;
 };
 

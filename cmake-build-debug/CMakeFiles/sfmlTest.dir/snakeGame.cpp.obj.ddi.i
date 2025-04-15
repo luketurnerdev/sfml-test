@@ -109415,37 +109415,34 @@ void SetInitialSpritePos(sf::Sprite& sprite, const float& startingXPos, const fl
     sprite.setPosition(startingPos);
 }
 
-void SetupCollisions(CollisionManager &collisionManager, MoveableObject &player, Food *&food) {
-
-
+void SetupCollisions(SpawnManager& spawnManager, CollisionManager &collisionManager, MoveableObject &player, Food *&food) {
+    collisionManager.ClearOneObjectAndCallback(food);
 
     collisionManager.RegisterObject("Player", &player);
     collisionManager.RegisterObject("Food", food);
 
     collisionManager.RegisterCollisionCallback("Player", "Food", [&]() {
-       std::cout << "Nom nom!" << std::endl;
+        std::cout << "Nom nom!" << std::endl;
         collisionManager.ClearOneObjectAndCallback(food);
         Food::DeleteFood(food);
+        food = nullptr;
+        spawnManager.setFoodCurrentlySpawned(false);
     });
-
 }
 
-void Init() {
-
-}
 void runSnakeGame() {
 
     sf::RenderWindow window(sf::VideoMode({800,600}), "SFML Test", sf::Style::Titlebar);
 
 
     MoveableObject player = Player::SpawnPlayer("img/sword32.png", {0,0}, 0.05f);
-# 85 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp"
+
+
     SpawnManager spawnManager;
-    Food* food = spawnManager.spawnFoodInRandomLocation(window);
+    Food* food = nullptr;
 
 
     CollisionManager collisionManager;
-    SetupCollisions(collisionManager, player, *&food);
 
     while (window.isOpen()) {
 
@@ -109454,6 +109451,16 @@ void runSnakeGame() {
 
 
         collisionManager.CheckCollisions();
+
+
+        if (!spawnManager.getFoodCurrentlySpawned()) {
+            food = spawnManager.spawnFoodInRandomLocation(window);
+
+            if (food != nullptr) {
+                SetupCollisions(spawnManager, collisionManager, player, food);
+                spawnManager.setFoodCurrentlySpawned(true);
+            }
+        }
 
 
 
