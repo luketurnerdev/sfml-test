@@ -109366,7 +109366,7 @@ void LogBoundary(const Boundary& boundary, Logger& logger);
 class SpawnManager {
 public:
     SpawnManager();
-    Food* spawnFoodInRandomLocation();
+    Food* spawnFoodInRandomLocation(const sf::RenderWindow& window);
     void setLastSpawnLocation(const Position newPos);
     void setFoodCurrentlySpawned(bool isSpawned);
 
@@ -109441,7 +109441,7 @@ void runSnakeGame() {
     MoveableObject player = Player::SpawnPlayer("img/sword32.png", {0,0}, 0.05f);
 # 85 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp"
     SpawnManager spawnManager;
-    Food* food = spawnManager.spawnFoodInRandomLocation();
+    Food* food = spawnManager.spawnFoodInRandomLocation(window);
 
 
     CollisionManager collisionManager;

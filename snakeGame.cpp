@@ -83,7 +83,7 @@ void runSnakeGame() {
 
     // Spawning system
     SpawnManager spawnManager;
-    Food* food = spawnManager.spawnFoodInRandomLocation();
+    Food* food = spawnManager.spawnFoodInRandomLocation(window);
 
     // Collisions
     CollisionManager collisionManager;

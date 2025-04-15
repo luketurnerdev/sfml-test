@@ -16,7 +16,7 @@
 class SpawnManager {
 public:
     SpawnManager();
-    Food* spawnFoodInRandomLocation();
+    Food* spawnFoodInRandomLocation(const sf::RenderWindow& window);
     void setLastSpawnLocation(const Position newPos);
     void setFoodCurrentlySpawned(bool isSpawned);
 
