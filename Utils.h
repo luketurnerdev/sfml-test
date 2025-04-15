@@ -11,6 +11,8 @@
 
 Position ClampToWindow(const Position& desiredPos, const sf::RenderWindow& window, sf::Sprite& sprite);
 Boundary DetermineSpriteBoundary(const sf::Sprite& sprite, const Position& spritePositionInSpace);
+int RandomNumber(int min, int max);
+
 class Logger {
 public:
     explicit Logger(const float intervalInSeconds);

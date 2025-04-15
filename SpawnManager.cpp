@@ -5,18 +5,23 @@
 #include "SpawnManager.h"
 
 #include "Food.h"
+#include "Utils.h"
 
 SpawnManager::SpawnManager() {
     foodIsCurrentlySpawned_ = false;
 }
 
-void SpawnManager::spawnFoodInRandomLocation(Position spawnPos) {
-    if (foodIsCurrentlySpawned_) return;
-
+Food* SpawnManager::spawnFoodInRandomLocation() {
+    if (foodIsCurrentlySpawned_) {return nullptr;}
+    float xPos = static_cast<float>(RandomNumber(300,500));
+    float yPos = static_cast<float>(RandomNumber(300,500));
     // TODO - make the next 3 lines dynamic (default texture, random location)
     sf::Texture foodTexture;
     foodTexture.loadFromFile("img/banana32.png");
-    Food::SpawnFood(foodTexture, {100,100});
+
+    Food* food = Food::SpawnFood(foodTexture, {xPos,yPos});
+
+    return food;
 };
 
 void SpawnManager::setLastSpawnLocation(const Position newPos) {

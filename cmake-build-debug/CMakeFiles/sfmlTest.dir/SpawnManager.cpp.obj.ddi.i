@@ -14,40 +14,6 @@
 
 
 
-# 1 "F:/Programming/C++/sfml/sfmlTest/Position.h" 1
-
-
-
-
-
-
-struct Position {
-    float x;
-    float y;
-};
-# 8 "F:/Programming/C++/sfml/sfmlTest/SpawnManager.h" 2
-
-
-
-
-
-
-
-class SpawnManager {
-    SpawnManager();
-public:
-    void spawnFoodInRandomLocation(Position spawnPos);
-    void setLastSpawnLocation(const Position newPos);
-    void setFoodCurrentlySpawned(bool isSpawned);
-
-    bool getFoodCurrentlySpawned() const;
-    const Position& getLastSpawnLocation() const;
-private:
-    bool foodIsCurrentlySpawned_;
-    Position lastSpawnLocation_ = {0,0};
-};
-# 6 "F:/Programming/C++/sfml/sfmlTest/SpawnManager.cpp" 2
-
 # 1 "F:/Programming/C++/sfml/sfmlTest/Food.h" 1
 
 
@@ -107568,7 +107534,23 @@ void __attribute__((dllimport)) sleep(Time duration);
 # 8 "F:/Programming/C++/sfml/sfmlTest/MoveableObject.h" 2
 
 # 1 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 1
-# 16 "F:/Programming/C++/sfml/sfmlTest/Boundary.h"
+# 11 "F:/Programming/C++/sfml/sfmlTest/Boundary.h"
+# 1 "F:/Programming/C++/sfml/sfmlTest/Position.h" 1
+
+
+
+
+
+
+struct Position {
+    float x;
+    float y;
+};
+# 12 "F:/Programming/C++/sfml/sfmlTest/Boundary.h" 2
+
+
+
+
 class MoveableObject;
 struct Boundary {
     Position topLeftCorner;
@@ -107623,19 +107605,58 @@ public:
 
     static void DeleteFood(Food*& foodInstance);
 };
-# 8 "F:/Programming/C++/sfml/sfmlTest/SpawnManager.cpp" 2
+# 8 "F:/Programming/C++/sfml/sfmlTest/SpawnManager.h" 2
+# 16 "F:/Programming/C++/sfml/sfmlTest/SpawnManager.h"
+class SpawnManager {
+public:
+    SpawnManager();
+    Food* spawnFoodInRandomLocation();
+    void setLastSpawnLocation(const Position newPos);
+    void setFoodCurrentlySpawned(bool isSpawned);
+
+    bool getFoodCurrentlySpawned() const;
+    const Position& getLastSpawnLocation() const;
+private:
+    bool foodIsCurrentlySpawned_;
+    Position lastSpawnLocation_ = {0,0};
+};
+# 6 "F:/Programming/C++/sfml/sfmlTest/SpawnManager.cpp" 2
+
+
+# 1 "F:/Programming/C++/sfml/sfmlTest/Utils.h" 1
+# 12 "F:/Programming/C++/sfml/sfmlTest/Utils.h"
+Position ClampToWindow(const Position& desiredPos, const sf::RenderWindow& window, sf::Sprite& sprite);
+Boundary DetermineSpriteBoundary(const sf::Sprite& sprite, const Position& spritePositionInSpace);
+int RandomNumber(int min, int max);
+
+class Logger {
+public:
+    explicit Logger(const float intervalInSeconds);
+    void LogIfReady(const std::string& message);
+
+private:
+    float interval;
+    sf::Clock clock;
+};
+
+void LogBoundary(const Boundary& boundary, Logger& logger);
+# 9 "F:/Programming/C++/sfml/sfmlTest/SpawnManager.cpp" 2
 
 SpawnManager::SpawnManager() {
     foodIsCurrentlySpawned_ = false;
 }
 
-void SpawnManager::spawnFoodInRandomLocation(Position spawnPos) {
-    if (foodIsCurrentlySpawned_) return;
-
+Food* SpawnManager::spawnFoodInRandomLocation() {
+    if (foodIsCurrentlySpawned_) {return nullptr;}
+    float xPos = static_cast<float>(RandomNumber(300,500));
+    float yPos = static_cast<float>(RandomNumber(300,500));
 
     sf::Texture foodTexture;
     foodTexture.loadFromFile("img/banana32.png");
-    Food::SpawnFood(foodTexture, {100,100});
+
+    Food* food = Food::SpawnFood(foodTexture, {xPos,yPos});
+
+    return food;
 };
 
 void SpawnManager::setLastSpawnLocation(const Position newPos) {

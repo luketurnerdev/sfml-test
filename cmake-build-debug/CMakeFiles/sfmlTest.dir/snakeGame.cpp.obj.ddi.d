@@ -310,4 +310,5 @@ CMakeFiles\sfmlTest.dir\snakeGame.cpp.obj.ddi: \
  F:/Programming/C++/sfml/sfmlTest/position.h \
  F:/Programming/C++/sfml/sfmlTest/Food.h \
  F:/Programming/C++/sfml/sfmlTest/Player.h \
- F:/Programming/C++/sfml/sfmlTest/Utils.h
+ F:/Programming/C++/sfml/sfmlTest/Utils.h \
+ F:/Programming/C++/sfml/sfmlTest/SpawnManager.h

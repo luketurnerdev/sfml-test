@@ -109346,6 +109346,8 @@ public:
 # 12 "F:/Programming/C++/sfml/sfmlTest/Utils.h"
 Position ClampToWindow(const Position& desiredPos, const sf::RenderWindow& window, sf::Sprite& sprite);
 Boundary DetermineSpriteBoundary(const sf::Sprite& sprite, const Position& spritePositionInSpace);
+int RandomNumber(int min, int max);
+
 class Logger {
 public:
     explicit Logger(const float intervalInSeconds);
@@ -109359,6 +109361,22 @@ private:
 void LogBoundary(const Boundary& boundary, Logger& logger);
 # 13 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
 
+# 1 "F:/Programming/C++/sfml/sfmlTest/SpawnManager.h" 1
+# 16 "F:/Programming/C++/sfml/sfmlTest/SpawnManager.h"
+class SpawnManager {
+public:
+    SpawnManager();
+    Food* spawnFoodInRandomLocation();
+    void setLastSpawnLocation(const Position newPos);
+    void setFoodCurrentlySpawned(bool isSpawned);
+
+    bool getFoodCurrentlySpawned() const;
+    const Position& getLastSpawnLocation() const;
+private:
+    bool foodIsCurrentlySpawned_;
+    Position lastSpawnLocation_ = {0,0};
+};
+# 15 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
 
 void CheckForWindowEvents(sf::RenderWindow& window) {
     while (const std::optional event = window.pollEvent()) {
@@ -109421,11 +109439,10 @@ void runSnakeGame() {
 
 
     MoveableObject player = Player::SpawnPlayer("img/sword32.png", {0,0}, 0.05f);
+# 85 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp"
+    SpawnManager spawnManager;
+    Food* food = spawnManager.spawnFoodInRandomLocation();
 
-
-    sf::Texture foodTexture;
-    foodTexture.loadFromFile("img/banana32.png");
-    Food* food = Food::SpawnFood(foodTexture, {100,100});
 
     CollisionManager collisionManager;
     SetupCollisions(collisionManager, player, *&food);

@@ -4,6 +4,7 @@
 
 #ifndef SPAWNMANAGER_H
 #define SPAWNMANAGER_H
+#include "Food.h"
 #include "Position.h"
 /*
     We will need:
@@ -13,9 +14,9 @@
 */
 
 class SpawnManager {
-    SpawnManager();
 public:
-    void spawnFoodInRandomLocation(Position spawnPos);
+    SpawnManager();
+    Food* spawnFoodInRandomLocation();
     void setLastSpawnLocation(const Position newPos);
     void setFoodCurrentlySpawned(bool isSpawned);
 

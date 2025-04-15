@@ -11,6 +11,7 @@
 #include "Player.h"
 #include "Utils.h"
 #include "MoveableObject.h"
+#include "SpawnManager.h"
 
 void CheckForWindowEvents(sf::RenderWindow& window) {
     while (const std::optional event = window.pollEvent()) {
@@ -75,10 +76,16 @@ void runSnakeGame() {
     MoveableObject player = Player::SpawnPlayer("img/sword32.png", {0,0}, 0.05f);
 
     // Spawn some food
-    sf::Texture foodTexture;
-    foodTexture.loadFromFile("img/banana32.png");
-    Food* food = Food::SpawnFood(foodTexture, {100,100});
+    // sf::Texture foodTexture;
+    // foodTexture.loadFromFile("img/banana32.png");
+    // Food* food = Food::SpawnFood(foodTexture, {100,100});
 
+
+    // Spawning system
+    SpawnManager spawnManager;
+    Food* food = spawnManager.spawnFoodInRandomLocation();
+
+    // Collisions
     CollisionManager collisionManager;
     SetupCollisions(collisionManager, player, *&food);
 

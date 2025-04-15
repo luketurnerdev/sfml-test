@@ -8,6 +8,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 
+#include <random>;
 #include "Boundary.h"
 #include "position.h"
 
@@ -52,6 +53,15 @@ Boundary DetermineSpriteBoundary(const sf::Sprite& sprite, const Position& sprit
         bottomRight
     };
 }
+
+int RandomNumber(int min, int max) {
+    std::random_device rd; // random_device gets a seed from the hardware of the pc every compilation
+    std::mt19937 gen(rd()); // Use the mersenne-twister engine to generate the number with the rd seed
+    std::uniform_int_distribution<> distribution(min,max); // Generate a range of ints, with an even distribution (equal amount of chance of being chosen)
+
+    return distribution(gen); // Generate the random number with our engine, within our range
+}
+
 
 Logger::Logger(float intervalInSeconds) : interval(intervalInSeconds) {}
 
