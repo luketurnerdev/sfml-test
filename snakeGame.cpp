@@ -64,12 +64,14 @@ void SetupCollisions(CollisionManager &collisionManager, MoveableObject &player,
 
 }
 
+void Init() {
 
+}
 void runSnakeGame() {
     // Setup window
     sf::RenderWindow window(sf::VideoMode({800,600}), "SFML Test", sf::Style::Titlebar);
 
-    // Init player
+    // Spawn player
     MoveableObject player = Player::SpawnPlayer("img/sword32.png", {0,0}, 0.05f);
 
     // Spawn some food
