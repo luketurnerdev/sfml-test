@@ -107554,7 +107554,16 @@ void DrawBoundarySquareOnScreenThisFrame(const MoveableObject& object, sf::Rende
 class MoveableObject {
 public:
 
-    MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement = 0.0f);
+    enum MovementDirection {
+        Up,
+        Down,
+        Left,
+        Right,
+        None,
+    };
+
+
+    MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement = 0.0f, MovementDirection startingMoveDirection = Right);
 
 
     const sf::Sprite& getSprite() const;
@@ -107566,6 +107575,8 @@ public:
 
 
     float getMovementIncrement() const;
+    const MovementDirection& getCurrentMovementDirection() const;
+    void setCurrentMovementDirection(MovementDirection newDirection);
 
 
 
@@ -107575,6 +107586,7 @@ public:
 private:
     Position position_;
     Boundary boundary_;
+    MovementDirection currentMovementDirection_;
 
 
     float movementIncrement_ = 0.0f;
@@ -107603,8 +107615,8 @@ void LogBoundary(const Boundary& boundary, Logger& logger);
 
 
 
-MoveableObject::MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement)
-    : position_(startPos), movementIncrement_(movementIncrement), texture_(texture), sprite_(texture_)
+MoveableObject::MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement, MovementDirection startingMoveDirection)
+    : position_(startPos), movementIncrement_(movementIncrement), texture_(texture), sprite_(texture_), currentMovementDirection_(startingMoveDirection)
 {
     sprite_.setPosition(sf::Vector2f(position_.x, position_.y));
 }
@@ -107625,6 +107637,11 @@ const Boundary &MoveableObject::getBoundary() const {
     return boundary_;
 }
 
+const MoveableObject::MovementDirection& MoveableObject::getCurrentMovementDirection() const {
+    return currentMovementDirection_;
+}
+
+
 
 void MoveableObject::setPosition(const Position& newPos, const sf::RenderWindow& window) {
     const Position validPos = ClampToWindow(newPos, window, sprite_);
@@ -107634,6 +107651,10 @@ void MoveableObject::setPosition(const Position& newPos, const sf::RenderWindow&
 
 
     setBoundary();
+}
+
+void MoveableObject::setCurrentMovementDirection(MoveableObject::MovementDirection newDirection) {
+    currentMovementDirection_ = newDirection;
 }
 
 void MoveableObject::setBoundary() {

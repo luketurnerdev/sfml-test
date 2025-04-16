@@ -107568,7 +107568,16 @@ void DrawBoundarySquareOnScreenThisFrame(const MoveableObject& object, sf::Rende
 class MoveableObject {
 public:
 
-    MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement = 0.0f);
+    enum MovementDirection {
+        Up,
+        Down,
+        Left,
+        Right,
+        None,
+    };
+
+
+    MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement = 0.0f, MovementDirection startingMoveDirection = Right);
 
 
     const sf::Sprite& getSprite() const;
@@ -107580,6 +107589,8 @@ public:
 
 
     float getMovementIncrement() const;
+    const MovementDirection& getCurrentMovementDirection() const;
+    void setCurrentMovementDirection(MovementDirection newDirection);
 
 
 
@@ -107589,6 +107600,7 @@ public:
 private:
     Position position_;
     Boundary boundary_;
+    MovementDirection currentMovementDirection_;
 
 
     float movementIncrement_ = 0.0f;

@@ -10,8 +10,17 @@
 #include "position.h"
 class MoveableObject {
 public:
+    // Generic types
+    enum MovementDirection {
+        Up,
+        Down,
+        Left,
+        Right,
+        None,
+    };
+
     //Constructor
-    MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement = 0.0f);
+    MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement = 0.0f, MovementDirection startingMoveDirection = Right);
 
     // Getter for sprite (so we can draw it elsewhere)
     const sf::Sprite& getSprite() const;
@@ -23,6 +32,8 @@ public:
     // Movement
     // void setMovementIncrement(float);
     float getMovementIncrement() const;
+    const MovementDirection& getCurrentMovementDirection() const;
+    void setCurrentMovementDirection(MovementDirection newDirection);
 
     // Boundaries / Collisions
     // We want to get the pixel values of the outer edges of the sprite
@@ -32,6 +43,7 @@ public:
 private:
     Position position_;
     Boundary boundary_;
+    MovementDirection currentMovementDirection_;
 
     // Default value because some of our instances (i.e., food) don't need movespeed
     float movementIncrement_ = 0.0f;

@@ -109247,7 +109247,16 @@ void DrawBoundarySquareOnScreenThisFrame(const MoveableObject& object, sf::Rende
 class MoveableObject {
 public:
 
-    MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement = 0.0f);
+    enum MovementDirection {
+        Up,
+        Down,
+        Left,
+        Right,
+        None,
+    };
+
+
+    MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement = 0.0f, MovementDirection startingMoveDirection = Right);
 
 
     const sf::Sprite& getSprite() const;
@@ -109259,6 +109268,8 @@ public:
 
 
     float getMovementIncrement() const;
+    const MovementDirection& getCurrentMovementDirection() const;
+    void setCurrentMovementDirection(MovementDirection newDirection);
 
 
 
@@ -109268,6 +109279,7 @@ public:
 private:
     Position position_;
     Boundary boundary_;
+    MovementDirection currentMovementDirection_;
 
 
     float movementIncrement_ = 0.0f;
@@ -109336,7 +109348,7 @@ public:
 };
 # 11 "F:/Programming/C++/sfml/sfmlTest/snakeGame.cpp" 2
 # 1 "F:/Programming/C++/sfml/sfmlTest/Player.h" 1
-# 13 "F:/Programming/C++/sfml/sfmlTest/Player.h"
+# 12 "F:/Programming/C++/sfml/sfmlTest/Player.h"
 class Player {
 public:
     static MoveableObject SpawnPlayer(const std::string& texturePath, const Position spawnPosition, const float playerMovementIncrement);
@@ -109386,23 +109398,47 @@ void CheckForWindowEvents(sf::RenderWindow& window) {
     }
 }
 
-void MovePlayerBasedOnKeyPresses(MoveableObject& player, sf::RenderWindow& window) {
+void ConstantlyMovePlayer(MoveableObject& player, sf::RenderWindow& window) {
+    switch (player.getCurrentMovementDirection()) {
+        case MoveableObject::MovementDirection::Right: {
+            player.setPosition(Position{player.getPosition().x + player.getMovementIncrement(),player.getPosition().y}, window);
+            break;
+        }
+        case MoveableObject::MovementDirection::Left: {
+            player.setPosition(Position{player.getPosition().x - player.getMovementIncrement(),player.getPosition().y}, window);
+            break;
+        }
+
+
+
+
+        case MoveableObject::MovementDirection::Up: {
+            player.setPosition(Position{player.getPosition().x, player.getPosition().y - player.getMovementIncrement()}, window);
+            break;
+        }
+        case MoveableObject::MovementDirection::Down: {
+            player.setPosition(Position{player.getPosition().x, player.getPosition().y + player.getMovementIncrement()}, window);
+            break;
+        }
+    }
+}
+
+void CheckForDirectionChanges(MoveableObject& player) {
+
+
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)) {
-        player.setPosition(Position{player.getPosition().x + player.getMovementIncrement(),player.getPosition().y}, window);
+        player.setCurrentMovementDirection(MoveableObject::Right);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) {
-        player.setPosition(Position{player.getPosition().x - player.getMovementIncrement(),player.getPosition().y}, window);
+        player.setCurrentMovementDirection(MoveableObject::Left);
     }
-
-
-
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down)) {
-        player.setPosition(Position{player.getPosition().x, player.getPosition().y + player.getMovementIncrement()}, window);
+        player.setCurrentMovementDirection(MoveableObject::Down);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up)) {
-        player.setPosition(Position{player.getPosition().x, player.getPosition().y - player.getMovementIncrement()}, window);
+        player.setCurrentMovementDirection(MoveableObject::Up);
     }
 }
 
@@ -109447,7 +109483,9 @@ void runSnakeGame() {
     while (window.isOpen()) {
 
         CheckForWindowEvents(window);
-        MovePlayerBasedOnKeyPresses(player, window);
+        ConstantlyMovePlayer(player, window);
+        CheckForDirectionChanges(player);
+
 
 
         collisionManager.CheckCollisions();

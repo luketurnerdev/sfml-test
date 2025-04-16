@@ -7,8 +7,8 @@
 #include <SFML/Graphics.hpp>
 
 // ":" section --> member initializer list
-MoveableObject::MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement)
-    : position_(startPos), movementIncrement_(movementIncrement), texture_(texture), sprite_(texture_)
+MoveableObject::MoveableObject(const sf::Texture& texture, const Position& startPos, float movementIncrement, MovementDirection startingMoveDirection)
+    : position_(startPos), movementIncrement_(movementIncrement), texture_(texture), sprite_(texture_), currentMovementDirection_(startingMoveDirection)
 {
     sprite_.setPosition(sf::Vector2f(position_.x, position_.y));
 }
@@ -29,6 +29,11 @@ const Boundary &MoveableObject::getBoundary() const {
     return boundary_;
 }
 
+const MoveableObject::MovementDirection& MoveableObject::getCurrentMovementDirection() const {
+    return currentMovementDirection_;
+}
+
+
 // Setters
 void MoveableObject::setPosition(const Position& newPos, const sf::RenderWindow& window) {
     const Position validPos = ClampToWindow(newPos, window, sprite_);
@@ -38,6 +43,10 @@ void MoveableObject::setPosition(const Position& newPos, const sf::RenderWindow&
 
     // Also update the boundary box
     setBoundary();
+}
+
+void MoveableObject::setCurrentMovementDirection(MoveableObject::MovementDirection newDirection) {
+    currentMovementDirection_ = newDirection;
 }
 
 void MoveableObject::setBoundary() {
