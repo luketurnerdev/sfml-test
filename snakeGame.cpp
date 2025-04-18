@@ -86,6 +86,9 @@ void SetupCollisions(SpawnManager& spawnManager, CollisionManager &collisionMana
         Food::DeleteFood(food);
         food = nullptr;
         spawnManager.setFoodCurrentlySpawned(false);
+
+        // Add to player's tail?
+
     });
 }
 
@@ -108,7 +111,6 @@ void runSnakeGame() {
         CheckForWindowEvents(window);
         ConstantlyMovePlayer(player, window);
         CheckForDirectionChanges(player);
-        // MovePlayerBasedOnKeyPresses(player, window);
 
         // Boundary and collision stuff
         collisionManager.CheckCollisions();
